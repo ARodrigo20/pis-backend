@@ -18,7 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('productos','ProductoController@getProductos');
-Route::post('productos/create','ProductoController@create');
-Route::post('productos/{id}','ProductoController@edit');
-Route::get('productos/delete/{id}','ProductoController@delete');
+Route::get('productos','ProductoController@getProductos')->middleware('cors');
+Route::post('productos/create','ProductoController@create')->middleware('cors');
+Route::post('productos/{id}','ProductoController@edit')->middleware('cors');
+Route::get('productos/delete/{id}','ProductoController@delete')->middleware('cors');
