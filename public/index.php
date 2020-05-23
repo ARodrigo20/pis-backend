@@ -48,9 +48,6 @@ $app = require_once __DIR__.'/../bootstrap/app.php';
 | and wonderful application we have prepared for them.
 |
 */
-header("Access-Control-Allow-Origin:*");
-header("Content-Type: application/json");
-header("Access-Control-Allow-Headers: Content-Type");
 
 $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
 
