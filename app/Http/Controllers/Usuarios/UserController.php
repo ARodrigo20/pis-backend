@@ -11,6 +11,8 @@ use App\Http\Controllers\LogsController;
 use Symfony\Component\HttpFoundation\Response;
 use App\User;
 use App\Http\Requests\Usuarios\User\UserRequest as UserRequest;
+use App\Http\Requests\Usuarios\User\UpdatePasswordRequest as UpdatePasswordRequest;
+use Illuminate\Support\Facades\Auth;
 
 /**
  * @group Usuarios
@@ -260,5 +262,25 @@ class UserController extends Controller
         ], 200, [], JSON_NUMERIC_CHECK);
     }
     
+    public function updatePassword(UpdatePasswordRequest $request, $id) 
+    {
+        $user = DB::table('users')->where('id_col', $id)->first();
 
+        if (password_verify($request->input('old_password'), $user->password)) {
+            $user = User::find($id);
+            $user->fill(array(
+                'password' => Hash::make($request->input('new_password')),
+            ))->save();
+        } else {
+            return response()->json([
+                'resp' => 'Credenciales no validas',
+                'code' => 101
+            ], 200, [], JSON_NUMERIC_CHECK);
+        }
+
+        return response()->json([
+            'resp' => 'Contraseña actualizada',
+            'code' => 200
+        ], 200, [], JSON_NUMERIC_CHECK);
+    }
 }
