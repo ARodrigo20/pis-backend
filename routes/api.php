@@ -84,6 +84,7 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::post('usuarios/create','Usuarios\UserController@create')->name('createUser');
     Route::post('usuarios/update/{id}','Usuarios\UserController@update')->name('updateUser');
     Route::get('usuarios/delete/{id}','Usuarios\UserController@delete')->name('deleteUser');
+    Route::post('usuarios/update/password/{id}','Usuarios\UserController@updatePassword')->name('updatePassword');
 
     //Clientes
     Route::get('clientes/get','Clientes\ClienteController@get')->name('getClientes');
