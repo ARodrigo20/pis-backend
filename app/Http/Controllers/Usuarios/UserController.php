@@ -55,7 +55,10 @@ class UserController extends Controller
     public function get()
     {
         try {
-            $users = User::with(['cargo','tipo_documento'])->where('est_reg', '!=', 'E')->get();
+            $users = User::with(['cargo','tipo_documento'])->where([
+                ['est_reg', '!=', 'E'],
+                ['est_reg', '!=', 'SU']
+            ])->get();
             // $users = DB::table('users')
             //                     ->select('id_col', 'nom_col', 'ape_col', 'email', 'num_doc_col', 'id_tipdoc', 'id_car', 'est_reg', 'created_at', 'updated_at')
             //                     ->where('est_reg', '!=', 'E')->get();

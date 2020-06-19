@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use JWTAuth;
@@ -18,7 +19,7 @@ class AuthController extends Controller
     /**
      * Login
      * 
-     * Login del siste,a
+     * Login del sistema
      * 
      * @bodyParam  email string required Email del usuario
      * @bodyParam  password string required Contraseña del usuario
@@ -34,6 +35,16 @@ class AuthController extends Controller
      */
     public function authenticate(Request $request)
     {
+        $user = DB::table('users')->where('email', $request->input('email'))->first();
+
+        if(!$user) {
+            return response()->json(['error' => 'credenciales no validas'], 402);
+        }
+
+        if($user->est_reg != "A" && $user->est_reg != "SU") {
+            return response()->json(['error' => 'credenciales no validas'], 402);
+        }
+
         $credentials = $request->only('email', 'password');
         try {
             if (! $token = JWTAuth::attempt($credentials)) {
