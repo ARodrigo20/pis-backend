@@ -15,8 +15,8 @@ class CreateTipoDocumentoTable extends Migration
     {
         Schema::create('tipo_documento', function (Blueprint $table) {
             $table->id('id_tipdoc');
-            $table->char('cod_tipdoc', 2);
-            $table->string('des_tipdoc', 20);
+            $table->char('cod_tipdoc', 2)->nullable();
+            $table->string('des_tipdoc', 20)->nullable();
             $table->char('est_reg', 2);
             $table->timestamps();
         });

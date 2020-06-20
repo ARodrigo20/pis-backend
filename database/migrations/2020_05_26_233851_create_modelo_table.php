@@ -15,7 +15,7 @@ class CreateModeloTable extends Migration
     {
         Schema::create('modelo', function (Blueprint $table) {
             $table->id('id_mod');
-            $table->string('des_mod', 50);
+            $table->string('des_mod', 50)->nullable();
             $table->char('est_reg', 2);
             $table->timestamps();
         });

@@ -33,7 +33,6 @@ class ProductoController extends Controller
      *       "stk_prod": 0,
      *       "des_prod": "string",
      *       "pre_com_prod": 0,
-     *       "pre_ven_prod": 0,
      *       "id_unimed": 0,
      *       "id_mar": 0,
      *       "id_mod": 0,
@@ -96,7 +95,6 @@ class ProductoController extends Controller
      *       "stk_prod": 0,
      *       "des_prod": "string",
      *       "pre_com_prod": 0,
-     *       "pre_ven_prod": 0,
      *       "id_unimed": 0,
      *       "id_mar": 0,
      *       "id_mod": 0,
@@ -148,11 +146,10 @@ class ProductoController extends Controller
      * Crea un producto
      * 
      * @bodyParam  cod_prod string Codigo del producto.
-     * @bodyParam  num_parte_prod string required Numero de parte del producto.
+     * @bodyParam  num_parte_prod string Numero de parte del producto.
      * @bodyParam  stk_prod int Stock del producto.
      * @bodyParam  des_prod string required Descripcion del producto
      * @bodyParam  pre_com_prod int Precio de compra del producto.
-     * @bodyParam  pre_ven_prod int Precio de venta del producto.
      * @bodyParam  id_unimed int Codigo de unidad de medida.
      * @bodyParam  id_mar int Codigo de marca.
      * @bodyParam  id_mod int Codigo de modelo.
@@ -171,7 +168,6 @@ class ProductoController extends Controller
                 'stk_prod' => $request->input('stk_prod') ? $request->input('stk_prod') : 0,
                 'des_prod' => $request->input('des_prod'),
                 'pre_com_prod' => $request->input('pre_com_prod'),
-                'pre_ven_prod' => $request->input('pre_ven_prod'),
                 'id_unimed' => $request->input('id_unimed'),
                 'id_mar' => $request->input('id_mar'),
                 'id_mod' => $request->input('id_mod'),
@@ -209,11 +205,10 @@ class ProductoController extends Controller
      * @urlParam  id required El ID del producto.
      * 
      * @bodyParam  cod_prod string Codigo del producto.
-     * @bodyParam  num_parte_prod string required Numero de parte del producto.
+     * @bodyParam  num_parte_prod string Numero de parte del producto.
      * @bodyParam  stk_prod int Stock del producto.
      * @bodyParam  des_prod string required Descripcion del producto
      * @bodyParam  pre_com_prod int Precio de compra del producto.
-     * @bodyParam  pre_ven_prod int Precio de venta del producto.
      * @bodyParam  id_unimed int Codigo de unidad de medida.
      * @bodyParam  id_mar int Codigo de marca.
      * @bodyParam  id_mod int Codigo de modelo.
@@ -233,7 +228,6 @@ class ProductoController extends Controller
                 'stk_prod' => $request->input('stk_prod') ? $request->input('stk_prod') : 0,
                 'des_prod' => $request->input('des_prod'),
                 'pre_com_prod' => $request->input('pre_com_prod'),
-                'pre_ven_prod' => $request->input('pre_ven_prod'),
                 'id_unimed' => $request->input('id_unimed'),
                 'id_mar' => $request->input('id_mar'),
                 'id_mod' => $request->input('id_mod'),

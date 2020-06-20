@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Almacen\Producto;
+namespace App\Http\Requests\Clientes\Cliente;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ProductoRequest extends FormRequest
+class ClienteContactoDireccionRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,8 @@ class ProductoRequest extends FormRequest
     public function rules()
     {
         return [
-            'des_prod' => 'required'
+            'contactos' => 'required',
+            'direcciones' => 'required',
         ];
     }
 }

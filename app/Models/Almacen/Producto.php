@@ -12,7 +12,6 @@ class Producto extends Model
                             'stk_prod',
                             'des_prod',
                             'pre_com_prod',
-                            'pre_ven_prod',
                             'id_unimed',
                             'id_mar',
                             'id_mod',

@@ -15,9 +15,11 @@ class CreateClienteContactoTable extends Migration
     {
         Schema::create('cliente_contacto', function (Blueprint $table) {
             $table->id('id_cli_con');
-            $table->string('nom_cli_con', 200);
+            $table->string('nom_cli_con', 200)->nullable();
             $table->string('ema_cli_con', 100)->nullable();
-            $table->char('tel_cli_con', 10);
+            $table->char('cel_cli_con', 10)->nullable();
+            $table->char('ane_cli_con', 10)->nullable();
+            $table->char('car_cli_con', 100)->nullable();
             $table->foreignId('id_cli')->nullable()->references('id_cli')->on('cliente');
             $table->char('est_reg', 2)->default('A');
             $table->timestamps();

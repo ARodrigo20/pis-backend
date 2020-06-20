@@ -16,11 +16,10 @@ class CreateProductoTable extends Migration
         Schema::create('producto', function (Blueprint $table) {
             $table->id('id_prod');
             $table->char('cod_prod', 20)->nullable();
-            $table->char('num_parte_prod', 20);
-            $table->float('stk_prod')->default(0);
+            $table->char('num_parte_prod', 20)->nullable();
+            $table->float('stk_prod')->nullable()->default(0);
             $table->string('des_prod', 100);
             $table->float('pre_com_prod')->nullable();
-            $table->float('pre_ven_prod')->nullable();
             $table->foreignId('id_unimed')->nullable()->references('id_unimed')->on('unidad_medida');
             $table->foreignId('id_mar')->nullable()->references('id_mar')->on('marca');
             $table->foreignId('id_mod')->nullable()->references('id_mod')->on('modelo');

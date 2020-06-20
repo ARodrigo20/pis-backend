@@ -9,7 +9,9 @@ class ClienteContacto extends Model
     protected $fillable = array(
                             'nom_cli_con',
                             'ema_cli_con',
-                            'tel_cli_con',
+                            'cel_cli_con',
+                            'ane_cli_con',
+                            'car_cli_con',
                             'id_cli',
                             'est_reg'
                         );

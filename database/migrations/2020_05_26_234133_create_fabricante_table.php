@@ -15,7 +15,7 @@ class CreateFabricanteTable extends Migration
     {
         Schema::create('fabricante', function (Blueprint $table) {
             $table->id('id_fab');
-            $table->string('des_fab', 100);
+            $table->string('des_fab', 100)->nullable();
             $table->char('est_reg', 2);
             $table->timestamps();
         });

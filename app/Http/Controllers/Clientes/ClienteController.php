@@ -13,6 +13,7 @@ use App\Models\Clientes\Cliente;
 use App\Models\Clientes\ClienteContacto;
 use App\Models\Clientes\ClienteDireccion;
 use App\Http\Requests\Clientes\Cliente\ClienteRequest as ClienteRequest;
+use App\Http\Requests\Clientes\Cliente\ClienteContactoDireccionRequest as ClienteContactoDireccionRequest;
 
 /**
  * @group Clientes
@@ -150,8 +151,6 @@ class ClienteController extends Controller
      * @bodyParam  numdoc_cli string required Numero de documento del cliente.
      * @bodyParam  ema_cli string Email del cliente.
      * @bodyParam  id_tipodoc int Tipo de documento del cliente.
-     * @bodyParam  contactos array Ejemplo: {"nom_cli_con":"string","ema_cli_con":"string","tel_cli_con":"string"}
-     * @bodyParam  direcciones array Ejemplo: {"ciu_cli":"string","dir_cli":"string","tel_cli":"string"}
      * 
      * @response {
      *    "resp": "cliente creado"
@@ -170,33 +169,33 @@ class ClienteController extends Controller
                 'id_tipdoc' => $request->input('id_tipdoc'),
                 'est_reg' => 'A'
             ]);
-            $contactos = $request->input('contactos');
+            // $contactos = $request->input('contactos');
                 
-            if($contactos) {
-                foreach($contactos as $contacto) {
-                    $clienteContacto = ClienteContacto::create([
-                        'nom_cli_con' => $contacto['nom_cli_con'],
-                        'ema_cli_con' => $contacto['ema_cli_con'],
-                        'tel_cli_con' => $contacto['tel_cli_con'],
-                        'id_cli' => $cliente->id_cli,
-                        'est_reg' => 'A'
-                    ]);
-                }
-            }
+            // if($contactos) {
+            //     foreach($contactos as $contacto) {
+            //         $clienteContacto = ClienteContacto::create([
+            //             'nom_cli_con' => $contacto['nom_cli_con'],
+            //             'ema_cli_con' => $contacto['ema_cli_con'],
+            //             'tel_cli_con' => $contacto['tel_cli_con'],
+            //             'id_cli' => $cliente->id_cli,
+            //             'est_reg' => 'A'
+            //         ]);
+            //     }
+            // }
 
-            $direcciones = $request->input('direcciones');
+            // $direcciones = $request->input('direcciones');
                 
-            if($direcciones) {
-                foreach($direcciones as $direccion) {
-                    $clienteDireccion = ClienteDireccion::create([
-                        'ciu_cli' => $direccion['ciu_cli'],
-                        'dir_cli' => $direccion['dir_cli'],
-                        'tel_cli' => $direccion['tel_cli'],
-                        'id_cli' => $cliente->id_cli,
-                        'est_reg' => 'A'
-                    ]);
-                }
-            }
+            // if($direcciones) {
+            //     foreach($direcciones as $direccion) {
+            //         $clienteDireccion = ClienteDireccion::create([
+            //             'ciu_cli' => $direccion['ciu_cli'],
+            //             'dir_cli' => $direccion['dir_cli'],
+            //             'tel_cli' => $direccion['tel_cli'],
+            //             'id_cli' => $cliente->id_cli,
+            //             'est_reg' => 'A'
+            //         ]);
+            //     }
+            // }
                 
             DB::commit();
             // all good
@@ -232,8 +231,6 @@ class ClienteController extends Controller
      * @bodyParam  numdoc_cli string required Numero de documento del cliente.
      * @bodyParam  ema_cli string Email del cliente.
      * @bodyParam  id_tipodoc int Tipo de documento del cliente.
-     * @bodyParam  contactos array Ejemplo: {"id_cli_con": 0,"nom_cli_con":"string","ema_cli_con":"string","tel_cli_con":"string","est_reg": "string"}
-     * @bodyParam  direcciones array Ejemplo: {"id_cli_dir": 0,"ciu_cli":"string","dir_cli":"string","tel_cli":"string","est_reg": "string"}
      * 
      * @response {
      *    "resp": "cliente actualizado"
@@ -252,55 +249,55 @@ class ClienteController extends Controller
                 'id_tipdoc' => $request->input('id_tipdoc'),
             ))->save();
 
-            $contactos = $request->input('contactos');
+            // $contactos = $request->input('contactos');
 
-            if($contactos) {
-                foreach($contactos as $contacto) {
-                    //nuevos => id < 0 //existentes > 0
-                    if($contacto['id_cli_con'] < 0){
-                        $clienteContacto = ClienteContacto::create([
-                            'nom_cli_con' => $contacto['nom_cli_con'],
-                            'ema_cli_con' => $contacto['ema_cli_con'],
-                            'tel_cli_con' => $contacto['tel_cli_con'],
-                            'id_cli' => $cliente->id_cli,
-                            'est_reg' => 'A'
-                        ]);
-                    } else {
-                        $clienteContacto = ClienteContacto::find($contacto['id_cli_con']);
-                        $clienteContacto->fill(array(
-                            'nom_cli_con' => $contacto['nom_cli_con'],
-                            'ema_cli_con' => $contacto['ema_cli_con'],
-                            'tel_cli_con' => $contacto['tel_cli_con'],
-                            'est_reg' => $contacto['est_reg'],
-                        ))->save();
-                    }
-                }
-            }
+            // if($contactos) {
+            //     foreach($contactos as $contacto) {
+            //         //nuevos => id < 0 //existentes > 0
+            //         if($contacto['id_cli_con'] < 0){
+            //             $clienteContacto = ClienteContacto::create([
+            //                 'nom_cli_con' => $contacto['nom_cli_con'],
+            //                 'ema_cli_con' => $contacto['ema_cli_con'],
+            //                 'tel_cli_con' => $contacto['tel_cli_con'],
+            //                 'id_cli' => $cliente->id_cli,
+            //                 'est_reg' => 'A'
+            //             ]);
+            //         } else {
+            //             $clienteContacto = ClienteContacto::find($contacto['id_cli_con']);
+            //             $clienteContacto->fill(array(
+            //                 'nom_cli_con' => $contacto['nom_cli_con'],
+            //                 'ema_cli_con' => $contacto['ema_cli_con'],
+            //                 'tel_cli_con' => $contacto['tel_cli_con'],
+            //                 'est_reg' => $contacto['est_reg'],
+            //             ))->save();
+            //         }
+            //     }
+            // }
 
-            $direcciones = $request->input('direcciones');
+            // $direcciones = $request->input('direcciones');
 
-            if($direcciones) {
-                foreach($direcciones as $direccion) {
-                    //nuevos => id < 0 //existentes > 0
-                    if($direccion['id_cli_dir'] < 0){
-                        $clienteDireccion = ClienteDireccion::create([
-                            'ciu_cli' => $direccion['ciu_cli'],
-                            'dir_cli' => $direccion['dir_cli'],
-                            'tel_cli' => $direccion['tel_cli'],
-                            'id_cli' => $cliente->id_cli,
-                            'est_reg' => 'A'
-                        ]);
-                    } else {
-                        $clienteDireccion = ClienteDireccion::find($direccion['id_cli_dir']);
-                        $clienteDireccion->fill(array(
-                            'ciu_cli' => $direccion['ciu_cli'],
-                            'dir_cli' => $direccion['dir_cli'],
-                            'tel_cli' => $direccion['tel_cli'],
-                            'est_reg' => $direccion['est_reg'],
-                        ))->save();
-                    }
-                }
-            }
+            // if($direcciones) {
+            //     foreach($direcciones as $direccion) {
+            //         //nuevos => id < 0 //existentes > 0
+            //         if($direccion['id_cli_dir'] < 0){
+            //             $clienteDireccion = ClienteDireccion::create([
+            //                 'ciu_cli' => $direccion['ciu_cli'],
+            //                 'dir_cli' => $direccion['dir_cli'],
+            //                 'tel_cli' => $direccion['tel_cli'],
+            //                 'id_cli' => $cliente->id_cli,
+            //                 'est_reg' => 'A'
+            //             ]);
+            //         } else {
+            //             $clienteDireccion = ClienteDireccion::find($direccion['id_cli_dir']);
+            //             $clienteDireccion->fill(array(
+            //                 'ciu_cli' => $direccion['ciu_cli'],
+            //                 'dir_cli' => $direccion['dir_cli'],
+            //                 'tel_cli' => $direccion['tel_cli'],
+            //                 'est_reg' => $direccion['est_reg'],
+            //             ))->save();
+            //         }
+            //     }
+            // }
                 
             DB::commit();
             // all good
@@ -375,6 +372,102 @@ class ClienteController extends Controller
         return response()->json([
             'resp' => 'Cliente Eliminado'
         ], 200, [], JSON_NUMERIC_CHECK);
-    }   
+    }
+
+    /**
+     * Administrar contactos y direcciones
+     * 
+     * Crea, Actualiza y elimina, contactos y direcciones de un cliente
+     *
+     * @urlParam  id required El ID del cliente.
+     * 
+     * @bodyParam  contactos array required Ejemplo: [{"id_cli_con": 0,"nom_cli_con":"string","ema_cli_con":"string","cel_cli_con":"string","ane_cli_con":"string","car_cli_con":"string","est_reg": "string"}]
+     * @bodyParam  direcciones array required Ejemplo: [{"id_cli_dir": 0,"ciu_cli":"string","dir_cli":"string","tel_cli":"string","est_reg": "string"}]
+     *
+     * 
+     * @response {
+     *    "resp": "contactos y direcciones actualizados"
+     * }
+     */
+    public function admContactosYdirecciones(ClienteContactoDireccionRequest $request, $id) 
+    {
+        DB::beginTransaction();
+
+        try {
+            $contactos = $request->input('contactos');
+
+            if($contactos) {
+                foreach($contactos as $contacto) {
+                    //nuevos => id < 0 //existentes > 0
+                    if($contacto['id_cli_con'] < 0){
+                        ClienteContacto::create([
+                            'nom_cli_con' => $contacto['nom_cli_con'],
+                            'ema_cli_con' => $contacto['ema_cli_con'],
+                            'cel_cli_con' => $contacto['cel_cli_con'],
+                            'ane_cli_con' => $contacto['ane_cli_con'],
+                            'car_cli_con' => $contacto['car_cli_con'],
+                            'id_cli' => $id,
+                            'est_reg' => 'A'
+                        ]);
+                    } else {
+                        $clienteContacto = ClienteContacto::find($contacto['id_cli_con']);
+                        $clienteContacto->fill(array(
+                            'nom_cli_con' => $contacto['nom_cli_con'],
+                            'ema_cli_con' => $contacto['ema_cli_con'],
+                            'cel_cli_con' => $contacto['cel_cli_con'],
+                            'ane_cli_con' => $contacto['ane_cli_con'],
+                            'car_cli_con' => $contacto['car_cli_con'],
+                            'est_reg' => $contacto['est_reg'],
+                        ))->save();
+                    }
+                }
+            }
+
+            $direcciones = $request->input('direcciones');
+
+            if($direcciones) {
+                foreach($direcciones as $direccion) {
+                    //nuevos => id < 0 //existentes > 0
+                    if($direccion['id_cli_dir'] < 0){
+                        ClienteDireccion::create([
+                            'ciu_cli' => $direccion['ciu_cli'],
+                            'dir_cli' => $direccion['dir_cli'],
+                            'tel_cli' => $direccion['tel_cli'],
+                            'id_cli' => $id,
+                            'est_reg' => 'A'
+                        ]);
+                    } else {
+                        $clienteDireccion = ClienteDireccion::find($direccion['id_cli_dir']);
+                        $clienteDireccion->fill(array(
+                            'ciu_cli' => $direccion['ciu_cli'],
+                            'dir_cli' => $direccion['dir_cli'],
+                            'tel_cli' => $direccion['tel_cli'],
+                            'est_reg' => $direccion['est_reg'],
+                        ))->save();
+                    }
+                }
+            }
+                
+            DB::commit();
+            // all good
+        } catch (Exception $e) {
+            
+            DB::rollback();
+            // something went wrong
+            return response()->json([
+                        'error' => 'ocurrio un error en el servidor',
+                        'desc' => $e
+                    ], 500);
+        }
+
+        //Logs
+        $descripcion = "Se modifico el cliente con ID: ".$id;
+        $logs = new LogsController();
+        $logs->create_log($descripcion,2);
+        ///////
+        return response()->json([
+            'resp' => 'Cliente Actualizado'
+        ], 200, [], JSON_NUMERIC_CHECK);
+    }
 
 }
