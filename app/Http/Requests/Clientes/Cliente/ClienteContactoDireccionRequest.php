@@ -24,8 +24,8 @@ class ClienteContactoDireccionRequest extends FormRequest
     public function rules()
     {
         return [
-            'contactos' => 'required|array',
-            'direcciones' => 'required',
+            'contactos' => 'required|array|min:0',
+            'direcciones' => 'required|array|min:0',
         ];
     }
 }
