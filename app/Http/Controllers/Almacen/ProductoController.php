@@ -16,14 +16,14 @@ use App\Http\Requests\Almacen\Producto\ProductoRequest as ProductoRequest;
  * APIs para Productos
  */
 class ProductoController extends Controller
-{   
-    
+{
+
     /**
      * Retornar productos
-     * 
+     *
      * Retorna todos los productos
-     * 
-     * 
+     *
+     *
      * @response {
      *  "data" : [
      *     {
@@ -78,16 +78,16 @@ class ProductoController extends Controller
             'size' => count($productos)
         ], 200, [], JSON_NUMERIC_CHECK);
         //$productos = Producto::get();
-        //return ProductoResource::collection($productos);        
+        //return ProductoResource::collection($productos);
     }
-    
+
     /**
      * Retornar producto
-     * 
+     *
      * Retorna producto por Id
-     * 
+     *
      * @urlParam  id required El ID del producto.
-     * 
+     *
      * @response {
      *       "id_prod": 0,
      *       "cod_prod": "string",
@@ -130,7 +130,7 @@ class ProductoController extends Controller
                 'desc' => $e
             ], 500);
         }
-        
+
         if($producto) {
             return response()->json($producto, 200, [], JSON_NUMERIC_CHECK);
         } else {
@@ -142,9 +142,9 @@ class ProductoController extends Controller
 
     /**
      * Crear producto
-     * 
+     *
      * Crea un producto
-     * 
+     *
      * @bodyParam  cod_prod string Codigo del producto.
      * @bodyParam  num_parte_prod string Numero de parte del producto.
      * @bodyParam  stk_prod int Stock del producto.
@@ -154,13 +154,12 @@ class ProductoController extends Controller
      * @bodyParam  id_mar int Codigo de marca.
      * @bodyParam  id_mod int Codigo de modelo.
      * @bodyParam  id_fab int Codigo de fabricante
-     * 
+     *
      * @response {
      *    "resp": "cliente creado"
      * }
      */
     public function create(ProductoRequest $request) {
-
         try {
             $producto = Producto::create([
                 'cod_prod' => $request->input('cod_prod'),
@@ -180,7 +179,6 @@ class ProductoController extends Controller
                 'desc' => $e
             ], 500);
         }
-
         //Logs
         $descripcion = "Se creo el producto con ID: ".$producto->id_prod;
         $logs = new LogsController();
@@ -199,11 +197,11 @@ class ProductoController extends Controller
 
     /**
      * Modificar producto
-     * 
+     *
      * Modifica un producto
      *
      * @urlParam  id required El ID del producto.
-     * 
+     *
      * @bodyParam  cod_prod string Codigo del producto.
      * @bodyParam  num_parte_prod string Numero de parte del producto.
      * @bodyParam  stk_prod int Stock del producto.
@@ -213,13 +211,13 @@ class ProductoController extends Controller
      * @bodyParam  id_mar int Codigo de marca.
      * @bodyParam  id_mod int Codigo de modelo.
      * @bodyParam  id_fab int Codigo de fabricante
-     * 
+     *
      * @response {
      *    "resp": "producto actualizado"
      * }
      */
     public function update(ProductoRequest $request, $id) {
-        
+
         try {
             $producto = Producto::find($id);
             $producto->fill(array(
@@ -258,11 +256,11 @@ class ProductoController extends Controller
 
     /**
      * Eliminar producto
-     * 
+     *
      * Elimina un producto
      *
      * @urlParam id required El ID del producto.
-     * 
+     *
      * @response {
      *    "resp": "producto eliminado"
      * }
@@ -287,6 +285,6 @@ class ProductoController extends Controller
             'resp' => 'Producto Eliminado'
         ], 200, [], JSON_NUMERIC_CHECK);
     }
-    
+
 
 }

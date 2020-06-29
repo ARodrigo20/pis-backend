@@ -61,7 +61,7 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::post('almacen/unidadesmedida/create','Almacen\UnidadMedidaController@create')->name('createUnidadMedida');
     Route::post('almacen/unidadesmedida/update/{id}','Almacen\UnidadMedidaController@update')->name('updateUnidadMedida');
     Route::get('almacen/unidadesmedida/delete/{id}','Almacen\UnidadMedidaController@delete')->name('deleteUnidadMedida');
-    
+
 
     ///Usuarios
     //Tipos de Documento
@@ -101,5 +101,19 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::post('proveedores/update/{id}','Proveedores\ProveedorController@update')->name('updateProveedor');
     Route::get('proveedores/delete/{id}','Proveedores\ProveedorController@delete')->name('deleteProveedor');
 
+    //Proveedores-Direcciones
+
+    Route::get('proveedores-direccion/get','Proveedores\ProveedorDireccionController@get')->name('getProveedoresDireccion');
+    Route::get('proveedores-direccion/get/{id}','Proveedores\ProveedorDireccionController@getById')->name('getProveedorDireccion');
+    Route::post('proveedores-direccion/update/{id}','Proveedores\ProveedorDireccionController@update')->name('updateProveedorDireccion');
+    Route::post('proveedores-direccion/create','Proveedores\ProveedorDireccionController@create')->name('createProveedorDireccion');
+    Route::get('proveedores-direccion/delete/{id}','Proveedores\ProveedorDireccionController@delete')->name('deleteProveedorDireccion');
+
+    //Proveedores-Colaborador
+    Route::get('proveedores-colaborador/get','Proveedores\ProveedorColaboradorController@get')->name('getProveedoresColaborador');
+    Route::get('proveedores-colaborador/get/{id}','Proveedores\ProveedorColaboradorController@getById')->name('getProveedorColaborador');
+    Route::post('proveedores-colaborador/create','Proveedores\ProveedorColaboradorController@create')->name('createProveedorColaborador');
+    Route::post('proveedores-colaborador/update/{id}','Proveedores\ProveedorColaboradorController@update')->name('updateProveedorColaborador');
+    Route::get('proveedores-colaborador/delete/{id}','Proveedores\ProveedorColaboradorController@delete')->name('deleteProveedorColaborador');
 
 });

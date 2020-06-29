@@ -12,8 +12,39 @@ use Symfony\Component\HttpFoundation\Response;
 use App\Models\Proveedores\Proveedor;
 use App\Http\Requests\Proveedores\Proveedor\ProveedorRequest as ProveedorRequest;
 
+/**
+ * @group Proveedores
+ * APIs para proveedores
+ */
+
 class ProveedorController extends Controller
 {
+    /**
+     * Retornar proveedores
+     *
+     * Retorna todos los proveedores
+     *
+     *
+     * @response {
+     *  "data" : [
+     *     {
+     *       "id_prov": 0,
+     *       "razsoc_prov": "string",
+     *       "ema_prov": "string",
+     *       "num_doc_prov": "char",
+     *       "id_tipdoc": 0,
+     *       "est_reg": "char",
+     *       "created_at": "2020-06-14T06:07:02.419Z",
+     *       "updated_at": "2020-06-14T06:07:02.419Z",
+     *       "tipo_documento": {
+     *          "id_tipdoc": 0,
+     *          "des_tipdoc": "string"
+     *       }
+     *     }
+     *  ],
+     *  "size":0
+     * }
+     */
     public function get()
     {
         Log::info('Pasooo:');
@@ -25,16 +56,38 @@ class ProveedorController extends Controller
                 'desc' => $e
             ], 500);
         }
-        
+
         return response()->json([
             'data' => $proveedores,
             'size' => count($proveedores)
         ], 200, [], JSON_NUMERIC_CHECK);
     }
+    /**
+     * Retornar proveedor
+     *
+     * Retorna proveedor por Id
+     *
+     * @urlParam  id required El ID del proveedor.
+     *
+     * @response {
+     *    "id_prov": 0,
+     *       "razsoc_prov": "string",
+     *       "ema_prov": "string",
+     *       "num_doc_prov": "char",
+     *       "id_tipdoc": 0,
+     *       "est_reg": "char",
+     *       "created_at": "2020-06-14T06:07:02.419Z",
+     *       "updated_at": "2020-06-14T06:07:02.419Z",
+     *       "tipo_documento": {
+     *          "id_tipdoc": 0,
+     *          "des_tipdoc": "string"
+     *       }
+     * }
+     */
 
 
     public function getById($id)
-    {        
+    {
         try {
             $proveedor = Proveedor::with(['tipo_documento'])->find($id);
         } catch (Exception $e) {
@@ -43,7 +96,7 @@ class ProveedorController extends Controller
                 'desc' => $e
             ], 500);
         }
-        
+
         if($proveedor) {
             return response()->json($proveedor, 200, [], JSON_NUMERIC_CHECK);
         } else {
@@ -52,8 +105,24 @@ class ProveedorController extends Controller
             ], 500);
         }
     }
+
+    /**
+     * Crear proveedor
+     *
+     * Crea un proveedor
+     *
+     * @bodyParam  razsoc_prov string required Razon social del proveedor.
+     * @bodyParam  ema_prov string email del proveeedor.
+     * @bodyParam  num_doc_prov char required Numero de documento del proveedor.
+     * @bodyParam  id_tipodoc int Tipo de documento del proveedor.
+     *
+     * @response {
+     *    "resp": "proveedor creado"
+     * }
+     */
+
     public function create(ProveedorRequest $request)
-    {   
+    {
         Log::info('Pasooo:');
         try {
             $proveedor = Proveedor::create([
@@ -80,8 +149,24 @@ class ProveedorController extends Controller
         ], 200, [], JSON_NUMERIC_CHECK);
     }
 
-    
-    public function update(ProveedorRequest $request, $id) 
+    /**
+     * Modificar proveedor
+     *
+     * Modifica un proveedor
+     *
+     * @urlParam  id required El ID del proveedor.
+     *
+     * @bodyParam  razsoc_prov string required Razon social del proveedor.
+     * @bodyParam  ema_prov string email del proveeedor.
+     * @bodyParam  num_doc_prov char required Numero de documento del proveedor.
+     * @bodyParam  id_tipodoc int Tipo de documento del proveedor.     *
+     *
+     * @response {
+     *    "resp": "proveedor actualizado"
+     * }
+     */
+
+    public function update(ProveedorRequest $request, $id)
     {
         try {
             $proveedor = Proveedor::find($id);
@@ -108,6 +193,17 @@ class ProveedorController extends Controller
         ], 200, [], JSON_NUMERIC_CHECK);
     }
 
+    /**
+     * Eliminar proveedor
+     *
+     * Elimina un proveedor
+     *
+     * @urlParam  id required El ID del proveedor.
+     *
+     * @response {
+     *    "resp": "proveedor eliminado"
+     * }
+     */
 
     public function delete($id) {
         try {

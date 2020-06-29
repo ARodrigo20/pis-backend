@@ -2,7 +2,11 @@
     "variables": [],
     "info": {
         "name": "Laravel API",
-        "_postman_id": "6010f089-a118-4a77-bcee-65792c20f5df",
+<<<<<<< HEAD
+        "_postman_id": "f0264671-e71e-4fee-91ff-0f626fc287f8",
+=======
+        "_postman_id": "fb5bbc58-76ea-4a4e-a8aa-08180a5bfbb4",
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -61,7 +65,11 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"email\": \"aliquid\",\n    \"password\": \"et\"\n}"
+<<<<<<< HEAD
+                            "raw": "{\n    \"email\": \"sed\",\n    \"password\": \"tenetur\"\n}"
+=======
+                            "raw": "{\n    \"email\": \"vero\",\n    \"password\": \"aliquam\"\n}"
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                         },
                         "description": "Login del sistema",
                         "response": []
@@ -113,7 +121,11 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "eius",
+<<<<<<< HEAD
+                                    "value": "eum",
+=======
+                                    "value": "quam",
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                                     "description": "El ID del cargo."
                                 }
                             ]
@@ -159,7 +171,11 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"des_car\": \"mollitia\"\n}"
+<<<<<<< HEAD
+                            "raw": "{\n    \"des_car\": \"atque\"\n}"
+=======
+                            "raw": "{\n    \"des_car\": \"eos\"\n}"
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                         },
                         "description": "Crea un cargo",
                         "response": []
@@ -177,7 +193,11 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "quis",
+<<<<<<< HEAD
+                                    "value": "enim",
+=======
+                                    "value": "et",
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                                     "description": "El ID del cargo."
                                 }
                             ]
@@ -195,7 +215,11 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"des_car\": \"porro\"\n}"
+<<<<<<< HEAD
+                            "raw": "{\n    \"des_car\": \"qui\"\n}"
+=======
+                            "raw": "{\n    \"des_car\": \"et\"\n}"
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                         },
                         "description": "Modifica un cargo",
                         "response": []
@@ -213,7 +237,11 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "aperiam",
+<<<<<<< HEAD
+                                    "value": "assumenda",
+=======
+                                    "value": "autem",
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                                     "description": "El ID del cargo."
                                 }
                             ]
@@ -283,7 +311,11 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "aut",
+<<<<<<< HEAD
+                                    "value": "beatae",
+=======
+                                    "value": "omnis",
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                                     "description": "El ID del cliente."
                                 }
                             ]
@@ -329,7 +361,11 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"razsoc_cli\": \"minus\",\n    \"numdoc_cli\": \"at\",\n    \"ema_cli\": \"et\",\n    \"id_tipodoc\": 20\n}"
+<<<<<<< HEAD
+                            "raw": "{\n    \"razsoc_cli\": \"illo\",\n    \"ciu_cli\": \"sed\",\n    \"dir_cli\": \"qui\",\n    \"numdoc_cli\": \"dolor\",\n    \"tel_cli\": \"esse\",\n    \"cel_cli\": \"aut\",\n    \"ema_cli\": \"neque\",\n    \"id_tipodoc\": 17\n}"
+=======
+                            "raw": "{\n    \"razsoc_cli\": \"facilis\",\n    \"numdoc_cli\": \"ratione\",\n    \"ema_cli\": \"ipsum\",\n    \"id_tipodoc\": 20\n}"
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                         },
                         "description": "Crea un cliente",
                         "response": []
@@ -347,7 +383,11 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "sunt",
+<<<<<<< HEAD
+                                    "value": "non",
+=======
+                                    "value": "aut",
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                                     "description": "El ID del cliente."
                                 }
                             ]
@@ -365,7 +405,11 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"razsoc_cli\": \"quis\",\n    \"numdoc_cli\": \"eos\",\n    \"ema_cli\": \"quo\",\n    \"id_tipodoc\": 19\n}"
+<<<<<<< HEAD
+                            "raw": "{\n    \"razsoc_cli\": \"dolor\",\n    \"ciu_cli\": \"eum\",\n    \"dir_cli\": \"officiis\",\n    \"numdoc_cli\": \"quis\",\n    \"tel_cli\": \"ab\",\n    \"cel_cli\": \"rem\",\n    \"ema_cli\": \"assumenda\",\n    \"id_tipodoc\": 16\n}"
+=======
+                            "raw": "{\n    \"razsoc_cli\": \"aut\",\n    \"numdoc_cli\": \"doloribus\",\n    \"ema_cli\": \"dolorum\",\n    \"id_tipodoc\": 13\n}"
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                         },
                         "description": "Modifica un cliente",
                         "response": []
@@ -383,7 +427,11 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "quia",
+<<<<<<< HEAD
+                                    "value": "vitae",
+=======
+                                    "value": "iste",
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                                     "description": "El ID del cliente."
                                 }
                             ]
@@ -419,7 +467,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "qui",
+                                    "value": "magni",
                                     "description": "El ID del cliente."
                                 }
                             ]
@@ -489,7 +537,11 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "aut",
+<<<<<<< HEAD
+                                    "value": "sequi",
+=======
+                                    "value": "at",
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                                     "description": "El ID del fabricante."
                                 }
                             ]
@@ -535,7 +587,11 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"des_fab\": \"est\"\n}"
+<<<<<<< HEAD
+                            "raw": "{\n    \"des_fab\": \"explicabo\"\n}"
+=======
+                            "raw": "{\n    \"des_fab\": \"eveniet\"\n}"
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                         },
                         "description": "Crea un fabricante",
                         "response": []
@@ -553,7 +609,11 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "voluptates",
+<<<<<<< HEAD
+                                    "value": "sit",
+=======
+                                    "value": "consectetur",
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                                     "description": "El ID del fabricante."
                                 }
                             ]
@@ -571,7 +631,11 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"des_fab\": \"qui\"\n}"
+<<<<<<< HEAD
+                            "raw": "{\n    \"des_fab\": \"sed\"\n}"
+=======
+                            "raw": "{\n    \"des_fab\": \"ad\"\n}"
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                         },
                         "description": "Modifica un fabricante",
                         "response": []
@@ -589,7 +653,11 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "ullam",
+<<<<<<< HEAD
+                                    "value": "dignissimos",
+=======
+                                    "value": "suscipit",
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                                     "description": "El ID del fabricante."
                                 }
                             ]
@@ -659,7 +727,11 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "dolore",
+<<<<<<< HEAD
+                                    "value": "corrupti",
+=======
+                                    "value": "voluptatibus",
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                                     "description": "El ID de la marca."
                                 }
                             ]
@@ -705,7 +777,11 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"des_mar\": \"ut\"\n}"
+<<<<<<< HEAD
+                            "raw": "{\n    \"des_mar\": \"eum\"\n}"
+=======
+                            "raw": "{\n    \"des_mar\": \"et\"\n}"
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                         },
                         "description": "Crea una marca",
                         "response": []
@@ -723,7 +799,11 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "aliquid",
+<<<<<<< HEAD
+                                    "value": "doloribus",
+=======
+                                    "value": "sit",
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                                     "description": "El ID de la marca."
                                 }
                             ]
@@ -741,7 +821,11 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"des_mar\": \"aut\"\n}"
+<<<<<<< HEAD
+                            "raw": "{\n    \"des_mar\": \"beatae\"\n}"
+=======
+                            "raw": "{\n    \"des_mar\": \"quisquam\"\n}"
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                         },
                         "description": "Modifica una marca",
                         "response": []
@@ -759,7 +843,11 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "ut",
+<<<<<<< HEAD
+                                    "value": "dicta",
+=======
+                                    "value": "veniam",
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                                     "description": "El ID de la marca."
                                 }
                             ]
@@ -829,7 +917,11 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "doloremque",
+<<<<<<< HEAD
+                                    "value": "pariatur",
+=======
+                                    "value": "voluptatem",
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                                     "description": "El ID del modelo."
                                 }
                             ]
@@ -875,7 +967,11 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"des_mod\": \"aut\"\n}"
+<<<<<<< HEAD
+                            "raw": "{\n    \"des_mod\": \"rerum\"\n}"
+=======
+                            "raw": "{\n    \"des_mod\": \"dolorem\"\n}"
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                         },
                         "description": "Crea un modelo",
                         "response": []
@@ -893,7 +989,11 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "assumenda",
+<<<<<<< HEAD
+                                    "value": "perspiciatis",
+=======
+                                    "value": "consequuntur",
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                                     "description": "El ID del modelo."
                                 }
                             ]
@@ -911,7 +1011,11 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"des_mod\": \"velit\"\n}"
+<<<<<<< HEAD
+                            "raw": "{\n    \"des_mod\": \"id\"\n}"
+=======
+                            "raw": "{\n    \"des_mod\": \"laudantium\"\n}"
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                         },
                         "description": "Modifica un modelo",
                         "response": []
@@ -929,7 +1033,11 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "totam",
+<<<<<<< HEAD
+                                    "value": "eveniet",
+=======
+                                    "value": "id",
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                                     "description": "El ID del modelo."
                                 }
                             ]
@@ -999,7 +1107,11 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "tenetur",
+<<<<<<< HEAD
+                                    "value": "mollitia",
+=======
+                                    "value": "laborum",
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                                     "description": "El ID del producto."
                                 }
                             ]
@@ -1045,7 +1157,11 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"cod_prod\": \"debitis\",\n    \"num_parte_prod\": \"esse\",\n    \"stk_prod\": 13,\n    \"des_prod\": \"et\",\n    \"pre_com_prod\": 16,\n    \"id_unimed\": 16,\n    \"id_mar\": 14,\n    \"id_mod\": 1,\n    \"id_fab\": 6\n}"
+<<<<<<< HEAD
+                            "raw": "{\n    \"cod_prod\": \"non\",\n    \"num_parte_prod\": \"aut\",\n    \"stk_prod\": 10,\n    \"des_prod\": \"dolore\",\n    \"pre_com_prod\": 8,\n    \"pre_ven_prod\": 1,\n    \"id_unimed\": 8,\n    \"id_mar\": 10,\n    \"id_mod\": 12,\n    \"id_fab\": 19\n}"
+=======
+                            "raw": "{\n    \"cod_prod\": \"corporis\",\n    \"num_parte_prod\": \"iste\",\n    \"stk_prod\": 15,\n    \"des_prod\": \"mollitia\",\n    \"pre_com_prod\": 10,\n    \"id_unimed\": 4,\n    \"id_mar\": 18,\n    \"id_mod\": 5,\n    \"id_fab\": 8\n}"
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                         },
                         "description": "Crea un producto",
                         "response": []
@@ -1063,7 +1179,11 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "amet",
+<<<<<<< HEAD
+                                    "value": "illum",
+=======
+                                    "value": "unde",
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                                     "description": "El ID del producto."
                                 }
                             ]
@@ -1081,7 +1201,11 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"cod_prod\": \"ex\",\n    \"num_parte_prod\": \"cum\",\n    \"stk_prod\": 4,\n    \"des_prod\": \"vero\",\n    \"pre_com_prod\": 9,\n    \"id_unimed\": 1,\n    \"id_mar\": 14,\n    \"id_mod\": 12,\n    \"id_fab\": 11\n}"
+<<<<<<< HEAD
+                            "raw": "{\n    \"cod_prod\": \"ullam\",\n    \"num_parte_prod\": \"repudiandae\",\n    \"stk_prod\": 11,\n    \"des_prod\": \"delectus\",\n    \"pre_com_prod\": 17,\n    \"pre_ven_prod\": 17,\n    \"id_unimed\": 1,\n    \"id_mar\": 10,\n    \"id_mod\": 17,\n    \"id_fab\": 3\n}"
+=======
+                            "raw": "{\n    \"cod_prod\": \"libero\",\n    \"num_parte_prod\": \"dolores\",\n    \"stk_prod\": 1,\n    \"des_prod\": \"minima\",\n    \"pre_com_prod\": 1,\n    \"id_unimed\": 19,\n    \"id_mar\": 12,\n    \"id_mod\": 20,\n    \"id_fab\": 3\n}"
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                         },
                         "description": "Modifica un producto",
                         "response": []
@@ -1099,7 +1223,11 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "eius",
+<<<<<<< HEAD
+                                    "value": "aliquid",
+=======
+                                    "value": "debitis",
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                                     "description": "El ID del producto."
                                 }
                             ]
@@ -1120,6 +1248,516 @@
                             "raw": "[]"
                         },
                         "description": "Elimina un producto",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Proveedores",
+            "description": "APIs para proveedores",
+            "item": [
+                {
+                    "name": "Retornar proveedores",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "api\/proveedores\/get",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Retorna todos los proveedores",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Retornar proveedor",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "api\/proveedores\/get\/:id",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "eum",
+                                    "description": "El ID del proveedor."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Retorna proveedor por Id",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Crear proveedor",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "api\/proveedores\/create",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"razsoc_prov\": \"voluptatibus\",\n    \"ema_prov\": \"impedit\",\n    \"num_doc_prov\": \"est\",\n    \"id_tipodoc\": 6\n}"
+                        },
+                        "description": "Crea un proveedor",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Modificar proveedor",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "api\/proveedores\/update\/:id",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "est",
+                                    "description": "El ID del proveedor."
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"razsoc_prov\": \"odio\",\n    \"ema_prov\": \"consequatur\",\n    \"num_doc_prov\": \"et\",\n    \"id_tipodoc\": 17\n}"
+                        },
+                        "description": "Modifica un proveedor",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Eliminar proveedor",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "api\/proveedores\/delete\/:id",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "sequi",
+                                    "description": "El ID del proveedor."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Elimina un proveedor",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Proveeedor Colaborador",
+            "description": "APIs para el colaborador del proveedor",
+            "item": [
+                {
+                    "name": "Retornar colaboradores proveedores",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "api\/proveedores-colaborador\/get",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Retorna todos los colaboradores proveedores",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Retornar colaborador proveedor",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "api\/proveedores-colaborador\/get\/:id",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "facilis",
+                                    "description": "El ID del colaborador proveedor."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Retorna colaborador proveedor por Id",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Crear colaborador proveedor",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "api\/proveedores-colaborador\/create",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"nom_prov\": \"minus\",\n    \"ema_prov\": \"rerum\",\n    \"tel_prov\": \"odio\",\n    \"id\": \"corrupti\"\n}"
+                        },
+                        "description": "Crea un colaborador proveedor",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Modificar colaborador proveedor",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "api\/proveedores-colaborador\/update\/:id",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "dolor",
+                                    "description": "El ID del colaborador proveedor."
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"nom_prov\": \"vel\",\n    \"ema_prov\": \"ipsa\",\n    \"tel_prov\": \"eveniet\",\n    \"id\": \"voluptatem\"\n}"
+                        },
+                        "description": "Modifica un colaborador proveedor",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Eliminar colaborador proveedor",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "api\/proveedores-colaborador\/delete\/:id",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "asperiores",
+                                    "description": "El ID del colaborador proveedor."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Elimina un colaborador proveedor",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Proveeedor Direccion",
+            "description": "APIs para direccion del Proveedor",
+            "item": [
+                {
+                    "name": "Retornar direcciones proveedores",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "api\/proveedores-direccion\/get",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Retorna todos las direcciones de proveedores",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Retornar direccion proveedor",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "api\/proveedores-direccion\/get\/:id",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "modi",
+                                    "description": "El ID de la direccion del proveedor."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Retorna la direccion de proveedor por Id",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Modificar direccion proveedor",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "api\/proveedores-direccion\/update\/:id",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "architecto",
+                                    "description": "El ID de la direccion proveedor."
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"ciu_prov\": \"beatae\",\n    \"dir_prov\": \"reiciendis\",\n    \"tel_prov\": \"sed\",\n    \"id\": \"nihil\"\n}"
+                        },
+                        "description": "Modifica una direccion de proveedor",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Crear proveedor",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "api\/proveedores-direccion\/create",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"ciu_prov\": \"est\",\n    \"dir_prov\": \"voluptatem\",\n    \"tel_prov\": \"hic\",\n    \"id\": \"consequuntur\"\n}"
+                        },
+                        "description": "Crea una direccion de proveedor",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Eliminar direccion proveedor",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "api\/proveedores-direccion\/delete\/:id",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "similique",
+                                    "description": "El ID de la direccion del proveedor."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Elimina un direccion proveedor",
                         "response": []
                     }
                 }
@@ -1203,7 +1841,11 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "fuga",
+<<<<<<< HEAD
+                                    "value": "error",
+=======
+                                    "value": "et",
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                                     "description": "El ID del tipo de documento."
                                 }
                             ]
@@ -1249,7 +1891,11 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"cod_tipdoc\": \"optio\",\n    \"des_tipdoc\": \"ducimus\"\n}"
+<<<<<<< HEAD
+                            "raw": "{\n    \"des_tipdoc\": \"omnis\"\n}"
+=======
+                            "raw": "{\n    \"cod_tipdoc\": \"rerum\",\n    \"des_tipdoc\": \"amet\"\n}"
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                         },
                         "description": "Crea un tipo de documento",
                         "response": []
@@ -1267,7 +1913,11 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "ut",
+<<<<<<< HEAD
+                                    "value": "quod",
+=======
+                                    "value": "qui",
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                                     "description": "El ID del tipo de documento."
                                 }
                             ]
@@ -1285,7 +1935,11 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"cod_tipdoc\": \"hic\",\n    \"des_tipdoc\": \"id\"\n}"
+<<<<<<< HEAD
+                            "raw": "{\n    \"des_tipdoc\": \"a\"\n}"
+=======
+                            "raw": "{\n    \"cod_tipdoc\": \"commodi\",\n    \"des_tipdoc\": \"voluptatum\"\n}"
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                         },
                         "description": "Modifica un tipo de documento",
                         "response": []
@@ -1303,7 +1957,11 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "quia",
+<<<<<<< HEAD
+                                    "value": "iste",
+=======
+                                    "value": "qui",
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                                     "description": "El ID del tipo de documento."
                                 }
                             ]
@@ -1373,7 +2031,11 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "voluptatem",
+<<<<<<< HEAD
+                                    "value": "nihil",
+=======
+                                    "value": "et",
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                                     "description": "El ID de la unidad de medida."
                                 }
                             ]
@@ -1419,7 +2081,11 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"nom_unimed\": \"esse\",\n    \"des_mar\": \"laborum\"\n}"
+<<<<<<< HEAD
+                            "raw": "{\n    \"nom_unimed\": \"est\",\n    \"des_mar\": \"sunt\"\n}"
+=======
+                            "raw": "{\n    \"nom_unimed\": \"enim\",\n    \"des_mar\": \"sit\"\n}"
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                         },
                         "description": "Crea una unidad de medida",
                         "response": []
@@ -1437,7 +2103,11 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "dolorem",
+<<<<<<< HEAD
+                                    "value": "ut",
+=======
+                                    "value": "asperiores",
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                                     "description": "El ID de la unidad de medida."
                                 }
                             ]
@@ -1455,7 +2125,11 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"nom_unimed\": \"sit\",\n    \"des_mar\": \"officiis\"\n}"
+<<<<<<< HEAD
+                            "raw": "{\n    \"nom_unimed\": \"quaerat\",\n    \"des_mar\": \"beatae\"\n}"
+=======
+                            "raw": "{\n    \"nom_unimed\": \"eligendi\",\n    \"des_mar\": \"qui\"\n}"
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                         },
                         "description": "Modifica una unidad de medida",
                         "response": []
@@ -1473,7 +2147,11 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "placeat",
+<<<<<<< HEAD
+                                    "value": "hic",
+=======
+                                    "value": "ab",
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                                     "description": "El ID de la unidad de medida."
                                 }
                             ]
@@ -1543,7 +2221,11 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "vero",
+<<<<<<< HEAD
+                                    "value": "architecto",
+=======
+                                    "value": "aliquam",
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                                     "description": "El ID del usuario."
                                 }
                             ]
@@ -1589,7 +2271,11 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"nom_col\": \"nihil\",\n    \"ape_col\": \"itaque\",\n    \"email\": \"id\",\n    \"password\": \"pariatur\",\n    \"num_doc_col\": \"commodi\",\n    \"cod_col\": \"error\",\n    \"cel_col\": \"natus\",\n    \"id_tipdoc\": 6,\n    \"id_car\": 13\n}"
+<<<<<<< HEAD
+                            "raw": "{\n    \"nom_col\": \"fugiat\",\n    \"ape_col\": \"perspiciatis\",\n    \"email\": \"architecto\",\n    \"password\": \"quae\",\n    \"num_doc_col\": \"repudiandae\",\n    \"id_tipdoc\": 7,\n    \"id_car\": 16\n}"
+=======
+                            "raw": "{\n    \"nom_col\": \"assumenda\",\n    \"ape_col\": \"ea\",\n    \"email\": \"fugiat\",\n    \"password\": \"nesciunt\",\n    \"num_doc_col\": \"autem\",\n    \"cod_col\": \"et\",\n    \"cel_col\": \"culpa\",\n    \"id_tipdoc\": 5,\n    \"id_car\": 9\n}"
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                         },
                         "description": "Crea un usuario",
                         "response": []
@@ -1607,7 +2293,11 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "non",
+<<<<<<< HEAD
+                                    "value": "est",
+=======
+                                    "value": "sunt",
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                                     "description": "El ID del usuario."
                                 }
                             ]
@@ -1625,7 +2315,11 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"nom_col\": \"est\",\n    \"ape_col\": \"dolor\",\n    \"email\": \"qui\",\n    \"num_doc_col\": \"in\",\n    \"cod_col\": \"quisquam\",\n    \"cel_col\": \"distinctio\",\n    \"id_tipdoc\": 6,\n    \"id_car\": 16\n}"
+<<<<<<< HEAD
+                            "raw": "{\n    \"nom_col\": \"nostrum\",\n    \"ape_col\": \"doloremque\",\n    \"email\": \"ipsam\",\n    \"num_doc_col\": \"sunt\",\n    \"id_tipdoc\": 8,\n    \"id_car\": 8\n}"
+=======
+                            "raw": "{\n    \"nom_col\": \"reprehenderit\",\n    \"ape_col\": \"quis\",\n    \"email\": \"voluptatem\",\n    \"num_doc_col\": \"quos\",\n    \"cod_col\": \"illum\",\n    \"cel_col\": \"nobis\",\n    \"id_tipdoc\": 6,\n    \"id_car\": 12\n}"
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                         },
                         "description": "Modifica un usuario",
                         "response": []
@@ -1643,7 +2337,11 @@
                                 {
                                     "id": "id",
                                     "key": "id",
+<<<<<<< HEAD
                                     "value": "nemo",
+=======
+                                    "value": "molestiae",
+>>>>>>> 8ba5c69ef87bd079902ec7ae884b0a13892072c6
                                     "description": "El ID del usuario."
                                 }
                             ]
@@ -1668,13 +2366,21 @@
                     }
                 },
                 {
-                    "name": "api\/usuarios\/update\/password\/{id}",
+                    "name": "Modificar Contrase\u00f1a",
                     "request": {
                         "url": {
                             "protocol": "http",
                             "host": "localhost",
                             "path": "api\/usuarios\/update\/password\/:id",
-                            "query": []
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "fugiat",
+                                    "description": "El ID del usuario."
+                                }
+                            ]
                         },
                         "method": "POST",
                         "header": [
@@ -1689,9 +2395,9 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "[]"
+                            "raw": "{\n    \"email\": \"modi\",\n    \"old_password\": \"expedita\",\n    \"new_password\": \"est\"\n}"
                         },
-                        "description": "",
+                        "description": "Modifica la contrase\u00f1a persona",
                         "response": []
                     }
                 }

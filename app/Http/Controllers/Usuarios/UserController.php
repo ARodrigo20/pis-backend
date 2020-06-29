@@ -265,6 +265,22 @@ class UserController extends Controller
         ], 200, [], JSON_NUMERIC_CHECK);
     }
     
+    /**
+     * Modificar Contraseña
+     * 
+     * Modifica la contraseña persona
+     *
+     * @urlParam  id required El ID del usuario.
+     * 
+     * @bodyParam  email string required Enail del usuario
+     * @bodyParam  old_password string required Contraseña antigua.
+     * @bodyParam  new_password string required Contraseña nueva.
+     * 
+     * @response {
+     *    "resp": "Contraseña actualizada o credenciales no validas",
+     *    "code": "200 o 101"
+     * }
+     */
     public function updatePassword(UpdatePasswordRequest $request, $id) 
     {
         $user = DB::table('users')->where('id_col', $id)->first();
