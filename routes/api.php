@@ -100,6 +100,8 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::post('proveedores/create','Proveedores\ProveedorController@create')->name('createProveedor');
     Route::post('proveedores/update/{id}','Proveedores\ProveedorController@update')->name('updateProveedor');
     Route::get('proveedores/delete/{id}','Proveedores\ProveedorController@delete')->name('deleteProveedor');
+    Route::post('proveedores/admbancolydir/{id}','Proveedores\ProveedorController@admBancosColaboradoresYdirecciones')->name('admBanColYdirecsProveedor');
+
 
     //Proveedores-Direcciones
 
@@ -115,5 +117,13 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::post('proveedores-colaborador/create','Proveedores\ProveedorColaboradorController@create')->name('createProveedorColaborador');
     Route::post('proveedores-colaborador/update/{id}','Proveedores\ProveedorColaboradorController@update')->name('updateProveedorColaborador');
     Route::get('proveedores-colaborador/delete/{id}','Proveedores\ProveedorColaboradorController@delete')->name('deleteProveedorColaborador');
+
+    //Proveedores-Banco
+    Route::get('proveedores-banco/get','Proveedores\ProveedorBancoController@get')->name('getProveedoresBanco');
+    Route::get('proveedores-banco/get/{id}','Proveedores\ProveedorBancoController@getById')->name('getProveedorBanco');
+    Route::post('proveedores-banco/create','Proveedores\ProveedorBancoController@create')->name('createProveedorBanco');
+    Route::post('proveedores-banco/update/{id}','Proveedores\ProveedorBancoController@update')->name('updateProveedorBanco');
+    Route::get('proveedores-banco/delete/{id}','Proveedores\ProveedorBancoController@delete')->name('deleteProveedorBanco');
+
 
 });

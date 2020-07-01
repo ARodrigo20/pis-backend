@@ -16,7 +16,7 @@ class Proveedor extends Model
                         );
         protected $primaryKey = 'id_prov';
 
-    	protected $appends = ['tipo_documento'];
+    	protected $appends = ['tipo_documento', 'bancos','colaboradores','direcciones'];
 	    protected $hidden = [
         	'created_at', 'updated_at',
     	];
@@ -30,5 +30,33 @@ class Proveedor extends Model
 	    {
 	    	return $this->belongsTo('App\Models\Usuarios\TipoDocumento', 'id_tipdoc');
 	    }
+
+	    public function getBancosAttribute()
+        {
+            return $this->bancos();
+        }
+        public function bancos()
+        {
+            return $this->hasMany('App\Models\Proveedores\ProveedorBanco', 'id_prov')->where('est_reg', '!=', 'E');
+        }
+
+        public function getColaboradoresAttribute()
+        {
+            return $this->colaboradores();
+        }
+
+        public function colaboradores()
+        {
+            return $this->hasMany('App\Models\Proveedores\ProveedorColaborador', 'id_prov')->where('est_reg', '!=', 'E');
+        }
+
+        public function getDireccionesAttribute()
+        {
+            return $this->direcciones();
+        }
+        public function direcciones(){
+            return $this->hasMany('App\Models\Proveedores\ProveedorDireccion', 'id_prov')->where('est_reg', '!=', 'E');
+        }
+
 
 }
