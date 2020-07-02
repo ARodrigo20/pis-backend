@@ -34,7 +34,6 @@ class ProveedorController extends Controller
      *          {
      *              "id_prov": 0,
      *              "razsoc_prov": "string",
-     *              "numdoc_prov": "string",
      *              "ema_prov": "string",
      *              "num_doc_prov": "string",
      *              "id_tipodoc": 0,
@@ -109,7 +108,6 @@ class ProveedorController extends Controller
      *          {
      *              "id_prov": 0,
      *              "razsoc_prov": "string",
-     *              "numdoc_prov": "string",
      *              "ema_prov": "string",
      *              "num_doc_prov": "string",
      *              "id_tipodoc": 0,
@@ -394,6 +392,9 @@ class ProveedorController extends Controller
                             'ema_prov_col' => $colaborador['ema_prov_col'],
                             'tel_prov_col' => $colaborador['tel_prov_col'],
                             'id_prov' => $id,
+                            'ane_prov_col' => $colaborador['ane_prov_col'],
+                            'car_prov_col' => $colaborador['car_prov_col'],
+
                             'est_reg' => 'A'
                         ]);
                     } else {
@@ -402,6 +403,8 @@ class ProveedorController extends Controller
                             'nom_prov_col' => $colaborador['nom_prov_col'],
                             'ema_prov_col' => $colaborador['ema_prov_col'],
                             'tel_prov_col' => $colaborador['tel_prov_col'],
+                            'ane_prov_col' => $colaborador['ane_prov_col'],
+                            'car_prov_col' => $colaborador['car_prov_col'],
                             'est_reg' => $colaborador['est_reg'],
                         ))->save();
                     }

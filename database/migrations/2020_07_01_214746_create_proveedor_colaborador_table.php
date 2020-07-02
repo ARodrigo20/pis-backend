@@ -19,6 +19,8 @@ class CreateProveedorColaboradorTable extends Migration
             $table->string('ema_prov_col', 100);
             $table->char('tel_prov_col',10)->nullable();
             $table->foreignId('id_prov')->nullable()->references('id_prov')->on('proveedor');
+            $table->char('ane_prov_col', 8);
+            $table->string('car_prov_col', 50);
             $table->char('est_reg', 2);
             $table->timestamps();
         });

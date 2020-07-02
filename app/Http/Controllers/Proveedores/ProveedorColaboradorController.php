@@ -27,10 +27,12 @@ class ProveedorColaboradorController extends Controller
      * @response {
      *  "data" : [
      *     {
-     *       "id_prov_Col": 0,
+     *       "id_prov_col": 0,
      *       "nom_prov_col": "string",
      *       "ema_prov_col": "string",
      *       "tel_prov_col": "char",
+     *       "ane_prov_col": "char",
+     *       "car_prov_col": "string",
      *       "created_at": "2020-06-14T06:07:02.419Z",
      *       "updated_at": "2020-06-14T06:07:02.419Z"
      *     }
@@ -70,6 +72,8 @@ class ProveedorColaboradorController extends Controller
      *       "nom_prov_col": "string",
      *       "ema_prov_col": "string",
      *       "tel_prov_col": "char",
+     *       "ane_prov_col": "char",
+     *       "car_prov_col": "string",
      *       "created_at": "2020-06-14T06:07:02.419Z",
      *       "updated_at": "2020-06-14T06:07:02.419Z"
      * }
@@ -103,6 +107,11 @@ class ProveedorColaboradorController extends Controller
      * @bodyParam  nom_prov string required nombre del colaborador del proveedor.
      * @bodyParam  ema_prov string required email del colaborador proveedor.
      * @bodyParam  tel_prov string telefono opcional del colaborador proveedor.
+     * @bodyParam  ane_prov_col char anexo del colaborador del proveedor.
+     * @bodyParam  car_prov_col string cargo del colaborador del proveedor.
+     *
+     *
+     *
      * @bodyParam  id del proveedor.
      *
      * @response {
@@ -119,6 +128,8 @@ class ProveedorColaboradorController extends Controller
                 'ema_prov_col' => $request->input('ema_prov_col'),
                 'tel_prov_col' => $request->input('tel_prov_col'),
                 'id_prov' => $request->input('id_prov'),
+                'ane_prov_col' => $request->input('ane_prov_col'),
+                'car_prov_col' => $request->input('car_prov_col'),
                 'est_reg' => 'A'
             ]);
         } catch (Exception $e) {
@@ -146,9 +157,11 @@ class ProveedorColaboradorController extends Controller
      * @urlParam  id required El ID del colaborador proveedor.
      *
      * @bodyParam  nom_prov string required nombre del colaborador del proveedor.
-     * @bodyParam  ema_prov string required email del colaborador  proveedor.
+     * @bodyParam  ema_prov string required email del colaborador proveedor.
      * @bodyParam  tel_prov string telefono opcional del colaborador proveedor.
-     * @bodyParam  id del proveedor.
+     * @bodyParam  ane_prov_col char anexo del colaborador del proveedor.
+     * @bodyParam  car_prov_col string cargo del colaborador del proveedor.
+     *
      *
      * @response {
      *    "resp": "colaborador proveedor actualizado"
@@ -164,6 +177,8 @@ class ProveedorColaboradorController extends Controller
                 'ema_prov_col' => $request->input('ema_prov_col'),
                 'tel_prov_col' => $request->input('tel_prov_col'),
                 'id_prov' => $request->input('id_prov'),
+                'ane_prov_col' => $request->input('ane_prov_col'),
+                'car_prov_col' => $request->input('car_prov_col'),
             ))->save();
         } catch (Exception $e) {
             return response()->json([

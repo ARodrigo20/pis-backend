@@ -27,6 +27,8 @@ class ProveedorColaboradorRequest extends FormRequest
             'ema_prov_col' => 'email',
             'nom_prov_col' => 'required',
             'tel_prov_col' => 'required',
+            'ane_prov_col' => 'required',
+            'car_prov_col' => 'required',
             'id_prov' => 'required',
         ];
     }

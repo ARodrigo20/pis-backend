@@ -12,6 +12,8 @@ class ProveedorColaborador extends Model
                         'ema_prov_col',
                         'tel_prov_col',
                         'id_prov',
+                        'ane_prov_col',
+                        'car_prov_col',
                         'est_reg'
     );
     protected $primaryKey = 'id_prov_col';
