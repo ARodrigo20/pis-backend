@@ -24,7 +24,7 @@ class ProveedorRequest extends FormRequest
     public function rules()
     {
         return [
-            'ema_prov' => 'email',
+//           'ema_prov' => 'email',
             'razsoc_prov' => 'required',
             'num_doc_prov' => 'required',
         ];

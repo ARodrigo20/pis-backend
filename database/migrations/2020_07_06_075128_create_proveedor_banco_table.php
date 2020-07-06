@@ -15,12 +15,12 @@ class CreateProveedorBancoTable extends Migration
     {
         Schema::create('proveedor_banco', function (Blueprint $table) {
             $table->id('id_prov_ban');
-            $table->string('tip_prov_ban', 100);
-            $table->string('cue_prov_ban', 200);
-            $table->string('ban_prov_ban', 200);
+            $table->string('tip_prov_ban', 100)->nullable();
+            $table->string('cue_prov_ban', 200)->nullable();
+            $table->string('ban_prov_ban', 200)->nullable();
             $table->foreignId('id_prov')->nullable()->references('id_prov')->on('proveedor');
-            $table->string('com_prov_ban', 200);
-            $table->char('est_reg', 2);
+            $table->string('com_prov_ban', 200)->nullable();
+            $table->char('est_reg', 2)->nullable();
             $table->timestamps();
         });
     }

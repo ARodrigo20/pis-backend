@@ -21,6 +21,7 @@ class ProveedorBanco extends Model
     protected $hidden = [
         'created_at', 'updated_at',
     ];
+
     public function getIdProveedorAttribute()
     {
         return $this->id_proveedor();
@@ -30,7 +31,5 @@ class ProveedorBanco extends Model
     {
         return $this->belongsTo('App\Models\Proveedores\Proveedor', 'id_prov');
     }
-
-
 
 }

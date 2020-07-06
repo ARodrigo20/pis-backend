@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Proveedores\Proveedor;
+namespace App\Http\Requests\Proveedores\ProveedorColaborador;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ProveedorDireccionRequest extends FormRequest
+class ProveedorColaboradorRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,10 +24,9 @@ class ProveedorDireccionRequest extends FormRequest
     public function rules()
     {
         return [
-            'ciu_prov' => 'required',
-            'dir_prov' => 'required',
-//          'tel_prov' => 'required',
-            'id_prov' => 'required',
+            'nom_prov_col' => 'required'
+            
+            
         ];
     }
 }

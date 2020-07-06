@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProveedorDireccion extends Migration
+class CreateProveedorColaboradorTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreateProveedorDireccion extends Migration
      */
     public function up()
     {
-        Schema::create('proveedor_direccion', function (Blueprint $table) {
-            $table->id('id_prov_dir');
-            $table->string('ciu_prov', 50);
-            $table->string('dir_prov', 200);
-            $table->integer('tel_prov')->nullable();
+        Schema::create('proveedor_colaborador', function (Blueprint $table) {
+            $table->id('id_prov_col');
+            $table->string('nom_prov_col', 100);
+            $table->string('ema_prov_col', 100)->nullable();
+            $table->char('tel_prov_col',10)->nullable();
             $table->foreignId('id_prov')->nullable()->references('id_prov')->on('proveedor');
+            $table->char('ane_prov_col', 8)->nullable();
+            $table->string('car_prov_col', 50)->nullable();
             $table->char('est_reg', 2);
             $table->timestamps();
         });
@@ -31,6 +33,6 @@ class CreateProveedorDireccion extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('proveedor_direccion');
+        Schema::dropIfExists('proveedor_colaborador');
     }
 }

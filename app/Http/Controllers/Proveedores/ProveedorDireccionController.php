@@ -85,7 +85,7 @@ class ProveedorDireccionController extends Controller
     public function getById($id)
     {
         try {
-            $proveedorDireccion = ProveedorDireccion::with(['id_proveedor'])->find($id);
+            $proveedorDireccion = ProveedorDireccion::with(['proveedor'])->find($id);
         } catch (Exception $e) {
             return response()->json([
                 'error' => 'ocurrio un error en el servidor',
@@ -110,7 +110,7 @@ class ProveedorDireccionController extends Controller
      * @bodyParam  ciu_prov string required ciudad del proveedor.
      * @bodyParam  dir_prov string required direccion proveedor.
      * @bodyParam  tel_prov char telefono required del proveedor.
-     * @bodyParam  id del proveedor int identificardor del proveedor.
+     * @bodyParam  id_prov int required id del proveedor asociado.
      *
      * @response {
      *    "resp": "direccion del proveedor creado"
@@ -155,7 +155,7 @@ class ProveedorDireccionController extends Controller
      * @bodyParam  ciu_prov string required ciudad del proveedor.
      * @bodyParam  dir_prov string required direccion proveedor.
      * @bodyParam  tel_prov string telefono required del proveedor.
-     * @bodyParam  id del proveedor int identificardor del proveedor.
+     * @bodyParam  id_prov int required id del proveedor asociado.
      *
      * @response {
      *    "resp": "direccion proveedor actualizado"

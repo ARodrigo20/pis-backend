@@ -105,7 +105,7 @@ class ProveedorBancoController extends Controller
      * @bodyParam  tip_prov_ban string required Tipo de cuenta que dispone el proveedor.
      * @bodyParam  cue_prov_ban string required Nro de cuenta del banco segun el tipo .
      * @bodyParam  ban_prov_ban string required Nombre del banco a quien pertenece la cuenta.
-     * @bodyParam  id del proveedor.
+     * @bodyParam  id_prov int required id del proveedor asociado.
      * @bodyParam  com_prov_ban string required Comentarios que pueda tener esta cuenta.
      *
      * @response {
@@ -151,7 +151,7 @@ class ProveedorBancoController extends Controller
      * @bodyParam  tip_prov_ban string required Tipo de cuenta que dispone el proveedor.
      * @bodyParam  cue_prov_ban string required Nro de cuenta del banco segun el tipo .
      * @bodyParam  ban_prov_ban string required Nombre del banco a quien pertenece la cuenta.
-     * @bodyParam  id del proveedor.
+     * @bodyParam  id_prov int required id del proveedor asociado.
      * @bodyParam  com_prov_ban string required Comentarios que pueda tener esta cuenta.
      *
      * @response {

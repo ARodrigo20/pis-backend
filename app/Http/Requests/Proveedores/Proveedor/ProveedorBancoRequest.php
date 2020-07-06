@@ -24,11 +24,13 @@ class ProveedorBancoRequest extends FormRequest
     public function rules()
     {
         return [
+/*
             'tip_prov_ban' => 'required',
             'cue_prov_ban' => 'required',
             'ban_prov_ban' => 'required',
-            'id_prov' => 'required',
             'com_prov_ban' => 'required',
+*/
+            'id_prov' => 'required',
         ];
     }
 

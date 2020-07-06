@@ -340,8 +340,8 @@ class ProveedorController extends Controller
      *
      * @urlParam  id required El ID del proveedor.
      *
-     * @bodyParam  banco array required Ejemplo: [{"id_prov_ban": 0,"tip_prov_ban":"string","cue_prov_ban":"string","ban_prov_ban":"string","est_reg": "string"}]
-     * @bodyParam  colaborador array required Ejemplo: [{"id_prov_col": 0,"nom_prov_col":"string","ema_prov_col":"string","tel_prov_col":"string","est_reg": "string"}]
+     * @bodyParam  banco array required Ejemplo: [{"id_prov_ban": 0,"tip_prov_ban":"string","cue_prov_ban":"string","ban_prov_ban":"string","com_prov_ban":"string","est_reg": "string"}]
+     * @bodyParam  colaborador array required Ejemplo: [{"id_prov_col": 0,"nom_prov_col":"string","ema_prov_col":"string","tel_prov_col":"string","ane_prov_col":"string","car_prov_col":"string","est_reg": "string"}]
      * @bodyParam  direcciones array required Ejemplo: [{"id_prov_dir": 0,"ciu_prov":"string","dir_prov":"string","tel_prov":"string","est_reg": "string"}]
      *
      *

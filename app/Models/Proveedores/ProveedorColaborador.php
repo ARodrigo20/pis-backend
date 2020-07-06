@@ -22,6 +22,7 @@ class ProveedorColaborador extends Model
     protected $hidden = [
         'created_at', 'updated_at',
     ];
+
     public function getIdProveedorAttribute()
     {
         return $this->id_proveedor();

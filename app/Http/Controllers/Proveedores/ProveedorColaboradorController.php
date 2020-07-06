@@ -52,7 +52,6 @@ class ProveedorColaboradorController extends Controller
                 'desc' => $e
             ], 500);
         }
-
         return response()->json([
             'data' => $proveedorColaborador,
             'size' => count($proveedorColaborador)
@@ -110,9 +109,7 @@ class ProveedorColaboradorController extends Controller
      * @bodyParam  ane_prov_col char anexo del colaborador del proveedor.
      * @bodyParam  car_prov_col string cargo del colaborador del proveedor.
      *
-     *
-     *
-     * @bodyParam  id del proveedor.
+     * @bodyParam  id_prov int required id del proveedor asociado.
      *
      * @response {
      *    "resp": "colaborador proveedor creado"
@@ -161,6 +158,7 @@ class ProveedorColaboradorController extends Controller
      * @bodyParam  tel_prov string telefono opcional del colaborador proveedor.
      * @bodyParam  ane_prov_col char anexo del colaborador del proveedor.
      * @bodyParam  car_prov_col string cargo del colaborador del proveedor.
+     * @bodyParam  id_prov int required id del proveedor asociado.
      *
      *
      * @response {

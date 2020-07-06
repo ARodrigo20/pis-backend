@@ -126,4 +126,15 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::get('proveedores-banco/delete/{id}','Proveedores\ProveedorBancoController@delete')->name('deleteProveedorBanco');
 
 
+
+    //Proyecto
+    Route::get('proyecto/get','ProyectoController@get')->name('getProyectos');
+    Route::get('proyecto/getTerminados','ProyectoController@getTerminados')->name('getProyectosTerminados');
+    Route::get('proyecto/getProceso','ProyectoController@getProceso')->name('getProyectosProceso');
+    Route::get('proyecto/get/{id}','ProyectoController@getById')->name('getProyecto');
+    Route::post('proyecto/create','ProyectoController@create')->name('createProyecto');
+    Route::post('proyecto/update/{id}','ProyectoController@update')->name('updateProyecto');
+    Route::get('proyecto/delete/{id}','ProyectoController@delete')->name('deleteProyecto');
+
+
 });
