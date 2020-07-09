@@ -41,7 +41,7 @@ class Cliente extends Model
         return $this->hasMany('App\Models\Clientes\ClienteContacto', 'id_cli')->where('est_reg', '!=', 'E');
     }
 
-    public function getProyectoAttribute()
+    public function getProyectosAttribute()
     {
         return $this->proyectos();
     }
