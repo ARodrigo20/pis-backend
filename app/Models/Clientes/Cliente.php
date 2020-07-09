@@ -15,7 +15,7 @@ class Cliente extends Model
                         );
     protected $primaryKey = 'id_cli';
 
-    protected $appends = ['tipo_documento', 'contactos', 'direcciones'];
+    protected $appends = ['tipo_documento', 'contactos', 'direcciones', 'proyectos'];
     protected $hidden = [
         'created_at', 'updated_at',
     ];
