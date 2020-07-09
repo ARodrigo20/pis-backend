@@ -68,7 +68,7 @@ class ClienteController extends Controller
     public function get()
     {
         try {
-            $clientes = Cliente::with(['tipo_documento', 'contactos','direcciones','proyecto'])->where('est_reg', '!=', 'E')->get();
+            $clientes = Cliente::with(['tipo_documento', 'contactos','direcciones'])->where('est_reg', '!=', 'E')->get();
         } catch (Exception $e) {
             return response()->json([
                 'error' => 'ocurrio un error en el servidor',
