@@ -26,10 +26,10 @@ class ProyectoController extends Controller
      * @response {
      *  "data" : [
      *     {
-     *       "id_prov_Col": 0,
-     *       "nom_proy_col": "string",
-     *       "ser_proy_col": "string",
-     *       "num_proy_col": "char",
+     *       "id_proy": 0,
+     *       "nom_proy": "string",
+     *       "ser_proy": "NTWC-P-",
+     *       "num_proy": "000X",
      *       "created_at": "2020-06-14T06:07:02.419Z",
      *       "updated_at": "2020-06-14T06:07:02.419Z"
      *     }
@@ -66,10 +66,10 @@ class ProyectoController extends Controller
      * @response {
      *  "data" : [
      *     {
-     *       "id_prov_Col": 0,
-     *       "nom_proy_col": "string",
-     *       "ser_proy_col": "string",
-     *       "num_proy_col": "char",
+     *       "id_proy": 0,
+     *       "nom_proy": "string",
+     *       "ser_proy": "NTWC-P-",
+     *       "num_proy": "000X",
      *       "created_at": "2020-06-14T06:07:02.419Z",
      *       "updated_at": "2020-06-14T06:07:02.419Z"
      *     }
@@ -105,10 +105,10 @@ class ProyectoController extends Controller
      * @response {
      *  "data" : [
      *     {
-     *       "id_prov_Col": 0,
-     *       "nom_proy_col": "string",
-     *       "ser_proy_col": "string",
-     *       "num_proy_col": "char",
+     *       "id_proy": 0,
+     *       "nom_proy": "string",
+     *       "ser_proy": "NTWC-P-",
+     *       "num_proy": "000X",
      *       "created_at": "2020-06-14T06:07:02.419Z",
      *       "updated_at": "2020-06-14T06:07:02.419Z"
      *     }
@@ -144,10 +144,10 @@ class ProyectoController extends Controller
      * @urlParam  id required El ID del proyecto .
      *
      * @response {
-     *       "id_prov_Col": 0,
-     *       "nom_proy_col": "string",
-     *       "ser_proy_col": "string",
-     *       "num_proy_col": "char",
+     *       "id_proy": 0,
+     *       "nom_proy": "string",
+     *       "ser_proy": "NTWC-P-",
+     *       "num_proy": "char",
      *       "created_at": "2020-06-14T06:07:02.419Z",
      *       "updated_at": "2020-06-14T06:07:02.419Z"
      * }
@@ -179,8 +179,6 @@ class ProyectoController extends Controller
      * Crea un proyecto
      *
      * @bodyParam  nom_proy string required nombre del proyecto.
-     * @bodyParam  ser_proy string numero de serie 8 char.
-     * @bodyParam  num_proy string numero de serie 4 char.
      * @bodyParam  id_cli del cliente.
      *
      * @response {
@@ -194,7 +192,7 @@ class ProyectoController extends Controller
         try {
             $proyecto = Proyecto::create([
                 'nom_proy' => $request->input('nom_proy'),
-                'ser_proy' => 'NTWC-P-'. $request->input('ser_proy'),
+                'ser_proy' => 'NTWC-P-',
                 'num_proy' => '',
                 'id_cli' => $request->input('id_cli'),
                 'est_reg' => 'A'

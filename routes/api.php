@@ -136,5 +136,8 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::post('proyecto/update/{id}','ProyectoController@update')->name('updateProyecto');
     Route::get('proyecto/delete/{id}','ProyectoController@delete')->name('deleteProyecto');
 
-
+    //Empresa
+    Route::post('empresa/update','EmpresaController@update')->name('updateEmpresa');
+    Route::get('empresa/get','EmpresaController@get')->name('getEmpresa');
+   
 });
