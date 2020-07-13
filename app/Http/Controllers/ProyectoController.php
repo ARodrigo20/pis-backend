@@ -121,7 +121,7 @@ class ProyectoController extends Controller
     {
         // Log::info('Pasooo:');
         try {
-            $proyecto = Proyecto::with(['cliente'])->where('est_reg', "P")->get();
+            $proyecto = Proyecto::with(['cliente'])->where('est_reg', "A")->get();
         } catch (Exception $e) {
             return response()->json([
                 'error' => 'ocurrio un error en el servidor',
@@ -233,7 +233,7 @@ class ProyectoController extends Controller
      * @urlParam  id required El ID del proyecto .
      * @bodyParam  nom_proy string required nombre del proyecto.
      * @bodyParam  est_reg char Estado de registro para cambiar .
-     *
+     * @bodyParam  id_cli char Estado de registro para cambiar .
      * @response {
      *    "resp": "proyecto  actualizado"
      * }
@@ -248,7 +248,7 @@ class ProyectoController extends Controller
                 'ser_proy' => $proyecto->ser_proy,
                 'num_proy' => $proyecto->num_proy,
                 'est_reg'   => $request->input('est_reg'),
-                'id_cli' => $proyecto->id_cli,
+                'id_cli' => $request->input('id_cli'),
                 
             ))->save();
         } catch (Exception $e) {
