@@ -132,7 +132,7 @@ class EmpresaController extends Controller
                     'id_emp' => 1
                 ]);
             }
-            $existImage = $empresa->img_emp;
+            // $existImage = $empresa->img_emp;
 
             if($image) {
                 $empresa->fill(array(
@@ -151,9 +151,9 @@ class EmpresaController extends Controller
 
                 //$image->move('uploads', $image->getClientOriginalName());
                 
-                if($existImage) {
-                    Storage::disk('local')->delete($existImage);
-                }
+                // if($existImage) {
+                //     Storage::disk('local')->delete($existImage);
+                // }
                 
                 Storage::disk('local')->put($img_emp, file_get_contents($image));
                 //Storage::disk('local')->put( $image->getClientOriginalName(),'uploads', $image);

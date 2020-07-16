@@ -2,7 +2,7 @@
     "variables": [],
     "info": {
         "name": "Laravel API",
-        "_postman_id": "b2d87f9a-271f-464f-ba42-70df694575e2",
+        "_postman_id": "0d3d606b-f282-4c58-bfa9-5f053a0b9421",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -61,7 +61,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"email\": \"totam\",\n    \"password\": \"sint\"\n}"
+                            "raw": "{\n    \"email\": \"quia\",\n    \"password\": \"consectetur\"\n}"
                         },
                         "description": "Login del sistema",
                         "response": []
@@ -113,7 +113,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "eos",
+                                    "value": "rerum",
                                     "description": "El ID del cargo."
                                 }
                             ]
@@ -159,7 +159,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"des_car\": \"eligendi\"\n}"
+                            "raw": "{\n    \"des_car\": \"ducimus\"\n}"
                         },
                         "description": "Crea un cargo",
                         "response": []
@@ -177,7 +177,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "dolores",
+                                    "value": "numquam",
                                     "description": "El ID del cargo."
                                 }
                             ]
@@ -195,7 +195,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"des_car\": \"nam\"\n}"
+                            "raw": "{\n    \"des_car\": \"cupiditate\"\n}"
                         },
                         "description": "Modifica un cargo",
                         "response": []
@@ -213,7 +213,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "provident",
+                                    "value": "cum",
                                     "description": "El ID del cargo."
                                 }
                             ]
@@ -283,7 +283,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "voluptatem",
+                                    "value": "aut",
                                     "description": "El ID del cliente."
                                 }
                             ]
@@ -329,7 +329,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"razsoc_cli\": \"omnis\",\n    \"numdoc_cli\": \"aut\",\n    \"ema_cli\": \"qui\",\n    \"id_tipodoc\": 18\n}"
+                            "raw": "{\n    \"razsoc_cli\": \"sit\",\n    \"numdoc_cli\": \"eveniet\",\n    \"ema_cli\": \"est\",\n    \"id_tipodoc\": 10\n}"
                         },
                         "description": "Crea un cliente",
                         "response": []
@@ -347,7 +347,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "sapiente",
+                                    "value": "odit",
                                     "description": "El ID del cliente."
                                 }
                             ]
@@ -365,7 +365,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"razsoc_cli\": \"qui\",\n    \"numdoc_cli\": \"harum\",\n    \"ema_cli\": \"qui\",\n    \"id_tipodoc\": 20\n}"
+                            "raw": "{\n    \"razsoc_cli\": \"voluptatem\",\n    \"numdoc_cli\": \"voluptatem\",\n    \"ema_cli\": \"ea\",\n    \"id_tipodoc\": 12\n}"
                         },
                         "description": "Modifica un cliente",
                         "response": []
@@ -383,7 +383,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "voluptates",
+                                    "value": "et",
                                     "description": "El ID del cliente."
                                 }
                             ]
@@ -419,7 +419,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "ipsa",
+                                    "value": "unde",
                                     "description": "El ID del cliente."
                                 }
                             ]
@@ -471,7 +471,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"logo\": \"tempora\",\n    \"nom_emp\": \"eaque\",\n    \"numdoc_emp\": \"et\",\n    \"dir_emp\": \"exercitationem\",\n    \"dis_emp\": \"quia\",\n    \"ciu_emp\": \"distinctio\",\n    \"tel_emp\": \"adipisci\",\n    \"cel_emp\": \"aperiam\",\n    \"codciu_emp\": \"dolorem\",\n    \"id_tipodoc\": 2\n}"
+                            "raw": "{\n    \"logo\": \"similique\",\n    \"nom_emp\": \"perspiciatis\",\n    \"numdoc_emp\": \"et\",\n    \"dir_emp\": \"natus\",\n    \"dis_emp\": \"quibusdam\",\n    \"ciu_emp\": \"tempora\",\n    \"tel_emp\": \"dolorem\",\n    \"cel_emp\": \"necessitatibus\",\n    \"codciu_emp\": \"rerum\",\n    \"id_tipodoc\": 7\n}"
                         },
                         "description": "Modifica datos de la empresa (Usar Body-> form-data en Postman)",
                         "response": []
@@ -551,7 +551,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "quibusdam",
+                                    "value": "quod",
                                     "description": "El ID del fabricante."
                                 }
                             ]
@@ -597,7 +597,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"des_fab\": \"nisi\"\n}"
+                            "raw": "{\n    \"des_fab\": \"assumenda\"\n}"
                         },
                         "description": "Crea un fabricante",
                         "response": []
@@ -615,7 +615,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "voluptatem",
+                                    "value": "aliquid",
                                     "description": "El ID del fabricante."
                                 }
                             ]
@@ -633,7 +633,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"des_fab\": \"quia\"\n}"
+                            "raw": "{\n    \"des_fab\": \"id\"\n}"
                         },
                         "description": "Modifica un fabricante",
                         "response": []
@@ -651,7 +651,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "beatae",
+                                    "value": "molestias",
                                     "description": "El ID del fabricante."
                                 }
                             ]
@@ -721,7 +721,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "et",
+                                    "value": "dolores",
                                     "description": "El ID de la marca."
                                 }
                             ]
@@ -767,7 +767,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"des_mar\": \"quod\"\n}"
+                            "raw": "{\n    \"des_mar\": \"necessitatibus\"\n}"
                         },
                         "description": "Crea una marca",
                         "response": []
@@ -785,7 +785,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "sunt",
+                                    "value": "doloribus",
                                     "description": "El ID de la marca."
                                 }
                             ]
@@ -803,7 +803,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"des_mar\": \"consequatur\"\n}"
+                            "raw": "{\n    \"des_mar\": \"repellat\"\n}"
                         },
                         "description": "Modifica una marca",
                         "response": []
@@ -821,7 +821,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "odit",
+                                    "value": "doloremque",
                                     "description": "El ID de la marca."
                                 }
                             ]
@@ -891,7 +891,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "est",
+                                    "value": "et",
                                     "description": "El ID del modelo."
                                 }
                             ]
@@ -937,7 +937,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"des_mod\": \"nemo\"\n}"
+                            "raw": "{\n    \"des_mod\": \"in\"\n}"
                         },
                         "description": "Crea un modelo",
                         "response": []
@@ -955,7 +955,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "asperiores",
+                                    "value": "minus",
                                     "description": "El ID del modelo."
                                 }
                             ]
@@ -973,7 +973,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"des_mod\": \"sit\"\n}"
+                            "raw": "{\n    \"des_mod\": \"expedita\"\n}"
                         },
                         "description": "Modifica un modelo",
                         "response": []
@@ -991,7 +991,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "fugit",
+                                    "value": "minus",
                                     "description": "El ID del modelo."
                                 }
                             ]
@@ -1061,7 +1061,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "vitae",
+                                    "value": "esse",
                                     "description": "El ID del producto."
                                 }
                             ]
@@ -1107,7 +1107,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"cod_prod\": \"quia\",\n    \"num_parte_prod\": \"aut\",\n    \"stk_prod\": 17,\n    \"des_prod\": \"non\",\n    \"pre_com_prod\": 4,\n    \"id_unimed\": 11,\n    \"id_mar\": 14,\n    \"id_mod\": 17,\n    \"id_fab\": 10\n}"
+                            "raw": "{\n    \"cod_prod\": \"facilis\",\n    \"num_parte_prod\": \"sint\",\n    \"stk_prod\": 10,\n    \"des_prod\": \"quibusdam\",\n    \"pre_com_prod\": 6,\n    \"mon_prod\": 18,\n    \"id_unimed\": 13,\n    \"id_mar\": 7,\n    \"id_mod\": 13,\n    \"id_fab\": 13\n}"
                         },
                         "description": "Crea un producto",
                         "response": []
@@ -1125,7 +1125,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "ut",
+                                    "value": "magnam",
                                     "description": "El ID del producto."
                                 }
                             ]
@@ -1143,7 +1143,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"cod_prod\": \"vel\",\n    \"num_parte_prod\": \"esse\",\n    \"stk_prod\": 2,\n    \"des_prod\": \"et\",\n    \"pre_com_prod\": 16,\n    \"id_unimed\": 8,\n    \"id_mar\": 1,\n    \"id_mod\": 12,\n    \"id_fab\": 12\n}"
+                            "raw": "{\n    \"cod_prod\": \"adipisci\",\n    \"num_parte_prod\": \"placeat\",\n    \"stk_prod\": 14,\n    \"des_prod\": \"consequuntur\",\n    \"pre_com_prod\": 4,\n    \"mon_prod\": 16,\n    \"id_unimed\": 20,\n    \"id_mar\": 10,\n    \"id_mod\": 1,\n    \"id_fab\": 1\n}"
                         },
                         "description": "Modifica un producto",
                         "response": []
@@ -1161,7 +1161,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "qui",
+                                    "value": "et",
                                     "description": "El ID del producto."
                                 }
                             ]
@@ -1231,7 +1231,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "ad",
+                                    "value": "beatae",
                                     "description": "El ID del proveedor."
                                 }
                             ]
@@ -1277,7 +1277,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"razsoc_prov\": \"vitae\",\n    \"ema_prov\": \"fuga\",\n    \"num_doc_prov\": \"iure\",\n    \"id_tipodoc\": 2\n}"
+                            "raw": "{\n    \"razsoc_prov\": \"repellat\",\n    \"ema_prov\": \"sunt\",\n    \"num_doc_prov\": \"velit\",\n    \"id_tipodoc\": 9\n}"
                         },
                         "description": "Crea un proveedor",
                         "response": []
@@ -1295,7 +1295,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "nam",
+                                    "value": "qui",
                                     "description": "El ID del proveedor."
                                 }
                             ]
@@ -1313,7 +1313,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"razsoc_prov\": \"illo\",\n    \"ema_prov\": \"illum\",\n    \"num_doc_prov\": \"libero\",\n    \"id_tipodoc\": 9\n}"
+                            "raw": "{\n    \"razsoc_prov\": \"nisi\",\n    \"ema_prov\": \"eum\",\n    \"num_doc_prov\": \"quia\",\n    \"id_tipodoc\": 3\n}"
                         },
                         "description": "Modifica un proveedor",
                         "response": []
@@ -1331,7 +1331,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "iusto",
+                                    "value": "officiis",
                                     "description": "El ID del proveedor."
                                 }
                             ]
@@ -1367,7 +1367,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "voluptatem",
+                                    "value": "impedit",
                                     "description": "El ID del proveedor."
                                 }
                             ]
@@ -1437,7 +1437,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "veniam",
+                                    "value": "dolores",
                                     "description": "El ID de banco proveedor."
                                 }
                             ]
@@ -1483,7 +1483,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"tip_prov_ban\": \"fugiat\",\n    \"cue_prov_ban\": \"vitae\",\n    \"ban_prov_ban\": \"enim\",\n    \"id_prov\": 13,\n    \"com_prov_ban\": \"voluptates\"\n}"
+                            "raw": "{\n    \"tip_prov_ban\": \"recusandae\",\n    \"cue_prov_ban\": \"placeat\",\n    \"ban_prov_ban\": \"architecto\",\n    \"id_prov\": 13,\n    \"com_prov_ban\": \"reiciendis\"\n}"
                         },
                         "description": "Crea un banco proveedor",
                         "response": []
@@ -1501,7 +1501,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "cupiditate",
+                                    "value": "sit",
                                     "description": "El ID del banco proveedor."
                                 }
                             ]
@@ -1519,7 +1519,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"tip_prov_ban\": \"dolorem\",\n    \"cue_prov_ban\": \"accusantium\",\n    \"ban_prov_ban\": \"beatae\",\n    \"id_prov\": 15,\n    \"com_prov_ban\": \"voluptates\"\n}"
+                            "raw": "{\n    \"tip_prov_ban\": \"in\",\n    \"cue_prov_ban\": \"minima\",\n    \"ban_prov_ban\": \"natus\",\n    \"id_prov\": 14,\n    \"com_prov_ban\": \"debitis\"\n}"
                         },
                         "description": "Modifica un banco del proveedor",
                         "response": []
@@ -1537,7 +1537,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "velit",
+                                    "value": "aut",
                                     "description": "El ID del banco de proveedor."
                                 }
                             ]
@@ -1607,7 +1607,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "possimus",
+                                    "value": "aut",
                                     "description": "El ID del colaborador proveedor."
                                 }
                             ]
@@ -1653,7 +1653,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"nom_prov\": \"possimus\",\n    \"ema_prov\": \"nesciunt\",\n    \"tel_prov\": \"dolorum\",\n    \"ane_prov_col\": \"aut\",\n    \"car_prov_col\": \"accusamus\",\n    \"id_prov\": 7\n}"
+                            "raw": "{\n    \"nom_prov\": \"officiis\",\n    \"ema_prov\": \"est\",\n    \"tel_prov\": \"odio\",\n    \"ane_prov_col\": \"labore\",\n    \"car_prov_col\": \"quia\",\n    \"id_prov\": 15\n}"
                         },
                         "description": "Crea un colaborador proveedor",
                         "response": []
@@ -1671,7 +1671,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "odio",
+                                    "value": "quod",
                                     "description": "El ID del colaborador proveedor."
                                 }
                             ]
@@ -1689,7 +1689,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"nom_prov\": \"eos\",\n    \"ema_prov\": \"eligendi\",\n    \"tel_prov\": \"maxime\",\n    \"ane_prov_col\": \"magnam\",\n    \"car_prov_col\": \"reprehenderit\",\n    \"id_prov\": 19\n}"
+                            "raw": "{\n    \"nom_prov\": \"rem\",\n    \"ema_prov\": \"ut\",\n    \"tel_prov\": \"vel\",\n    \"ane_prov_col\": \"non\",\n    \"car_prov_col\": \"facilis\",\n    \"id_prov\": 11\n}"
                         },
                         "description": "Modifica un colaborador proveedor",
                         "response": []
@@ -1707,7 +1707,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "deleniti",
+                                    "value": "ut",
                                     "description": "El ID del colaborador proveedor."
                                 }
                             ]
@@ -1777,7 +1777,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "eligendi",
+                                    "value": "nulla",
                                     "description": "El ID de la direccion del proveedor."
                                 }
                             ]
@@ -1813,7 +1813,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "itaque",
+                                    "value": "perspiciatis",
                                     "description": "El ID de la direccion proveedor."
                                 }
                             ]
@@ -1831,7 +1831,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"ciu_prov\": \"voluptatibus\",\n    \"dir_prov\": \"itaque\",\n    \"tel_prov\": \"deserunt\",\n    \"id_prov\": 15\n}"
+                            "raw": "{\n    \"ciu_prov\": \"rerum\",\n    \"dir_prov\": \"quasi\",\n    \"tel_prov\": \"quaerat\",\n    \"id_prov\": 18\n}"
                         },
                         "description": "Modifica una direccion de proveedor",
                         "response": []
@@ -1859,7 +1859,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"ciu_prov\": \"voluptatibus\",\n    \"dir_prov\": \"perspiciatis\",\n    \"tel_prov\": \"minus\",\n    \"id_prov\": 14\n}"
+                            "raw": "{\n    \"ciu_prov\": \"illo\",\n    \"dir_prov\": \"nostrum\",\n    \"tel_prov\": \"amet\",\n    \"id_prov\": 1\n}"
                         },
                         "description": "Crea una direccion de proveedor",
                         "response": []
@@ -1877,7 +1877,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "officia",
+                                    "value": "similique",
                                     "description": "El ID de la direccion del proveedor."
                                 }
                             ]
@@ -2003,7 +2003,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "cupiditate",
+                                    "value": "praesentium",
                                     "description": "El ID del proyecto ."
                                 }
                             ]
@@ -2049,7 +2049,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"nom_proy\": \"saepe\",\n    \"id_cli\": \"similique\"\n}"
+                            "raw": "{\n    \"nom_proy\": \"incidunt\",\n    \"id_cli\": \"est\"\n}"
                         },
                         "description": "Crea un proyecto",
                         "response": []
@@ -2067,7 +2067,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "eveniet",
+                                    "value": "eum",
                                     "description": "El ID del proyecto ."
                                 }
                             ]
@@ -2085,7 +2085,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"nom_proy\": \"est\",\n    \"est_reg\": \"tempore\",\n    \"id_cli\": \"qui\"\n}"
+                            "raw": "{\n    \"nom_proy\": \"cum\",\n    \"est_reg\": \"et\",\n    \"id_cli\": \"qui\"\n}"
                         },
                         "description": "Modifica un proyecto",
                         "response": []
@@ -2103,7 +2103,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "qui",
+                                    "value": "quia",
                                     "description": "El ID del proyecto ."
                                 }
                             ]
@@ -2207,7 +2207,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "qui",
+                                    "value": "quia",
                                     "description": "El ID del tipo de documento."
                                 }
                             ]
@@ -2253,7 +2253,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"cod_tipdoc\": \"vitae\",\n    \"des_tipdoc\": \"qui\"\n}"
+                            "raw": "{\n    \"cod_tipdoc\": \"repudiandae\",\n    \"des_tipdoc\": \"iure\"\n}"
                         },
                         "description": "Crea un tipo de documento",
                         "response": []
@@ -2271,7 +2271,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "amet",
+                                    "value": "maiores",
                                     "description": "El ID del tipo de documento."
                                 }
                             ]
@@ -2289,7 +2289,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"cod_tipdoc\": \"sit\",\n    \"des_tipdoc\": \"iusto\"\n}"
+                            "raw": "{\n    \"cod_tipdoc\": \"blanditiis\",\n    \"des_tipdoc\": \"officiis\"\n}"
                         },
                         "description": "Modifica un tipo de documento",
                         "response": []
@@ -2307,7 +2307,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "nesciunt",
+                                    "value": "rerum",
                                     "description": "El ID del tipo de documento."
                                 }
                             ]
@@ -2377,7 +2377,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "et",
+                                    "value": "atque",
                                     "description": "El ID de la unidad de medida."
                                 }
                             ]
@@ -2423,7 +2423,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"nom_unimed\": \"quam\",\n    \"des_mar\": \"consequatur\"\n}"
+                            "raw": "{\n    \"nom_unimed\": \"eligendi\",\n    \"des_mar\": \"officiis\"\n}"
                         },
                         "description": "Crea una unidad de medida",
                         "response": []
@@ -2441,7 +2441,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "fugit",
+                                    "value": "distinctio",
                                     "description": "El ID de la unidad de medida."
                                 }
                             ]
@@ -2459,7 +2459,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"nom_unimed\": \"ut\",\n    \"des_mar\": \"non\"\n}"
+                            "raw": "{\n    \"nom_unimed\": \"sunt\",\n    \"des_mar\": \"deserunt\"\n}"
                         },
                         "description": "Modifica una unidad de medida",
                         "response": []
@@ -2477,7 +2477,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "non",
+                                    "value": "laborum",
                                     "description": "El ID de la unidad de medida."
                                 }
                             ]
@@ -2547,7 +2547,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "nam",
+                                    "value": "molestiae",
                                     "description": "El ID del usuario."
                                 }
                             ]
@@ -2593,7 +2593,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"nom_col\": \"mollitia\",\n    \"ape_col\": \"inventore\",\n    \"email\": \"aut\",\n    \"password\": \"sit\",\n    \"num_doc_col\": \"beatae\",\n    \"cod_col\": \"culpa\",\n    \"cel_col\": \"nisi\",\n    \"id_tipdoc\": 8,\n    \"id_car\": 7\n}"
+                            "raw": "{\n    \"nom_col\": \"recusandae\",\n    \"ape_col\": \"quod\",\n    \"email\": \"perferendis\",\n    \"password\": \"neque\",\n    \"num_doc_col\": \"rem\",\n    \"cod_col\": \"rerum\",\n    \"cel_col\": \"quaerat\",\n    \"id_tipdoc\": 8,\n    \"id_car\": 20\n}"
                         },
                         "description": "Crea un usuario",
                         "response": []
@@ -2611,7 +2611,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "numquam",
+                                    "value": "velit",
                                     "description": "El ID del usuario."
                                 }
                             ]
@@ -2629,7 +2629,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"nom_col\": \"eos\",\n    \"ape_col\": \"rerum\",\n    \"email\": \"dolorum\",\n    \"num_doc_col\": \"aut\",\n    \"cod_col\": \"earum\",\n    \"cel_col\": \"exercitationem\",\n    \"id_tipdoc\": 16,\n    \"id_car\": 4\n}"
+                            "raw": "{\n    \"nom_col\": \"consequuntur\",\n    \"ape_col\": \"odio\",\n    \"email\": \"reiciendis\",\n    \"num_doc_col\": \"odio\",\n    \"cod_col\": \"minima\",\n    \"cel_col\": \"soluta\",\n    \"id_tipdoc\": 17,\n    \"id_car\": 14\n}"
                         },
                         "description": "Modifica un usuario",
                         "response": []
@@ -2647,7 +2647,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "laborum",
+                                    "value": "dolores",
                                     "description": "El ID del usuario."
                                 }
                             ]
@@ -2683,7 +2683,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "quis",
+                                    "value": "velit",
                                     "description": "El ID del usuario."
                                 }
                             ]
@@ -2701,7 +2701,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"email\": \"omnis\",\n    \"old_password\": \"eveniet\",\n    \"new_password\": \"aliquam\"\n}"
+                            "raw": "{\n    \"email\": \"quo\",\n    \"old_password\": \"tempora\",\n    \"new_password\": \"voluptatibus\"\n}"
                         },
                         "description": "Modifica la contrase\u00f1a persona",
                         "response": []
