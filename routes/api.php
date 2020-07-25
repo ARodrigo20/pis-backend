@@ -139,5 +139,11 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     //Empresa
     Route::post('empresa/update','EmpresaController@update')->name('updateEmpresa');
     Route::get('empresa/get','EmpresaController@get')->name('getEmpresa');
+
+    //Cotizacion cliente
+    Route::get('cotizacion-cliente/get','CotizacionCliente\CotizacionClienteController@get')->name('getCotizacionesCliente');
+    Route::get('cotizacion-cliente/get/{id}','CotizacionCliente\CotizacionClienteController@getById')->name('getCotizacionCliente');
+    Route::post('cotizacion-cliente/create','CotizacionCliente\CotizacionClienteController@create')->name('createCotizacionCliente');
+    Route::get('cotizacion-cliente/annul/{id}','CotizacionCliente\CotizacionClienteController@annul')->name('annulCotizacionCliente');
    
 });
