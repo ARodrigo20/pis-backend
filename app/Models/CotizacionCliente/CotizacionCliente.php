@@ -24,49 +24,19 @@ class CotizacionCliente extends Model
                         );
     protected $primaryKey = 'solcli_id';
 
-    // protected $appends = ['tipo_documento', 'contactos', 'direcciones', 'proyectos'];
+    protected $appends = ['cotizacion_detalle'];
     protected $hidden = [
         'created_at', 'updated_at',
     ];
 
-    // public function getTipoDocumentoAttribute()
-    // {
-    //     return $this->tipo_documento();
-    // }
+    public function getCotizacionDetalleAttribute()
+    {
+        return $this->cotizacion_detalle();
+    }
 
-    // public function tipo_documento()
-    // {
-    //     return $this->belongsTo('App\Models\Usuarios\TipoDocumento', 'id_tipdoc');
-    // }
-
-    // public function getContactosAttribute()
-    // {
-    //     return $this->contactos();
-    // }
-
-    // public function contactos()
-    // {
-    //     return $this->hasMany('App\Models\Clientes\ClienteContacto', 'id_cli')->where('est_reg', '!=', 'E');
-    // }
-
-    // public function getProyectosAttribute()
-    // {
-    //     return $this->proyectos();
-    // }
-
-    // public function proyectos()
-    // {
-    //     return $this->hasMany('App\Models\Proyecto\Proyecto', 'id_cli')->where('est_reg', '!=', 'E');
-    // }
-
-    // public function getDireccionesAttribute()
-    // {
-    //     return $this->direcciones();
-    // }
-
-    // public function direcciones()
-    // {
-    //     return $this->hasMany('App\Models\Clientes\ClienteDireccion', 'id_cli')->where('est_reg', '!=', 'E');
-    // }
+    public function cotizacion_detalle()
+    {
+        return $this->hasMany('App\Models\CotizacionCliente\CotizacionClienteDetalle', 'solcli_id');
+    }
 
 }

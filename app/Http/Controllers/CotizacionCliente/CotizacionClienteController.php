@@ -12,6 +12,8 @@ use App\Http\Controllers\LogsController;
 use Symfony\Component\HttpFoundation\Response;
 use App\Models\CotizacionCliente\CotizacionCliente;
 use App\Models\CotizacionCliente\CotizacionClienteDetalle;
+use App\Models\Empresa\Empresa;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\Clientes\Cliente\ClienteRequest as ClienteRequest;
 use App\Http\Requests\Clientes\Cliente\ClienteContactoDireccionRequest as ClienteContactoDireccionRequest;
 
@@ -34,7 +36,7 @@ class CotizacionClienteController extends Controller
                                         'solcli_cli_nom',
                                         'solcli_cli_dir',
                                         'solcli_cli_con',
-                                        'est_reg',)->get();
+                                        'est_reg',)->orderBy('solcli_id', 'desc')->get();
         } catch (Exception $e) {
             return response()->json([
                 'error' => 'ocurrio un error en el servidor',
@@ -51,7 +53,7 @@ class CotizacionClienteController extends Controller
     public function getById($id)
     {        
         try {
-            $cotizacion = CotizacionCliente::find($id);
+            $cotizacion = CotizacionCliente::with(['cotizacion_detalle'] )->find($id);
         } catch (Exception $e) {
             return response()->json([
                 'error' => 'ocurrio un error en el servidor',
@@ -60,12 +62,29 @@ class CotizacionClienteController extends Controller
         }
         
         if($cotizacion) {
-            return response()->json($cotizacion, 200, [], JSON_NUMERIC_CHECK);
+            $empresa = Empresa::find(1);
+            $b64_file = null;
+            if($empresa && $empresa->img_emp) {
+                $b64_file = base64_encode(Storage::disk('local')->get($empresa->img_emp));
+                return response()->json([
+                    'cotizacion' => $cotizacion,
+                    'logo' => $b64_file,
+                    'extension' => $empresa->imgext_emp
+                ], 200, [], JSON_NUMERIC_CHECK);
+            } else {
+                return response()->json([
+                    'cotizacion' => $cotizacion,
+                    'logo' => null,
+                    'extension' => null
+                ], 200, [], JSON_NUMERIC_CHECK);
+            }
+            
         } else {
             return response()->json([
                 'resp' => 'No se encontro la cotizacion'
             ], 500);
         }
+
     }
 
     /**
