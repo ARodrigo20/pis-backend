@@ -93,6 +93,8 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::post('clientes/update/{id}','Clientes\ClienteController@update')->name('updateCliente');
     Route::get('clientes/delete/{id}','Clientes\ClienteController@delete')->name('deleteCliente');
     Route::post('clientes/admconydir/{id}','Clientes\ClienteController@admContactosYdirecciones')->name('admContYdirecsCliente');
+    Route::post('clientes/createContacto','Clientes\ClienteController@createContacto')->name('createContacto');
+    Route::post('clientes/createDireccion','Clientes\ClienteController@createDireccion')->name('createDireccion');
 
     //Proveedores
     Route::get('proveedores/get','Proveedores\ProveedorController@get')->name('getProveedores');

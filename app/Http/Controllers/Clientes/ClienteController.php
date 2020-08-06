@@ -470,4 +470,76 @@ class ClienteController extends Controller
         ], 200, [], JSON_NUMERIC_CHECK);
     }
 
+    public function createContacto(Request $request) 
+    {
+        DB::beginTransaction();
+
+        try {
+            $contacto = ClienteContacto::create([
+                'nom_cli_con' => $request->input('nom_cli_con'),
+                'ema_cli_con' => $request->input('ema_cli_con'),
+                'cel_cli_con' => $request->input('cel_cli_con'),
+                'ane_cli_con' => $request->input('ane_cli_con'),
+                'car_cli_con' => $request->input('car_cli_con'),
+                'id_cli' => $request->input('id_cli'),
+                'est_reg' => 'A'
+            ]);
+                
+            DB::commit();
+            // all good
+        } catch (Exception $e) {
+            
+            DB::rollback();
+            // something went wrong
+            return response()->json([
+                        'error' => 'ocurrio un error en el servidor',
+                        'desc' => $e
+                    ], 500);
+        }
+
+        //Logs
+        $descripcion = "Se creo el contacto con ID: ".$contacto->id_cli_con;
+        $logs = new LogsController();
+        $logs->create_log($descripcion,1);
+        ///////
+        return response()->json([
+            'resp' => 'Contacto Creado'
+        ], 200, [], JSON_NUMERIC_CHECK);
+    }
+
+    public function createDireccion(Request $request) 
+    {
+        DB::beginTransaction();
+
+        try {
+            $direccion = ClienteDireccion::create([
+                'ciu_cli' => $request->input('ciu_cli'),
+                'dir_cli' => $request->input('dir_cli'),
+                'tel_cli' => $request->input('tel_cli'),
+                'id_cli' => $request->input('id_cli'),
+                'est_reg' => 'A'
+            ]);
+                
+            DB::commit();
+            // all good
+        } catch (Exception $e) {
+            
+            DB::rollback();
+            // something went wrong
+            return response()->json([
+                        'error' => 'ocurrio un error en el servidor',
+                        'desc' => $e
+                    ], 500);
+        }
+
+        //Logs
+        $descripcion = "Se creo la direccion con ID: ".$direccion->id_cli_dir;
+        $logs = new LogsController();
+        $logs->create_log($descripcion,1);
+        ///////
+        return response()->json([
+            'resp' => 'Direccion Creada'
+        ], 200, [], JSON_NUMERIC_CHECK);
+    }
+
 }
