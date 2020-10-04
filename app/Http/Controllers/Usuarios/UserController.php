@@ -264,21 +264,6 @@ class UserController extends Controller
             'resp' => 'Usuario Eliminado'
         ], 200, [], JSON_NUMERIC_CHECK);
     }
-	
-	public function restore($id) {
-        try {
-            $user = User::find($id);
-            $user->fill(array('password' => Hash::make("12345678")))->save();
-        } catch (Exception $e) {
-            return response()->json([
-                'error' => 'ocurrio un error en el servidor',
-                'desc' => $e
-            ], 500);
-        }
-        return response()->json([
-            'resp' => 'Usuario Restablecido'
-        ], 200, [], JSON_NUMERIC_CHECK);
-    }
     
     /**
      * Modificar Contraseña

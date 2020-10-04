@@ -84,7 +84,6 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::post('usuarios/create','Usuarios\UserController@create')->name('createUser');
     Route::post('usuarios/update/{id}','Usuarios\UserController@update')->name('updateUser');
     Route::get('usuarios/delete/{id}','Usuarios\UserController@delete')->name('deleteUser');
-	Route::get('usuarios/restore/{id}','Usuarios\UserController@restore')->name('restoreUser');
     Route::post('usuarios/update/password/{id}','Usuarios\UserController@updatePassword')->name('updatePassword');
 
     //Clientes
@@ -148,5 +147,13 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::get('cotizacion-cliente/get/{id}','CotizacionCliente\CotizacionClienteController@getById')->name('getCotizacionCliente');
     Route::post('cotizacion-cliente/create','CotizacionCliente\CotizacionClienteController@create')->name('createCotizacionCliente');
     Route::get('cotizacion-cliente/annul/{id}','CotizacionCliente\CotizacionClienteController@annul')->name('annulCotizacionCliente');
-   
+
+    //Cotizacion proveedor
+    Route::get('cotizacion-proveedor/get','CotizacionProveedor\CotizacionProveedorController@get')->name('getCotizacionesProveedor');
+    Route::get('cotizacion-proveedor/get/{id}','CotizacionProveedor\CotizacionProveedorController@getById')->name('getCotizacionProveedor');
+    Route::post('cotizacion-proveedor/create','CotizacionProveedor\CotizacionProveedorController@create')->name('createCotizacionProveedor');
+    Route::get('cotizacion-proveedor/annul/{id}','CotizacionProveedor\CotizacionProveedorController@annul')->name('annulCotizacionProveedor');
+
+
+
 });

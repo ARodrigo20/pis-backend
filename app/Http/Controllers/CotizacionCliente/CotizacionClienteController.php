@@ -22,8 +22,29 @@ use App\Http\Requests\Clientes\Cliente\ClienteContactoDireccionRequest as Client
  * APIs para cotizaciones de clientes
  */
 class CotizacionClienteController extends Controller
-{   
-
+{
+    /**
+     * Retornar cotizaciones
+     *
+     * Retorna todos las cotizaciones activas y anuladas
+     *
+     *
+     * @response {
+     *      "data" : [
+     *          {
+     *              "solcli_id": 0,
+     *              "solcli_cod": "string",
+     *              "solcli_fec": "date",
+     *              "solcli_proy_nom": "string",
+     *              "solcli_cli_nom": "string",
+     *              "solcli_cli_dir": "string",
+     *              "solcli_cli_con": "string",
+     *              "est_reg": "string"
+     *          }
+     *      ],
+     *      "size":0
+     * }
+     */
     public function get()
     {
         try {
@@ -36,22 +57,67 @@ class CotizacionClienteController extends Controller
                                         'solcli_cli_nom',
                                         'solcli_cli_dir',
                                         'solcli_cli_con',
-                                        'est_reg',)->orderBy('solcli_id', 'desc')->get();
+                                        'est_reg')->orderBy('solcli_id', 'desc')->get();
         } catch (Exception $e) {
             return response()->json([
                 'error' => 'ocurrio un error en el servidor',
                 'desc' => $e
             ], 500);
         }
-        
+
         return response()->json([
             'data' => $cotizaciones,
             'size' => count($cotizaciones)
         ], 200, [], JSON_NUMERIC_CHECK);
     }
 
+    /**
+     * Retornar cotizacion
+     *
+     * Retorna cotizacion por Id
+     *
+     * @urlParam  id required El ID de la cotizacion.
+     *
+     * @response {
+     *      "cotizacion": {
+     *          "solcli_id": 0,
+     *          "solcli_cod": "string",
+     *          "solcli_fec": "string",
+     *          "id_proy": 0,
+     *          "solcli_proy_nom": "string",
+     *          "solcli_proy_cod": "string",
+     *          "id_cli": 0,
+     *          "solcli_cli_nom": "string",
+     *          "solcli_cli_numdoc": "string",
+     *          "solcli_cli_tipdoc": "algo",
+     *          "solcli_cli_dir": "string",
+     *          "solcli_cli_con": "string",
+     *          "id_col": 0,
+     *          "solcli_col_nom": "string",
+     *          "est_reg": "string",
+     *          "cotizacion_detalle": [
+     *              {
+     *                  "solclidet_id": 0,
+     *                  "solcli_id": 0,
+     *                  "solclidet_prod_serv": 0,
+     *                  "solclidet_des": "string",
+     *                  "id_prod": 0,
+     *                  "solclidet_prod_can": 0,
+     *                  "solclidet_prod_codint": "string",
+     *                  "solclidet_prod_numpar": "string",
+     *                  "solclidet_prod_fabr": "string",
+     *                  "solclidet_prod_marc": "string",
+     *                  "solclidet_prod_unimed": "string",
+     *                  "solclidet_prod_stock": 0
+     *              }
+     *          ]
+     *      },
+     *      "logo": "string",
+     *      "extension": "string"
+     * }
+     */
     public function getById($id)
-    {        
+    {
         try {
             $cotizacion = CotizacionCliente::with(['cotizacion_detalle'] )->find($id);
         } catch (Exception $e) {
@@ -60,7 +126,7 @@ class CotizacionClienteController extends Controller
                 'desc' => $e
             ], 500);
         }
-        
+
         if($cotizacion) {
             $empresa = Empresa::find(1);
             $b64_file = null;
@@ -78,39 +144,37 @@ class CotizacionClienteController extends Controller
                     'extension' => null
                 ], 200, [], JSON_NUMERIC_CHECK);
             }
-            
+
         } else {
             return response()->json([
                 'resp' => 'No se encontro la cotizacion'
             ], 500);
         }
-
     }
 
     /**
      * Crear Cotizacion Cliente
-     * 
+     *
      * Crea una Cotizacion de cliente
-     * 
-     * @bodyParam  razsoc_cli string required Razon social del cliente.
-     * @bodyParam  numdoc_cli string required Numero de documento del cliente.
-     * @bodyParam  ema_cli string Email del cliente.
-     * @bodyParam  id_tipodoc int Tipo de documento del cliente.
-     * 
+     *
+     * @bodyParam  id_cli int required Id del cliente.
+     * @bodyParam  solcli_cli_nom string Nombre del cliente.
+     * @bodyParam  solcli_cli_numdoc string Numero de documento del cliente.
+     * @bodyParam  solcli_cli_tipdoc string Tipo de documento del cliente.
+     * @bodyParam  solcli_cli_dir string Direccion del cliente.
+     * @bodyParam  solcli_cli_con string Contacto del cliente.
+     * @bodyParam  id_col int Id del colaborador.
+     * @bodyParam  solcli_col_nom string Nombre del colaborador.
+     * @bodyParam  cotizacion_detalle array required Ejemplo: [{"solcli_id": 0,"solclidet_prod_serv": 1,"solclidet_des":"string","id_prod":0,"solclidet_prod_can":0,"solclidet_prod_codint":"string","solclidet_prod_numpar": "string","solclidet_prod_fabr": "string","solclidet_prod_marc": "string","solclidet_prod_unimed": "string","solclidet_prod_stock": 0}]
+     *
      * @response {
      *    "resp": "cotizacion creada"
      * }
      */
     public function create(Request $request)
-    {   
+    {
 
         DB::beginTransaction();
-        //solcli_cod
-        // $date = new DateTime();
-
-        //$max = DB::table('solicitud_cotizacion_cliente')->whereYear('solcli_fec', '=', 2021)->max('solcli_cod');
-
-        //error_log("DATE:: ".$max);
 
         try {
             $cotizacionCliente = CotizacionCliente::create([
@@ -131,7 +195,7 @@ class CotizacionClienteController extends Controller
             ]);
 
             $detalles = $request->input('cotizacion_detalle');
-                
+
             if($detalles) {
                 foreach($detalles as $detalle) {
                     $cotizacionDetalle = CotizacionClienteDetalle::create([
@@ -149,11 +213,11 @@ class CotizacionClienteController extends Controller
                     ]);
                 }
             }
-                
+
             DB::commit();
             // all good
         } catch (Exception $e) {
-            
+
             DB::rollback();
             // something went wrong
             return response()->json([
@@ -173,6 +237,17 @@ class CotizacionClienteController extends Controller
 
     }
 
+    /**
+     * Anular cotizacion
+     *
+     * Anula una cotizacion
+     *
+     * @urlParam  id required El ID de la cotizacion.
+     *
+     * @response {
+     *    "resp": "Cotizacion anulada"
+     * }
+     */
     public function annul($id) {
         try {
             $cotizacion = CotizacionCliente::find($id);
