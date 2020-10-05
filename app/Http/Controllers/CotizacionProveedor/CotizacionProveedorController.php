@@ -214,7 +214,7 @@ class CotizacionProveedorController extends Controller
                     $cotizacionProveedorDetalle = CotizacionProveedorDetalle::create([
                         'cotprovdet_cant' => $detalle['cotprov_det_cant'],
                         'cotprovdet_desc' => $detalle['cotprov_det_desc'],
-                        'cotprov_id' => $detalle['cotprov_id'],
+                        'cotprov_id' => $cotizacionProveedor->cotprov_id,
                         'id_prod' => $detalle['id_prod'],
                     ]);
                 }
