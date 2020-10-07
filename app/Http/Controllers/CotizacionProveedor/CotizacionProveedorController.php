@@ -180,7 +180,7 @@ class CotizacionProveedorController extends Controller
      * @bodyParam  cotprov_ema string Email del contacto a quien se enviara.
      * @bodyParam  estado string estado del registro.
      * @bodyParam  estado_envio estado del envio a email del contacto.
-     * @bodyParam  cotizacion_proveedor_detalle array required Ejemplo: [{"cotprov_id": 0,"cotprovdet_cant":"int","cotprovdet_des":char}]
+     * @bodyParam  cotizacion_proveedor_detalle array required Ejemplo: [{"cotprov_id": 0,"cotprovdet_cant":"int","id_prod":"int","cotprovdet_des":char}]
      *
      * @response {
      *    "resp": "cotizacion Proveedor creada"
@@ -203,8 +203,8 @@ class CotizacionProveedorController extends Controller
                 'cotprov_dir' => $request->input('cotprov_dir'),
                 'cotprov_con' => $request->input('cotprov_con'),
                 'cotprov_ema' => $request->input('cotprov_ema'),
-                'estado' => $request->input('estado'),
-                'estado_envio' => $request->input('estado_envio'),
+                'estado' => 'A',
+                'estado_envio' => '0',
             ]);
 
             $detalles = $request->input('cotizacion_detalle');
