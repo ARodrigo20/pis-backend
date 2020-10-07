@@ -23,7 +23,7 @@ class CotizacionProveedor extends Model
                         );
     protected  $primaryKey = "cotprov_id";
 
-    protected $appends = ['cotizacion_detalle'];
+    protected $appends = ['proyecto','cotizacion_detalle'];
     protected $hidden = [
         'created_at', 'updated_at',
     ];
@@ -36,6 +36,24 @@ class CotizacionProveedor extends Model
     public function cotizacion_detalle()
     {
         return $this->hasMany('App\Models\CotizacionProveedor\CotizacionProveedorDetalle', 'cotprov_id');
+    }
+    public function getProyectoAttribute()
+    {
+        return $this->proyecto();
+    }
+
+    public function proyecto()
+    {
+        return $this->belongsTo('App\Models\Proyecto\Proyecto', 'id_proy');
+    }
+    public function getCotizacionClienteAttribute()
+    {
+        return $this->cotizacionCliente();
+    }
+
+    public function cotizacionCliente()
+    {
+        return $this->belongsTo('App\Models\CotizacionCliente\CotizacionCliente', 'solcli_id');
     }
 
 }

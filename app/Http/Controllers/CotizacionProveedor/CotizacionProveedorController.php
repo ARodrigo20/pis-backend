@@ -26,14 +26,15 @@ use App\Http\Requests\Proveedores\Proveedor\ProveedorDireccionRequest as Proveed
  */
 class CotizacionProveedorController extends Controller
 {
+    
     /**
-     * Retornar cotizacion proveedores
+     * Retornar cotizaciones
      *
-     * Retorna todas las cotizaciones de los proveedores
+     * Retorna todos las cotizaciones activas y anuladas
      *
      *
      * @response {
-     *      "cotizacion" :
+     *      "data" : [
      *          {
      *              "cotprov_id": 0,
      *              "solcli_id": 0,
@@ -49,35 +50,28 @@ class CotizacionProveedorController extends Controller
      *              "cotprov_ema": "string",
      *              "estado": "char",
      *              "estado_envio": "char",
-     *              "cotizacion_proveedor_detalle": [{
-     *                  "cotprovdet_id": 0,
-     *                  "cotprovdet_cant": "string",
-     *                  "cotprovdet_desc": "string",
-     *                  "cotprov_id": 0,
-     *                  "id_prod": 0
-     *              }]
-     *          },
+     *              "proyecto":{
+     *                  "id_proy": 0,
+     *                  "nom_proy":"string",
+     *                  "ser_proy": "string",
+     *                  "num_proy": 0,
+     *                  "id_cli": 0,
+     *                  "est_reg": "A"
+     *              },
+     *              "cotizacion_cliente":{
+     *                  "solcli_id": 0,
+     *                  "solcli_cod": "string"
+     *              }
+     *          }
+     *      ],
      *      "size":0
      * }
      */
-
+    
+    
     public function get(){
         try {
-            $cotizacionesProveedor = DB::table('cotizacion_proveedor')
-                ->select(
-                    'solcli_id',
-                    'id_proy',
-                    'id_cli',
-                    'id_prov',
-                    'cotprov_fec',
-                    'cotprov_razsoc',
-                    'cotprov_ruc',
-                    'cotprov_tipdoc',
-                    'cotprov_dir',
-                    'cotprov_con',
-                    'cotprov_ema',
-                    'estado',
-                    'estado_envio')->orderBy('solcli_id', 'desc')->get();
+            $cotizacionesProveedor = CotizacionProveedor::with(['proyecto','cotizacionCliente'])->orderBy('solcli_id', 'desc')->get();
         } catch (Exception $e){
             return response()->json([
                 'error' => 'Ocurrio un error en el servidor',
@@ -114,6 +108,15 @@ class CotizacionProveedorController extends Controller
      *              "cotprov_ema": "string",
      *              "estado": "char",
      *              "estado_envio": "char",
+     *              "proyecto":{
+     *                  "id_proy":0,
+     *                  "nom_proy":"string",
+     *                  "ser_proy": "NTWC-P-",
+     *                  "num_proy": 0,
+     *                  "id_cli": 0,
+     *                  "est_reg": "A",
+     *                  "cliente": {}
+     *               },
      *              "cotizacion_proveedor_detalle": [{
      *                  "cotprovdet_id": 0,
      *                  "cotprovdet_cant": "string",
