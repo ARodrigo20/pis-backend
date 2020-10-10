@@ -50,6 +50,10 @@ class CotizacionProveedorController extends Controller
      *              "cotprov_ema": "string",
      *              "estado": "char",
      *              "estado_envio": "char",
+     *              "cotprov_cod": "string",
+     *              "id_col": 0,
+     *              "cotprov_col_nom": "string",
+     *              "cotprov_col_usu": "string",
      *              "proyecto":{
      *                  "id_proy": 0,
      *                  "nom_proy":"string",
@@ -108,6 +112,10 @@ class CotizacionProveedorController extends Controller
      *              "cotprov_ema": "string",
      *              "estado": "char",
      *              "estado_envio": "char",
+     *              "cotprov_cod": "string",
+     *              "id_col": 0,
+     *              "cotprov_col_nom": "string",
+     *              "cotprov_col_usu": "string",
      *              "proyecto":{
      *                  "id_proy":0,
      *                  "nom_proy":"string",
@@ -170,19 +178,21 @@ class CotizacionProveedorController extends Controller
      *
      * Crea una Cotizacion de Proveedor
      *
-     * @bodyParam  solcli_id int required Id de la solicitud de cotizacion del cliente.
-     * @bodyParam  id_proy int required Id del proyecto.
-     * @bodyParam  id_cli int required Id del cliente.
-     * @bodyParam  id_prov int required Id del proveedor.
-     * @bodyParam  cotprov_fec date fecha de emision de la cotizacion del Proveedor.
+     * @bodyParam  solcli_id int Id de la solicitud de cotizacion del cliente.
+     * @bodyParam  id_proy int Id del proyecto.
+     * @bodyParam  id_cli int Id del cliente.
+     * @bodyParam  id_prov int Id del proveedor.
      * @bodyParam  cotprov_razsoc string razon social del Proveedor.
      * @bodyParam  cotprov_ruc char numero ruc de la empresa a quien se realiza la cotizacion.
-     * @bodyParam  cotprov_tipdoc char Tipo de documento de quien se realiza el pedido.
+     * @bodyParam  cotprov_tipdoc char Tipo de documento del proveedor.
      * @bodyParam  cotprov_dir string Direccion del Proveedor.
      * @bodyParam  cotprov_con string Contacto del Proveedor.
      * @bodyParam  cotprov_ema string Email del contacto a quien se enviara.
      * @bodyParam  estado string estado del registro.
      * @bodyParam  estado_envio estado del envio a email del contacto.
+     * @bodyParam  id_col string Id del usuario.
+     * @bodyParam  cotprov_col_nom string Nombre del usuario.
+     * @bodyParam  cotprov_col_usu string Usuario o email del usuario.
      * @bodyParam  cotizacion_proveedor_detalle array required Ejemplo: [{"cotprov_id": 0,"cotprovdet_cant":"int","id_prod":"int","cotprovdet_des":char}]
      *
      * @response {
@@ -199,13 +209,17 @@ class CotizacionProveedorController extends Controller
                 'id_proy' => $request->input('id_proy'),
                 'id_cli' => $request->input('id_cli'),
                 'id_prov' => $request->input('id_prov'),
-                'cotprov_fec' => $request->input('cotprov_fec'),
+                'cotprov_fec' => new DateTime(),
                 'cotprov_razsoc' => $request->input('cotprov_razsoc'),
                 'cotprov_ruc' => $request->input('cotprov_ruc'),
                 'cotprov_tipdoc' => $request->input('cotprov_tipdoc'),
                 'cotprov_dir' => $request->input('cotprov_dir'),
                 'cotprov_con' => $request->input('cotprov_con'),
                 'cotprov_ema' => $request->input('cotprov_ema'),
+                'cotprov_cod' => $this->next_cod(),
+                'id_col' => $request->input('id_col'),
+                'cotprov_col_nom' => $request->input('cotprov_col_nom'),
+                'cotprov_col_usu' => $request->input('cotprov_col_usu'),
                 'estado' => 'A',
                 'estado_envio' => '0',
             ]);
@@ -215,10 +229,10 @@ class CotizacionProveedorController extends Controller
             if($detalles) {
                 foreach ($detalles as $detalle){
                     $cotizacionProveedorDetalle = CotizacionProveedorDetalle::create([
-                        'cotprovdet_cant' => $detalle['cotprov_det_cant'],
-                        'cotprovdet_desc' => $detalle['cotprov_det_desc'],
                         'cotprov_id' => $cotizacionProveedor->cotprov_id,
-                        'id_prod' => $detalle['id_prod'],
+                        'cotprovdet_cant' => $detalle['cotprovdet_cant'],
+                        'cotprovdet_desc' => $detalle['cotprovdet_desc'],
+                        'id_prod' => $detalle['id_prod']
                     ]);
                 }
             }
@@ -264,10 +278,10 @@ class CotizacionProveedorController extends Controller
     }
 
 
-/*
+
     public function next_cod()
     {
-        $cod_cotizacion_max = DB::table('cotizacion_proveedor')->whereYear('cotprov_fec', '=', date("Y"))->max('solcli_id');
+        $cod_cotizacion_max = DB::table('cotizacion_proveedor')->whereYear('cotprov_fec', '=', date("Y"))->max('cotprov_cod');
         if($cod_cotizacion_max == null) $cod_cotizacion_max = "#0001-NTWC-".date("Y");
         else {
             $numberStr = substr($cod_cotizacion_max,1,5);
@@ -276,6 +290,6 @@ class CotizacionProveedorController extends Controller
         }
         return $cod_cotizacion_max;
     }
-*/
+
 
 }

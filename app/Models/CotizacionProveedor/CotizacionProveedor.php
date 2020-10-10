@@ -19,7 +19,11 @@ class CotizacionProveedor extends Model
                             'cotprov_con',
                             'cotprov_ema',
                             'estado',
-                            'estado_envio'
+                            'estado_envio',
+                            'cotprov_cod',
+                            'id_col',
+                            'cotprov_col_nom',
+                            'cotprov_col_usu'
                         );
     protected  $primaryKey = "cotprov_id";
 
