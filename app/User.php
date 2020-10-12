@@ -78,4 +78,8 @@ class User extends Authenticatable implements JWTSubject
     {
         return [];
     }
+
+    public function proformaClientes(){
+        return $this->hasMany(ProformaCliente::class);
+    }
 }

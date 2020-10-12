@@ -58,5 +58,9 @@ class Proveedor extends Model
             return $this->hasMany('App\Models\Proveedores\ProveedorDireccion', 'id_prov')->where('est_reg', '!=', 'E');
         }
 
+        public function proformaClienteDetalles(){
+            return $this->hasMany(ProformaClienteDet::class);
+        }
+
 
 }

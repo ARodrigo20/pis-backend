@@ -55,4 +55,9 @@ class Producto extends Model
     {
         return $this->belongsTo('App\Models\Almacen\UnidadMedida', 'id_unimed');
     }
+    public function proformaClienteDetalles(){
+        return $this->hasMany(ProformaClienteDet::class);
+    }
+
+   
 }

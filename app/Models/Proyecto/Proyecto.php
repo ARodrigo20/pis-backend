@@ -29,5 +29,8 @@ class Proyecto extends Model
 	    public function cliente()
 	    {
 	    	return $this->belongsTo('App\Models\Clientes\Cliente', 'id_cli');
-	    }
+        }
+    public function proformaClientes(){
+        return $this->hasMany(ProformaCliente::class);
+    }
 }

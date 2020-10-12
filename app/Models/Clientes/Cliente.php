@@ -61,4 +61,8 @@ class Cliente extends Model
         return $this->hasMany('App\Models\Clientes\ClienteDireccion', 'id_cli')->where('est_reg', '!=', 'E');
     }
 
+    public function proformaClientes(){
+        return $this->hasMany(ProformaCliente::class);
+    }
+
 }
