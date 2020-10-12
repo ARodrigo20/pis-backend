@@ -48,8 +48,8 @@ class CotizacionProveedorController extends Controller
      *              "cotprov_dir": "string",
      *              "cotprov_con": "string",
      *              "cotprov_ema": "string",
-     *              "estado": "char",
-     *              "estado_envio": "char",
+     *              "est_reg": "char",
+     *              "est_env": "char",
      *              "cotprov_cod": "string",
      *              "id_col": 0,
      *              "cotprov_col_nom": "string",
@@ -110,8 +110,8 @@ class CotizacionProveedorController extends Controller
      *              "cotprov_dir": "string",
      *              "cotprov_con": "string",
      *              "cotprov_ema": "string",
-     *              "estado": "char",
-     *              "estado_envio": "char",
+     *              "est_reg": "char",
+     *              "est_env": "char",
      *              "cotprov_cod": "string",
      *              "id_col": 0,
      *              "cotprov_col_nom": "string",
@@ -130,7 +130,12 @@ class CotizacionProveedorController extends Controller
      *                  "cotprovdet_cant": "string",
      *                  "cotprovdet_desc": "string",
      *                  "cotprov_id": 0,
-     *                  "id_prod": 0
+     *                  "id_prod": 0,
+     *                  "cotprovdet_prod_codint": "string",
+     *                  "cotprovdet_prod_numpar": "string",
+     *                  "cotprovdet_prod_fabr": "string",
+     *                  "cotprovdet_prod_marc": "string",
+     *                  "cotprovdet_prod_unimed": "string"
      *              }]
      *          },
      *      "size":0
@@ -140,7 +145,8 @@ class CotizacionProveedorController extends Controller
     public function getById($id)
     {
         try {
-            $cotizacionProveedor = CotizacionProveedor::with(['cotizacion_detalle'] )->find($id);
+            $cotizacionProveedor = CotizacionProveedor::with(['cotizacion_detalle','proyecto'] )->find($id);
+            
         } catch (Exception $e) {
             return response()->json([
                 'error' => 'ocurrio un error en el servidor',
@@ -161,6 +167,7 @@ class CotizacionProveedorController extends Controller
             } else {
                 return response()->json([
                     'cotizacion' => $cotizacionProveedor,
+                    //'detalle'=>$CotizacionProveedorDetalle,
                     'logo' => null,
                     'extension' => null
                 ], 200, [], JSON_NUMERIC_CHECK);
@@ -188,12 +195,10 @@ class CotizacionProveedorController extends Controller
      * @bodyParam  cotprov_dir string Direccion del Proveedor.
      * @bodyParam  cotprov_con string Contacto del Proveedor.
      * @bodyParam  cotprov_ema string Email del contacto a quien se enviara.
-     * @bodyParam  estado string estado del registro.
-     * @bodyParam  estado_envio estado del envio a email del contacto.
      * @bodyParam  id_col string Id del usuario.
      * @bodyParam  cotprov_col_nom string Nombre del usuario.
      * @bodyParam  cotprov_col_usu string Usuario o email del usuario.
-     * @bodyParam  cotizacion_proveedor_detalle array required Ejemplo: [{"cotprov_id": 0,"cotprovdet_cant":"int","id_prod":"int","cotprovdet_des":char}]
+     * @bodyParam  cotizacion_proveedor_detalle array required Ejemplo: [{"cotprov_id": 0,"cotprovdet_cant":"int","id_prod":"int","cotprovdet_desc":"char","cotprovdet_prod_codint":"string","cotprovdet_prod_numpar":"string","cotprovdet_prod_fabr":"string","cotprovdet_prod_marc":"string",cotprovdet_prod_unimed":"char"}]
      *
      * @response {
      *    "resp": "cotizacion Proveedor creada"
@@ -220,8 +225,8 @@ class CotizacionProveedorController extends Controller
                 'id_col' => $request->input('id_col'),
                 'cotprov_col_nom' => $request->input('cotprov_col_nom'),
                 'cotprov_col_usu' => $request->input('cotprov_col_usu'),
-                'estado' => 'A',
-                'estado_envio' => '0',
+                'est_reg' => 'A',
+                'est_env' => '0',
             ]);
 
             $detalles = $request->input('cotizacion_detalle');
@@ -232,7 +237,13 @@ class CotizacionProveedorController extends Controller
                         'cotprov_id' => $cotizacionProveedor->cotprov_id,
                         'cotprovdet_cant' => $detalle['cotprovdet_cant'],
                         'cotprovdet_desc' => $detalle['cotprovdet_desc'],
-                        'id_prod' => $detalle['id_prod']
+                        'id_prod' => $detalle['id_prod'],
+                        'cotprovdet_prod_codint' => $detalle['cotprovdet_prod_codint'],
+                        'cotprovdet_prod_numpar' => $detalle['cotprovdet_prod_numpar'],
+                        'cotprovdet_prod_fabr' => $detalle['cotprovdet_prod_fabr'],
+                        'cotprovdet_prod_marc' => $detalle['cotprovdet_prod_marc'],
+                        'cotprovdet_prod_unimed' => $detalle['cotprovdet_prod_unimed']
+                        
                     ]);
                 }
             }
@@ -264,7 +275,7 @@ class CotizacionProveedorController extends Controller
     public function annul($id) {
         try {
             $cotizacionProveedor = CotizacionProveedor::find($id);
-            $cotizacionProveedor->fill(array('estado' => 'AN'))->save();
+            $cotizacionProveedor->fill(array('est_reg' => 'AN'))->save();
         } catch (Exception $e) {
             return response()->json([
                 'error' => 'ocurrio un error en el servidor',
@@ -277,6 +288,22 @@ class CotizacionProveedorController extends Controller
         ], 200, [], JSON_NUMERIC_CHECK);
     }
 
+    public function envio($id) {
+        try {
+            $this->envio_email("acruzg@unsa.edu.pe");
+            $cotizacionProveedor = CotizacionProveedor::find($id);
+            $cotizacionProveedor->fill(array('est_env' => '1'))->save();
+        } catch (Exception $e) {
+            return response()->json([
+                'error' => 'ocurrio un error en el servidor',
+                'desc' => $e
+            ], 500);
+        }
+
+        return response()->json([
+            'resp' => 'Cotizacion del Proveedor enviada'
+        ], 200, [], JSON_NUMERIC_CHECK);
+    }
 
 
     public function next_cod()
@@ -289,6 +316,11 @@ class CotizacionProveedorController extends Controller
             $cod_cotizacion_max = "#".sprintf("%'.04d", $max)."-NTWC-".date("Y");
         }
         return $cod_cotizacion_max;
+    }
+
+    public function envio_email($email_des){
+        Mail::to($email_des)->send(new MessageReceived);
+        return "mensaje enviado";
     }
 
 

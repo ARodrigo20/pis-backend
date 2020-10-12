@@ -153,6 +153,7 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::get('cotizacion-proveedor/get/{id}','CotizacionProveedor\CotizacionProveedorController@getById')->name('getCotizacionProveedor');
     Route::post('cotizacion-proveedor/create','CotizacionProveedor\CotizacionProveedorController@create')->name('createCotizacionProveedor');
     Route::get('cotizacion-proveedor/annul/{id}','CotizacionProveedor\CotizacionProveedorController@annul')->name('annulCotizacionProveedor');
+    Route::get('cotizacion-proveedor/envio/{id}','CotizacionProveedor\CotizacionProveedorController@envio')->name('envioCotizacionProveedor');
 
 
 
