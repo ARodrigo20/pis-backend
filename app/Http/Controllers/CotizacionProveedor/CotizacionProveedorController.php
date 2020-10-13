@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\LogsController;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\CotizacionProveedorReceived;
 use Mockery\Exception;
 use Symfony\Component\HttpFoundation\Response;
 use App\Models\CotizacionProveedor\CotizacionProveedor;
@@ -288,21 +290,32 @@ class CotizacionProveedorController extends Controller
         ], 200, [], JSON_NUMERIC_CHECK);
     }
 
-    public function envio($id) {
+    public function sendTo($id, Request $request){
+
         try {
-            $this->envio_email("acruzg@unsa.edu.pe");
             $cotizacionProveedor = CotizacionProveedor::find($id);
             $cotizacionProveedor->fill(array('est_env' => '1'))->save();
+            $correo = CotizacionProveedor::where('cotprov_id','=',$id)->value('cotprov_ema');
+            $usuario= CotizacionProveedor::where('cotprov_id','=',$id)->value('cotprov_col_usu');
+
+            $data=[
+                'name' => $request->name,
+                'pdf' => $request->file('pdf'),
+                'usu' =>$usuario
+            ];
+
+            Mail::to($correo)->send(new CotizacionProveedorReceived($data));
+
         } catch (Exception $e) {
             return response()->json([
                 'error' => 'ocurrio un error en el servidor',
                 'desc' => $e
             ], 500);
         }
-
         return response()->json([
-            'resp' => 'Cotizacion del Proveedor enviada'
+            'resp' => 'Cotizacion del Proveedor Enviada'
         ], 200, [], JSON_NUMERIC_CHECK);
+
     }
 
 
@@ -318,10 +331,7 @@ class CotizacionProveedorController extends Controller
         return $cod_cotizacion_max;
     }
 
-    public function envio_email($email_des){
-        Mail::to($email_des)->send(new MessageReceived);
-        return "mensaje enviado";
-    }
+    
 
 
 }
