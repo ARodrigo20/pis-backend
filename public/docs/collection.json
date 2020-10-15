@@ -2,7 +2,7 @@
     "variables": [],
     "info": {
         "name": "Laravel API",
-        "_postman_id": "e4e249f8-55e5-4916-9c21-f8fdc20ec58f",
+        "_postman_id": "888dfbad-dabb-42b2-a867-9d9923e4e66c",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -61,7 +61,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"email\": \"praesentium\",\n    \"password\": \"ipsum\"\n}"
+                            "raw": "{\n    \"email\": \"ut\",\n    \"password\": \"esse\"\n}"
                         },
                         "description": "Login del sistema",
                         "response": []
@@ -113,7 +113,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "consectetur",
+                                    "value": "ad",
                                     "description": "El ID del cargo."
                                 }
                             ]
@@ -159,7 +159,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"des_car\": \"eos\"\n}"
+                            "raw": "{\n    \"des_car\": \"reiciendis\"\n}"
                         },
                         "description": "Crea un cargo",
                         "response": []
@@ -177,7 +177,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "aut",
+                                    "value": "dolorem",
                                     "description": "El ID del cargo."
                                 }
                             ]
@@ -195,7 +195,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"des_car\": \"necessitatibus\"\n}"
+                            "raw": "{\n    \"des_car\": \"ea\"\n}"
                         },
                         "description": "Modifica un cargo",
                         "response": []
@@ -213,7 +213,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "iure",
+                                    "value": "mollitia",
                                     "description": "El ID del cargo."
                                 }
                             ]
@@ -283,7 +283,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "voluptas",
+                                    "value": "fuga",
                                     "description": "El ID del cliente."
                                 }
                             ]
@@ -329,7 +329,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"razsoc_cli\": \"autem\",\n    \"numdoc_cli\": \"possimus\",\n    \"ema_cli\": \"soluta\",\n    \"id_tipodoc\": 15\n}"
+                            "raw": "{\n    \"razsoc_cli\": \"laboriosam\",\n    \"numdoc_cli\": \"quia\",\n    \"ema_cli\": \"nam\",\n    \"id_tipodoc\": 2\n}"
                         },
                         "description": "Crea un cliente",
                         "response": []
@@ -347,7 +347,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "in",
+                                    "value": "illum",
                                     "description": "El ID del cliente."
                                 }
                             ]
@@ -365,7 +365,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"razsoc_cli\": \"accusamus\",\n    \"numdoc_cli\": \"minus\",\n    \"ema_cli\": \"dolor\",\n    \"id_tipodoc\": 2\n}"
+                            "raw": "{\n    \"razsoc_cli\": \"sit\",\n    \"numdoc_cli\": \"quo\",\n    \"ema_cli\": \"fugit\",\n    \"id_tipodoc\": 15\n}"
                         },
                         "description": "Modifica un cliente",
                         "response": []
@@ -383,7 +383,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "officiis",
+                                    "value": "aspernatur",
                                     "description": "El ID del cliente."
                                 }
                             ]
@@ -419,7 +419,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "similique",
+                                    "value": "ut",
                                     "description": "El ID del cliente."
                                 }
                             ]
@@ -545,7 +545,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "voluptas",
+                                    "value": "in",
                                     "description": "El ID de la cotizacion."
                                 }
                             ]
@@ -591,7 +591,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"id_cli\": 11,\n    \"solcli_cli_nom\": \"qui\",\n    \"solcli_cli_numdoc\": \"delectus\",\n    \"solcli_cli_tipdoc\": \"quisquam\",\n    \"solcli_cli_dir\": \"sit\",\n    \"solcli_cli_con\": \"quae\",\n    \"id_col\": 3,\n    \"solcli_col_nom\": \"consequatur\",\n    \"cotizacion_detalle\": []\n}"
+                            "raw": "{\n    \"id_cli\": 18,\n    \"solcli_cli_nom\": \"nihil\",\n    \"solcli_cli_numdoc\": \"eius\",\n    \"solcli_cli_tipdoc\": \"possimus\",\n    \"solcli_cli_dir\": \"eum\",\n    \"solcli_cli_con\": \"quod\",\n    \"id_col\": 20,\n    \"solcli_col_nom\": \"perspiciatis\",\n    \"cotizacion_detalle\": []\n}"
                         },
                         "description": "Crea una Cotizacion de cliente",
                         "response": []
@@ -609,7 +609,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "aut",
+                                    "value": "ipsam",
                                     "description": "El ID de la cotizacion."
                                 }
                             ]
@@ -679,7 +679,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "possimus",
+                                    "value": "iusto",
                                     "description": "El ID de la cotizacion del proveedor."
                                 }
                             ]
@@ -725,7 +725,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"solcli_id\": 7,\n    \"id_proy\": 3,\n    \"id_cli\": 7,\n    \"id_prov\": 8,\n    \"cotprov_razsoc\": \"optio\",\n    \"cotprov_ruc\": \"officiis\",\n    \"cotprov_tipdoc\": \"et\",\n    \"cotprov_dir\": \"quibusdam\",\n    \"cotprov_con\": \"et\",\n    \"cotprov_ema\": \"fugit\",\n    \"id_col\": \"rerum\",\n    \"cotprov_col_nom\": \"itaque\",\n    \"cotprov_col_usu\": \"repellendus\",\n    \"cotizacion_proveedor_detalle\": []\n}"
+                            "raw": "{\n    \"solcli_id\": 12,\n    \"id_proy\": 20,\n    \"id_cli\": 18,\n    \"id_prov\": 11,\n    \"cotprov_razsoc\": \"occaecati\",\n    \"cotprov_ruc\": \"sunt\",\n    \"cotprov_tipdoc\": \"qui\",\n    \"cotprov_dir\": \"natus\",\n    \"cotprov_con\": \"suscipit\",\n    \"cotprov_ema\": \"incidunt\",\n    \"id_col\": \"non\",\n    \"cotprov_col_nom\": \"itaque\",\n    \"cotprov_col_usu\": \"vitae\",\n    \"cotizacion_proveedor_detalle\": []\n}"
                         },
                         "description": "Crea una Cotizacion de Proveedor",
                         "response": []
@@ -743,7 +743,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "placeat",
+                                    "value": "recusandae",
                                     "description": "El ID de la cotizacion del proveedor."
                                 }
                             ]
@@ -823,7 +823,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"logo\": \"voluptas\",\n    \"nom_emp\": \"velit\",\n    \"numdoc_emp\": \"debitis\",\n    \"dir_emp\": \"aut\",\n    \"dis_emp\": \"quibusdam\",\n    \"ciu_emp\": \"deserunt\",\n    \"tel_emp\": \"laborum\",\n    \"cel_emp\": \"optio\",\n    \"codciu_emp\": \"incidunt\",\n    \"id_tipodoc\": 18\n}"
+                            "raw": "{\n    \"logo\": \"ducimus\",\n    \"nom_emp\": \"et\",\n    \"numdoc_emp\": \"laudantium\",\n    \"dir_emp\": \"iste\",\n    \"dis_emp\": \"distinctio\",\n    \"ciu_emp\": \"fugiat\",\n    \"tel_emp\": \"quos\",\n    \"cel_emp\": \"molestiae\",\n    \"codciu_emp\": \"debitis\",\n    \"id_tipodoc\": 15\n}"
                         },
                         "description": "Modifica datos de la empresa (Usar Body-> form-data en Postman)",
                         "response": []
@@ -903,7 +903,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "et",
+                                    "value": "blanditiis",
                                     "description": "El ID del fabricante."
                                 }
                             ]
@@ -949,7 +949,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"des_fab\": \"et\"\n}"
+                            "raw": "{\n    \"des_fab\": \"quibusdam\"\n}"
                         },
                         "description": "Crea un fabricante",
                         "response": []
@@ -967,7 +967,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "voluptatibus",
+                                    "value": "rem",
                                     "description": "El ID del fabricante."
                                 }
                             ]
@@ -985,7 +985,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"des_fab\": \"sit\"\n}"
+                            "raw": "{\n    \"des_fab\": \"et\"\n}"
                         },
                         "description": "Modifica un fabricante",
                         "response": []
@@ -1003,7 +1003,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "nam",
+                                    "value": "soluta",
                                     "description": "El ID del fabricante."
                                 }
                             ]
@@ -1073,7 +1073,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "repellat",
+                                    "value": "aut",
                                     "description": "El ID de la marca."
                                 }
                             ]
@@ -1119,7 +1119,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"des_mar\": \"aut\"\n}"
+                            "raw": "{\n    \"des_mar\": \"dolor\"\n}"
                         },
                         "description": "Crea una marca",
                         "response": []
@@ -1137,7 +1137,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "debitis",
+                                    "value": "et",
                                     "description": "El ID de la marca."
                                 }
                             ]
@@ -1155,7 +1155,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"des_mar\": \"omnis\"\n}"
+                            "raw": "{\n    \"des_mar\": \"debitis\"\n}"
                         },
                         "description": "Modifica una marca",
                         "response": []
@@ -1173,7 +1173,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "similique",
+                                    "value": "id",
                                     "description": "El ID de la marca."
                                 }
                             ]
@@ -1243,7 +1243,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "dolorem",
+                                    "value": "doloremque",
                                     "description": "El ID del modelo."
                                 }
                             ]
@@ -1289,7 +1289,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"des_mod\": \"quo\"\n}"
+                            "raw": "{\n    \"des_mod\": \"quis\"\n}"
                         },
                         "description": "Crea un modelo",
                         "response": []
@@ -1307,7 +1307,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "voluptate",
+                                    "value": "architecto",
                                     "description": "El ID del modelo."
                                 }
                             ]
@@ -1325,7 +1325,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"des_mod\": \"cum\"\n}"
+                            "raw": "{\n    \"des_mod\": \"nihil\"\n}"
                         },
                         "description": "Modifica un modelo",
                         "response": []
@@ -1343,7 +1343,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "veniam",
+                                    "value": "sed",
                                     "description": "El ID del modelo."
                                 }
                             ]
@@ -1413,7 +1413,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "quidem",
+                                    "value": "voluptas",
                                     "description": "El ID del producto."
                                 }
                             ]
@@ -1459,7 +1459,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"cod_prod\": \"cumque\",\n    \"num_parte_prod\": \"non\",\n    \"stk_prod\": 10,\n    \"des_prod\": \"et\",\n    \"pre_com_prod\": 20,\n    \"mon_prod\": 18,\n    \"id_unimed\": 14,\n    \"id_mar\": 8,\n    \"id_mod\": 19,\n    \"id_fab\": 9\n}"
+                            "raw": "{\n    \"cod_prod\": \"inventore\",\n    \"num_parte_prod\": \"tempora\",\n    \"stk_prod\": 18,\n    \"des_prod\": \"eveniet\",\n    \"pre_com_prod\": 17,\n    \"mon_prod\": 11,\n    \"id_unimed\": 7,\n    \"id_mar\": 17,\n    \"id_mod\": 8,\n    \"id_fab\": 11\n}"
                         },
                         "description": "Crea un producto",
                         "response": []
@@ -1477,7 +1477,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "quas",
+                                    "value": "in",
                                     "description": "El ID del producto."
                                 }
                             ]
@@ -1495,7 +1495,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"cod_prod\": \"debitis\",\n    \"num_parte_prod\": \"assumenda\",\n    \"stk_prod\": 12,\n    \"des_prod\": \"molestias\",\n    \"pre_com_prod\": 12,\n    \"mon_prod\": 7,\n    \"id_unimed\": 6,\n    \"id_mar\": 17,\n    \"id_mod\": 15,\n    \"id_fab\": 18\n}"
+                            "raw": "{\n    \"cod_prod\": \"ea\",\n    \"num_parte_prod\": \"nihil\",\n    \"stk_prod\": 14,\n    \"des_prod\": \"natus\",\n    \"pre_com_prod\": 11,\n    \"mon_prod\": 13,\n    \"id_unimed\": 2,\n    \"id_mar\": 10,\n    \"id_mod\": 2,\n    \"id_fab\": 7\n}"
                         },
                         "description": "Modifica un producto",
                         "response": []
@@ -1513,7 +1513,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "dolor",
+                                    "value": "illum",
                                     "description": "El ID del producto."
                                 }
                             ]
@@ -1534,6 +1534,110 @@
                             "raw": "[]"
                         },
                         "description": "Elimina un producto",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "ProformaClienteDetalle",
+            "description": "APIs para proforma cliente detalle",
+            "item": [
+                {
+                    "name": "Crear Proforma Cliente Detalle",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "api\/proforma-cliente-detalle\/create",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"\\\"id_pro\\\":\": \"beatae\",\n    \"\\\"id_prod\\\":\": \"ea\",\n    \"\\\"prof_det_can\\\":\": \"officiis\",\n    \"\\\"prof_det_pre_lis\\\":\": \"exercitationem\",\n    \"\\\"prof_det_imp\\\":\": \"iure\",\n    \"\\\"prof_det_cos\\\":\": \"necessitatibus\",\n    \"\\\"prof_det_tcos\\\":\": \"accusamus\",\n    \"\\\"prof_det_com\\\":\": \"distinctio\",\n    \"\\\"id_prov\\\":\": \"odio\",\n    \"\\\"prof_prod_serv\\\":\": \"quo\",\n    \"\\\"prof_des_prod\\\":\": \"tenetur\",\n    \"\\\"prof_can_prod\\\":\": 484904.7\n}"
+                        },
+                        "description": "Crea una proforma cliente detalle",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "ProforomaCliente",
+            "description": "APIs para proformacliente",
+            "item": [
+                {
+                    "name": "Crear Proforma Cliente",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "api\/proforma-cliente\/create",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"\\\"id_cli\\\":\": \"dolores\",\n    \"\\\"prof_mon\\\":\": \"aliquid\",\n    \"\\\"id_proy\\\":\": \"non\",\n    \"\\\"id_col\\\":\": \"et\",\n    \"\\\"solcli_id\\\":\": \"sit\",\n    \"\\\"prof_cre\\\":\": \"sit\",\n    \"\\\"prof_imp_ini\\\":\": \"earum\",\n    \"\\\"prof_int\\\":\": \"deleniti\",\n    \"\\\"prof_cuo\\\":\": \"voluptates\",\n    \"\\\"prof_val\\\":\": \"laboriosam\",\n    \"\\\"prof_tie_ent\\\":\": \"consequatur\",\n    \"\\\"prof_cos_dir\\\":\": \"voluptatum\",\n    \"\\\"prof_gas_ind\\\":\": \"debitis\",\n    \"\\\"prof_uti\\\":\": \"saepe\",\n    \"\\\"prof_bas_imp\\\":\": \"aut\",\n    \"\\\"prof_igv\\\":\": \"maiores\",\n    \"\\\"prof_neto\\\":\": \"et\",\n    \"\\\"prof_fac\\\":\": \"id\",\n    \"\\\"prof_finan\\\":\": \"nisi\",\n    \"\\\"prof_val_cuo\\\":\": \"provident\"\n}"
+                        },
+                        "description": "Crea una proforma cliente",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Anular proforma de cliente",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "api\/proforma-cliente\/annul\/:id",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "ut",
+                                    "description": "El ID de la proforma del cliente."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Anula una proforma",
                         "response": []
                     }
                 }
@@ -1583,7 +1687,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "libero",
+                                    "value": "saepe",
                                     "description": "El ID del proveedor."
                                 }
                             ]
@@ -1629,7 +1733,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"razsoc_prov\": \"et\",\n    \"ema_prov\": \"ducimus\",\n    \"num_doc_prov\": \"velit\",\n    \"id_tipodoc\": 9\n}"
+                            "raw": "{\n    \"razsoc_prov\": \"nemo\",\n    \"ema_prov\": \"expedita\",\n    \"num_doc_prov\": \"cumque\",\n    \"id_tipodoc\": 17\n}"
                         },
                         "description": "Crea un proveedor",
                         "response": []
@@ -1647,7 +1751,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "autem",
+                                    "value": "perspiciatis",
                                     "description": "El ID del proveedor."
                                 }
                             ]
@@ -1665,7 +1769,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"razsoc_prov\": \"quo\",\n    \"ema_prov\": \"vitae\",\n    \"num_doc_prov\": \"maiores\",\n    \"id_tipodoc\": 2\n}"
+                            "raw": "{\n    \"razsoc_prov\": \"perferendis\",\n    \"ema_prov\": \"dolores\",\n    \"num_doc_prov\": \"quo\",\n    \"id_tipodoc\": 11\n}"
                         },
                         "description": "Modifica un proveedor",
                         "response": []
@@ -1683,7 +1787,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "vel",
+                                    "value": "molestias",
                                     "description": "El ID del proveedor."
                                 }
                             ]
@@ -1719,7 +1823,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "facilis",
+                                    "value": "dolores",
                                     "description": "El ID del proveedor."
                                 }
                             ]
@@ -1789,7 +1893,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "sit",
+                                    "value": "quos",
                                     "description": "El ID de banco proveedor."
                                 }
                             ]
@@ -1835,7 +1939,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"tip_prov_ban\": \"nostrum\",\n    \"cue_prov_ban\": \"quibusdam\",\n    \"ban_prov_ban\": \"sit\",\n    \"id_prov\": 20,\n    \"com_prov_ban\": \"quis\"\n}"
+                            "raw": "{\n    \"tip_prov_ban\": \"non\",\n    \"cue_prov_ban\": \"est\",\n    \"ban_prov_ban\": \"nihil\",\n    \"id_prov\": 3,\n    \"com_prov_ban\": \"quia\"\n}"
                         },
                         "description": "Crea un banco proveedor",
                         "response": []
@@ -1853,7 +1957,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "aliquam",
+                                    "value": "commodi",
                                     "description": "El ID del banco proveedor."
                                 }
                             ]
@@ -1871,7 +1975,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"tip_prov_ban\": \"architecto\",\n    \"cue_prov_ban\": \"explicabo\",\n    \"ban_prov_ban\": \"veritatis\",\n    \"id_prov\": 2,\n    \"com_prov_ban\": \"qui\"\n}"
+                            "raw": "{\n    \"tip_prov_ban\": \"dolores\",\n    \"cue_prov_ban\": \"explicabo\",\n    \"ban_prov_ban\": \"consectetur\",\n    \"id_prov\": 16,\n    \"com_prov_ban\": \"eum\"\n}"
                         },
                         "description": "Modifica un banco del proveedor",
                         "response": []
@@ -1889,7 +1993,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "ipsa",
+                                    "value": "hic",
                                     "description": "El ID del banco de proveedor."
                                 }
                             ]
@@ -1959,7 +2063,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "omnis",
+                                    "value": "aut",
                                     "description": "El ID del colaborador proveedor."
                                 }
                             ]
@@ -2005,7 +2109,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"nom_prov\": \"et\",\n    \"ema_prov\": \"dignissimos\",\n    \"tel_prov\": \"vero\",\n    \"ane_prov_col\": \"beatae\",\n    \"car_prov_col\": \"modi\",\n    \"id_prov\": 4\n}"
+                            "raw": "{\n    \"nom_prov\": \"odio\",\n    \"ema_prov\": \"ut\",\n    \"tel_prov\": \"sint\",\n    \"ane_prov_col\": \"nemo\",\n    \"car_prov_col\": \"tempore\",\n    \"id_prov\": 18\n}"
                         },
                         "description": "Crea un colaborador proveedor",
                         "response": []
@@ -2023,7 +2127,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "error",
+                                    "value": "minus",
                                     "description": "El ID del colaborador proveedor."
                                 }
                             ]
@@ -2041,7 +2145,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"nom_prov\": \"magni\",\n    \"ema_prov\": \"amet\",\n    \"tel_prov\": \"quis\",\n    \"ane_prov_col\": \"et\",\n    \"car_prov_col\": \"cupiditate\",\n    \"id_prov\": 20\n}"
+                            "raw": "{\n    \"nom_prov\": \"ratione\",\n    \"ema_prov\": \"voluptatem\",\n    \"tel_prov\": \"autem\",\n    \"ane_prov_col\": \"eligendi\",\n    \"car_prov_col\": \"consequatur\",\n    \"id_prov\": 8\n}"
                         },
                         "description": "Modifica un colaborador proveedor",
                         "response": []
@@ -2059,7 +2163,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "et",
+                                    "value": "qui",
                                     "description": "El ID del colaborador proveedor."
                                 }
                             ]
@@ -2129,7 +2233,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "molestiae",
+                                    "value": "sed",
                                     "description": "El ID de la direccion del proveedor."
                                 }
                             ]
@@ -2183,7 +2287,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"ciu_prov\": \"saepe\",\n    \"dir_prov\": \"vero\",\n    \"tel_prov\": \"neque\",\n    \"id_prov\": 11\n}"
+                            "raw": "{\n    \"ciu_prov\": \"perferendis\",\n    \"dir_prov\": \"eum\",\n    \"tel_prov\": \"eos\",\n    \"id_prov\": 5\n}"
                         },
                         "description": "Modifica una direccion de proveedor",
                         "response": []
@@ -2211,7 +2315,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"ciu_prov\": \"atque\",\n    \"dir_prov\": \"omnis\",\n    \"tel_prov\": \"qui\",\n    \"id_prov\": 17\n}"
+                            "raw": "{\n    \"ciu_prov\": \"est\",\n    \"dir_prov\": \"nemo\",\n    \"tel_prov\": \"nisi\",\n    \"id_prov\": 3\n}"
                         },
                         "description": "Crea una direccion de proveedor",
                         "response": []
@@ -2229,7 +2333,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "labore",
+                                    "value": "animi",
                                     "description": "El ID de la direccion del proveedor."
                                 }
                             ]
@@ -2355,7 +2459,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "omnis",
+                                    "value": "porro",
                                     "description": "El ID del proyecto ."
                                 }
                             ]
@@ -2401,7 +2505,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"nom_proy\": \"consequatur\",\n    \"id_cli\": \"excepturi\"\n}"
+                            "raw": "{\n    \"nom_proy\": \"dolor\",\n    \"id_cli\": \"id\"\n}"
                         },
                         "description": "Crea un proyecto",
                         "response": []
@@ -2419,7 +2523,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "possimus",
+                                    "value": "veniam",
                                     "description": "El ID del proyecto ."
                                 }
                             ]
@@ -2437,7 +2541,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"nom_proy\": \"dignissimos\",\n    \"est_reg\": \"voluptatem\",\n    \"id_cli\": \"quae\"\n}"
+                            "raw": "{\n    \"nom_proy\": \"inventore\",\n    \"est_reg\": \"tempore\",\n    \"id_cli\": \"magni\"\n}"
                         },
                         "description": "Modifica un proyecto",
                         "response": []
@@ -2455,7 +2559,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "quam",
+                                    "value": "alias",
                                     "description": "El ID del proyecto ."
                                 }
                             ]
@@ -2559,7 +2663,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "soluta",
+                                    "value": "laborum",
                                     "description": "El ID del tipo de documento."
                                 }
                             ]
@@ -2605,7 +2709,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"cod_tipdoc\": \"temporibus\",\n    \"des_tipdoc\": \"quia\"\n}"
+                            "raw": "{\n    \"cod_tipdoc\": \"alias\",\n    \"des_tipdoc\": \"pariatur\"\n}"
                         },
                         "description": "Crea un tipo de documento",
                         "response": []
@@ -2623,7 +2727,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "facere",
+                                    "value": "perspiciatis",
                                     "description": "El ID del tipo de documento."
                                 }
                             ]
@@ -2641,7 +2745,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"cod_tipdoc\": \"qui\",\n    \"des_tipdoc\": \"aspernatur\"\n}"
+                            "raw": "{\n    \"cod_tipdoc\": \"perferendis\",\n    \"des_tipdoc\": \"molestias\"\n}"
                         },
                         "description": "Modifica un tipo de documento",
                         "response": []
@@ -2659,7 +2763,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "libero",
+                                    "value": "occaecati",
                                     "description": "El ID del tipo de documento."
                                 }
                             ]
@@ -2729,7 +2833,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "sint",
+                                    "value": "recusandae",
                                     "description": "El ID de la unidad de medida."
                                 }
                             ]
@@ -2775,7 +2879,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"nom_unimed\": \"eum\",\n    \"des_mar\": \"autem\"\n}"
+                            "raw": "{\n    \"nom_unimed\": \"sed\",\n    \"des_mar\": \"omnis\"\n}"
                         },
                         "description": "Crea una unidad de medida",
                         "response": []
@@ -2793,7 +2897,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "quae",
+                                    "value": "sit",
                                     "description": "El ID de la unidad de medida."
                                 }
                             ]
@@ -2811,7 +2915,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"nom_unimed\": \"quos\",\n    \"des_mar\": \"repudiandae\"\n}"
+                            "raw": "{\n    \"nom_unimed\": \"consequatur\",\n    \"des_mar\": \"voluptatem\"\n}"
                         },
                         "description": "Modifica una unidad de medida",
                         "response": []
@@ -2829,7 +2933,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "sed",
+                                    "value": "nisi",
                                     "description": "El ID de la unidad de medida."
                                 }
                             ]
@@ -2899,7 +3003,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "repellendus",
+                                    "value": "voluptatum",
                                     "description": "El ID del usuario."
                                 }
                             ]
@@ -2945,7 +3049,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"nom_col\": \"voluptas\",\n    \"ape_col\": \"magnam\",\n    \"email\": \"eos\",\n    \"password\": \"inventore\",\n    \"num_doc_col\": \"aliquam\",\n    \"cod_col\": \"ullam\",\n    \"cel_col\": \"exercitationem\",\n    \"id_tipdoc\": 19,\n    \"id_car\": 4\n}"
+                            "raw": "{\n    \"nom_col\": \"et\",\n    \"ape_col\": \"reprehenderit\",\n    \"email\": \"reiciendis\",\n    \"password\": \"sed\",\n    \"num_doc_col\": \"dolorum\",\n    \"cod_col\": \"molestiae\",\n    \"cel_col\": \"quisquam\",\n    \"id_tipdoc\": 17,\n    \"id_car\": 16\n}"
                         },
                         "description": "Crea un usuario",
                         "response": []
@@ -2963,7 +3067,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "voluptas",
+                                    "value": "atque",
                                     "description": "El ID del usuario."
                                 }
                             ]
@@ -2981,7 +3085,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"nom_col\": \"sapiente\",\n    \"ape_col\": \"accusamus\",\n    \"email\": \"non\",\n    \"num_doc_col\": \"possimus\",\n    \"cod_col\": \"autem\",\n    \"cel_col\": \"ratione\",\n    \"id_tipdoc\": 15,\n    \"id_car\": 5\n}"
+                            "raw": "{\n    \"nom_col\": \"omnis\",\n    \"ape_col\": \"impedit\",\n    \"email\": \"sit\",\n    \"num_doc_col\": \"fugit\",\n    \"cod_col\": \"veniam\",\n    \"cel_col\": \"consectetur\",\n    \"id_tipdoc\": 20,\n    \"id_car\": 2\n}"
                         },
                         "description": "Modifica un usuario",
                         "response": []
@@ -2999,7 +3103,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "ea",
+                                    "value": "iste",
                                     "description": "El ID del usuario."
                                 }
                             ]
@@ -3035,7 +3139,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "est",
+                                    "value": "ducimus",
                                     "description": "El ID del usuario."
                                 }
                             ]
@@ -3053,7 +3157,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"email\": \"assumenda\",\n    \"old_password\": \"labore\",\n    \"new_password\": \"recusandae\"\n}"
+                            "raw": "{\n    \"email\": \"eius\",\n    \"old_password\": \"in\",\n    \"new_password\": \"cumque\"\n}"
                         },
                         "description": "Modifica la contrase\u00f1a persona",
                         "response": []
@@ -3159,174 +3263,6 @@
                             "query": []
                         },
                         "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "api\/proforma-cliente\/get",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "localhost",
-                            "path": "api\/proforma-cliente\/get",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "api\/proforma-cliente\/get\/{id}",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "localhost",
-                            "path": "api\/proforma-cliente\/get\/:id",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "api\/proforma-cliente\/create",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "localhost",
-                            "path": "api\/proforma-cliente\/create",
-                            "query": []
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "api\/proforma-cliente-detalle\/get",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "localhost",
-                            "path": "api\/proforma-cliente-detalle\/get",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "api\/proforma-cliente-detalle\/get\/{id}",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "localhost",
-                            "path": "api\/proforma-cliente-detalle\/get\/:id",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "api\/proforma-cliente-detalle\/create",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "localhost",
-                            "path": "api\/proforma-cliente-detalle\/create",
-                            "query": []
-                        },
-                        "method": "POST",
                         "header": [
                             {
                                 "key": "Content-Type",
