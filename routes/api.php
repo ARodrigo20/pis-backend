@@ -168,5 +168,5 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::post('cotizacion-proveedor/send/{id}','CotizacionProveedor\CotizacionProveedorController@sendTo')->name('sendCotizacionProveedor');
 
 
-
+    Route::post('email/send-email','Email\EmailController@sendEmail')->name('sendEmail');
 });
