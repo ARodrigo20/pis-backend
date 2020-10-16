@@ -150,15 +150,9 @@ Route::group(['middleware' => ['jwt.verify']], function() {
 
     //Proforma cliente
     Route::get('proforma-cliente/get','ProformaCliente\ProformaClienteController@get')->name('getProformasCliente');
-    Route::get('proforma-cliente/get/{id}','ProformaCliente\ProformaClienteController@show')->name('getProformaCliente');
+    Route::get('proforma-cliente/get/{id}','ProformaCliente\ProformaClienteController@getById')->name('getProformaCliente');
     Route::post('proforma-cliente/create','ProformaCliente\ProformaClienteController@create')->name('createProformaliente');
     Route::get('proforma-cliente/annul/{id}','ProformaCliente\ProformaClienteController@annul')->name('annulProformaCliente');
-
-     //Proforma cliente detalle
-     Route::post('proforma-cliente-detalle/create','ProformaCliente\ProformaClienteDetController@create')->name('createProformalienteDet');
-    
-   
-  
 
     //Cotizacion proveedor
     Route::get('cotizacion-proveedor/get','CotizacionProveedor\CotizacionProveedorController@get')->name('getCotizacionesProveedor');
@@ -166,7 +160,6 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::post('cotizacion-proveedor/create','CotizacionProveedor\CotizacionProveedorController@create')->name('createCotizacionProveedor');
     Route::get('cotizacion-proveedor/annul/{id}','CotizacionProveedor\CotizacionProveedorController@annul')->name('annulCotizacionProveedor');
     Route::post('cotizacion-proveedor/send/{id}','CotizacionProveedor\CotizacionProveedorController@sendTo')->name('sendCotizacionProveedor');
-
 
     Route::post('email/send-email','Email\EmailController@sendEmail')->name('sendEmail');
 });

@@ -39,30 +39,18 @@ class ProformaCliente extends Model
                         );
     protected $primaryKey = 'id_pro';
 
-    protected $appends = ['proyecto','cliente','proformaClienteDetalles'];
+    protected $appends = ['proyecto','cliente','proforma_detalle','usuario'];
     protected $hidden = [
         'created_at', 'updated_at',
     ];
 
-    public function proyecto(){
-        return $this->belongsTo(Proyecto::class);
-    }
-
-    public function cliente(){
-        return $this->belongsTo(Cliente::class);
-    }
-
-    public function  usuario(){
-        return $this->belongsTo(User::class);
-    }
-
-    public function proformaClienteDetalles(){
-        return $this->hasMany('App\Models\ProformaCliente\ProformaClienteDet', 'id_pro');
-    }
-
     public function getProyectoAttribute()
     {
         return $this->proyecto();
+    }
+
+    public function proyecto(){
+        return $this->belongsTo('App\Models\Proyecto\Proyecto', 'id_proy');
     }
 
     public function getClienteAttribute()
@@ -70,9 +58,26 @@ class ProformaCliente extends Model
         return $this->cliente();
     }
 
-    public function getProformaClienteDetallesAttribute()
-    {
-        return $this->proformaClienteDetalles();
+    public function cliente(){
+        return $this->belongsTo('App\Models\Clientes\Cliente', 'id_cli');
     }
-   
+
+    public function getProformaDetalleAttribute()
+    {
+        return $this->proforma_detalle();
+    }
+
+    public function proforma_detalle(){
+        return $this->hasMany('App\Models\ProformaCliente\ProformaClienteDet', 'id_pro');
+    }
+
+    public function getUsuarioAttribute()
+    {
+        return $this->usuario();
+    }
+
+    public function usuario(){
+        return $this->belongsTo('App\User', 'id_col');
+    }
+
 }

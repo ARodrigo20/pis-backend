@@ -27,18 +27,5 @@ class ProformaClienteDet extends Model
     protected $hidden = [
         'created_at', 'updated_at',
     ];
-    public function proformaCliente()
-    {
-        return $this->belongsTo(ProformaCliente::class);
-    }
-    public function proveedor()
-    {
-        return $this->belongsTo(Proveedor::class);
-    }
-
-    public function producto()
-    {
-        return $this->belongsTo(Producto::class);
-    }
-
+    
 }

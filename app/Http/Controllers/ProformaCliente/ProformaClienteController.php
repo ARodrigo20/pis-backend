@@ -5,13 +5,14 @@ namespace App\Http\Controllers\ProformaCliente;
 // use App\ProformaCliente;
 use App\Http\Controllers\Controller;
 use App\Models\ProformaCliente\ProformaCliente;
+use App\Models\ProformaCliente\ProformaClienteDet;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use DateTime;
 
 /**
- * @group ProforomaCliente
- * APIs para proformacliente
+ * @group ProformaCliente
+ * APIs para proforma cliente
  */
 
 
@@ -21,67 +22,82 @@ class ProformaClienteController extends Controller
     /**
      * Retornar proformas cliente
      *
-     * Retorna todos las proformas cliente activas y anuladas
+     * Retorna todas las proformas cliente activas y anuladas
      *
-     * @urlParam  
      *
      * @response {
-     *      "data" :
+     *      "data" : [
      *          {
-     * @bodyParam  "id_pro":int
-     * @bodyParam  "id_cli": int,
-     * @bodyParam  "prof_mon": int,
-     * @bodyParam  "id_proy": int,
-     * @bodyParam  "id_col": int,
-     * @bodyParam  "solcli_id": int,
-     * @bodyParam  "prof_cre": 1-2-3,
-     * @bodyParam  "prof_imp_ini": float,
-     * @bodyParam  "prof_int": float,
-     * @bodyParam  "prof_cuo": int,
-     * @bodyParam  "prof_val": char,
-     * @bodyParam  "prof_tie_ent": char,
-     * @bodyParam  "prof_cos_dir": float,
-     * @bodyParam  "prof_gas_ind": float,
-     * @bodyParam  "prof_uti": float,
-     * @bodyParam  "prof_bas_imp": float,
-     * @bodyParam  "prof_igv": float,
-     * @bodyParam  "prof_neto": float,
-     * @bodyParam  "prof_fac": float,
-     * @bodyParam  "prof_finan": float,
-     * @bodyParam  "prof_val_cuo": float,
+     *              "id_pro": 0,
+     *              "id_cli": 0,
+     *              "prof_fec": "date",
+     *              "prof_mon": 0,
+     *              "id_proy": 0,
+     *              "id_col": 0,
+     *              "solcli_id": 0,
+     *              "prof_cre": 0,
+     *              "prof_imp_ini": 0,
+     *              "prof_int": 0,
+     *              "prof_cuo": 0,
+     *              "prof_val": "string",
+     *              "prof_tie_ent": "string",
+     *              "prof_cos_dir": 0,
+     *              "prof_gas_ind": 0,
+     *              "prof_uti": 0,
+     *              "prof_bas_imp": 0,
+     *              "prof_igv": 0,
+     *              "prof_neto": 0,
+     *              "prof_fac": 0,
+     *              "prof_finan": 0,
+     *              "prof_val_cuo": 0,
+     *              "est_reg": "string",
      *              "proyecto":{
      *                  "id_proy":0,
      *                  "nom_proy":"string",
-     *                  "ser_proy": "NTWC-P-",
+     *                  "ser_proy": "string",
      *                  "num_proy": 0,
      *                  "id_cli": 0,
-     *                  "est_reg": "A",
-     *                  "cliente": {}
-     *               },
-     *              "proforma_cliente_detalles": [{
-                        * "id_prof_det": int,
-                        * "id_pro": int,
-                        * "id_prod": int,
-                        * "prof_det_can": int,
-                        * "prof_det_pre_lis": float,
-                        * "prof_det_imp": float,
-                        * "prof_det_cos": float,
-                        * "prof_det_tcos": float,
-                        * "prof_det_com": float,
-                        * "id_prov": int,
-                        * "prof_prod_serv": int,
-                        * "prof_des_prod": char,
-                        * "prof_can_prod": float
-     *              }]
-     *          },
+     *                  "est_reg": "string"
+     *              },
+     *              "cliente": {
+     *                  "id_cli": 0,
+     *                  "razsoc_cli": "string",
+     *                  "numdoc_cli": 0,
+     *                  "ema_cli": "string",
+     *                  "id_tipdoc": 0,
+     *                  "est_reg": "string"
+     *              },
+     *              "usuario": {
+     *                  "id_col": 0,
+     *                  "nom_col": "string",
+     *                  "ape_col": "string"
+     *              },
+     *              "proforma_detalle": [
+     *                  {
+     *                      "id_prof_det": 0,
+     *                      "id_pro": 0,
+     *                      "id_prod": 0,
+     *                      "prof_det_can": 0,
+     *                      "prof_det_pre_lis": 0,
+     *                      "prof_det_imp": 0,
+     *                      "prof_det_cos": 0,
+     *                      "prof_det_tcos": 0,
+     *                      "prof_det_com": 0,
+     *                      "id_prov": 0,
+     *                      "prof_prod_serv": 0,
+     *                      "prof_des_prod": "string",
+     *                      "prof_can_prod": 0
+     *                  }
+     *              ]
+     *          }
+     *      ],
      *      "size":0
-     *  }
+     * }
      */
     public function get()
     {
-
         try {
-            $proforma_cabecera = ProformaCliente::with(['proyecto', 'cliente', 'proformaClienteDetalles'])->get();
+            $proforma_cabecera = ProformaCliente::with(['proyecto', 'cliente', 'proforma_detalle','usuario'])->get();
         } catch (Exception $e) {
             return response()->json([
                 'error' => 'Ocurrio un error en el servidor',
@@ -94,31 +110,127 @@ class ProformaClienteController extends Controller
         ], 200, [], JSON_NUMERIC_CHECK);
     }
 
+
+    /**
+     * Retornar proforma del cliente
+     *
+     * Retorna proforma del cliente por medio de su Id
+     *
+     * @urlParam  id required El ID de la proforma del cliente.
+     *
+     * @response {
+     *              "id_pro": 0,
+     *              "id_cli": 0,
+     *              "prof_fec": "date",
+     *              "prof_mon": 0,
+     *              "id_proy": 0,
+     *              "id_col": 0,
+     *              "solcli_id": 0,
+     *              "prof_cre": 0,
+     *              "prof_imp_ini": 0,
+     *              "prof_int": 0,
+     *              "prof_cuo": 0,
+     *              "prof_val": "string",
+     *              "prof_tie_ent": "string",
+     *              "prof_cos_dir": 0,
+     *              "prof_gas_ind": 0,
+     *              "prof_uti": 0,
+     *              "prof_bas_imp": 0,
+     *              "prof_igv": 0,
+     *              "prof_neto": 0,
+     *              "prof_fac": 0,
+     *              "prof_finan": 0,
+     *              "prof_val_cuo": 0,
+     *              "est_reg": "string",
+     *              "proyecto":{
+     *                  "id_proy":0,
+     *                  "nom_proy":"string",
+     *                  "ser_proy": "string",
+     *                  "num_proy": 0,
+     *                  "id_cli": 0,
+     *                  "est_reg": "string"
+     *              },
+     *              "cliente": {
+     *                  "id_cli": 0,
+     *                  "razsoc_cli": "string",
+     *                  "numdoc_cli": 0,
+     *                  "ema_cli": "string",
+     *                  "id_tipdoc": 0,
+     *                  "est_reg": "string"
+     *              },
+     *              "usuario": {
+     *                  "id_col": 0,
+     *                  "nom_col": "string",
+     *                  "ape_col": "string"
+     *              },
+     *              "proforma_detalle": [
+     *                  {
+     *                      "id_prof_det": 0,
+     *                      "id_pro": 0,
+     *                      "id_prod": 0,
+     *                      "prof_det_can": 0,
+     *                      "prof_det_pre_lis": 0,
+     *                      "prof_det_imp": 0,
+     *                      "prof_det_cos": 0,
+     *                      "prof_det_tcos": 0,
+     *                      "prof_det_com": 0,
+     *                      "id_prov": 0,
+     *                      "prof_prod_serv": 0,
+     *                      "prof_des_prod": "string",
+     *                      "prof_can_prod": 0
+     *                  }
+     *              ]
+     *          }
+     */
+    public function getById($id)
+    {
+        try {
+            $proforma_cabecera = ProformaCliente::with(['proyecto', 'cliente', 'proforma_detalle','usuario'])->find($id);
+        } catch (Exception $e) {
+            return response()->json([
+                'error' => 'ocurrio un error en el servidor',
+                'desc' => $e,
+            ], 500);
+        }
+
+        if ($proforma_cabecera) {
+            return response()->json($proforma_cabecera, 200, [], JSON_NUMERIC_CHECK);
+        } else {
+            return response()->json([
+                'resp' => 'No se encontro la proforma cliente',
+            ], 500);
+        }
+    }
+
+
+
     /**
      * Crear Proforma Cliente
      *
      * Crea una proforma cliente
      *
-     * @bodyParam  "id_cli": int,
-     * @bodyParam  "prof_mon": int,
-     * @bodyParam  "id_proy": int,
-     * @bodyParam  "id_col": int,
-     * @bodyParam  "solcli_id": int,
-     * @bodyParam  "prof_cre": 1-2-3,
-     * @bodyParam  "prof_imp_ini": float,
-     * @bodyParam  "prof_int": float,
-     * @bodyParam  "prof_cuo": int,
-     * @bodyParam  "prof_val": char,
-     * @bodyParam  "prof_tie_ent": char,
-     * @bodyParam  "prof_cos_dir": float,
-     * @bodyParam  "prof_gas_ind": float,
-     * @bodyParam  "prof_uti": float,
-     * @bodyParam  "prof_bas_imp": float,
-     * @bodyParam  "prof_igv": float,
-     * @bodyParam  "prof_neto": float,
-     * @bodyParam  "prof_fac": float,
-     * @bodyParam  "prof_finan": float,
-     * @bodyParam  "prof_val_cuo": float,
+     * @bodyParam id_cli int Id del cliente.
+     * @bodyParam prof_mon int Moneda de la proforma.
+     * @bodyParam id_proy int Id del proyecto.
+     * @bodyParam id_col int Id del colaborador.
+     * @bodyParam solcli_id int Id de la solicitud de cliente.
+     * @bodyParam prof_cre int Codigo de seleccion del cliente (1-2-3).
+     * @bodyParam prof_imp_ini float Importe inicial.
+     * @bodyParam prof_int float Interes, Porcentaje de Interes.
+     * @bodyParam prof_cuo int Cuotas.
+     * @bodyParam prof_val string Validez de la proforma.
+     * @bodyParam prof_tie_ent string Tiempo de entrega.
+     * @bodyParam prof_cos_dir float Costo directo.
+     * @bodyParam prof_gas_ind float Gastos indirectos.
+     * @bodyParam prof_uti float Utilidad.
+     * @bodyParam prof_bas_imp float Base imponible.
+     * @bodyParam prof_igv float float IGV.
+     * @bodyParam prof_neto float Neto a pagar.
+     * @bodyParam prof_fac float Factor.
+     * @bodyParam prof_finan float Financiacion.
+     * @bodyParam prof_val_cuo float Valor Cuota.
+     * @bodyParam proforma_detalle array required Ejemplo: [{"id_prof_det": 1,"id_pro": 5,"id_prod": 10,"prof_det_can": 10,"prof_det_pre_lis": 20,"prof_det_imp": 10,"prof_det_cos": 10,"prof_det_tcos": 10,"prof_det_com": 10,"id_prov": 2,"prof_prod_serv": 1,"prof_des_prod": "producto","prof_can_prod": 10}]
+     * 
      * @response {
      *    "resp": "proforma cliente creada"
      * }
@@ -129,7 +241,6 @@ class ProformaClienteController extends Controller
 
         try {
             $proformaCliente = ProformaCliente::create([
-                // 'id_pro' => $request->input('id_pro'),
                 'id_cli' => $request->input('id_cli'),
                 'prof_fec' => new DateTime(),
                 'prof_mon' => $request->input('prof_mon'),
@@ -154,6 +265,28 @@ class ProformaClienteController extends Controller
                 'est_reg' => 'A',
             ]);
 
+            $detalles = $request->input('proforma_detalle');
+
+            if($detalles) {
+                foreach($detalles as $detalle) {
+                    $proformaClientedet = ProformaClienteDet::create([
+                        'id_pro' => $proformaCliente->id_pro,
+                        'id_prod' => $detalle['id_prod'],
+                        'prof_det_can' => $detalle['prof_det_can'],
+                        'prof_det_pre_lis' => $detalle['prof_det_pre_lis'],
+                        'prof_det_imp' => $detalle['prof_det_imp'],
+                        'prof_det_cos' => $detalle['prof_det_cos'],
+                        'prof_det_tcos' => $detalle['prof_det_tcos'],
+                        'prof_det_com' => $detalle['prof_det_com'],
+                        'id_prov' => $detalle['id_prov'],
+                        'prof_prod_serv' => $detalle['prof_prod_serv'],
+                        'prof_des_prod' => $detalle['prof_des_prod'],
+                        'prof_can_prod' => $detalle['prof_can_prod'],
+                        'est_reg' => 'A'
+                    ]);
+                }
+            }
+
             DB::commit();
             //all good
         } catch (Exception $e) {
@@ -166,105 +299,6 @@ class ProformaClienteController extends Controller
         return response()->json([
             'resp' => 'Proforma cliente creada',
         ], 200, [], JSON_NUMERIC_CHECK);
-    }
-
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Retornar proforma del cliente
-     *
-     * Retorna proforma del cliente por medio de su Id
-     *
-     * @urlParam  id required El ID de la proforma del cliente.
-     *
-     * @response {
-     *      "data :
-     *          {
-     * @bodyParam  "id_pro":int
-     * @bodyParam  "id_cli": int,
-     * @bodyParam  "prof_mon": int,
-     * @bodyParam  "id_proy": int,
-     * @bodyParam  "id_col": int,
-     * @bodyParam  "solcli_id": int,
-     * @bodyParam  "prof_cre": 1-2-3,
-     * @bodyParam  "prof_imp_ini": float,
-     * @bodyParam  "prof_int": float,
-     * @bodyParam  "prof_cuo": int,
-     * @bodyParam  "prof_val": char,
-     * @bodyParam  "prof_tie_ent": char,
-     * @bodyParam  "prof_cos_dir": float,
-     * @bodyParam  "prof_gas_ind": float,
-     * @bodyParam  "prof_uti": float,
-     * @bodyParam  "prof_bas_imp": float,
-     * @bodyParam  "prof_igv": float,
-     * @bodyParam  "prof_neto": float,
-     * @bodyParam  "prof_fac": float,
-     * @bodyParam  "prof_finan": float,
-     * @bodyParam  "prof_val_cuo": float,
-     *              "proyecto":{
-     *                  "id_proy":0,
-     *                  "nom_proy":"string",
-     *                  "ser_proy": "NTWC-P-",
-     *                  "num_proy": 0,
-     *                  "id_cli": 0,
-     *                  "est_reg": "A",
-     *                  "cliente": {}
-     *               },
-     *              "proforma_cliente_detalles": [{
-                        * "id_prof_det": int,
-                        * "id_pro": int,
-                        * "id_prod": int,
-                        * "prof_det_can": int,
-                        * "prof_det_pre_lis": float,
-                        * "prof_det_imp": float,
-                        * "prof_det_cos": float,
-                        * "prof_det_tcos": float,
-                        * "prof_det_com": float,
-                        * "id_prov": int,
-                        * "prof_prod_serv": int,
-                        * "prof_des_prod": char,
-                        * "prof_can_prod": float
-     *              }]
-     *          },
-     *      "size":0
-     * }
-     */
-    public function show($id)
-    {
-        try {
-            $proforma_cabecera = ProformaCliente::with(['proformaClienteDetalles'])->find($id);
-        } catch (Exception $e) {
-            return response()->json([
-                'error' => 'ocurrio un error en el servidor',
-                'desc' => $e,
-            ], 500);
-        }
-
-        if ($proforma_cabecera) {
-            return response()->json($proforma_cabecera, 200, [], JSON_NUMERIC_CHECK);
-        } else {
-            return response()->json([
-                'resp' => 'No se encontro la proforma cliente',
-            ], 500);
-        }
-    }
-
-    public function edit(ProformaCliente $proformaCliente)
-    {
-        //
-    }
-
-    public function update(Request $request, ProformaCliente $proformaCliente)
-    {
-        //
-    }
-
-    public function destroy(ProformaCliente $proformaCliente)
-    {
-        //
     }
 
     /**
