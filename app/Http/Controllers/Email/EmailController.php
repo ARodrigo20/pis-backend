@@ -8,6 +8,7 @@ use Swift_Mailer;
 use Swift_MailTransport;
 use Swift_SmtpTransport;
 use Swift_Message;
+use App\Models\CotizacionProveedor\CotizacionProveedor;
 use Illuminate\Support\Facades\Crypt;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -40,6 +41,8 @@ class EmailController extends Controller
      * @bodyParam  cc string Correo Adjunto (correo del usuario logueado).
      * @bodyParam  mensaje string Mensaje del correo.
      * @bodyParam  destinatario string required Correo destino.
+     * @bodyParam  tabla string Tabla de Referencia para actualizacion de estado de envio (Cotizacion de proveedor: 'cot-prov').
+     * @bodyParam  doc_referencia string ID del documento de referencia de la Tabla para actualizacion de estado de envio.
      * 
      * @response {
      *    "resp": "Correo Enviado"
@@ -51,6 +54,10 @@ class EmailController extends Controller
         $mensaje = $request->input('mensaje') ? $request->input('mensaje') : "";
         $destinatario =$request->input('destinatario') ? $request->input('destinatario') : "";
         $archivo = $request->file('archivo');
+
+        $tabla = $request->input('tabla');
+        $doc_referencia = $request->input('doc_referencia');
+
 
         Mail::raw($mensaje, function ($message) use($asunto,$cc,$destinatario,$archivo) {
             $message->from(getenv("MAIL_USERNAME"),"NETWORK CONTROL");
@@ -64,6 +71,15 @@ class EmailController extends Controller
                 //$message->attachData($archivo, $archivo->getClientOriginalName());
             }
         });
+
+        if($tabla != null && $doc_referencia != null) {
+            switch ($tabla) {
+                case "cot-prov":
+                    $cotizacionProveedor = CotizacionProveedor::find(intval($doc_referencia));
+                    $cotizacionProveedor->fill(array('est_env' => '1'))->save();
+                    break;
+            }
+        }
 
         return response()->json([
             'resp' => 'Correo Enviado'
