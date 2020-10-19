@@ -50,6 +50,8 @@ class ProformaClienteController extends Controller
      *              "prof_fac": 0,
      *              "prof_finan": 0,
      *              "prof_val_cuo": 0,
+     *              "prof_cli_id_dir": 0,
+     *              "prof_cli_id_con": 0,
      *              "est_reg": "string",
      *              "proyecto":{
      *                  "id_proy":0,
@@ -141,6 +143,8 @@ class ProformaClienteController extends Controller
      *              "prof_fac": 0,
      *              "prof_finan": 0,
      *              "prof_val_cuo": 0,
+     *              "prof_cli_id_dir": 0,
+     *              "prof_cli_id_con": 0,
      *              "est_reg": "string",
      *              "proyecto":{
      *                  "id_proy":0,
@@ -229,6 +233,8 @@ class ProformaClienteController extends Controller
      * @bodyParam prof_fac float Factor.
      * @bodyParam prof_finan float Financiacion.
      * @bodyParam prof_val_cuo float Valor Cuota.
+     * @bodyParam prof_cli_id_dir int Id de la direccion de cliente.
+     * @bodyParam prof_cli_id_con int Id del contacto de cliente.
      * @bodyParam proforma_detalle array required Ejemplo: [{"id_prof_det": 1,"id_pro": 5,"id_prod": 10,"prof_det_can": 10,"prof_det_pre_lis": 20,"prof_det_imp": 10,"prof_det_cos": 10,"prof_det_tcos": 10,"prof_det_com": 10,"id_prov": 2,"prof_prod_serv": 1,"prof_des_prod": "producto","prof_can_prod": 10}]
      * 
      * @response {
@@ -262,6 +268,8 @@ class ProformaClienteController extends Controller
                 'prof_fac' => $request->input('prof_fac'),
                 'prof_finan' => $request->input('prof_finan'),
                 'prof_val_cuo' => $request->input('prof_val_cuo'),
+                'prof_cli_id_dir' => $request->input('prof_cli_id_dir'),
+                'prof_cli_id_con' => $request->input('prof_cli_id_con'),
                 'est_reg' => 'A',
             ]);
 

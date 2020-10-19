@@ -34,9 +34,9 @@ class ProformaCliente extends Model
         'est_reg',
         'prof_fac',
         'prof_finan',
-        'prof_val_cuo'
-
-                        );
+        'prof_val_cuo',
+        'prof_cli_id_dir',
+        'prof_cli_id_con');
     protected $primaryKey = 'id_pro';
 
     protected $appends = ['proyecto','cliente','proforma_detalle','usuario'];
