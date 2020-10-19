@@ -221,7 +221,8 @@ class EmpresaController extends Controller
         $empresa = Empresa::find(1);
 
         if($empresa && $empresa->img_emp) {
-            return Storage::disk('local')->get($empresa->img_emp);
+            $file = Storage::disk('local')->get($empresa->img_emp);
+            return response($file, 200)->header('Content-Type', $empresa->imgext_emp);
         } else {
             return response()->json([
                 'resp' => 'No se encontro el logotipo'
