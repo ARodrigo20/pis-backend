@@ -86,7 +86,7 @@ class ProformaCliente extends Model
     }
 
     public function cliente_contacto(){
-        return $this->belongsTo('App\Models\Clientes\ClienteContacto', 'prof_cli_id_con');
+        return $this->belongsTo('App\Models\Clientes\ClienteContacto', 'prof_cli_id_con')->with(['tipo_documento']);
     }
 
     public function getClienteDireccionAttribute()
