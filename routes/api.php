@@ -23,6 +23,7 @@ use Illuminate\Support\Facades\Route;
 //Autenticacion
 Route::post('register', 'AuthController@register');
 Route::post('login', 'AuthController@authenticate');
+Route::get('empresa/logo','EmpresaController@getLogo')->name('getLogo');
 
 Route::group(['middleware' => ['jwt.verify']], function() {
 

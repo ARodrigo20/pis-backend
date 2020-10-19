@@ -215,4 +215,18 @@ class EmpresaController extends Controller
         // error_log('Some message here: '.$ruc);
     }
 
+
+    public function getLogo()
+    {        
+        $empresa = Empresa::find(1);
+
+        if($empresa && $empresa->img_emp) {
+            return Storage::disk('local')->get($empresa->img_emp);
+        } else {
+            return response()->json([
+                'resp' => 'No se encontro el logotipo'
+            ], 500);
+        }
+    }
+
 }
