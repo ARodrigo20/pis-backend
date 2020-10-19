@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use JWTAuth;
 use Tymon\JWTAuth\Exceptions\JWTException;
+use App\Models\Empresa\Empresa;
+use Illuminate\Support\Facades\Storage;
 
 /**
  * @group Autenticacion
@@ -54,6 +56,14 @@ class AuthController extends Controller
             return response()->json(['error' => 'no se pudo crear el token'], 500);
         }
         $response = compact('token');
+
+        $empresa = Empresa::find(1);
+
+        if($empresa && $empresa->img_emp) {
+            $b64_file = base64_encode(Storage::disk('local')->get($empresa->img_emp));
+            $response['logo'] = $b64_file;
+            $response['logo_ext'] = $empresa->imgext_emp;
+        }
         $response['user'] = Auth::user();
         return $response;
         // return response()->json(compact('token'));
