@@ -189,7 +189,7 @@ class ProformaClienteController extends Controller
     public function getById($id)
     {
         try {
-            $proforma_cabecera = ProformaCliente::with(['proyecto', 'cliente', 'proforma_detalle','usuario'])->find($id);
+            $proforma_cabecera = ProformaCliente::with(['proyecto', 'cliente', 'proforma_detalle','usuario','cliente_contacto','cliente_direccion'])->find($id);
         } catch (Exception $e) {
             return response()->json([
                 'error' => 'ocurrio un error en el servidor',

@@ -39,7 +39,7 @@ class ProformaCliente extends Model
         'prof_cli_id_con');
     protected $primaryKey = 'id_pro';
 
-    protected $appends = ['proyecto','cliente','proforma_detalle','usuario'];
+    protected $appends = ['proyecto','cliente','proforma_detalle','usuario','cliente_contacto','cliente_direccion'];
     protected $hidden = [
         'created_at', 'updated_at',
     ];
@@ -78,6 +78,24 @@ class ProformaCliente extends Model
 
     public function usuario(){
         return $this->belongsTo('App\User', 'id_col');
+    }
+
+    public function getClienteContactoAttribute()
+    {
+        return $this->cliente_contacto();
+    }
+
+    public function cliente_contacto(){
+        return $this->belongsTo('App\Models\Clientes\ClienteContacto', 'prof_cli_id_con');
+    }
+
+    public function getClienteDireccionAttribute()
+    {
+        return $this->cliente_direccion();
+    }
+
+    public function cliente_direccion(){
+        return $this->belongsTo('App\Models\Clientes\ClienteDireccion', 'prof_cli_id_dir');
     }
 
 }

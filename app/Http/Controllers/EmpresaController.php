@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use App\Models\Empresa\Empresa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 
 /**
  * @group Empresa
