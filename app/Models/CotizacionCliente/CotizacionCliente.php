@@ -17,7 +17,9 @@ class CotizacionCliente extends Model
                             'solcli_cli_numdoc',
                             'solcli_cli_tipdoc',
                             'solcli_cli_dir',
+                            'solcli_cli_id_dir',
                             'solcli_cli_con',
+                            'solcli_cli_id_con',
                             'id_col',
                             'solcli_col_nom',
                             'est_reg'

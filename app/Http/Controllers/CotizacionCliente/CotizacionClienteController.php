@@ -97,7 +97,9 @@ class CotizacionClienteController extends Controller
      *          "solcli_cli_numdoc": "string",
      *          "solcli_cli_tipdoc": "algo",
      *          "solcli_cli_dir": "string",
+     *          "solcli_cli_id_dir": 0,
      *          "solcli_cli_con": "string",
+     *          "solcli_cli_id_con": 0,
      *          "id_col": 0,
      *          "solcli_col_nom": "string",
      *          "est_reg": "string",
@@ -168,7 +170,9 @@ class CotizacionClienteController extends Controller
      * @bodyParam  solcli_cli_numdoc string Numero de documento del cliente.
      * @bodyParam  solcli_cli_tipdoc string Tipo de documento del cliente.
      * @bodyParam  solcli_cli_dir string Direccion del cliente.
+     * @bodyParam  solcli_cli_id_dir int Id de la direccion del cliente.
      * @bodyParam  solcli_cli_con string Contacto del cliente.
+     * @bodyParam  solcli_cli_id_con int Id del contacto del cliente.
      * @bodyParam  id_col int Id del colaborador.
      * @bodyParam  solcli_col_nom string Nombre del colaborador.
      * @bodyParam  cotizacion_detalle array required Ejemplo: [{"solcli_id": 0,"solclidet_prod_serv": 1,"solclidet_des":"string","id_prod":0,"solclidet_prod_can":0,"solclidet_prod_codint":"string","solclidet_prod_numpar": "string","solclidet_prod_fabr": "string","solclidet_prod_marc": "string","solclidet_prod_unimed": "string","solclidet_prod_stock": 0}]
@@ -194,7 +198,9 @@ class CotizacionClienteController extends Controller
                 'solcli_cli_numdoc' => $request->input('solcli_cli_numdoc'),
                 'solcli_cli_tipdoc' => $request->input('solcli_cli_tipdoc'),
                 'solcli_cli_dir' => $request->input('solcli_cli_dir'),
+                'solcli_cli_id_dir' => $request->input('solcli_cli_id_dir'),
                 'solcli_cli_con' => $request->input('solcli_cli_con'),
+                'solcli_cli_id_con' => $request->input('solcli_cli_id_con'),
                 'id_col' => $request->input('id_col'),
                 'solcli_col_nom' => $request->input('solcli_col_nom'),
                 'est_reg' => 'A'
