@@ -23,9 +23,18 @@ class ProformaClienteDet extends Model
         'prof_can_prod');
 
     protected $primaryKey = 'id_prof_det';
-
+    
+    protected $appends = ['producto'];
     protected $hidden = [
         'created_at', 'updated_at',
     ];
     
+    public function getProductoAttribute()
+    {
+        return $this->producto();
+    }
+
+    public function producto(){
+        return $this->belongsTo('App\Models\Almacen\Producto', 'id_prod')->with(['unidad_medida']);
+    }
 }
