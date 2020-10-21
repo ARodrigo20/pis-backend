@@ -58,9 +58,8 @@ class EmailController extends Controller
         $tabla = $request->input('tabla');
         $doc_referencia = $request->input('doc_referencia');
 
-
-        Mail::raw($mensaje, function ($message) use($asunto,$cc,$destinatario,$archivo) {
-            $message->from(getenv("MAIL_USERNAME"),"NETWORK CONTROL");
+		Mail::send([], [], function($message) use($asunto,$cc,$destinatario,$archivo){
+			$message->from(getenv("MAIL_USERNAME"),"NETWORK CONTROL");
             if($asunto) {
                 $message->subject($asunto);
             }
@@ -72,10 +71,24 @@ class EmailController extends Controller
                 $message->attachData(file_get_contents($archivo), $archivo->getClientOriginalName(), [
                     'mime' => $archivo->extension(),
                 ]);
-                //$message->attachData(base64_encode($archivo), $archivo->getClientOriginalName(), ['mime'=> $archivo->extension()]);
-                //$message->attachData($archivo, $archivo->getClientOriginalName());
             }
-        });
+			$message->setBody($mensaje, 'text/html');
+		});
+        // Mail::raw($mensaje, function ($message) use($mensaje,$asunto,$cc,$destinatario,$archivo) {
+            // $message->from(getenv("MAIL_USERNAME"),"NETWORK CONTROL");
+            // if($asunto) {
+                // $message->subject($asunto);
+            // }
+            // $message->to($destinatario);
+            // if($cc) {
+                // $message->cc($cc);
+            // }
+            // if($archivo) {
+                // $message->attachData(file_get_contents($archivo), $archivo->getClientOriginalName(), [
+                    // 'mime' => $archivo->extension(),
+                // ]);
+            // }
+        // });
 
         if($tabla != null && $doc_referencia != null) {
             switch ($tabla) {
