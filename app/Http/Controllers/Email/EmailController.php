@@ -58,7 +58,7 @@ class EmailController extends Controller
         $tabla = $request->input('tabla');
         $doc_referencia = $request->input('doc_referencia');
 
-		Mail::send([], [], function($message) use($asunto,$cc,$destinatario,$archivo){
+		Mail::send([], [], function($message){
 			//$message->from(getenv("MAIL_USERNAME"),"NETWORK CONTROL");
             if($asunto) {
                 $message->subject($asunto);
