@@ -35,6 +35,6 @@ class ProformaClienteDet extends Model
     }
 
     public function producto(){
-        return $this->belongsTo('App\Models\Almacen\Producto', 'id_prod')->pluck('id_unimed');
+        return $this->belongsTo('App\Models\Almacen\Producto', 'id_prod')->with(['unidad_medida']);
     }
 }
