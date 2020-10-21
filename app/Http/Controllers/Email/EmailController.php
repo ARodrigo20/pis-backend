@@ -51,7 +51,7 @@ class EmailController extends Controller
     public function sendEmail(Request $request){
         $asunto = $request->input('asunto') && $request->input('asunto') != "" ? $request->input('asunto') : null;
         $cc = $request->input('cc') && $request->input('cc') != "" ? $request->input('cc') : null;
-        $mensaje = $request->input('mensaje') && $request->input('mensaje') != "" ? $request->input('mensaje') : null;
+        $mensaje = $request->input('mensaje') ? $request->input('mensaje') : "";
         $destinatario =$request->input('destinatario');
         $archivo = $request->file('archivo');
 
@@ -61,8 +61,13 @@ class EmailController extends Controller
 
         Mail::raw($mensaje, function ($message) use($asunto,$cc,$destinatario,$archivo) {
             $message->from(getenv("MAIL_USERNAME"),"NETWORK CONTROL");
-            $message->subject($asunto);
-            $message->to($destinatario)->cc($cc);
+            if($asunto) {
+                $message->subject($asunto);
+            }
+            $message->to($destinatario);
+            if($cc) {
+                $message->cc($cc);
+            }
             if($archivo) {
                 $message->attachData(file_get_contents($archivo), $archivo->getClientOriginalName(), [
                     'mime' => $archivo->extension(),
