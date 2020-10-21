@@ -49,10 +49,10 @@ class EmailController extends Controller
      * }
      */
     public function sendEmail(Request $request){
-        $asunto = $request->input('asunto') ? $request->input('asunto') : "";
-        $cc = $request->input('cc') ? $request->input('cc') : "";
-        $mensaje = $request->input('mensaje') ? $request->input('mensaje') : "";
-        $destinatario =$request->input('destinatario') ? $request->input('destinatario') : "";
+        $asunto = $request->input('asunto') && $request->input('asunto') != "" ? $request->input('asunto') : null;
+        $cc = $request->input('cc') && $request->input('cc') != "" ? $request->input('cc') : null;
+        $mensaje = $request->input('mensaje') && $request->input('mensaje') != "" ? $request->input('mensaje') : null;
+        $destinatario =$request->input('destinatario');
         $archivo = $request->file('archivo');
 
         $tabla = $request->input('tabla');
