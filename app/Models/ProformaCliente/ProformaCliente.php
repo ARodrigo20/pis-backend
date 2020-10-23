@@ -30,7 +30,8 @@ class ProformaCliente extends Model
         'prof_uti',
         'prof_bas_imp',
         'prof_igv',
-        'prof_neto',                            
+        'prof_neto',
+        'est_env',                     
         'est_reg',
         'prof_fac',
         'prof_finan',
@@ -68,7 +69,7 @@ class ProformaCliente extends Model
     }
 
     public function proforma_detalle(){
-        return $this->hasMany('App\Models\ProformaCliente\ProformaClienteDet', 'id_pro')->with(['producto']);
+        return $this->hasMany('App\Models\ProformaCliente\ProformaClienteDet', 'id_pro')->with(['producto','proveedor']);
     }
 
     public function getUsuarioAttribute()

@@ -24,7 +24,7 @@ class ProformaClienteDet extends Model
 
     protected $primaryKey = 'id_prof_det';
     
-    protected $appends = ['producto'];
+    protected $appends = ['producto','proveedor'];
     protected $hidden = [
         'created_at', 'updated_at',
     ];
@@ -36,5 +36,14 @@ class ProformaClienteDet extends Model
 
     public function producto(){
         return $this->belongsTo('App\Models\Almacen\Producto', 'id_prod')->with(['unidad_medida']);
+    }
+
+    public function getProveedorAttribute()
+    {
+        return $this->proveedor();
+    }
+
+    public function proveedor(){
+        return $this->belongsTo('App\Models\Proveedores\Proveedor', 'id_prov');
     }
 }

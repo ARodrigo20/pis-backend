@@ -53,6 +53,7 @@ class ProformaClienteController extends Controller
      *              "prof_cli_id_dir": 0,
      *              "prof_cli_id_con": 0,
      *              "est_reg": "string",
+     *              "est_env": "string",
      *              "proyecto":{
      *                  "id_proy":0,
      *                  "nom_proy":"string",
@@ -74,23 +75,10 @@ class ProformaClienteController extends Controller
      *                  "nom_col": "string",
      *                  "ape_col": "string"
      *              },
-     *              "proforma_detalle": [
-     *                  {
-     *                      "id_prof_det": 0,
-     *                      "id_pro": 0,
-     *                      "id_prod": 0,
-     *                      "prof_det_can": 0,
-     *                      "prof_det_pre_lis": 0,
-     *                      "prof_det_imp": 0,
-     *                      "prof_det_cos": 0,
-     *                      "prof_det_tcos": 0,
-     *                      "prof_det_com": 0,
-     *                      "id_prov": 0,
-     *                      "prof_prod_serv": 0,
-     *                      "prof_des_prod": "string",
-     *                      "prof_can_prod": 0
-     *                  }
-     *              ]
+     *              "cliente_contacto": {
+     *                  "nom_cli_con": "string",
+     *                  "ema_cli_con": "string"
+     *              }
      *          }
      *      ],
      *      "size":0
@@ -99,7 +87,7 @@ class ProformaClienteController extends Controller
     public function get()
     {
         try {
-            $proforma_cabecera = ProformaCliente::with(['proyecto', 'cliente', 'proforma_detalle','usuario'])->orderBy('id_pro', 'desc')->get();
+            $proforma_cabecera = ProformaCliente::with(['proyecto', 'cliente','usuario','cliente_contacto'])->orderBy('id_pro', 'desc')->get();
         } catch (Exception $e) {
             return response()->json([
                 'error' => 'Ocurrio un error en el servidor',
@@ -162,10 +150,25 @@ class ProformaClienteController extends Controller
      *                  "id_tipdoc": 0,
      *                  "est_reg": "string"
      *              },
+     *              "cliente_contacto": {
+     *                  "nom_cli_con": "string",
+     *                  "ema_cli_con": "string"
+     *              },
+     *              "cliente_direccion": {
+     *                  "dir_cli": "string"
+     *              },
      *              "usuario": {
      *                  "id_col": 0,
      *                  "nom_col": "string",
      *                  "ape_col": "string"
+     *              },
+     *              "producto": {
+     *                  "id_prod": 6,
+     *                  "unidad_medida": {
+     *                      "id_unimed": 8,
+     *                      "nom_unimed": "string",
+     *                      "des_unimed": "string"
+     *                  }
      *              },
      *              "proforma_detalle": [
      *                  {
@@ -270,6 +273,7 @@ class ProformaClienteController extends Controller
                 'prof_val_cuo' => $request->input('prof_val_cuo'),
                 'prof_cli_id_dir' => $request->input('prof_cli_id_dir'),
                 'prof_cli_id_con' => $request->input('prof_cli_id_con'),
+                'est_env' => '0',
                 'est_reg' => 'A',
             ]);
 

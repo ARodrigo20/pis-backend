@@ -188,7 +188,6 @@ class ProyectoController extends Controller
 
     public function create(Request $request)
     {
-        Log::info('Pasooo:');
         try {
             $proyecto = Proyecto::create([
                 'nom_proy' => $request->input('nom_proy'),

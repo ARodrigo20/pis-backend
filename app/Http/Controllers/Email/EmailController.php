@@ -8,6 +8,7 @@ use Swift_Mailer;
 use Swift_MailTransport;
 use Swift_SmtpTransport;
 use Swift_Message;
+use App\Models\ProformaCliente\ProformaCliente;
 use App\Models\CotizacionProveedor\CotizacionProveedor;
 use Illuminate\Support\Facades\Crypt;
 use App\Http\Controllers\Controller;
@@ -41,7 +42,7 @@ class EmailController extends Controller
      * @bodyParam  cc string Correo Adjunto (correo del usuario logueado).
      * @bodyParam  mensaje string Mensaje del correo.
      * @bodyParam  destinatario string required Correo destino.
-     * @bodyParam  tabla string Tabla de Referencia para actualizacion de estado de envio (Cotizacion de proveedor: 'cot-prov').
+     * @bodyParam  tabla string Tabla de Referencia para actualizacion de estado de envio (Cotizacion de proveedor: 'cot-prov', Proforma: 'proforma').
      * @bodyParam  doc_referencia string ID del documento de referencia de la Tabla para actualizacion de estado de envio.
      * 
      * @response {
@@ -79,6 +80,10 @@ class EmailController extends Controller
                 case "cot-prov":
                     $cotizacionProveedor = CotizacionProveedor::find(intval($doc_referencia));
                     $cotizacionProveedor->fill(array('est_env' => '1'))->save();
+                    break;
+                case "proforma":
+                    $proforma = ProformaCliente::find(intval($doc_referencia));
+                    $proforma->fill(array('est_env' => '1'))->save();
                     break;
             }
         }
