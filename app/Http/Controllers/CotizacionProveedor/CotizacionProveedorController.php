@@ -77,7 +77,7 @@ class CotizacionProveedorController extends Controller
     
     public function get(){
         try {
-            $cotizacionesProveedor = CotizacionProveedor::with(['proyecto','cotizacionCliente'])->orderBy('solcli_id', 'desc')->get();
+            $cotizacionesProveedor = CotizacionProveedor::with(['proyecto','cotizacionCliente'])->orderBy('cotprov_id', 'desc')->get();
         } catch (Exception $e){
             return response()->json([
                 'error' => 'Ocurrio un error en el servidor',
@@ -291,7 +291,7 @@ class CotizacionProveedorController extends Controller
             ], 500);
         }
         //Logs
-        $descripcion = "Se anulo la cotizacion de proveedor con codigo: ".$cotizacionProveedor->solcli_cod;
+        $descripcion = "Se anulo la cotizacion de proveedor con codigo: ".$cotizacionProveedor->cotprov_cod;
         $logs = new LogsController();
         $logs->create_log($descripcion, 3);
         ///////
