@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\ProformaCliente;
 
-// use App\ProformaCliente;
+use App\Http\Controllers\LogsController;
 use App\Http\Controllers\Controller;
 use App\Models\ProformaCliente\ProformaCliente;
 use App\Models\ProformaCliente\ProformaClienteDet;
