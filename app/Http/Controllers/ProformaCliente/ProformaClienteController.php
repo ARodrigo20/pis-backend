@@ -343,7 +343,7 @@ class ProformaClienteController extends Controller
         //Logs
         $descripcion = "Se anulo la proforma de cliente con codigo: PROFORMA-".sprintf("%'.04d", $proformaCliente->id_pro);
         $logs = new LogsController();
-        $logs->create_log($descripcion, 3);
+        $logs->create_log($descripcion, 4);
         ///////
         return response()->json([
             'resp' => 'Proforma del cliente Anulada'

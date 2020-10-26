@@ -274,7 +274,7 @@ class CotizacionClienteController extends Controller
         //Logs
         $descripcion = "Se anulo la cotizacion de cliente con codigo: ".$cotizacion->solcli_cod;
         $logs = new LogsController();
-        $logs->create_log($descripcion, 3);
+        $logs->create_log($descripcion, 4);
         ///////
         return response()->json([
             'resp' => 'Cotizacion Anulada'

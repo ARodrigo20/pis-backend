@@ -293,7 +293,7 @@ class CotizacionProveedorController extends Controller
         //Logs
         $descripcion = "Se anulo la cotizacion de proveedor con codigo: ".$cotizacionProveedor->cotprov_cod;
         $logs = new LogsController();
-        $logs->create_log($descripcion, 3);
+        $logs->create_log($descripcion, 4);
         ///////
         return response()->json([
             'resp' => 'Cotizacion del Proveedor Anulada'
