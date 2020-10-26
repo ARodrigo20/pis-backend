@@ -238,11 +238,11 @@ class CotizacionClienteController extends Controller
                     ], 500);
         }
 
-        // //Logs
-        // $descripcion = "Se creo el cliente con ID: ".$cliente->id_cli;
-        // $logs = new LogsController();
-        // $logs->create_log($descripcion, 1);
-        // ///////
+        //Logs
+        $descripcion = "Se creo la cotizacion de cliente con codigo: ".$cotizacionCliente->solcli_cod;
+        $logs = new LogsController();
+        $logs->create_log($descripcion, 1);
+        ///////
         return response()->json([
             'resp' => 'Cotizacion creada'
         ], 200, [], JSON_NUMERIC_CHECK);
@@ -271,11 +271,11 @@ class CotizacionClienteController extends Controller
             ], 500);
         }
 
-        // //Logs
-        // $descripcion = "Se elimino el usuario con ID: ".$user->id_col;
-        // $logs = new LogsController();
-        // $logs->create_log($descripcion, 3);
-        // ///////
+        //Logs
+        $descripcion = "Se anulo la cotizacion de cliente con codigo: ".$cotizacion->solcli_cod;
+        $logs = new LogsController();
+        $logs->create_log($descripcion, 3);
+        ///////
         return response()->json([
             'resp' => 'Cotizacion Anulada'
         ], 200, [], JSON_NUMERIC_CHECK);
@@ -291,66 +291,6 @@ class CotizacionClienteController extends Controller
             $cod_cotizacion_max = "#".sprintf("%'.04d", $max)."-NTWC-".date("Y");
         }
         return $cod_cotizacion_max;
-    }
-
-    public function contact(Request $request){
-        $subject = "Asunto del correo";
-        $for = "alexx.rodrigo.20@gmail.com";
-        // Mail::send('email',$request->all(), function($msj) use($subject,$for){
-        //     $msj->from("aflorespam@unsa.edu.pe","Alejandro Flores");
-        //     $msj->subject($subject);
-        //     $msj->to($for);
-        // });
-        // Mail::raw('Mensajito', function ($message){
-        //     $message->from("test@ntwcontrol.com","NETWORK CONTROL");
-        //     $message->password_hash("Veloster17.");
-        //     $message->subject("prueba");
-        //     $message->to('aflorespam@unsa.edu.pe');
-        // });
-
-        // Backup your default mailer
-        // $backup = Mail::getSwiftMailer();
-
-        // // Setup your gmail mailer
-        // $transport = \Swift_SmtpTransport::newInstance('mail.ntwcontrol.com', 465, 'ssl');
-        // $transport->setUsername('test@ntwcontrol.com');
-        // $transport->setPassword('Veloster17.');
-        // // Any other mailer configuration stuff needed...
-
-        // $gmail = new Swift_Mailer($transport);
-
-        // // Set the mailer as gmail
-        // Mail::setSwiftMailer($gmail);
-
-        // // Send your message
-        // //Mail::send();
-        // Mail::raw('Mensajito 2', function ($message){
-        //     $message->from("test@ntwcontrol.com","NETWORK CONTROL");
-        //     $message->subject("prueba2");
-        //     $message->to('aflorespam@unsa.edu.pe');
-        // });
-        
-
-        // // Restore your original mailer
-        // Mail::setSwiftMailer($backup);
-
-        $transport = (new Swift_SmtpTransport('mail.ntwcontrol.com', 465, 'ssl'))
-        ->setUsername('test@ntwcontrol.com')
-        ->setPassword('$2y$10$6du8mYzx9tt3MLd5ovfY.uZz6jXwhllVe7SPVNz0pItBtRHUI9EGK');
-
-    $mailer = new Swift_Mailer($transport);
-
-    $message = (new Swift_Message($subject))
-        ->setFrom("test@ntwcontrol.com","NETWORK CONTROL")
-        ->setTo('aflorespam@unsa.edu.pe')
-        ->setBody(Crypt::decrypt('eyJpdiI6ImZCZStsVm1rRXJVeFZxcS9YcFY4UVE9PSIsInZhbHVlIjoidXFKYlpVakRrbXZSamFMN2NsQjNCUT09IiwibWFjIjoiOTE2ZjNlZWRiMGVmMGRmZjU1ZDdmOWI3ZWExZDM5NjgwZGZhODhjMmIwMGI0YTVhNWI1YmE2NjBlZTdjYTRmZiJ9'));
-
-    return $mailer->send($message);
-
-
-        // return response()->json([
-        //     'resp' => 'Correo Enviado'
-        // ], 200, [], JSON_NUMERIC_CHECK);
     }
 
 }

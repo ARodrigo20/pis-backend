@@ -258,6 +258,12 @@ class CotizacionProveedorController extends Controller
                 'desc' => $e
             ], 500);
         }
+
+        //Logs
+        $descripcion = "Se creo la cotizacion de proveedor con codigo: ".$cotizacionProveedor->cotprov_cod;
+        $logs = new LogsController();
+        $logs->create_log($descripcion, 1);
+        ///////
         return response()->json([
             'resp' => 'Cotizacion creada'
         ], 200, [], JSON_NUMERIC_CHECK);
@@ -284,7 +290,11 @@ class CotizacionProveedorController extends Controller
                 'desc' => $e
             ], 500);
         }
-
+        //Logs
+        $descripcion = "Se anulo la cotizacion de proveedor con codigo: ".$cotizacionProveedor->solcli_cod;
+        $logs = new LogsController();
+        $logs->create_log($descripcion, 3);
+        ///////
         return response()->json([
             'resp' => 'Cotizacion del Proveedor Anulada'
         ], 200, [], JSON_NUMERIC_CHECK);
@@ -330,8 +340,5 @@ class CotizacionProveedorController extends Controller
         }
         return $cod_cotizacion_max;
     }
-
-    
-
 
 }

@@ -308,6 +308,11 @@ class ProformaClienteController extends Controller
                 'desc' => $e,
             ], 500);
         }
+        //Logs
+        $descripcion = "Se creo la proforma de cliente con codigo: PROFORMA-".sprintf("%'.04d", $proformaCliente->id_pro);
+        $logs = new LogsController();
+        $logs->create_log($descripcion, 1);
+        ///////
         return response()->json([
             'resp' => 'Proforma cliente creada',
         ], 200, [], JSON_NUMERIC_CHECK);
@@ -335,7 +340,11 @@ class ProformaClienteController extends Controller
                 'desc' => $e
             ], 500);
         }
-
+        //Logs
+        $descripcion = "Se anulo la proforma de cliente con codigo: PROFORMA-".sprintf("%'.04d", $proformaCliente->id_pro);
+        $logs = new LogsController();
+        $logs->create_log($descripcion, 3);
+        ///////
         return response()->json([
             'resp' => 'Proforma del cliente Anulada'
         ], 200, [], JSON_NUMERIC_CHECK);
