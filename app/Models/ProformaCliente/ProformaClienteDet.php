@@ -19,6 +19,7 @@ class ProformaClienteDet extends Model
         'prof_det_com',
         'id_prov',
         'prof_prod_serv',
+        'prof_det_stock',
         'prof_des_prod', 
         'prof_can_prod');
 

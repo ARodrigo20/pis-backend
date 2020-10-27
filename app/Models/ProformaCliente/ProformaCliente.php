@@ -36,6 +36,8 @@ class ProformaCliente extends Model
         'prof_fac',
         'prof_finan',
         'prof_val_cuo',
+        'prof_obs',
+        'prof_desc',
         'prof_cli_id_dir',
         'prof_cli_id_con');
     protected $primaryKey = 'id_pro';
