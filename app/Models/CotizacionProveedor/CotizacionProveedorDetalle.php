@@ -20,4 +20,14 @@ class CotizacionProveedorDetalle extends Model
     protected $primaryKey = 'cotprovdet_id';
     public $timestamps = false;
     
+	protected $appends = ['producto'];
+    
+    public function getProductoAttribute()
+    {
+        return $this->producto();
+    }
+
+    public function producto(){
+        return $this->belongsTo('App\Models\Almacen\Producto', 'id_prod')->with(['unidad_medida']);
+    }
 }
