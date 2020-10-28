@@ -39,7 +39,7 @@ class CotizacionProveedor extends Model
 
     public function cotizacion_detalle()
     {
-        return $this->hasMany('App\Models\CotizacionProveedor\CotizacionProveedorDetalle', 'cotprov_id');
+        return $this->hasMany('App\Models\CotizacionProveedor\CotizacionProveedorDetalle', 'cotprov_id')->with(['producto']);
     }
     public function getProyectoAttribute()
     {
