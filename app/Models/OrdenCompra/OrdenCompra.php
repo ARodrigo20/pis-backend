@@ -17,6 +17,7 @@ class OrdenCompra extends Model
         'ord_com_igv',
         'ord_com_tot',
         'id_pro',
+        'ord_com_est',
         'est_env',
         'est_reg');
     protected $primaryKey = 'id_ord_com';

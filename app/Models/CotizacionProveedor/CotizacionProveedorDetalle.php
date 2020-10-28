@@ -20,7 +20,7 @@ class CotizacionProveedorDetalle extends Model
     protected $primaryKey = 'cotprovdet_id';
     public $timestamps = false;
     
-	protected $appends = ['producto'];
+    protected $appends = ['producto'];
     
     public function getProductoAttribute()
     {

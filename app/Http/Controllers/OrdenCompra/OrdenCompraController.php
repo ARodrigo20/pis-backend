@@ -35,6 +35,7 @@ class OrdenCompraController extends Controller
      *              "ord_com_igv": 0,
      *              "ord_com_tot": 0,
      *              "id_pro": 0,
+     *              "ord_com_est": "string",
      *              "est_env": 0,
      *              "est_reg": "string",
      *              "orden_detalle": [
@@ -115,6 +116,7 @@ class OrdenCompraController extends Controller
             ]);
 
             $detalles = $request->input('orden_detalle');
+            $estado_orden = "1";
 
             if($detalles) {
                 foreach($detalles as $detalle) {
@@ -132,8 +134,12 @@ class OrdenCompraController extends Controller
                         'ord_com_det_canent' => $detalle['ord_com_det_canent'],
                         'ord_com_det_canfal' => $detalle['ord_com_det_canfal']
                     ]);
+                    if($detalle['ord_com_det_est'] != "2") {
+                        $estado_orden = "0";
+                    }
                 }
             }
+            $ordenCompra->fill(array('ord_com_est' => $estado_orden))->save();
 
             DB::commit();
         } catch (Exception $e) {
