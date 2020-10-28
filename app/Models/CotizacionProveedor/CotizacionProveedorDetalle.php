@@ -28,6 +28,6 @@ class CotizacionProveedorDetalle extends Model
     }
 
     public function producto(){
-        return $this->belongsTo('App\Models\Almacen\Producto', 'id_prod')->with(['unidad_medida']);
+        return $this->belongsTo('App\Models\Almacen\Producto', 'id_prod')->with(['unidad_medida','fabricante']);
     }
 }
