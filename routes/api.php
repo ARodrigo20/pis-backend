@@ -167,4 +167,8 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::post('orden-compra/create','OrdenCompra\OrdenCompraController@create')->name('createOrdenCompra');
 
     Route::post('email/send-email','Email\EmailController@sendEmail')->name('sendEmail');
+
+    //Kardex
+    Route::get('kardex/get','Kardex\KardexController@get')->name('getKardex');
+    Route::post('kardex/create','Kardex\KardexController@create')->name('createKardex');
 });
