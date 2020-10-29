@@ -21,11 +21,13 @@ class ProformaClienteDet extends Model
         'prof_prod_serv',
         'prof_det_stock',
         'prof_des_prod', 
-        'prof_can_prod');
+        'prof_can_prod',
+        'id_sec',
+    );
 
     protected $primaryKey = 'id_prof_det';
     
-    protected $appends = ['producto','proveedor'];
+    protected $appends = ['producto','proveedor','seccion'];
     protected $hidden = [
         'created_at', 'updated_at',
     ];
@@ -46,5 +48,15 @@ class ProformaClienteDet extends Model
 
     public function proveedor(){
         return $this->belongsTo('App\Models\Proveedores\Proveedor', 'id_prov');
+    }
+
+    public function getSeccionAttribute()
+    {
+        return $this->seccion();
+    }
+
+
+    public function seccion(){
+        return $this->belongsTo('App\Models\Seccion\Seccion','id_sec');
     }
 }

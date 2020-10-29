@@ -171,4 +171,12 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     //Kardex
     Route::get('kardex/get','Kardex\KardexController@get')->name('getKardex');
     Route::post('kardex/create','Kardex\KardexController@create')->name('createKardex');
+
+    //Seccion para el pdf
+    Route::get('seccion/get','Seccion\SeccionController@get')->name('getSecciones');
+    Route::get('seccion/get/{id}','Seccion\SeccionController@getById')->name('getSeccion');
+    Route::post('seccion/create','Seccion\SeccionController@create')->name('createSeccion');
+    Route::post('seccion/update/{id}','Seccion\SeccionController@update')->name('updateSeccion');
+    Route::get('seccion/delete/{id}','Seccion\SeccionController@delete')->name('deleteSeccion');
+
 });

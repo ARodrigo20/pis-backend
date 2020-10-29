@@ -184,7 +184,12 @@ class ProformaClienteController extends Controller
      *                      "id_prov": 0,
      *                      "prof_prod_serv": 0,
      *                      "prof_des_prod": "string",
-     *                      "prof_can_prod": 0
+     *                      "prof_can_prod": 0,
+     *                      "seccion": {
+     *                          "id_sec": 1,
+     *                          "des_sec": "string",
+     *                          "est_reg": "A"
+     *                      }
      *                  }
      *              ]
      *          }
@@ -240,7 +245,7 @@ class ProformaClienteController extends Controller
      * @bodyParam prof_cli_id_con int Id del contacto de cliente.
      * @bodyParam prof_obs  char 200 observaciones del cliente.
      * @bodyParam prof_desc float procentaje de descuento.
-     * @bodyParam proforma_detalle array required Ejemplo: [{"id_prof_det": 1,"id_pro": 5,"id_prod": 10,"prof_det_can": 10,"prof_det_pre_lis": 20,"prof_det_imp": 10,"prof_det_cos": 10,"prof_det_tcos": 10,"prof_det_com": 10,"id_prov": 2,"prof_prod_serv": 1,"prof_des_prod": "producto","prof_can_prod": 10}]
+     * @bodyParam proforma_detalle array required Ejemplo: [{"id_prof_det": 1,"id_pro": 5,"id_prod": 10,"prof_det_can": 10,"prof_det_pre_lis": 20,"prof_det_imp": 10,"prof_det_cos": 10,"prof_det_tcos": 10,"prof_det_com": 10,"id_prov": 2,"id_sec": 1,"prof_prod_serv": 1,"prof_des_prod": "producto","prof_can_prod": 10}]
      * 
      * @response {
      *    "resp": "proforma cliente creada"
@@ -299,6 +304,7 @@ class ProformaClienteController extends Controller
                         'prof_des_prod' => $detalle['prof_des_prod'],
                         'prof_can_prod' => $detalle['prof_can_prod'],
                         'prof_det_stock' => $detalle['prof_det_stock'],
+                        'id_sec' => $detalle['id_sec'],
                         'est_reg' => 'A'
                     ]);
                 }
