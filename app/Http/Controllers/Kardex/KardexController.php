@@ -223,8 +223,6 @@ class KardexController extends Controller
                                 ->join('users','users.id_col','=','orden_compra.id_col')
                                 ->join('cotizacion_proveedor','cotizacion_proveedor.cotprov_id','=','orden_compra.cotprov_id')
                                 ->join('orden_compra_det','orden_compra_det.id_ord_com','=','orden_compra.id_ord_com')
-                                ->where('orden_compra_det.ord_com_det_est','=',"0")
-                                ->orWhere('orden_compra_det.ord_com_det_est','=','1')
                                 ->where('orden_compra.est_reg', '!=', 'E')
                                 ->where('orden_compra.id_ord_com','=',$id)
                                 ->groupBy('orden_compra.id_ord_com')
