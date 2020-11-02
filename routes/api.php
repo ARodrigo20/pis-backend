@@ -170,7 +170,8 @@ Route::group(['middleware' => ['jwt.verify']], function() {
 
     //Kardex
     Route::get('kardex/get','Kardex\KardexController@get')->name('getKardex');
-    Route::get('kardex/getpendiente','Kardex\KardexController@getPendiente')->name('getStatusKardex');
+    Route::get('kardex/getpendiente','Kardex\KardexController@getPendientes')->name('getStatusKardex');
+    Route::get('kardex/getpendiente/{id}','Kardex\KardexController@getPendiente')->name('getPendientes');
     Route::get('kardex/getcompleto','Kardex\KardexController@getCompleto')->name('getOrdenCompleto');
     Route::post('kardex/create','Kardex\KardexController@create')->name('createKardex');
 

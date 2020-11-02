@@ -15,8 +15,8 @@ use Symfony\Component\HttpFoundation\Response;
 use App\Models\Empresa\Empresa;
 use App\Models\Kardex\Kardex;
 use Illuminate\Support\Facades\Storage;
+use App\Models\OrdenCompra\OrdenCompra;
 use App\Models\OrdenCompra\OrdenCompraDet;
-
 
 /**
  * @group Kardex
@@ -169,7 +169,7 @@ class KardexController extends Controller
      */
     
     
-    public function getPendiente(){
+    public function getPendientes(){
         try {
             $kardex= DB::table('orden_compra')
                                 ->select('orden_compra.id_ord_com','ord_com_fec','ord_com_cod','users.email as usu_ema','cotizacion_proveedor.cotprov_razsoc as prov_razsoc')
@@ -194,6 +194,56 @@ class KardexController extends Controller
             'size' => count($kardex)
         ],200, [], JSON_NUMERIC_CHECK);
     }
+
+    /**
+     * Retornar ordenes pendientes o incompletas por ID
+     *
+     * Retorna todos las ordenes de compra por ID que tengan en el detalle pendiente o incompleto a la hora de realizar la entrega del producto
+     *
+     *
+     * @response {
+     *      "data" : [
+     *          {
+     *              "id_ord_com": 0,
+     *              "ord_comfec": "date",
+     *              "ord_com_cod": "string",
+     *              "usu_ema": 0,
+     *              "prov_razsoc": "string"       
+     *          }
+     *      ],
+     *      "size":0
+     * }
+     */
+    
+    
+    public function getPendiente($id){
+        try {
+            $kardex= DB::table('orden_compra')
+                                ->select('orden_compra.id_ord_com','ord_com_fec','ord_com_cod','users.email as usu_ema','cotizacion_proveedor.cotprov_razsoc as prov_razsoc')
+                                ->join('users','users.id_col','=','orden_compra.id_col')
+                                ->join('cotizacion_proveedor','cotizacion_proveedor.cotprov_id','=','orden_compra.cotprov_id')
+                                ->join('orden_compra_det','orden_compra_det.id_ord_com','=','orden_compra.id_ord_com')
+                                ->where('orden_compra_det.ord_com_det_est','=',"0")
+                                ->orWhere('orden_compra_det.ord_com_det_est','=','1')
+                                ->where('orden_compra.est_reg', '!=', 'E')
+                                ->where('orden_compra.id_ord_com','=',$id)
+                                ->groupBy('orden_compra.id_ord_com')
+                                ->orderBy('orden_compra.id_ord_com','asc')
+                                ->get();
+            //$kardex = kardex::with([''])->orderBy('id_kar', 'desc')->get();
+        } catch (Exception $e){
+            return response()->json([
+                'error' => 'Ocurrio un error en el servidor',
+                'desc' => $e
+            ], 500);
+        }
+        return  response()->json([
+            'data' => $kardex,
+            'size' => count($kardex)
+        ],200, [], JSON_NUMERIC_CHECK);
+    }
+
+    
 
     
     
