@@ -161,6 +161,7 @@ class KardexController extends Controller
      *              "ord_comfec": "date",
      *              "ord_com_cod": "string",
      *              "usu_ema": 0,
+     *              "id_col":0,
      *              "prov_razsoc": "string"       
      *          }
      *      ],
@@ -172,7 +173,7 @@ class KardexController extends Controller
     public function getPendientes(){
         try {
             $kardex= DB::table('orden_compra')
-                                ->select('orden_compra.id_ord_com','ord_com_fec','ord_com_cod','users.email as usu_ema','cotizacion_proveedor.cotprov_razsoc as prov_razsoc')
+                                ->select('orden_compra.id_ord_com','ord_com_fec','ord_com_cod','users.email as usu_ema','orden_compra.id_col','cotizacion_proveedor.cotprov_razsoc as prov_razsoc')
                                 ->join('users','users.id_col','=','orden_compra.id_col')
                                 ->join('cotizacion_proveedor','cotizacion_proveedor.cotprov_id','=','orden_compra.cotprov_id')
                                 ->join('orden_compra_det','orden_compra_det.id_ord_com','=','orden_compra.id_ord_com')
