@@ -39,7 +39,11 @@ class ProformaCliente extends Model
         'prof_obs',
         'prof_desc',
         'prof_cli_id_dir',
-        'prof_cli_id_con');
+        'prof_cli_id_con',
+        'prof_cli_ciu',
+        'prof_cod',
+    
+    );
     protected $primaryKey = 'id_pro';
 
     protected $appends = ['proyecto','cliente','proforma_detalle','usuario','cliente_contacto','cliente_direccion'];

@@ -23,6 +23,9 @@ class ProformaClienteDet extends Model
         'prof_des_prod', 
         'prof_can_prod',
         'id_sec',
+        'id_prov_dir',
+        'prof_dir_prov',
+        'prof_ema_prov'
     );
 
     protected $primaryKey = 'id_prof_det';

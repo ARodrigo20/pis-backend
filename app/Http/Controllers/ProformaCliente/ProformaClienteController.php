@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers\ProformaCliente;
 
+use App\Http\Controllers\Utilitarios\Console;
 use App\Http\Controllers\LogsController;
 use App\Http\Controllers\Controller;
+use App\Models\Clientes\Cliente;
+use App\Models\Clientes\ClienteDireccion;
+use App\Models\Proveedores\ProveedorDireccion;
 use App\Models\ProformaCliente\ProformaCliente;
 use App\Models\ProformaCliente\ProformaClienteDet;
 use Illuminate\Http\Request;
@@ -52,6 +56,8 @@ class ProformaClienteController extends Controller
      *              "prof_val_cuo": 0,
      *              "prof_cli_id_dir": 0,
      *              "prof_cli_id_con": 0,
+     *              "prof_cli_ciu":"String",
+     *              "prof_cod":"2020-1",
      *              "est_reg": "string",
      *              "est_env": "string",
      *              "proyecto":{
@@ -134,6 +140,8 @@ class ProformaClienteController extends Controller
      *              "prof_cli_id_dir": 0,
      *              "prof_cli_id_con": 0,
      *              "est_reg": "string",
+     *              "prof_cli_ciu":"String",
+     *              "prof_cod":"2020-1",
      *              "proyecto":{
      *                  "id_proy":0,
      *                  "nom_proy":"string",
@@ -185,6 +193,9 @@ class ProformaClienteController extends Controller
      *                      "prof_prod_serv": 0,
      *                      "prof_des_prod": "string",
      *                      "prof_can_prod": 0,
+     *                      "prof_dir_prov": "string",
+     *                      "prof_ema_prov": "algo@gmail.com",
+     *                      "id_prov_dir": 1,
      *                      "seccion": {
      *                          "id_sec": 1,
      *                          "des_sec": "string",
@@ -243,9 +254,10 @@ class ProformaClienteController extends Controller
      * @bodyParam prof_val_cuo float Valor Cuota.
      * @bodyParam prof_cli_id_dir int Id de la direccion de cliente.
      * @bodyParam prof_cli_id_con int Id del contacto de cliente.
-     * @bodyParam prof_obs  char 200 observaciones del cliente.
+     * @bodyParam prof_obs  char observaciones del cliente.
      * @bodyParam prof_desc float procentaje de descuento.
-     * @bodyParam proforma_detalle array required Ejemplo: [{"id_prof_det": 1,"id_pro": 5,"id_prod": 10,"prof_det_can": 10,"prof_det_pre_lis": 20,"prof_det_imp": 10,"prof_det_cos": 10,"prof_det_tcos": 10,"prof_det_com": 10,"id_prov": 2,"id_sec": 1,"prof_prod_serv": 1,"prof_des_prod": "producto","prof_can_prod": 10}]
+     * @bodyParam prof_cli_ciu Direccion del cliente.
+     * @bodyParam proforma_detalle array required Ejemplo: [{"id_prof_det": 1,"id_pro": 5,"id_prod": 10,"prof_det_can": 10,"prof_det_pre_lis": 20,"prof_det_imp": 10,"prof_det_cos": 10,"prof_det_tcos": 10,"prof_det_com": 10,"id_prov": 2,"id_sec": 1,"prof_prod_serv": 1,"prof_des_prod": "producto","prof_can_prod": 10,  "prof_dir_prov": "String", "prof_ema_prov": "algo@gmail.com","id_prov_dir": "Id direccion proveedor"}]
      * 
      * @response {
      *    "resp": "proforma cliente creada"
@@ -254,7 +266,10 @@ class ProformaClienteController extends Controller
     public function create(Request $request)
     {
         DB::beginTransaction();
-
+        
+        // $cliente_direccion = ClienteDireccion::find($request->input('id_cli_dir'));
+        // $cli_ciu = $cliente_direccion->ciu_cli;
+        // echo Console::log('un_nombre', $cliente);
         try {
             $proformaCliente = ProformaCliente::create([
                 'id_cli' => $request->input('id_cli'),
@@ -282,6 +297,8 @@ class ProformaClienteController extends Controller
                 'prof_cli_id_con' => $request->input('prof_cli_id_con'),
                 'prof_obs' => $request->input('prof_obs'),
                 'prof_desc' => $request->input('prof_desc'),
+                'prof_cli_ciu' => $request->input('prof_cli_ciu'),
+                'prof_cod' => $this->next_cod(),
                 'est_env' => '0',
                 'est_reg' => 'A',
             ]);
@@ -304,6 +321,9 @@ class ProformaClienteController extends Controller
                         'prof_des_prod' => $detalle['prof_des_prod'],
                         'prof_can_prod' => $detalle['prof_can_prod'],
                         'prof_det_stock' => $detalle['prof_det_stock'],
+                        'id_prov_dir' => $detalle['id_prov_dir'],
+                        'prof_dir_prov' => $detalle['prof_dir_prov'],
+                        'prof_ema_prov' => $detalle['prof_ema_prov'],
                         'id_sec' => $detalle['id_sec'],
                         'est_reg' => 'A'
                     ]);
@@ -359,5 +379,18 @@ class ProformaClienteController extends Controller
         return response()->json([
             'resp' => 'Proforma del cliente Anulada'
         ], 200, [], JSON_NUMERIC_CHECK);
+    }
+
+
+    public function next_cod()
+    {
+        $cod_cotizacion_max = DB::table('proforma_cliente')->whereYear('prof_fec', '=', date("Y"))->max('prof_cod');
+        if($cod_cotizacion_max == null) $cod_cotizacion_max = date("Y")."-1";
+        else {
+            $numberStr = substr($cod_cotizacion_max,5,6);
+            $max = intval($numberStr) + 1;
+            $cod_cotizacion_max = date("Y")."-".$max;
+        }
+        return $cod_cotizacion_max;
     }
 }

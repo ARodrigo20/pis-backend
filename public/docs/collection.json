@@ -2,7 +2,7 @@
     "variables": [],
     "info": {
         "name": "Laravel API",
-        "_postman_id": "ec63cb5d-4be0-4c34-a558-3faf25faf02b",
+        "_postman_id": "c6adc6c2-7749-4f22-a2e8-1480f069e12c",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -61,7 +61,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"email\": \"itaque\",\n    \"password\": \"architecto\"\n}"
+                            "raw": "{\n    \"email\": \"qui\",\n    \"password\": \"beatae\"\n}"
                         },
                         "description": "Login del sistema",
                         "response": []
@@ -113,7 +113,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "et",
+                                    "value": "cumque",
                                     "description": "El ID del cargo."
                                 }
                             ]
@@ -159,7 +159,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"des_car\": \"optio\"\n}"
+                            "raw": "{\n    \"des_car\": \"est\"\n}"
                         },
                         "description": "Crea un cargo",
                         "response": []
@@ -177,7 +177,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "ut",
+                                    "value": "voluptas",
                                     "description": "El ID del cargo."
                                 }
                             ]
@@ -195,7 +195,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"des_car\": \"tempora\"\n}"
+                            "raw": "{\n    \"des_car\": \"asperiores\"\n}"
                         },
                         "description": "Modifica un cargo",
                         "response": []
@@ -213,7 +213,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "iste",
+                                    "value": "voluptatem",
                                     "description": "El ID del cargo."
                                 }
                             ]
@@ -283,7 +283,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "maiores",
+                                    "value": "harum",
                                     "description": "El ID del cliente."
                                 }
                             ]
@@ -329,7 +329,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"razsoc_cli\": \"et\",\n    \"numdoc_cli\": \"et\",\n    \"ema_cli\": \"cum\",\n    \"id_tipodoc\": 13\n}"
+                            "raw": "{\n    \"razsoc_cli\": \"nulla\",\n    \"numdoc_cli\": \"molestias\",\n    \"ema_cli\": \"voluptas\",\n    \"id_tipodoc\": 3\n}"
                         },
                         "description": "Crea un cliente",
                         "response": []
@@ -347,7 +347,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "consequatur",
+                                    "value": "aut",
                                     "description": "El ID del cliente."
                                 }
                             ]
@@ -365,7 +365,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"razsoc_cli\": \"assumenda\",\n    \"numdoc_cli\": \"ipsa\",\n    \"ema_cli\": \"minus\",\n    \"id_tipodoc\": 9\n}"
+                            "raw": "{\n    \"razsoc_cli\": \"est\",\n    \"numdoc_cli\": \"ipsa\",\n    \"ema_cli\": \"ut\",\n    \"id_tipodoc\": 13\n}"
                         },
                         "description": "Modifica un cliente",
                         "response": []
@@ -383,7 +383,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "consequuntur",
+                                    "value": "et",
                                     "description": "El ID del cliente."
                                 }
                             ]
@@ -419,7 +419,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "et",
+                                    "value": "illum",
                                     "description": "El ID del cliente."
                                 }
                             ]
@@ -591,7 +591,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"id_cli\": 12,\n    \"solcli_cli_nom\": \"corporis\",\n    \"solcli_cli_numdoc\": \"sit\",\n    \"solcli_cli_tipdoc\": \"debitis\",\n    \"solcli_cli_dir\": \"inventore\",\n    \"solcli_cli_id_dir\": 16,\n    \"solcli_cli_con\": \"rem\",\n    \"solcli_cli_id_con\": 7,\n    \"id_col\": 10,\n    \"solcli_col_nom\": \"et\",\n    \"cotizacion_detalle\": []\n}"
+                            "raw": "{\n    \"id_cli\": 3,\n    \"solcli_cli_nom\": \"ex\",\n    \"solcli_cli_numdoc\": \"facilis\",\n    \"solcli_cli_tipdoc\": \"aut\",\n    \"solcli_cli_dir\": \"quis\",\n    \"solcli_cli_id_dir\": 19,\n    \"solcli_cli_con\": \"harum\",\n    \"solcli_cli_id_con\": 20,\n    \"id_col\": 13,\n    \"solcli_col_nom\": \"consequatur\",\n    \"cotizacion_detalle\": []\n}"
                         },
                         "description": "Crea una Cotizacion de cliente",
                         "response": []
@@ -609,7 +609,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "adipisci",
+                                    "value": "mollitia",
                                     "description": "El ID de la cotizacion."
                                 }
                             ]
@@ -679,7 +679,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "quis",
+                                    "value": "et",
                                     "description": "El ID de la cotizacion del proveedor."
                                 }
                             ]
@@ -725,7 +725,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"solcli_id\": 12,\n    \"id_proy\": 15,\n    \"id_cli\": 10,\n    \"id_prov\": 13,\n    \"cotprov_razsoc\": \"corrupti\",\n    \"cotprov_ruc\": \"nisi\",\n    \"cotprov_tipdoc\": \"corrupti\",\n    \"cotprov_dir\": \"odio\",\n    \"cotprov_con\": \"cupiditate\",\n    \"cotprov_ema\": \"sit\",\n    \"id_col\": \"harum\",\n    \"cotprov_col_nom\": \"autem\",\n    \"cotprov_col_usu\": \"velit\",\n    \"cotizacion_proveedor_detalle\": []\n}"
+                            "raw": "{\n    \"solcli_id\": 20,\n    \"id_proy\": 10,\n    \"id_cli\": 13,\n    \"id_prov\": 14,\n    \"cotprov_razsoc\": \"libero\",\n    \"cotprov_ruc\": \"ut\",\n    \"cotprov_tipdoc\": \"sunt\",\n    \"cotprov_dir\": \"rerum\",\n    \"cotprov_con\": \"in\",\n    \"cotprov_ema\": \"aut\",\n    \"id_col\": \"sequi\",\n    \"cotprov_col_nom\": \"quis\",\n    \"cotprov_col_usu\": \"sed\",\n    \"cotizacion_proveedor_detalle\": []\n}"
                         },
                         "description": "Crea una Cotizacion de Proveedor",
                         "response": []
@@ -743,7 +743,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "accusantium",
+                                    "value": "libero",
                                     "description": "El ID de la cotizacion del proveedor."
                                 }
                             ]
@@ -823,7 +823,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"archivo\": \"incidunt\",\n    \"asunto\": \"architecto\",\n    \"cc\": \"autem\",\n    \"mensaje\": \"dignissimos\",\n    \"destinatario\": \"ratione\",\n    \"tabla\": \"recusandae\",\n    \"doc_referencia\": \"maxime\"\n}"
+                            "raw": "{\n    \"archivo\": \"aut\",\n    \"asunto\": \"necessitatibus\",\n    \"cc\": \"aut\",\n    \"mensaje\": \"perferendis\",\n    \"destinatario\": \"repellendus\",\n    \"tabla\": \"sed\",\n    \"doc_referencia\": \"in\"\n}"
                         },
                         "description": "Envia un correo (Usar Body-> form-data en Postman, FormData en Angular)",
                         "response": []
@@ -885,7 +885,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"logo\": \"ullam\",\n    \"nom_emp\": \"rerum\",\n    \"numdoc_emp\": \"non\",\n    \"dir_emp\": \"rerum\",\n    \"dis_emp\": \"dolorem\",\n    \"ciu_emp\": \"nostrum\",\n    \"tel_emp\": \"accusamus\",\n    \"cel_emp\": \"ea\",\n    \"codciu_emp\": \"libero\",\n    \"id_tipodoc\": 2\n}"
+                            "raw": "{\n    \"logo\": \"quod\",\n    \"nom_emp\": \"vero\",\n    \"numdoc_emp\": \"sed\",\n    \"dir_emp\": \"eum\",\n    \"dis_emp\": \"optio\",\n    \"ciu_emp\": \"sunt\",\n    \"tel_emp\": \"quam\",\n    \"cel_emp\": \"cupiditate\",\n    \"codciu_emp\": \"id\",\n    \"id_tipodoc\": 6\n}"
                         },
                         "description": "Modifica datos de la empresa (Usar Body-> form-data en Postman)",
                         "response": []
@@ -965,7 +965,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "similique",
+                                    "value": "sint",
                                     "description": "El ID del fabricante."
                                 }
                             ]
@@ -1011,7 +1011,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"des_fab\": \"reiciendis\"\n}"
+                            "raw": "{\n    \"des_fab\": \"quidem\"\n}"
                         },
                         "description": "Crea un fabricante",
                         "response": []
@@ -1029,7 +1029,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "nesciunt",
+                                    "value": "quis",
                                     "description": "El ID del fabricante."
                                 }
                             ]
@@ -1047,7 +1047,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"des_fab\": \"quia\"\n}"
+                            "raw": "{\n    \"des_fab\": \"suscipit\"\n}"
                         },
                         "description": "Modifica un fabricante",
                         "response": []
@@ -1065,7 +1065,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "consequatur",
+                                    "value": "mollitia",
                                     "description": "El ID del fabricante."
                                 }
                             ]
@@ -1253,7 +1253,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "iusto",
+                                    "value": "voluptatem",
                                     "description": "El ID de la marca."
                                 }
                             ]
@@ -1299,7 +1299,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"des_mar\": \"et\"\n}"
+                            "raw": "{\n    \"des_mar\": \"nemo\"\n}"
                         },
                         "description": "Crea una marca",
                         "response": []
@@ -1317,7 +1317,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "sapiente",
+                                    "value": "dolores",
                                     "description": "El ID de la marca."
                                 }
                             ]
@@ -1335,7 +1335,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"des_mar\": \"asperiores\"\n}"
+                            "raw": "{\n    \"des_mar\": \"quia\"\n}"
                         },
                         "description": "Modifica una marca",
                         "response": []
@@ -1353,7 +1353,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "est",
+                                    "value": "dolore",
                                     "description": "El ID de la marca."
                                 }
                             ]
@@ -1423,7 +1423,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "sequi",
+                                    "value": "adipisci",
                                     "description": "El ID del modelo."
                                 }
                             ]
@@ -1469,7 +1469,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"des_mod\": \"qui\"\n}"
+                            "raw": "{\n    \"des_mod\": \"provident\"\n}"
                         },
                         "description": "Crea un modelo",
                         "response": []
@@ -1487,7 +1487,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "neque",
+                                    "value": "quia",
                                     "description": "El ID del modelo."
                                 }
                             ]
@@ -1505,7 +1505,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"des_mod\": \"culpa\"\n}"
+                            "raw": "{\n    \"des_mod\": \"ut\"\n}"
                         },
                         "description": "Modifica un modelo",
                         "response": []
@@ -1523,7 +1523,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "quam",
+                                    "value": "exercitationem",
                                     "description": "El ID del modelo."
                                 }
                             ]
@@ -1565,7 +1565,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "debitis",
+                                    "value": "doloribus",
                                     "description": "El ID de la orden de compra."
                                 }
                             ]
@@ -1611,7 +1611,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"cotprov_id\": 1,\n    \"id_col\": 10,\n    \"ord_com_bas_imp\": 254748647.9107035,\n    \"ord_com_igv\": 32,\n    \"ord_com_tot\": 49.3041,\n    \"id_pro\": 18,\n    \"orden_detalle\": []\n}"
+                            "raw": "{\n    \"cotprov_id\": 4,\n    \"id_col\": 17,\n    \"ord_com_bas_imp\": 2390.64,\n    \"ord_com_igv\": 263.5,\n    \"ord_com_tot\": 7.95665482,\n    \"id_pro\": 3,\n    \"orden_detalle\": []\n}"
                         },
                         "description": "Crea una orden de compra",
                         "response": []
@@ -1663,7 +1663,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "doloremque",
+                                    "value": "nam",
                                     "description": "El ID del producto."
                                 }
                             ]
@@ -1709,7 +1709,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"cod_prod\": \"aut\",\n    \"num_parte_prod\": \"expedita\",\n    \"stk_prod\": 7,\n    \"des_prod\": \"distinctio\",\n    \"pre_com_prod\": 13,\n    \"mon_prod\": 17,\n    \"id_unimed\": 16,\n    \"id_mar\": 17,\n    \"id_mod\": 15,\n    \"id_fab\": 15\n}"
+                            "raw": "{\n    \"cod_prod\": \"repudiandae\",\n    \"num_parte_prod\": \"sed\",\n    \"stk_prod\": 17,\n    \"des_prod\": \"aut\",\n    \"pre_com_prod\": 19,\n    \"mon_prod\": 1,\n    \"id_unimed\": 11,\n    \"id_mar\": 1,\n    \"id_mod\": 15,\n    \"id_fab\": 18\n}"
                         },
                         "description": "Crea un producto",
                         "response": []
@@ -1727,7 +1727,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "eum",
+                                    "value": "non",
                                     "description": "El ID del producto."
                                 }
                             ]
@@ -1745,7 +1745,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"cod_prod\": \"mollitia\",\n    \"num_parte_prod\": \"et\",\n    \"stk_prod\": 6,\n    \"des_prod\": \"est\",\n    \"pre_com_prod\": 8,\n    \"mon_prod\": 20,\n    \"id_unimed\": 6,\n    \"id_mar\": 2,\n    \"id_mod\": 8,\n    \"id_fab\": 18\n}"
+                            "raw": "{\n    \"cod_prod\": \"tenetur\",\n    \"num_parte_prod\": \"omnis\",\n    \"stk_prod\": 18,\n    \"des_prod\": \"dolorem\",\n    \"pre_com_prod\": 6,\n    \"mon_prod\": 5,\n    \"id_unimed\": 16,\n    \"id_mar\": 12,\n    \"id_mod\": 4,\n    \"id_fab\": 12\n}"
                         },
                         "description": "Modifica un producto",
                         "response": []
@@ -1763,7 +1763,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "voluptatem",
+                                    "value": "laborum",
                                     "description": "El ID del producto."
                                 }
                             ]
@@ -1833,7 +1833,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "voluptates",
+                                    "value": "qui",
                                     "description": "El ID de la proforma del cliente."
                                 }
                             ]
@@ -1879,7 +1879,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"id_cli\": 4,\n    \"prof_mon\": 14,\n    \"id_proy\": 6,\n    \"id_col\": 20,\n    \"solcli_id\": 3,\n    \"prof_cre\": 7,\n    \"prof_imp_ini\": 479.829066,\n    \"prof_int\": 2256952.6791059007,\n    \"prof_cuo\": 8,\n    \"prof_val\": \"nisi\",\n    \"prof_tie_ent\": \"architecto\",\n    \"prof_cos_dir\": 281.678623837,\n    \"prof_gas_ind\": 772.94788462,\n    \"prof_uti\": 0,\n    \"prof_bas_imp\": 3.5,\n    \"prof_igv\": 57584.47481,\n    \"prof_neto\": 5192.1025,\n    \"prof_fac\": 811664.75468264,\n    \"prof_finan\": 39875.318721303,\n    \"prof_val_cuo\": 23626440.31836411,\n    \"prof_cli_id_dir\": 5,\n    \"prof_cli_id_con\": 3,\n    \"prof_obs\": \"minima\",\n    \"prof_desc\": 14567779,\n    \"proforma_detalle\": []\n}"
+                            "raw": "{\n    \"id_cli\": 1,\n    \"prof_mon\": 1,\n    \"id_proy\": 5,\n    \"id_col\": 12,\n    \"solcli_id\": 10,\n    \"prof_cre\": 19,\n    \"prof_imp_ini\": 1.02438,\n    \"prof_int\": 13614128.1,\n    \"prof_cuo\": 9,\n    \"prof_val\": \"delectus\",\n    \"prof_tie_ent\": \"laborum\",\n    \"prof_cos_dir\": 317.4805,\n    \"prof_gas_ind\": 31785234.03145543,\n    \"prof_uti\": 637.242302,\n    \"prof_bas_imp\": 23731347.4,\n    \"prof_igv\": 869846,\n    \"prof_neto\": 34.91963854,\n    \"prof_fac\": 2014.296698,\n    \"prof_finan\": 432.97328449,\n    \"prof_val_cuo\": 13035.04,\n    \"prof_cli_id_dir\": 9,\n    \"prof_cli_id_con\": 1,\n    \"prof_obs\": \"sint\",\n    \"prof_desc\": 8811302.5,\n    \"prof_cli_ciu\": \"et\",\n    \"proforma_detalle\": []\n}"
                         },
                         "description": "Crea una proforma cliente",
                         "response": []
@@ -1897,7 +1897,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "ullam",
+                                    "value": "repellendus",
                                     "description": "El ID de la proforma del cliente."
                                 }
                             ]
@@ -1967,7 +1967,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "impedit",
+                                    "value": "odio",
                                     "description": "El ID del proveedor."
                                 }
                             ]
@@ -2013,7 +2013,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"razsoc_prov\": \"perspiciatis\",\n    \"ema_prov\": \"earum\",\n    \"num_doc_prov\": \"labore\",\n    \"id_tipodoc\": 3\n}"
+                            "raw": "{\n    \"razsoc_prov\": \"non\",\n    \"ema_prov\": \"accusantium\",\n    \"num_doc_prov\": \"quo\",\n    \"id_tipodoc\": 5\n}"
                         },
                         "description": "Crea un proveedor",
                         "response": []
@@ -2031,7 +2031,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "sit",
+                                    "value": "non",
                                     "description": "El ID del proveedor."
                                 }
                             ]
@@ -2049,7 +2049,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"razsoc_prov\": \"adipisci\",\n    \"ema_prov\": \"et\",\n    \"num_doc_prov\": \"aliquam\",\n    \"id_tipodoc\": 5\n}"
+                            "raw": "{\n    \"razsoc_prov\": \"et\",\n    \"ema_prov\": \"dignissimos\",\n    \"num_doc_prov\": \"possimus\",\n    \"id_tipodoc\": 13\n}"
                         },
                         "description": "Modifica un proveedor",
                         "response": []
@@ -2067,7 +2067,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "aliquam",
+                                    "value": "ut",
                                     "description": "El ID del proveedor."
                                 }
                             ]
@@ -2103,7 +2103,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "quia",
+                                    "value": "est",
                                     "description": "El ID del proveedor."
                                 }
                             ]
@@ -2173,7 +2173,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "autem",
+                                    "value": "rerum",
                                     "description": "El ID de banco proveedor."
                                 }
                             ]
@@ -2219,7 +2219,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"tip_prov_ban\": \"nisi\",\n    \"cue_prov_ban\": \"repellat\",\n    \"ban_prov_ban\": \"est\",\n    \"id_prov\": 2,\n    \"com_prov_ban\": \"qui\"\n}"
+                            "raw": "{\n    \"tip_prov_ban\": \"voluptatum\",\n    \"cue_prov_ban\": \"blanditiis\",\n    \"ban_prov_ban\": \"rerum\",\n    \"id_prov\": 14,\n    \"com_prov_ban\": \"autem\"\n}"
                         },
                         "description": "Crea un banco proveedor",
                         "response": []
@@ -2237,7 +2237,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "repudiandae",
+                                    "value": "minus",
                                     "description": "El ID del banco proveedor."
                                 }
                             ]
@@ -2255,7 +2255,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"tip_prov_ban\": \"aperiam\",\n    \"cue_prov_ban\": \"qui\",\n    \"ban_prov_ban\": \"alias\",\n    \"id_prov\": 10,\n    \"com_prov_ban\": \"ab\"\n}"
+                            "raw": "{\n    \"tip_prov_ban\": \"quia\",\n    \"cue_prov_ban\": \"est\",\n    \"ban_prov_ban\": \"at\",\n    \"id_prov\": 1,\n    \"com_prov_ban\": \"soluta\"\n}"
                         },
                         "description": "Modifica un banco del proveedor",
                         "response": []
@@ -2273,7 +2273,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "quisquam",
+                                    "value": "provident",
                                     "description": "El ID del banco de proveedor."
                                 }
                             ]
@@ -2343,7 +2343,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "dolorem",
+                                    "value": "molestias",
                                     "description": "El ID del colaborador proveedor."
                                 }
                             ]
@@ -2389,7 +2389,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"nom_prov\": \"asperiores\",\n    \"ema_prov\": \"quis\",\n    \"tel_prov\": \"itaque\",\n    \"ane_prov_col\": \"minus\",\n    \"car_prov_col\": \"voluptas\",\n    \"id_prov\": 14\n}"
+                            "raw": "{\n    \"nom_prov\": \"quod\",\n    \"ema_prov\": \"vero\",\n    \"tel_prov\": \"nobis\",\n    \"ane_prov_col\": \"mollitia\",\n    \"car_prov_col\": \"fugiat\",\n    \"id_prov\": 8\n}"
                         },
                         "description": "Crea un colaborador proveedor",
                         "response": []
@@ -2407,7 +2407,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "earum",
+                                    "value": "ut",
                                     "description": "El ID del colaborador proveedor."
                                 }
                             ]
@@ -2425,7 +2425,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"nom_prov\": \"voluptatem\",\n    \"ema_prov\": \"illum\",\n    \"tel_prov\": \"adipisci\",\n    \"ane_prov_col\": \"porro\",\n    \"car_prov_col\": \"quo\",\n    \"id_prov\": 11\n}"
+                            "raw": "{\n    \"nom_prov\": \"sunt\",\n    \"ema_prov\": \"fugiat\",\n    \"tel_prov\": \"temporibus\",\n    \"ane_prov_col\": \"hic\",\n    \"car_prov_col\": \"sapiente\",\n    \"id_prov\": 8\n}"
                         },
                         "description": "Modifica un colaborador proveedor",
                         "response": []
@@ -2443,7 +2443,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "non",
+                                    "value": "a",
                                     "description": "El ID del colaborador proveedor."
                                 }
                             ]
@@ -2513,7 +2513,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "dicta",
+                                    "value": "debitis",
                                     "description": "El ID de la direccion del proveedor."
                                 }
                             ]
@@ -2549,7 +2549,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "doloremque",
+                                    "value": "quis",
                                     "description": "El ID de la direccion proveedor."
                                 }
                             ]
@@ -2567,7 +2567,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"ciu_prov\": \"aperiam\",\n    \"dir_prov\": \"a\",\n    \"tel_prov\": \"aut\",\n    \"id_prov\": 7\n}"
+                            "raw": "{\n    \"ciu_prov\": \"ex\",\n    \"dir_prov\": \"illum\",\n    \"tel_prov\": \"hic\",\n    \"id_prov\": 19\n}"
                         },
                         "description": "Modifica una direccion de proveedor",
                         "response": []
@@ -2595,7 +2595,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"ciu_prov\": \"est\",\n    \"dir_prov\": \"aliquam\",\n    \"tel_prov\": \"vel\",\n    \"id_prov\": 12\n}"
+                            "raw": "{\n    \"ciu_prov\": \"dolorem\",\n    \"dir_prov\": \"dolorum\",\n    \"tel_prov\": \"labore\",\n    \"id_prov\": 11\n}"
                         },
                         "description": "Crea una direccion de proveedor",
                         "response": []
@@ -2613,7 +2613,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "amet",
+                                    "value": "qui",
                                     "description": "El ID de la direccion del proveedor."
                                 }
                             ]
@@ -2739,7 +2739,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "delectus",
+                                    "value": "ea",
                                     "description": "El ID del proyecto ."
                                 }
                             ]
@@ -2785,7 +2785,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"nom_proy\": \"consequuntur\",\n    \"id_cli\": \"et\"\n}"
+                            "raw": "{\n    \"nom_proy\": \"nam\",\n    \"id_cli\": \"quia\"\n}"
                         },
                         "description": "Crea un proyecto",
                         "response": []
@@ -2803,7 +2803,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "quo",
+                                    "value": "consequatur",
                                     "description": "El ID del proyecto ."
                                 }
                             ]
@@ -2821,7 +2821,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"nom_proy\": \"dolor\",\n    \"est_reg\": \"aut\",\n    \"id_cli\": \"dolorum\"\n}"
+                            "raw": "{\n    \"nom_proy\": \"deleniti\",\n    \"est_reg\": \"provident\",\n    \"id_cli\": \"molestias\"\n}"
                         },
                         "description": "Modifica un proyecto",
                         "response": []
@@ -2839,7 +2839,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "quae",
+                                    "value": "dolor",
                                     "description": "El ID del proyecto ."
                                 }
                             ]
@@ -2943,7 +2943,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "minima",
+                                    "value": "magni",
                                     "description": "El ID de la seccion"
                                 }
                             ]
@@ -2989,7 +2989,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"des_sec\": \"quas\"\n}"
+                            "raw": "{\n    \"des_sec\": \"nobis\"\n}"
                         },
                         "description": "Crea una seccion",
                         "response": []
@@ -3007,7 +3007,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "dolorem",
+                                    "value": "fugiat",
                                     "description": "El ID de la seccion."
                                 }
                             ]
@@ -3025,7 +3025,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"des_sec\": \"magnam\"\n}"
+                            "raw": "{\n    \"des_sec\": \"consequatur\"\n}"
                         },
                         "description": "Modifica la descripcion seccion",
                         "response": []
@@ -3043,7 +3043,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "et",
+                                    "value": "tempore",
                                     "description": "El ID de la seccion."
                                 }
                             ]
@@ -3113,7 +3113,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "magnam",
+                                    "value": "odit",
                                     "description": "El ID del tipo de documento."
                                 }
                             ]
@@ -3159,7 +3159,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"cod_tipdoc\": \"magni\",\n    \"des_tipdoc\": \"in\"\n}"
+                            "raw": "{\n    \"cod_tipdoc\": \"aut\",\n    \"des_tipdoc\": \"consequatur\"\n}"
                         },
                         "description": "Crea un tipo de documento",
                         "response": []
@@ -3177,7 +3177,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "commodi",
+                                    "value": "qui",
                                     "description": "El ID del tipo de documento."
                                 }
                             ]
@@ -3195,7 +3195,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"cod_tipdoc\": \"ipsum\",\n    \"des_tipdoc\": \"nemo\"\n}"
+                            "raw": "{\n    \"cod_tipdoc\": \"sint\",\n    \"des_tipdoc\": \"explicabo\"\n}"
                         },
                         "description": "Modifica un tipo de documento",
                         "response": []
@@ -3213,7 +3213,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "dolor",
+                                    "value": "animi",
                                     "description": "El ID del tipo de documento."
                                 }
                             ]
@@ -3283,7 +3283,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "blanditiis",
+                                    "value": "non",
                                     "description": "El ID de la unidad de medida."
                                 }
                             ]
@@ -3329,7 +3329,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"nom_unimed\": \"provident\",\n    \"des_mar\": \"harum\"\n}"
+                            "raw": "{\n    \"nom_unimed\": \"aut\",\n    \"des_mar\": \"rerum\"\n}"
                         },
                         "description": "Crea una unidad de medida",
                         "response": []
@@ -3347,7 +3347,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "nam",
+                                    "value": "deleniti",
                                     "description": "El ID de la unidad de medida."
                                 }
                             ]
@@ -3365,7 +3365,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"nom_unimed\": \"qui\",\n    \"des_mar\": \"dolorem\"\n}"
+                            "raw": "{\n    \"nom_unimed\": \"voluptatum\",\n    \"des_mar\": \"impedit\"\n}"
                         },
                         "description": "Modifica una unidad de medida",
                         "response": []
@@ -3383,7 +3383,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "qui",
+                                    "value": "officia",
                                     "description": "El ID de la unidad de medida."
                                 }
                             ]
@@ -3453,7 +3453,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "dolor",
+                                    "value": "quasi",
                                     "description": "El ID del usuario."
                                 }
                             ]
@@ -3499,7 +3499,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"nom_col\": \"totam\",\n    \"ape_col\": \"qui\",\n    \"email\": \"facilis\",\n    \"password\": \"eius\",\n    \"num_doc_col\": \"quae\",\n    \"cod_col\": \"consequatur\",\n    \"cel_col\": \"unde\",\n    \"id_tipdoc\": 12,\n    \"id_car\": 2\n}"
+                            "raw": "{\n    \"nom_col\": \"nihil\",\n    \"ape_col\": \"qui\",\n    \"email\": \"sed\",\n    \"password\": \"deserunt\",\n    \"num_doc_col\": \"nemo\",\n    \"cod_col\": \"in\",\n    \"cel_col\": \"amet\",\n    \"id_tipdoc\": 20,\n    \"id_car\": 19\n}"
                         },
                         "description": "Crea un usuario",
                         "response": []
@@ -3517,7 +3517,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "impedit",
+                                    "value": "incidunt",
                                     "description": "El ID del usuario."
                                 }
                             ]
@@ -3535,7 +3535,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"nom_col\": \"molestiae\",\n    \"ape_col\": \"vel\",\n    \"email\": \"ad\",\n    \"num_doc_col\": \"reiciendis\",\n    \"cod_col\": \"distinctio\",\n    \"cel_col\": \"commodi\",\n    \"id_tipdoc\": 20,\n    \"id_car\": 1\n}"
+                            "raw": "{\n    \"nom_col\": \"perferendis\",\n    \"ape_col\": \"nulla\",\n    \"email\": \"magnam\",\n    \"num_doc_col\": \"non\",\n    \"cod_col\": \"est\",\n    \"cel_col\": \"dolor\",\n    \"id_tipdoc\": 11,\n    \"id_car\": 13\n}"
                         },
                         "description": "Modifica un usuario",
                         "response": []
@@ -3553,7 +3553,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "distinctio",
+                                    "value": "rem",
                                     "description": "El ID del usuario."
                                 }
                             ]
@@ -3589,7 +3589,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "nostrum",
+                                    "value": "accusamus",
                                     "description": "El ID del usuario."
                                 }
                             ]
@@ -3607,7 +3607,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"email\": \"optio\",\n    \"old_password\": \"repellendus\",\n    \"new_password\": \"et\"\n}"
+                            "raw": "{\n    \"email\": \"doloremque\",\n    \"old_password\": \"magni\",\n    \"new_password\": \"consequatur\"\n}"
                         },
                         "description": "Modifica la contrase\u00f1a persona",
                         "response": []
