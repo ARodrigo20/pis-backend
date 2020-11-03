@@ -195,7 +195,6 @@ class ProformaClienteController extends Controller
      *                      "prof_can_prod": 0,
      *                      "prof_dir_prov": "string",
      *                      "prof_ema_prov": "algo@gmail.com",
-     *                      "id_prov_dir": 1,
      *                      "seccion": {
      *                          "id_sec": 1,
      *                          "des_sec": "string",
@@ -257,7 +256,7 @@ class ProformaClienteController extends Controller
      * @bodyParam prof_obs  char observaciones del cliente.
      * @bodyParam prof_desc float procentaje de descuento.
      * @bodyParam prof_cli_ciu Direccion del cliente.
-     * @bodyParam proforma_detalle array required Ejemplo: [{"id_prof_det": 1,"id_pro": 5,"id_prod": 10,"prof_det_can": 10,"prof_det_pre_lis": 20,"prof_det_imp": 10,"prof_det_cos": 10,"prof_det_tcos": 10,"prof_det_com": 10,"id_prov": 2,"id_sec": 1,"prof_prod_serv": 1,"prof_des_prod": "producto","prof_can_prod": 10,  "prof_dir_prov": "String", "prof_ema_prov": "algo@gmail.com","id_prov_dir": "Id direccion proveedor"}]
+     * @bodyParam proforma_detalle array required Ejemplo: [{"id_prof_det": 1,"id_pro": 5,"id_prod": 10,"prof_det_can": 10,"prof_det_pre_lis": 20,"prof_det_imp": 10,"prof_det_cos": 10,"prof_det_tcos": 10,"prof_det_com": 10,"id_prov": 2,"id_sec": 1,"prof_prod_serv": 1,"prof_des_prod": "producto","prof_can_prod": 10,  "prof_dir_prov": "String", "prof_ema_prov": "algo@gmail.com"}]
      * 
      * @response {
      *    "resp": "proforma cliente creada"
@@ -321,7 +320,6 @@ class ProformaClienteController extends Controller
                         'prof_des_prod' => $detalle['prof_des_prod'],
                         'prof_can_prod' => $detalle['prof_can_prod'],
                         'prof_det_stock' => $detalle['prof_det_stock'],
-                        'id_prov_dir' => $detalle['id_prov_dir'],
                         'prof_dir_prov' => $detalle['prof_dir_prov'],
                         'prof_ema_prov' => $detalle['prof_ema_prov'],
                         'id_sec' => $detalle['id_sec'],
