@@ -87,7 +87,7 @@ class ProformaClienteController extends Controller
     public function get()
     {
         try {
-            $proforma_cabecera = ProformaCliente::with(['proyecto', 'cliente','usuario','cliente_contacto'])->orderBy('id_pro', 'desc')->get();
+            $proforma_cabecera = ProformaCliente::with(['proyecto', 'cliente','usuario','cliente_contacto','cliente_direccion'])->orderBy('id_pro', 'desc')->get();
         } catch (Exception $e) {
             return response()->json([
                 'error' => 'Ocurrio un error en el servidor',
