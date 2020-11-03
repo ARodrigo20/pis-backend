@@ -96,7 +96,7 @@ class KardexController extends Controller
             if($detalles){
                 foreach ($detalles as $detalle){
                     
-                    if($detalle['ord_com_det_canent']){
+                    
                         $kardex=Kardex::create([
                         
                             'fec_kar' => new DateTime(),
@@ -123,7 +123,7 @@ class KardexController extends Controller
                             'ord_com_det_canent' => $detalle['ord_com_det_canent'],
                             'ord_com_det_canfal' => $detalle['ord_com_det_canfal'],
                         ))->save();
-                    }
+                    
                     
                 }
             }
