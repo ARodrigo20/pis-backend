@@ -163,6 +163,7 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::post('cotizacion-proveedor/send/{id}','CotizacionProveedor\CotizacionProveedorController@sendTo')->name('sendCotizacionProveedor');
 
     //Orden de Compra
+    Route::get('orden-compra/get','OrdenCompra\OrdenCompraController@get')->name('getOrdenesDeCompra');
     Route::get('orden-compra/get/{id}','OrdenCompra\OrdenCompraController@getById')->name('getOrdenCompra');
     Route::post('orden-compra/create','OrdenCompra\OrdenCompraController@create')->name('createOrdenCompra');
 

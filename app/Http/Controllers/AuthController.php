@@ -61,6 +61,7 @@ class AuthController extends Controller
 
         if($empresa && $empresa->img_emp) {
             $b64_file = base64_encode(Storage::disk('local')->get($empresa->img_emp));
+            $response['empresa'] = $empresa;
             $response['logo'] = $b64_file;
             $response['logo_ext'] = $empresa->imgext_emp;
         }

@@ -23,4 +23,14 @@ class OrdenCompraDet extends Model
 
     protected $primaryKey = 'id_ord_det';
     public $timestamps = false;
+    protected $appends = ['producto'];
+
+    public function getProductoAttribute()
+    {
+        return $this->producto();
+    }
+
+    public function producto(){
+        return $this->belongsTo('App\Models\Almacen\Producto', 'id_prod');
+    }
 }

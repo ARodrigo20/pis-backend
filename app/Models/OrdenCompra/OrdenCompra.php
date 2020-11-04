@@ -18,11 +18,13 @@ class OrdenCompra extends Model
         'ord_com_tot',
         'id_pro',
         'ord_com_est',
+        'ord_com_prov_id',
+        'ord_com_term',
         'est_env',
         'est_reg');
     protected $primaryKey = 'id_ord_com';
 
-    protected $appends = ['orden_detalle'];
+    protected $appends = ['orden_detalle','usuario','cotizacion_proveedor','proveedor'];
     protected $hidden = [
         'created_at', 'updated_at',
     ];
@@ -34,7 +36,34 @@ class OrdenCompra extends Model
 
     public function orden_detalle()
     {
-        return $this->hasMany('App\Models\OrdenCompra\OrdenCompraDet', 'id_ord_com');
+        return $this->hasMany('App\Models\OrdenCompra\OrdenCompraDet', 'id_ord_com')->with(['producto']);
+    }
+
+    public function getUsuarioAttribute()
+    {
+        return $this->usuario();
+    }
+
+    public function usuario(){
+        return $this->belongsTo('App\User', 'id_col');
+    }
+
+    public function getCotizacionProveedorAttribute()
+    {
+        return $this->cotizacion_proveedor();
+    }
+
+    public function cotizacion_proveedor(){
+        return $this->belongsTo('App\Models\CotizacionProveedor\CotizacionProveedor', 'cotprov_id');
+    }
+
+    public function getProveedorAttribute()
+    {
+        return $this->proveedor();
+    }
+
+    public function proveedor(){
+        return $this->belongsTo('App\Models\Proveedores\Proveedor', 'ord_com_prov_id');
     }
 
 }

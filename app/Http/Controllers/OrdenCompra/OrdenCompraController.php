@@ -16,6 +16,21 @@ use DateTime;
 
 class OrdenCompraController extends Controller
 {
+    public function get()
+    {
+        try {
+            $ordenes = OrdenCompra::with(['usuario'])->orderBy('id_ord_com', 'desc')->get();
+        } catch (Exception $e) {
+            return response()->json([
+                'error' => 'Ocurrio un error en el servidor',
+                'desc' => $e,
+            ], 500);
+        }
+        return response()->json([
+            'data' => $ordenes,
+            'size' => count($ordenes),
+        ], 200, [], JSON_NUMERIC_CHECK);
+    }
 
     /**
      * Retornar orden de compra
@@ -36,6 +51,8 @@ class OrdenCompraController extends Controller
      *              "ord_com_tot": 0,
      *              "id_pro": 0,
      *              "ord_com_est": "string",
+     *              "ord_com_prov_id": 0,
+     *              "ord_com_term": "string",
      *              "est_env": 0,
      *              "est_reg": "string",
      *              "orden_detalle": [
@@ -60,7 +77,7 @@ class OrdenCompraController extends Controller
     public function getById($id)
     {
         try {
-            $orden_compra = OrdenCompra::with(['orden_detalle'])->find($id);
+            $orden_compra = OrdenCompra::with(['orden_detalle','usuario','cotizacion_proveedor','proveedor'])->find($id);
         } catch (Exception $e) {
             return response()->json([
                 'error' => 'ocurrio un error en el servidor',
@@ -85,6 +102,8 @@ class OrdenCompraController extends Controller
      * Crea una orden de compra
      *
      * @bodyParam cotprov_id int Id de la cotizacion de proveedor.
+     * @bodyParam ord_com_prov_id int Id del proveedor.
+     * @bodyParam ord_com_term string Terminos de la orden de compra.
      * @bodyParam id_col int Id del colaborador.
      * @bodyParam ord_com_bas_imp float Base imponible.
      * @bodyParam ord_com_igv float IGV, 18% de la base imponible.
@@ -104,6 +123,8 @@ class OrdenCompraController extends Controller
             $ordenCompra = OrdenCompra::create([
                 'ord_com_cod' => $this->next_cod(),
                 'cotprov_id' => $request->input('cotprov_id'),
+                'ord_com_prov_id' => $request->input('ord_com_prov_id'),
+                'ord_com_term' => $request->input('ord_com_term'),
                 'id_emp' => 1,
                 'ord_com_fec' => new DateTime(),
                 'id_col' => $request->input('id_col'),
