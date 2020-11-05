@@ -166,6 +166,7 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::get('orden-compra/get','OrdenCompra\OrdenCompraController@get')->name('getOrdenesDeCompra');
     Route::get('orden-compra/get/{id}','OrdenCompra\OrdenCompraController@getById')->name('getOrdenCompra');
     Route::post('orden-compra/create','OrdenCompra\OrdenCompraController@create')->name('createOrdenCompra');
+    Route::get('orden-compra/annul/{id}','OrdenCompra\OrdenCompraController@annul')->name('annulOrdenCompra');
 
     Route::post('email/send-email','Email\EmailController@sendEmail')->name('sendEmail');
 

@@ -19,6 +19,9 @@ class OrdenCompra extends Model
         'id_pro',
         'ord_com_est',
         'ord_com_prov_id',
+        'ord_com_prov_dir',
+        'ord_com_prov_con',
+        'ord_com_prov_ema',
         'ord_com_term',
         'est_env',
         'est_reg');
@@ -45,7 +48,7 @@ class OrdenCompra extends Model
     }
 
     public function usuario(){
-        return $this->belongsTo('App\User', 'id_col');
+        return $this->belongsTo('App\User', 'id_col')->select('id_col','email','nom_col','ape_col');
     }
 
     public function getCotizacionProveedorAttribute()

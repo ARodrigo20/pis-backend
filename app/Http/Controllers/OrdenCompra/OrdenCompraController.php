@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\OrdenCompra\OrdenCompra;
 use App\Models\OrdenCompra\OrdenCompraDet;
+use App\Models\Almacen\Producto;
+use App\Http\Controllers\LogsController;
 use DateTime;
 
 /**
@@ -19,7 +21,7 @@ class OrdenCompraController extends Controller
     public function get()
     {
         try {
-            $ordenes = OrdenCompra::with(['usuario'])->orderBy('id_ord_com', 'desc')->get();
+            $ordenes = OrdenCompra::with(['usuario','proveedor'])->orderBy('id_ord_com', 'desc')->get();
         } catch (Exception $e) {
             return response()->json([
                 'error' => 'Ocurrio un error en el servidor',
@@ -52,6 +54,9 @@ class OrdenCompraController extends Controller
      *              "id_pro": 0,
      *              "ord_com_est": "string",
      *              "ord_com_prov_id": 0,
+     *              "ord_com_prov_dir": "string",
+     *              "ord_com_prov_con": "string",
+     *              "ord_com_prov_ema": "string",
      *              "ord_com_term": "string",
      *              "est_env": 0,
      *              "est_reg": "string",
@@ -103,6 +108,9 @@ class OrdenCompraController extends Controller
      *
      * @bodyParam cotprov_id int Id de la cotizacion de proveedor.
      * @bodyParam ord_com_prov_id int Id del proveedor.
+     * @bodyParam ord_com_prov_dir string Direccion del proveedor.
+     * @bodyParam ord_com_prov_con string Contacto del proveedor.
+     * @bodyParam ord_com_prov_ema string Correo del contacto del proveedor.
      * @bodyParam ord_com_term string Terminos de la orden de compra.
      * @bodyParam id_col int Id del colaborador.
      * @bodyParam ord_com_bas_imp float Base imponible.
@@ -124,6 +132,9 @@ class OrdenCompraController extends Controller
                 'ord_com_cod' => $this->next_cod(),
                 'cotprov_id' => $request->input('cotprov_id'),
                 'ord_com_prov_id' => $request->input('ord_com_prov_id'),
+                'ord_com_prov_dir' => $request->input('ord_com_prov_dir'),
+                'ord_com_prov_con' => $request->input('ord_com_prov_con'),
+                'ord_com_prov_ema' => $request->input('ord_com_prov_ema'),
                 'ord_com_term' => $request->input('ord_com_term'),
                 'id_emp' => 1,
                 'ord_com_fec' => new DateTime(),
@@ -150,14 +161,16 @@ class OrdenCompraController extends Controller
                         'ord_com_det_can' => $detalle['ord_com_det_can'],
                         'ord_com_det_unimed' => $detalle['ord_com_det_unimed'],
                         'ord_com_det_preuni' => $detalle['ord_com_det_preuni'],
-                        'ord_com_det_est' => $detalle['ord_com_det_est'],
-                        'ord_com_det_feclleg' => $detalle['ord_com_det_feclleg'],
+                        'ord_com_det_est' => "0",
+                        'ord_com_det_feclleg' => null,
                         'ord_com_det_canent' => $detalle['ord_com_det_canent'],
                         'ord_com_det_canfal' => $detalle['ord_com_det_canfal']
                     ]);
                     if($detalle['ord_com_det_est'] != "2") {
                         $estado_orden = "0";
                     }
+                    $producto = Producto::find($detalle['id_prod']);
+                    $producto->fill(array('pre_com_prod' => $detalle['ord_com_det_preuni']))->save();
                 }
             }
             $ordenCompra->fill(array('ord_com_est' => $estado_orden))->save();
@@ -170,8 +183,46 @@ class OrdenCompraController extends Controller
                 'desc' => $e,
             ], 500);
         }
+
+        //Logs
+        $descripcion = "Se creo la orden de compra con codigo: ".$ordenCompra->ord_com_cod;
+        $logs = new LogsController();
+        $logs->create_log($descripcion, 1);
+        ///////
         return response()->json([
             'resp' => 'Orden de compra creada',
+        ], 200, [], JSON_NUMERIC_CHECK);
+    }
+
+    /**
+     * Anular orden de compra
+     *
+     * Anula una orden de compra
+     *
+     * @urlParam  id required El ID de la orden de compra.
+     *
+     * @response {
+     *    "resp": "Orden de compra anulada"
+     * }
+     */
+
+    public function annul($id) {
+        try {
+            $ordenCompra = OrdenCompra::find($id);
+            $ordenCompra->fill(array('est_reg' => 'AN'))->save();
+        } catch (Exception $e) {
+            return response()->json([
+                'error' => 'ocurrio un error en el servidor',
+                'desc' => $e
+            ], 500);
+        }
+        //Logs
+        $descripcion = "Se anulo la orden de compra con codigo: ".$ordenCompra->ord_com_cod;
+        $logs = new LogsController();
+        $logs->create_log($descripcion, 4);
+        ///////
+        return response()->json([
+            'resp' => 'Orden de compra Anulada'
         ], 200, [], JSON_NUMERIC_CHECK);
     }
 

@@ -9,6 +9,7 @@ use Swift_MailTransport;
 use Swift_SmtpTransport;
 use Swift_Message;
 use App\Models\ProformaCliente\ProformaCliente;
+use App\Models\OrdenCompra\OrdenCompra;
 use App\Models\CotizacionProveedor\CotizacionProveedor;
 use Illuminate\Support\Facades\Crypt;
 use App\Http\Controllers\Controller;
@@ -84,6 +85,10 @@ class EmailController extends Controller
                 case "proforma":
                     $proforma = ProformaCliente::find(intval($doc_referencia));
                     $proforma->fill(array('est_env' => '1'))->save();
+                    break;
+                case "orden":
+                    $orden = OrdenCompra::find(intval($doc_referencia));
+                    $orden->fill(array('est_env' => '1'))->save();
                     break;
             }
         }
