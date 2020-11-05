@@ -17,6 +17,7 @@ use App\Models\Kardex\Kardex;
 use Illuminate\Support\Facades\Storage;
 use App\Models\OrdenCompra\OrdenCompra;
 use App\Models\OrdenCompra\OrdenCompraDet;
+use App\Models\Almacen\Producto;
 
 /**
  * @group Kardex
@@ -90,7 +91,7 @@ class KardexController extends Controller
     public function create(Request $request)
     {
         DB::beginTransaction();
-
+        $actualStock=null;
         try {
             $detalles = $request->input('kardex_ingreso');
             if($detalles){
@@ -123,6 +124,20 @@ class KardexController extends Controller
                             'ord_com_det_canent' => $detalle['ord_com_det_canent'],
                             'ord_com_det_canfal' => $detalle['ord_com_det_canfal'],
                         ))->save();
+                        
+                        $idProd=DB::table('orden_compra_det')
+                                            ->select('id_prod')
+                                            ->where('id_ord_det','=',$detalle['id_ord_det'])->get();
+                        
+                        $actualStock=DB::table('Producto')
+                                            ->select('stk_prod')
+                                            ->where('id_prod','=',$idProd[0]->id_prod)->get();
+                        $stock=$actualStock[0]->stk_prod+$detalle['prod_cant'];
+                        $updateStock=Producto::find($idProd[0]->id_prod);
+                        
+                        $updateStock->fill(array(
+                            'stk_prod'=>$stock
+                        ))->save();
                     
                     
                 }
@@ -144,7 +159,7 @@ class KardexController extends Controller
         //$logs->create_log($descripcion, 1);
         ///////
         return response()->json([
-            'resp' => 'Kardex registrado'
+            'resp' => 'kardex registrado',
         ], 200, [], JSON_NUMERIC_CHECK);
     }
 
