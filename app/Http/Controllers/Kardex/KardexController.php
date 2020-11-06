@@ -129,7 +129,7 @@ class KardexController extends Controller
                                             ->select('id_prod')
                                             ->where('id_ord_det','=',$detalle['id_ord_det'])->get();
                         
-                        $actualStock=DB::table('Producto')
+                        $actualStock=DB::table('producto')
                                             ->select('stk_prod')
                                             ->where('id_prod','=',$idProd[0]->id_prod)->get();
                         $stock=$actualStock[0]->stk_prod+$detalle['prod_cant'];
