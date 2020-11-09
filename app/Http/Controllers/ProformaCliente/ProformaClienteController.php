@@ -49,6 +49,7 @@ class ProformaClienteController extends Controller
      *              "prof_gas_ind": 0,
      *              "prof_uti": 0,
      *              "prof_bas_imp": 0,
+     *              "prof_tie_ins": "string",
      *              "prof_igv": 0,
      *              "prof_neto": 0,
      *              "prof_fac": 0,
@@ -132,6 +133,7 @@ class ProformaClienteController extends Controller
      *              "prof_gas_ind": 0,
      *              "prof_uti": 0,
      *              "prof_bas_imp": 0,
+     *              "prof_tie_ins": "string",
      *              "prof_igv": 0,
      *              "prof_neto": 0,
      *              "prof_fac": 0,
@@ -254,6 +256,7 @@ class ProformaClienteController extends Controller
      * @bodyParam prof_cli_id_dir int Id de la direccion de cliente.
      * @bodyParam prof_cli_id_con int Id del contacto de cliente.
      * @bodyParam prof_obs  char observaciones del cliente.
+     * @bodyParam prof_tie_ins  char proforma tiempo de instalacion.
      * @bodyParam prof_desc float procentaje de descuento.
      * @bodyParam prof_cli_ciu Direccion del cliente.
      * @bodyParam proforma_detalle array required Ejemplo: [{"id_prof_det": 1,"id_pro": 5,"id_prod": 10,"prof_det_can": 10,"prof_det_pre_lis": 20,"prof_det_imp": 10,"prof_det_cos": 10,"prof_det_tcos": 10,"prof_det_com": 10,"id_prov": 2,"id_sec": 1,"prof_prod_serv": 1,"prof_des_prod": "producto","prof_can_prod": 10,  "prof_dir_prov": "String", "prof_ema_prov": "algo@gmail.com"}]
@@ -287,6 +290,7 @@ class ProformaClienteController extends Controller
                 'prof_gas_ind' => $request->input('prof_gas_ind'),
                 'prof_uti' => $request->input('prof_uti'),
                 'prof_bas_imp' => $request->input('prof_bas_imp'),
+                
                 'prof_igv' => $request->input('prof_igv'),
                 'prof_neto' => $request->input('prof_neto'),
                 'prof_fac' => $request->input('prof_fac'),
@@ -297,6 +301,7 @@ class ProformaClienteController extends Controller
                 'prof_obs' => $request->input('prof_obs'),
                 'prof_desc' => $request->input('prof_desc'),
                 'prof_cli_ciu' => $request->input('prof_cli_ciu'),
+                'prof_tie_ins' => $request->input('prof_tie_ins'),
                 'prof_cod' => $this->next_cod(),
                 'est_env' => '0',
                 'est_reg' => 'A',
