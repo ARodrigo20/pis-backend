@@ -56,6 +56,8 @@ class KardexController extends Controller
      *          }
      *      ],
      *      "size":0
+     *      "logo":"string",
+     *      "extension":"string"
      * }
      */
     
@@ -70,10 +72,30 @@ class KardexController extends Controller
                 'desc' => $e
             ], 500);
         }
-        return  response()->json([
-            'data' => $kardex,
-            'size' => count($kardex)
-        ],200, [], JSON_NUMERIC_CHECK);
+        if($kardex) {
+            $empresa = Empresa::find(1);
+            $b64_file = null;
+            if($empresa && $empresa->img_emp) {
+                $b64_file = base64_encode(Storage::disk('local')->get($empresa->img_emp));
+                return response()->json([
+                    'cotizacion' => $kardex,
+                    'logo' => $b64_file,
+                    'extension' => $empresa->imgext_emp
+                ], 200, [], JSON_NUMERIC_CHECK);
+            } else {
+                return response()->json([
+                    'cotizacion' => $kardex,
+                    'logo' => null,
+                    'extension' => null
+                ], 200, [], JSON_NUMERIC_CHECK);
+            }
+
+        } else {
+            return response()->json([
+                'resp' => 'No se encontro la cotizacion'
+            ], 500);
+        }
+
     }
 
     
@@ -194,7 +216,7 @@ class KardexController extends Controller
                                 ->join('orden_compra_det','orden_compra_det.id_ord_com','=','orden_compra.id_ord_com')
                                 ->where('orden_compra_det.ord_com_det_est','=',"0")
                                 ->orWhere('orden_compra_det.ord_com_det_est','=','1')
-                                ->where('orden_compra.est_reg', '!=', 'E')
+                                ->where('orden_compra.est_reg', '!=', 'AN')
                                 ->groupBy('orden_compra.id_ord_com')
                                 ->orderBy('orden_compra.id_ord_com','asc')
                                 ->get();
