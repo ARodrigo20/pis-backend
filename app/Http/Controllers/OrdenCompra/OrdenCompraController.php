@@ -9,6 +9,7 @@ use App\Models\OrdenCompra\OrdenCompra;
 use App\Models\OrdenCompra\OrdenCompraDet;
 use App\Models\Almacen\Producto;
 use App\Http\Controllers\LogsController;
+use App\Models\Clientes\Cliente;
 use DateTime;
 
 /**
@@ -58,6 +59,7 @@ class OrdenCompraController extends Controller
      *              "ord_com_prov_con": "string",
      *              "ord_com_prov_ema": "string",
      *              "ord_com_term": "string",
+     *              "id_cli": 1,
      *              "est_env": 0,
      *              "est_reg": "string",
      *              "orden_detalle": [
@@ -76,13 +78,21 @@ class OrdenCompraController extends Controller
      *                      "ord_com_det_canent": 0,
      *                      "ord_com_det_canfal": 0
      *                  }
-     *              ]
+     *              ],
+     *              "cliente": {
+     *                  "id_cli": 0,
+     *                  "razsoc_cli": "string",
+     *                  "numdoc_cli": 0,
+     *                  "ema_cli": "string",
+     *                  "id_tipdoc": 0,
+     *                  "est_reg": "string"
+     *              },
      *          }
      */
     public function getById($id)
     {
         try {
-            $orden_compra = OrdenCompra::with(['orden_detalle','usuario','cotizacion_proveedor','proveedor'])->find($id);
+            $orden_compra = OrdenCompra::with(['orden_detalle','usuario','cotizacion_proveedor','proveedor','cliente'])->find($id);
         } catch (Exception $e) {
             return response()->json([
                 'error' => 'ocurrio un error en el servidor',
@@ -117,6 +127,7 @@ class OrdenCompraController extends Controller
      * @bodyParam ord_com_igv float IGV, 18% de la base imponible.
      * @bodyParam ord_com_tot float Total, suma de base imponible y el igv.
      * @bodyParam id_pro int Id de la proforma de cliente.
+     * @bodyParam id_cli int Id del cliente.
      * @bodyParam orden_detalle array required Ejemplo: [{"id_prod": 0,"ord_com_det_numpar": "string", "ord_com_det_fab": "string","ord_com_det_des": "string","ord_com_det_can": 0,"ord_com_det_unimed": "string","ord_com_det_preuni": 0, "ord_com_det_est":"string", "ord_com_det_feclleg": "2020-25-10", "ord_com_det_canent": 0,"ord_com_det_canfal": 0}]
      * 
      * @response {
@@ -143,6 +154,7 @@ class OrdenCompraController extends Controller
                 'ord_com_igv' => $request->input('ord_com_igv'),
                 'ord_com_tot' => $request->input('ord_com_tot'),
                 'id_pro' => $request->input('id_pro'),
+                'id_cli' => $request->input('id_cli'),
                 'est_env' => '0',
                 'est_reg' => 'A',
             ]);

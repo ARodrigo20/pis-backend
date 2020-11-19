@@ -15,7 +15,7 @@ class Cliente extends Model
                         );
     protected $primaryKey = 'id_cli';
 
-    protected $appends = ['tipo_documento', 'contactos', 'direcciones', 'proyectos'];
+    protected $appends = ['tipo_documento', 'contactos', 'direcciones', 'proyectos','ordenes_compras'];
     protected $hidden = [
         'created_at', 'updated_at',
     ];
@@ -63,6 +63,15 @@ class Cliente extends Model
 
     public function proformaClientes(){
         return $this->hasMany(ProformaCliente::class);
+    }
+
+    public function getOrdenesComprasAttribute()
+    {
+        return $this->ordenes_compras();
+    }
+    public function ordenes_compras()
+    {
+        return $this->hasMany('App\Models\OrdenCompra\OrdenCompra', 'id_ord_com');
     }
 
 }

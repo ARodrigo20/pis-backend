@@ -3,6 +3,7 @@
 namespace App\Models\OrdenCompra;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Clientes\Cliente;
 
 class OrdenCompra extends Model
 {
@@ -23,11 +24,11 @@ class OrdenCompra extends Model
         'ord_com_prov_con',
         'ord_com_prov_ema',
         'ord_com_term',
+        'id_cli',
         'est_env',
         'est_reg');
     protected $primaryKey = 'id_ord_com';
-
-    protected $appends = ['orden_detalle','usuario','cotizacion_proveedor','proveedor'];
+    protected $appends = ['orden_detalle','usuario','cotizacion_proveedor','proveedor','cliente'];
     protected $hidden = [
         'created_at', 'updated_at',
     ];
@@ -67,6 +68,16 @@ class OrdenCompra extends Model
 
     public function proveedor(){
         return $this->belongsTo('App\Models\Proveedores\Proveedor', 'ord_com_prov_id');
+    }
+
+    public function getClienteAttribute()
+    {
+        return $this->cliente();
+    }
+
+    public function cliente()
+    {
+        return $this->belongsTo('App\Models\Clientes\Cliente','id_cli');
     }
 
 }
