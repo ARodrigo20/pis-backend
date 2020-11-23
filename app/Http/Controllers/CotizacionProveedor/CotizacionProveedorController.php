@@ -328,7 +328,9 @@ class CotizacionProveedorController extends Controller
 
     }
 
-
+    public function update(){
+        
+    }
     public function next_cod()
     {
         $cod_cotizacion_max = DB::table('cotizacion_proveedor')->whereYear('cotprov_fec', '=', date("Y"))->max('cotprov_cod');

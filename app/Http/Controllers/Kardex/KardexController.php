@@ -55,7 +55,7 @@ class KardexController extends Controller
      *              "est_reg": "char"       
      *          }
      *      ],
-     *      "size":0
+     *      "size":0,
      *      "logo":"string",
      *      "extension":"string"
      * }

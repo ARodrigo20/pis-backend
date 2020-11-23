@@ -184,4 +184,10 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::post('seccion/update/{id}','Seccion\SeccionController@update')->name('updateSeccion');
     Route::get('seccion/delete/{id}','Seccion\SeccionController@delete')->name('deleteSeccion');
 
+    //gasto
+    Route::get('gasto/get','Gasto\GastoController@get')->name('getGastos');
+    Route::post('gasto/create','Gasto\GastoController@create')->name('createGasto');
+    Route::get('gasto/annul/{id}','Gasto\GastoController@annul')->name('annulGasto');
+    Route::get('gasto/get/{id}','Gasto\GastoController@getById')->name('getGasto');
+    Route::post('gasto/update/{id}','Gasto\GastoController@update')->name('updateGasto');
 });
