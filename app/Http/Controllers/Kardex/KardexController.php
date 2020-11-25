@@ -84,7 +84,7 @@ class KardexController extends Controller
                 ], 200, [], JSON_NUMERIC_CHECK);
             } else {
                 return response()->json([
-                    'cotizacion' => $kardex,
+                    'kardex' => $kardex,
                     'logo' => null,
                     'extension' => null
                 ], 200, [], JSON_NUMERIC_CHECK);
