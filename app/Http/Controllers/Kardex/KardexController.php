@@ -78,13 +78,13 @@ class KardexController extends Controller
             if($empresa && $empresa->img_emp) {
                 $b64_file = base64_encode(Storage::disk('local')->get($empresa->img_emp));
                 return response()->json([
-                    'cotizacion' => $kardex,
+                    'data' => $kardex,
                     'logo' => $b64_file,
                     'extension' => $empresa->imgext_emp
                 ], 200, [], JSON_NUMERIC_CHECK);
             } else {
                 return response()->json([
-                    'kardex' => $kardex,
+                    'data' => $kardex,
                     'logo' => null,
                     'extension' => null
                 ], 200, [], JSON_NUMERIC_CHECK);
@@ -92,7 +92,7 @@ class KardexController extends Controller
 
         } else {
             return response()->json([
-                'resp' => 'No se encontro la cotizacion'
+                'resp' => 'No se encontro el kardex'
             ], 500);
         }
 
