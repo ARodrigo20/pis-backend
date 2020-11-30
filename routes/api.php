@@ -148,12 +148,18 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::get('cotizacion-cliente/get/{id}','CotizacionCliente\CotizacionClienteController@getById')->name('getCotizacionCliente');
     Route::post('cotizacion-cliente/create','CotizacionCliente\CotizacionClienteController@create')->name('createCotizacionCliente');
     Route::get('cotizacion-cliente/annul/{id}','CotizacionCliente\CotizacionClienteController@annul')->name('annulCotizacionCliente');
+    Route::post('cotizacion-cliente/update-header/{id}','CotizacionCliente\CotizacionClienteController@updateHeaderCotizacionCliente')->name('updateHeaderCotizacionCliente');
+    Route::post('cotizacion-cliente/update-detail/{id}','CotizacionCliente\CotizacionClienteController@updateDetailCotizacionCliente')->name('updateDetailCotizacionCliente');
+    
 
     //Proforma cliente
     Route::get('proforma-cliente/get','ProformaCliente\ProformaClienteController@get')->name('getProformasCliente');
     Route::get('proforma-cliente/get/{id}','ProformaCliente\ProformaClienteController@getById')->name('getProformaCliente');
     Route::post('proforma-cliente/create','ProformaCliente\ProformaClienteController@create')->name('createProformaliente');
     Route::get('proforma-cliente/annul/{id}','ProformaCliente\ProformaClienteController@annul')->name('annulProformaCliente');
+    Route::post('proforma-cliente/update-header/{id}','ProformaCliente\ProformaClienteController@updateHeaderProforma')->name('updateHeaderProforma');
+    Route::post('proforma-cliente/update-detail/{id}','ProformaCliente\ProformaClienteController@updateDetailProforma')->name('updateDetailProforma');
+    
 
     //Cotizacion proveedor
     Route::get('cotizacion-proveedor/get','CotizacionProveedor\CotizacionProveedorController@get')->name('getCotizacionesProveedor');
