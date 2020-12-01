@@ -86,7 +86,7 @@ class ProformaCliente extends Model
     }
 
     public function usuario(){
-        return $this->belongsTo('App\User', 'id_col');
+        return $this->belongsTo('App\User', 'id_col')->select('id_col','email','nom_col','ape_col');
     }
 
     public function getClienteContactoAttribute()
