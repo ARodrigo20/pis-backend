@@ -65,7 +65,19 @@ class AuthController extends Controller
             $response['logo'] = $b64_file;
             $response['logo_ext'] = $empresa->imgext_emp;
         }
-        $response['user'] = Auth::user();
+        
+        $user_logged = Auth::user();
+        $b64_file = null;
+        if($user_logged) {
+            if ($user_logged->firma) {
+                $b64_file = base64_encode($user_logged->firma);
+            }
+        }
+
+        $user_logged->firma = $b64_file;
+
+        $response['user'] = $user_logged;
+        
         return $response;
         // return response()->json(compact('token'));
     }

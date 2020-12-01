@@ -19,7 +19,8 @@ class OrdenCompraDet extends Model
         'ord_com_det_est',
         'ord_com_det_feclleg',
         'ord_com_det_canent',
-        'ord_com_det_canfal');
+        'ord_com_det_canfal',
+        'ord_com_prod_serv');
 
     protected $primaryKey = 'id_ord_det';
     public $timestamps = false;

@@ -302,4 +302,74 @@ class UserController extends Controller
             'code' => 200
         ], 200, [], JSON_NUMERIC_CHECK);
     }
+
+
+    public function getFirma($id)
+    {
+        try {
+            $user = User::find($id);
+        } catch (Exception $e) {
+            return response()->json([
+                'error' => 'ocurrio un error en el servidor',
+                'desc' => $e
+            ], 500);
+        }
+        
+        if($user) {
+            $b64_file = null;
+            if ($user->firma) {
+                $b64_file = base64_encode($user->firma);
+            }
+            
+            return response()->json([
+                'firma' => $b64_file
+            ], 200, []);
+        } else {
+            return response()->json([
+                'resp' => 'No se encontro el usuario'
+            ], 500);
+        }
+    }
+
+    public function updateFirma(Request $request)
+    {
+        $user_id = $request->input('user_id');
+        $firma = $request->file('firma');
+
+        DB::beginTransaction();
+
+        try {
+            $user = User::find(intval($user_id));
+            if($user && $firma) {
+                $user->fill(array(
+                    'firma' => $firma->openFile()->fread($firma->getSize())
+                ))->save();
+            }
+
+            DB::commit();
+            // all good
+        } catch (Exception $e) {
+            
+            DB::rollback();
+            // something went wrong
+            return response()->json([
+                        'error' => 'ocurrio un error en el servidor',
+                        'desc' => $e
+                    ], 500);
+        }
+
+        $b64_file = null;
+        if($user) {
+            if ($user->firma) {
+                $b64_file = base64_encode($user->firma);
+            }
+        }
+
+        return response()->json([
+            'resp' => 'Firma Actualizada',
+            'firma' => $b64_file
+        ], 200, [], JSON_NUMERIC_CHECK);
+       
+    }
+
 }

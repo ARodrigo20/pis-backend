@@ -60,6 +60,8 @@ class OrdenCompraController extends Controller
      *              "ord_com_prov_ema": "string",
      *              "ord_com_term": "string",
      *              "id_cli": 1,
+     *              "ord_com_tip": "string",
+     *              "ord_med_ent": "string",
      *              "est_env": 0,
      *              "est_reg": "string",
      *              "orden_detalle": [
@@ -76,7 +78,8 @@ class OrdenCompraController extends Controller
      *                      "ord_com_det_est": "string",
      *                      "ord_com_det_feclleg": "Date",
      *                      "ord_com_det_canent": 0,
-     *                      "ord_com_det_canfal": 0
+     *                      "ord_com_det_canfal": 0,
+     *                      "ord_com_prod_serv": "string"
      *                  }
      *              ],
      *              "cliente": {
@@ -128,7 +131,8 @@ class OrdenCompraController extends Controller
      * @bodyParam ord_com_tot float Total, suma de base imponible y el igv.
      * @bodyParam id_pro int Id de la proforma de cliente.
      * @bodyParam id_cli int Id del cliente.
-     * @bodyParam orden_detalle array required Ejemplo: [{"id_prod": 0,"ord_com_det_numpar": "string", "ord_com_det_fab": "string","ord_com_det_des": "string","ord_com_det_can": 0,"ord_com_det_unimed": "string","ord_com_det_preuni": 0, "ord_com_det_est":"string", "ord_com_det_feclleg": "2020-25-10", "ord_com_det_canent": 0,"ord_com_det_canfal": 0}]
+     * @bodyParam ord_med_ent string Medio de entrega de la orden de compra.
+     * @bodyParam orden_detalle array required Ejemplo: [{"id_prod": 0,"ord_com_det_numpar": "string", "ord_com_det_fab": "string","ord_com_det_des": "string","ord_com_det_can": 0,"ord_com_det_unimed": "string","ord_com_det_preuni": 0, "ord_com_det_est":"string", "ord_com_det_feclleg": "2020-25-10", "ord_com_det_canent": 0,"ord_com_det_canfal": 0, "ord_com_prod_serv":"string"}]
      * 
      * @response {
      *    "resp": "orden de compra creada"
@@ -155,6 +159,8 @@ class OrdenCompraController extends Controller
                 'ord_com_tot' => $request->input('ord_com_tot'),
                 'id_pro' => $request->input('id_pro'),
                 'id_cli' => $request->input('id_cli'),
+                'ord_med_ent' => $request->input('ord_med_ent'),
+                'ord_com_tip' => '1',
                 'est_env' => '0',
                 'est_reg' => 'A',
             ]);
@@ -176,7 +182,8 @@ class OrdenCompraController extends Controller
                         'ord_com_det_est' => "0",
                         'ord_com_det_feclleg' => null,
                         'ord_com_det_canent' => $detalle['ord_com_det_canent'],
-                        'ord_com_det_canfal' => $detalle['ord_com_det_canfal']
+                        'ord_com_det_canfal' => $detalle['ord_com_det_canfal'],
+                        'ord_com_prod_serv' => $detalle['ord_com_prod_serv'],
                     ]);
                     if($detalle['ord_com_det_est'] != "2") {
                         $estado_orden = "0";

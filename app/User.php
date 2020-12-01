@@ -26,6 +26,7 @@ class User extends Authenticatable implements JWTSubject
         'cel_col',
         'id_tipdoc',
         'id_car',
+        'firma',
         'est_reg'
     ];
 
