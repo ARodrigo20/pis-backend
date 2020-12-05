@@ -57,7 +57,7 @@ class GastoController extends Controller
     public function get()
     {
         try {
-            $cotizaciones = DB::table('gasto')
+            $Gasto = DB::table('gasto')
                                     ->select(
                                         'id_gas',
                                         'gas_fec',
@@ -84,8 +84,8 @@ class GastoController extends Controller
         }
 
         return response()->json([
-            'data' => $cotizaciones,
-            'size' => count($cotizaciones)
+            'data' => $Gasto,
+            'size' => count($Gasto)
         ], 200, [], JSON_NUMERIC_CHECK);
     }
 
@@ -166,7 +166,7 @@ class GastoController extends Controller
 
         } else {
             return response()->json([
-                'resp' => 'No se encontro la cotizacion'
+                'resp' => 'No se encontro el gasto'
             ], 500);
         }
     }

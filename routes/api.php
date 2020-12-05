@@ -198,4 +198,10 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::get('gasto/annul/{id}','Gasto\GastoController@annul')->name('annulGasto');
     Route::get('gasto/get/{id}','Gasto\GastoController@getById')->name('getGasto');
     Route::post('gasto/update/{id}','Gasto\GastoController@update')->name('updateGasto');
+    
+    //orden compra cliente
+    Route::get('orden-compra-cliente/get','OrdenCompra\OrdenCompraClienteController@get')->name('getOrdenesDeCompraCliente');
+    Route::get('orden-compra-cliente/get/{id}','OrdenCompra\OrdenCompraClienteController@getById')->name('getOrdenCompraCliente');
+    Route::post('orden-compra-cliente/create','OrdenCompra\OrdenCompraClienteController@create')->name('createOrdenCompraCliente');
+    Route::get('orden-compra-cliente/annul/{id}','OrdenCompra\OrdenCompraClienteController@annul')->name('annulOrdenCompraCliente');
 });
