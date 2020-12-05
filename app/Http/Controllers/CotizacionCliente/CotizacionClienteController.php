@@ -221,7 +221,8 @@ class CotizacionClienteController extends Controller
                         'solclidet_prod_fabr' => $detalle['solclidet_prod_fabr'],
                         'solclidet_prod_marc' => $detalle['solclidet_prod_marc'],
                         'solclidet_prod_unimed' => $detalle['solclidet_prod_unimed'],
-                        'solclidet_prod_stock' => $detalle['solclidet_prod_stock']
+                        'solclidet_prod_stock' => $detalle['solclidet_prod_stock'],
+                        'est_reg' => 'A'
                     ]);
                 }
             }
@@ -399,8 +400,117 @@ class CotizacionClienteController extends Controller
        
         ///////
         return response()->json([
-            'resp' => 'Clotizacion cliente detalle Actualizado'
+            'resp' => 'Cotizacion cliente detalle Actualizado'
         ], 200, [], JSON_NUMERIC_CHECK);
+    }
+
+
+
+     /**
+     * Actualizacion Cotizacion Cliente Cabecera y detalle
+     *
+     * Actualiza una Cotizacion de cliente completa
+     *
+     * @urlParam  id required El ID de la cabecera de la cotizacion cliente. 
+     * @bodyParam  id_cli int required Id del cliente.
+     * @bodyParam  solcli_cli_nom string Nombre del cliente.
+     * @bodyParam  solcli_cli_numdoc string Numero de documento del cliente.
+     * @bodyParam  solcli_cli_tipdoc string Tipo de documento del cliente.
+     * @bodyParam  solcli_cli_dir string Direccion del cliente.
+     * @bodyParam  solcli_cli_id_dir int Id de la direccion del cliente.
+     * @bodyParam  solcli_cli_con string Contacto del cliente.
+     * @bodyParam  solcli_cli_id_con int Id del contacto del cliente.
+     * @bodyParam  id_col int Id del colaborador.
+     * @bodyParam  solcli_col_nom string Nombre del colaborador.
+     * @bodyParam  est_reg string Estado del registro cabecera
+     * @bodyParam  cotizacion_detalle array required Ejemplo: [{"solcli_id": 0,"solclidet_prod_serv": 1,"solclidet_des":"string","id_prod":0,"solclidet_prod_can":0,"solclidet_prod_codint":"string","solclidet_prod_numpar": "string","solclidet_prod_fabr": "string","solclidet_prod_marc": "string","solclidet_prod_unimed": "string","solclidet_prod_stock": 0, "est_reg":"A"}]
+     *
+     * @response {
+     *    "resp": "Cotizacion cliente Cabecera y detalle Actualizado con exito"
+     * }
+     */
+    public function updateComplete(Request $request, $id) 
+    {
+
+        try {
+            $cotizacionCliente = CotizacionCliente::find($id);
+            $cotizacionCliente->fill(array(
+                
+                'id_proy' => $request->input('id_proy'),
+                'solcli_proy_nom' => $request->input('solcli_proy_nom'),
+                'solcli_proy_cod' => $request->input('solcli_proy_cod'),
+                'id_cli' => $request->input('id_cli'),
+                'solcli_cli_nom' => $request->input('solcli_cli_nom'),
+                'solcli_cli_numdoc' => $request->input('solcli_cli_numdoc'),
+                'solcli_cli_tipdoc' => $request->input('solcli_cli_tipdoc'),
+                'solcli_cli_dir' => $request->input('solcli_cli_dir'),
+                'solcli_cli_id_dir' => $request->input('solcli_cli_id_dir'),
+                'solcli_cli_con' => $request->input('solcli_cli_con'),
+                'solcli_cli_id_con' => $request->input('solcli_cli_id_con'),
+                'id_col' => $request->input('id_col'),
+                'solcli_col_nom' => $request->input('solcli_col_nom'),
+                'est_reg' => $request->input('est_reg'),
+            ))->save();
+
+            $detalles = $request->input('cotizacion_detalle');
+
+            if($detalles) {
+                foreach($detalles as $detalle) {                  
+                    //if($detalle->solclidet_id != null ){
+                    if($detalle['solclidet_id'] < 0){
+                        $cotizacionDetalle = CotizacionClienteDetalle::create([
+                            'solcli_id' => $cotizacionCliente->solcli_id,
+                            'solclidet_prod_serv' => $detalle['solclidet_prod_serv'],
+                            'solclidet_des' => $detalle['solclidet_des'],
+                            'id_prod' => $detalle['id_prod'],
+                            'solclidet_prod_can' => $detalle['solclidet_prod_can'],
+                            'solclidet_prod_codint' => $detalle['solclidet_prod_codint'],
+                            'solclidet_prod_numpar' => $detalle['solclidet_prod_numpar'],
+                            'solclidet_prod_fabr' => $detalle['solclidet_prod_fabr'],
+                            'solclidet_prod_marc' => $detalle['solclidet_prod_marc'],
+                            'solclidet_prod_unimed' => $detalle['solclidet_prod_unimed'],
+                            'solclidet_prod_stock' => $detalle['solclidet_prod_stock'],
+                            'est_reg' => "A"
+                        ]);
+                    } else {
+                        $clienteContacto = CotizacionClienteDetalle::find($detalle['solclidet_id']);
+                        $clienteContacto->fill(array(
+                            'solcli_id' => $cotizacionCliente->solcli_id,
+                            'solclidet_prod_serv' => $detalle['solclidet_prod_serv'],
+                            'solclidet_des' => $detalle['solclidet_des'],
+                            'id_prod' => $detalle['id_prod'],
+                            'solclidet_prod_can' => $detalle['solclidet_prod_can'],
+                            'solclidet_prod_codint' => $detalle['solclidet_prod_codint'],
+                            'solclidet_prod_numpar' => $detalle['solclidet_prod_numpar'],
+                            'solclidet_prod_fabr' => $detalle['solclidet_prod_fabr'],
+                            'solclidet_prod_marc' => $detalle['solclidet_prod_marc'],
+                            'solclidet_prod_unimed' => $detalle['solclidet_prod_unimed'],
+                            'solclidet_prod_stock' => $detalle['solclidet_prod_stock'],
+                            'est_reg' => $detalle['est_reg']
+                        ))->save();
+                    }
+
+
+
+                }
+            }
+
+
+
+
+
+        } catch (Exception $e) {
+            return response()->json([
+                'error' => 'ocurrio un error en el servidor',
+                'desc' => $e
+            ], 500);
+        }
+
+            
+        return response()->json([
+            'resp' => 'Cotizacion cliente Cabecera y detalle Actualizado con exito'
+        ], 200, [], JSON_NUMERIC_CHECK);
+      
     }
 
 }

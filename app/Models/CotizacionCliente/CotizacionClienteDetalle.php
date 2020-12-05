@@ -17,7 +17,8 @@ class CotizacionClienteDetalle extends Model
                             'solclidet_prod_fabr',
                             'solclidet_prod_marc',
                             'solclidet_prod_unimed',
-                            'solclidet_prod_stock'
+                            'solclidet_prod_stock',
+                            'est_reg'
                         );
     protected $primaryKey = 'solclidet_id';
     public $timestamps = false;
