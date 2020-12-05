@@ -192,6 +192,7 @@ class ProformaClienteController extends Controller
      *                      "prof_det_imp": 0,
      *                      "prof_det_cos": 0,
      *                      "prof_det_tcos": 0,
+     *                      "prof_det_por_com": 0,
      *                      "prof_det_com": 0,
      *                      "id_prov": 0,
      *                      "prof_prod_serv": 0,
@@ -262,7 +263,7 @@ class ProformaClienteController extends Controller
      * @bodyParam prof_con_pag  char Condiciones de pago.
      * @bodyParam prof_desc float procentaje de descuento.
      * @bodyParam prof_cli_ciu Direccion del cliente.
-     * @bodyParam proforma_detalle array required Ejemplo: [{"id_prof_det": 1,"id_pro": 5,"id_prod": 10,"prof_det_can": 10,"prof_det_pre_lis": 20,"prof_det_imp": 10,"prof_det_cos": 10,"prof_det_tcos": 10,"prof_det_com": 10,"id_prov": 2,"id_sec": 1,"prof_prod_serv": 1,"prof_des_prod": "producto","prof_can_prod": 10,  "prof_dir_prov": "String", "prof_ema_prov": "algo@gmail.com"}]
+     * @bodyParam proforma_detalle array required Ejemplo: [{"id_prof_det": 1,"id_pro": 5,"id_prod": 10,"prof_det_can": 10,"prof_det_pre_lis": 20,"prof_det_imp": 10,"prof_det_cos": 10,"prof_det_tcos": 10, "prof_det_por_com": 0, "prof_det_com": 10,"id_prov": 2,"id_sec": 1,"prof_prod_serv": 1,"prof_des_prod": "producto","prof_can_prod": 10,  "prof_dir_prov": "String", "prof_ema_prov": "algo@gmail.com"}]
      * 
      * @response {
      *    "resp": "proforma cliente creada"
@@ -322,6 +323,7 @@ class ProformaClienteController extends Controller
                         'prof_det_imp' => $detalle['prof_det_imp'],
                         'prof_det_cos' => $detalle['prof_det_cos'],
                         'prof_det_tcos' => $detalle['prof_det_tcos'],
+                        'prof_det_por_com' => $detalle['prof_det_por_com'],
                         'prof_det_com' => $detalle['prof_det_com'],
                         'id_prov' => $detalle['id_prov'],
                         'prof_prod_serv' => $detalle['prof_prod_serv'],
@@ -329,6 +331,7 @@ class ProformaClienteController extends Controller
                         'prof_can_prod' => $detalle['prof_can_prod'],
                         'prof_det_stock' => $detalle['prof_det_stock'],
                         'prof_dir_prov' => $detalle['prof_dir_prov'],
+                        'id_prov_dir' => $detalle['id_prov_dir'],
                         'prof_ema_prov' => $detalle['prof_ema_prov'],
                         'id_sec' => $detalle['id_sec'],
                         'est_reg' => 'A'
@@ -354,6 +357,116 @@ class ProformaClienteController extends Controller
             'resp' => 'Proforma cliente creada',
         ], 200, [], JSON_NUMERIC_CHECK);
     }
+
+
+    public function update(Request $request, $id)
+    {
+        DB::beginTransaction();
+
+        try {
+            $proformaCliente = ProformaCliente::find($id);
+            $proformaCliente->fill(array(
+                'id_cli' => $request->input('id_cli'),
+                'prof_mon' => $request->input('prof_mon'),
+                'id_proy' => $request->input('id_proy'),
+                'id_col' => $request->input('id_col'),
+                'solcli_id' => $request->input('solcli_id'),
+                'prof_cre' => $request->input('prof_cre'),
+                'prof_imp_ini' => $request->input('prof_imp_ini'),
+                'prof_int' => $request->input('prof_int'),
+                'prof_cuo' => $request->input('prof_cuo'),
+                'prof_val' => $request->input('prof_val'),
+                'prof_tie_ent' => $request->input('prof_tie_ent'),
+                'prof_cos_dir' => $request->input('prof_cos_dir'),
+                'prof_gas_ind' => $request->input('prof_gas_ind'),
+                'prof_uti' => $request->input('prof_uti'),
+                'prof_bas_imp' => $request->input('prof_bas_imp'),
+                'prof_igv' => $request->input('prof_igv'),
+                'prof_neto' => $request->input('prof_neto'),
+                'prof_fac' => $request->input('prof_fac'),
+                'prof_finan' => $request->input('prof_finan'),
+                'prof_val_cuo' => $request->input('prof_val_cuo'),
+                'prof_cli_id_dir' => $request->input('prof_cli_id_dir'),
+                'prof_cli_id_con' => $request->input('prof_cli_id_con'),
+                'prof_obs' => $request->input('prof_obs'),
+                'prof_desc' => $request->input('prof_desc'),
+                'prof_cli_ciu' => $request->input('prof_cli_ciu'),
+                'prof_tie_ins' => $request->input('prof_tie_ins'),
+                'prof_con_pag' => $request->input('prof_con_pag'),
+            ))->save();
+
+            $detalles = $request->input('proforma_detalle');
+
+            if($detalles) {
+                foreach($detalles as $detalle) {
+                    //nuevos => id < 0 //existentes > 0
+                    if($detalle['id_prof_det'] < 0){
+                        $proformaClientedet = ProformaClienteDet::create([
+                            'id_pro' => $proformaCliente->id_pro,
+                            'id_prod' => $detalle['id_prod'],
+                            'prof_det_can' => $detalle['prof_det_can'],
+                            'prof_det_pre_lis' => $detalle['prof_det_pre_lis'],
+                            'prof_det_imp' => $detalle['prof_det_imp'],
+                            'prof_det_cos' => $detalle['prof_det_cos'],
+                            'prof_det_tcos' => $detalle['prof_det_tcos'],
+                            'prof_det_por_com' => $detalle['prof_det_por_com'],
+                            'prof_det_com' => $detalle['prof_det_com'],
+                            'id_prov' => $detalle['id_prov'],
+                            'prof_prod_serv' => $detalle['prof_prod_serv'],
+                            'prof_des_prod' => $detalle['prof_des_prod'],
+                            'prof_can_prod' => $detalle['prof_can_prod'],
+                            'prof_det_stock' => $detalle['prof_det_stock'],
+                            'prof_dir_prov' => $detalle['prof_dir_prov'],
+                            'id_prov_dir' => $detalle['id_prov_dir'],
+                            'prof_ema_prov' => $detalle['prof_ema_prov'],
+                            'id_sec' => $detalle['id_sec'],
+                            'est_reg' => 'A'
+                        ]);
+                    } else {
+                        $proformaClientedet = ProformaClienteDet::find($detalle['id_prof_det']);
+                        $proformaClientedet->fill(array(
+                            'id_prod' => $detalle['id_prod'],
+                            'prof_det_can' => $detalle['prof_det_can'],
+                            'prof_det_pre_lis' => $detalle['prof_det_pre_lis'],
+                            'prof_det_imp' => $detalle['prof_det_imp'],
+                            'prof_det_cos' => $detalle['prof_det_cos'],
+                            'prof_det_tcos' => $detalle['prof_det_tcos'],
+                            'prof_det_por_com' => $detalle['prof_det_por_com'],
+                            'prof_det_com' => $detalle['prof_det_com'],
+                            'id_prov' => $detalle['id_prov'],
+                            'prof_prod_serv' => $detalle['prof_prod_serv'],
+                            'prof_des_prod' => $detalle['prof_des_prod'],
+                            'prof_can_prod' => $detalle['prof_can_prod'],
+                            'prof_det_stock' => $detalle['prof_det_stock'],
+                            'prof_dir_prov' => $detalle['prof_dir_prov'],
+                            'id_prov_dir' => $detalle['id_prov_dir'],
+                            'prof_ema_prov' => $detalle['prof_ema_prov'],
+                            'id_sec' => $detalle['id_sec'],
+                            'est_reg' => $detalle['est_reg'],
+                        ))->save();
+                    }
+                }
+            }
+
+            DB::commit();
+            //all good
+        } catch (Exception $e) {
+            DB::rollBack();
+            return response()->json([
+                'error' => 'ocurrio un error en el servidor',
+                'desc' => $e,
+            ], 500);
+        }
+        //Logs
+        $descripcion = "Se modifico la proforma de cliente con codigo: PROFORMA-".sprintf("%'.04d", $proformaCliente->id_pro);
+        $logs = new LogsController();
+        $logs->create_log($descripcion, 2);
+        ///////
+        return response()->json([
+            'resp' => 'Proforma cliente creada',
+        ], 200, [], JSON_NUMERIC_CHECK);
+    }
+
 
     /**
      * Anular proforma de cliente

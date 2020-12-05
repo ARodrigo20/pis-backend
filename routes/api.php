@@ -161,7 +161,7 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::get('proforma-cliente/annul/{id}','ProformaCliente\ProformaClienteController@annul')->name('annulProformaCliente');
     Route::post('proforma-cliente/update-header/{id}','ProformaCliente\ProformaClienteController@updateHeaderProforma')->name('updateHeaderProforma');
     Route::post('proforma-cliente/update-detail/{id}','ProformaCliente\ProformaClienteController@updateDetailProforma')->name('updateDetailProforma');
-    
+    Route::post('proforma-cliente/update/{id}','ProformaCliente\ProformaClienteController@update')->name('updateProforma');
 
     //Cotizacion proveedor
     Route::get('cotizacion-proveedor/get','CotizacionProveedor\CotizacionProveedorController@get')->name('getCotizacionesProveedor');

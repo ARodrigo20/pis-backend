@@ -16,6 +16,7 @@ class ProformaClienteDet extends Model
         'prof_det_imp',
         'prof_det_cos',
         'prof_det_tcos',
+        'prof_det_por_com',
         'prof_det_com',
         'id_prov',
         'prof_prod_serv',
@@ -23,8 +24,10 @@ class ProformaClienteDet extends Model
         'prof_des_prod', 
         'prof_can_prod',
         'id_sec',
+        'est_reg',
         'prof_dir_prov',
-        'prof_ema_prov'
+        'prof_ema_prov',
+        'id_prov_dir'
     );
 
     protected $primaryKey = 'id_prof_det';
@@ -40,7 +43,7 @@ class ProformaClienteDet extends Model
     }
 
     public function producto(){
-        return $this->belongsTo('App\Models\Almacen\Producto', 'id_prod')->with(['unidad_medida']);
+        return $this->belongsTo('App\Models\Almacen\Producto', 'id_prod')->with(['unidad_medida','marca']);
     }
 
     public function getProveedorAttribute()

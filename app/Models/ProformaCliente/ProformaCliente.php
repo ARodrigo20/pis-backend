@@ -77,7 +77,7 @@ class ProformaCliente extends Model
     }
 
     public function proforma_detalle(){
-        return $this->hasMany('App\Models\ProformaCliente\ProformaClienteDet', 'id_pro')->with(['producto','proveedor','seccion']);
+        return $this->hasMany('App\Models\ProformaCliente\ProformaClienteDet', 'id_pro')->with(['producto','proveedor','seccion'])->where('est_reg', '!=', 'E');
     }
 
     public function getUsuarioAttribute()
