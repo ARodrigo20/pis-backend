@@ -22,7 +22,7 @@ class OrdenCompraController extends Controller
     public function get()
     {
         try {
-            $ordenes = OrdenCompra::with(['usuario','proveedor'])->orderBy('id_ord_com', 'desc')->get();
+            $ordenes = OrdenCompra::with(['usuario','proveedor'])->where("ord_com_tip","=","1")->orderBy('id_ord_com', 'desc')->get();
         } catch (Exception $e) {
             return response()->json([
                 'error' => 'Ocurrio un error en el servidor',

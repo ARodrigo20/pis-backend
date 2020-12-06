@@ -280,6 +280,71 @@ class KardexController extends Controller
     }
 
     
+    /**
+     * Retornar Kardex para excel
+     *
+     * Retorna todos los kardex para el excel
+     *
+     *
+     * @response {
+     *      "data" : [
+     *          {
+     *              
+     *              "fecha": "date",
+     *              "codigo": "string",
+     *              "descripcion del producto": "string",
+     *              "Numero de parte": "string",
+     *              "Unidad de medida": "char",
+     *              "Cantidad": "float",
+     *              "Proveedor_Cliente": "string",
+     *              "Factura": "string",
+     *              "Guia Remision": "string",
+     *              "Boleta": "string",
+     *              "Tipo": "char",
+     *              "Usuario": "string"
+     *          }
+     *      ]
+     *      
+     * }
+     */
+    
+    
+    public function getExcel(){
+        try {
+            $kardex= DB::table('kardex')->select('fec_kar as Fecha','cod_kar as Codigo','prod_desc as Descripcion de Producto','prod_numpar as Numero de parte','prod_unimed as Unidad de Medida','prod_cant as cantidad','prov_razsoc as Proveedor_Cliente','fac_kar as Factura','guirem_kar as Guia Remision','bol_kar as Boleta','tip_kar as Tipo','col_usu as Usuario')
+            ->where('est_reg', '!=', 'E')->orderBy('id_kar','desc')->get();
+            //$kardex = kardex::with([''])->orderBy('id_kar', 'desc')->get();
+        } catch (Exception $e){
+            return response()->json([
+                'error' => 'Ocurrio un error en el servidor',
+                'desc' => $e
+            ], 500);
+        }
+        if($kardex) {
+            $empresa = Empresa::find(1);
+            $b64_file = null;
+            if($empresa && $empresa->img_emp) {
+                $b64_file = base64_encode(Storage::disk('local')->get($empresa->img_emp));
+                return response()->json([
+                    'data' => $kardex,
+                    'logo' => $b64_file,
+                    'extension' => $empresa->imgext_emp
+                ], 200, [], JSON_NUMERIC_CHECK);
+            } else {
+                return response()->json([
+                    'data' => $kardex,
+                    'logo' => null,
+                    'extension' => null
+                ], 200, [], JSON_NUMERIC_CHECK);
+            }
+
+        } else {
+            return response()->json([
+                'resp' => 'No se encontro el kardex'
+            ], 500);
+        }
+
+    }
 
     
     

@@ -184,6 +184,7 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::get('kardex/getpendiente/{id}','Kardex\KardexController@getPendiente')->name('getPendientes');
     Route::get('kardex/getcompleto','Kardex\KardexController@getCompleto')->name('getOrdenCompleto');
     Route::post('kardex/create','Kardex\KardexController@create')->name('createKardex');
+    Route::get('kardex/getexcel','Kardex\KardexController@getExcel')->name('getKardexExcel');
 
     //Seccion para el pdf
     Route::get('seccion/get','Seccion\SeccionController@get')->name('getSecciones');

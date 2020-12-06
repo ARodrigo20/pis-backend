@@ -51,7 +51,9 @@ class GastoController extends Controller
      *              "est_reg": "string"
      *          }
      *      ],
-     *      "size":0
+     *      "size":0,
+     *      "logo": "string",
+     *      "extension": "string"
      * }
      */
     public function get()
@@ -82,11 +84,29 @@ class GastoController extends Controller
                 'desc' => $e
             ], 500);
         }
+        if($Gasto) {
+            $empresa = Empresa::find(1);
+            $b64_file = null;
+            if($empresa && $empresa->img_emp) {
+                $b64_file = base64_encode(Storage::disk('local')->get($empresa->img_emp));
+                return response()->json([
+                    'Gasto' => $Gasto,
+                    'logo' => $b64_file,
+                    'extension' => $empresa->imgext_emp
+                ], 200, [], JSON_NUMERIC_CHECK);
+            } else {
+                return response()->json([
+                    'Gasto' => $Gasto,
+                    'logo' => null,
+                    'extension' => null
+                ], 200, [], JSON_NUMERIC_CHECK);
+            }
 
-        return response()->json([
-            'data' => $Gasto,
-            'size' => count($Gasto)
-        ], 200, [], JSON_NUMERIC_CHECK);
+        } else {
+            return response()->json([
+                'resp' => 'No se encontro el gasto'
+            ], 500);
+        }
     }
 
     /**
