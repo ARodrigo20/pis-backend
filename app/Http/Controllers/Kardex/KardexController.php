@@ -311,7 +311,9 @@ class KardexController extends Controller
     
     public function getExcel(){
         try {
-            $kardex= DB::table('kardex')->select('fec_kar as Fecha','cod_kar as Codigo','prod_desc as Descripcion de Producto','prod_numpar as Numero de parte','prod_unimed as Unidad de Medida','prod_cant as cantidad','prov_razsoc as Proveedor_Cliente','fac_kar as Factura','guirem_kar as Guia Remision','bol_kar as Boleta','tip_kar as Tipo','col_usu as Usuario')
+            $kardex= DB::table('kardex')->select('fec_kar as Fecha','cod_kar as Codigo','prod_desc as Descripcion de Producto','prod_numpar as Numero de parte','prod_unimed as Unidad de Medida','prod_cant as cantidad','prov_razsoc as Proveedor_Cliente','fac_kar as Factura','guirem_kar as Guia Remision','bol_kar as Boleta','col_usu as Usuario',\DB::raw('(CASE 
+            WHEN tip_kar="1" THEN "Ingreso"
+            ELSE "Salida" END) as Tipo'))
             ->where('est_reg', '!=', 'E')->orderBy('id_kar','desc')->get();
             //$kardex = kardex::with([''])->orderBy('id_kar', 'desc')->get();
         } catch (Exception $e){

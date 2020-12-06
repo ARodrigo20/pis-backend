@@ -21,6 +21,7 @@ class Gasto extends Model
         'gas_tipcam',
         'gas_totdol',
         'gas_desc',
+        'gas_fac_ser',
         'est_reg');
     protected $primaryKey = 'id_gas';
 

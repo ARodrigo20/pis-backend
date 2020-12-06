@@ -48,6 +48,7 @@ class GastoController extends Controller
      *              "gas_tipcam":"float",
      *              "gas_totdol":"float",
      *              "gas_desc":"string",
+     *              "gas_fac_ser":"string",
      *              "est_reg": "string"
      *          }
      *      ],
@@ -76,6 +77,7 @@ class GastoController extends Controller
                                         'gas_tipcam',
                                         'gas_totdol',
                                         'gas_desc',
+                                        'gas_fac_ser',
                                         'gasto.est_reg')->join('proyecto','proyecto.id_proy','=','gasto.id_proy')
                                         ->orderBy('id_gas', 'desc')->get();
         } catch (Exception $e) {
@@ -206,7 +208,8 @@ class GastoController extends Controller
      * @bodyParam  prov_ruc string ruc del proveedor.
      * @bodyParam  id_proy int Id del proyecto.
      * @bodyParam  gas_mon char tipo de moneda 0=sol 1=dolar.
-     * @bodyParam  gas_tipcam float tipo de cambio de moneda dolar.
+     * @bodyParam  gas_tipcam float tipo de cambio de moneda dolar. 
+     * @bodyParam  gas_fac_ser string serie de la factura
      * @bodyParam  gas_totdol float total en dolares
      * @bodyParam  gas_desc string descripcion del gasto
      *
@@ -234,6 +237,7 @@ class GastoController extends Controller
                 'gas_tipcam'=>$request->input('gas_tipcam'),
                 'gas_totdol'=>$request->input('gas_totdol'),
                 'gas_desc'=>$request->input('gas_desc'),
+                'gas_fac_ser'=>$request->input('gas_fac_ser'),
                 'est_reg' => 'A'
             ]);
 
@@ -310,7 +314,8 @@ class GastoController extends Controller
      * @bodyParam  id_proy int Id del proyecto.
      * @bodyParam  gas_mon char tipo de moneda 0=sol 1=dolar.
      * @bodyParam  gas_tipcam float tipo de cambio de moneda dolar.
-     * @bodyParam  gas_totdol float total en dolares
+     * @bodyParam  gas_totdol float total en dolares 
+     * @bodyParam  gas_fac_ser string numero de serie de la factura.
      * @bodyParam  gas_desc string descripcion del gasto
      * @response {
      *    "resp": "Gasto  actualizado"
@@ -333,6 +338,7 @@ class GastoController extends Controller
                 'gas_tipcam'=>$request->input('gas_tipcam'),
                 'gas_totdol'=>$request->input('gas_totdol'),
                 'gas_desc'=>$request->input('gas_desc'),
+                'gas_fac_ser'=>$request->input('gas_fac_ser'),
                 
             ))->save();
         } catch (Exception $e) {
@@ -350,6 +356,83 @@ class GastoController extends Controller
         ], 200, [], JSON_NUMERIC_CHECK);
 
     }
+
+    /**
+     * Retornar Gastos Excel
+     *
+     * Retorna todos los gastos para excel
+     *
+     *
+     * @response {
+     *      "data" : [
+     *          {
+     *              
+     *              "Fecha": "date",
+     *              "Factura": "string",
+     *              "Proveedor": "String",
+     *              "RUC": "float",
+     *              "Descripcion": "float",
+     *              "Subtotal S/":"string",
+     *              "IGV S/":"char",
+     *              "Total S/.":"string",
+     *              "T.C $":"char",
+     *              "Dolares $":"float"
+     *          }
+     *      ],
+     *      "size":0,
+     *      "logo": "string",
+     *      "extension": "string"
+     * }
+     */
+    public function getExcel()
+    {
+        try {
+            $Gasto = DB::table('gasto')
+                                    ->select(
+                                        
+                                        'gas_fec as Fecha',
+                                        'nom_proy as Proyecto',
+                                        DB::raw('CONCAT(gas_fac_ser,"-",gas_fac) as Factura'),
+                                        'prov_razsoc as Proveedor',
+                                        'prov_ruc as RUC',
+                                        'gas_desc as Descripcion',
+                                        'gas_subtot as Sub.Total S/',
+                                        'gas_igv as IGV S/',
+                                        'gas_tot as Total S/',
+                                        'gas_tipcam as T.C. $',
+                                        'gas_totdol as Dolares $')->join('proyecto','proyecto.id_proy','=','gasto.id_proy')
+                                        ->orderBy('id_gas', 'desc')->get();
+        } catch (Exception $e) {
+            return response()->json([
+                'error' => 'ocurrio un error en el servidor',
+                'desc' => $e
+            ], 500);
+        }
+        if($Gasto) {
+            $empresa = Empresa::find(1);
+            $b64_file = null;
+            if($empresa && $empresa->img_emp) {
+                $b64_file = base64_encode(Storage::disk('local')->get($empresa->img_emp));
+                return response()->json([
+                    'Gasto' => $Gasto,
+                    'logo' => $b64_file,
+                    'extension' => $empresa->imgext_emp
+                ], 200, [], JSON_NUMERIC_CHECK);
+            } else {
+                return response()->json([
+                    'Gasto' => $Gasto,
+                    'logo' => null,
+                    'extension' => null
+                ], 200, [], JSON_NUMERIC_CHECK);
+            }
+
+        } else {
+            return response()->json([
+                'resp' => 'No se encontro el gasto'
+            ], 500);
+        }
+    }
+
 
     
 
