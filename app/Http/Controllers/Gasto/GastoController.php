@@ -133,6 +133,7 @@ class GastoController extends Controller
      *          "gas_mon": "char",
      *          "gas_tipcam": "float",
      *          "gas_totdol": "float",
+     *          "gas_fac_ser": "string",
      *          "gas_desc": "string"
      *      },    
      *      "logo": "string",
@@ -159,6 +160,7 @@ class GastoController extends Controller
                                         'gas_tipcam',
                                         'gas_totdol',
                                         'gas_desc',
+                                        'gas_fac_ser',
                                         'gasto.est_reg')->join('proyecto','proyecto.id_proy','=','gasto.id_proy')
                                         ->where('id_gas','=',$id)->get();
         } catch (Exception $e) {
@@ -175,14 +177,10 @@ class GastoController extends Controller
                 $b64_file = base64_encode(Storage::disk('local')->get($empresa->img_emp));
                 return response()->json([
                     'Gasto' => $Gasto,
-                    'logo' => $b64_file,
-                    'extension' => $empresa->imgext_emp
                 ], 200, [], JSON_NUMERIC_CHECK);
             } else {
                 return response()->json([
                     'Gasto' => $Gasto,
-                    'logo' => null,
-                    'extension' => null
                 ], 200, [], JSON_NUMERIC_CHECK);
             }
 
