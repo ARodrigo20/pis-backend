@@ -206,4 +206,19 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::get('orden-compra-cliente/get/{id}','OrdenCompra\OrdenCompraClienteController@getById')->name('getOrdenCompraCliente');
     Route::post('orden-compra-cliente/create','OrdenCompra\OrdenCompraClienteController@create')->name('createOrdenCompraCliente');
     Route::get('orden-compra-cliente/annul/{id}','OrdenCompra\OrdenCompraClienteController@annul')->name('annulOrdenCompraCliente');
+
+    // Transportista
+
+    Route::get('transportista/get','Facturacion\TransportistaController@get')->name('getTransportistas');
+    Route::get('transportista/get/{id}','Facturacion\TransportistaController@getById')->name('getTransportista');
+    Route::post('transportista/create','Facturacion\TransportistaController@create')->name('createTransportista');
+    Route::get('transportista/annul/{id}','Facturacion\TransportistaController@annul')->name('annulTransportista');
+    Route::post('transportista/update/{id}','Facturacion\TransportistaController@update')->name('updateTransportista');
+
+    // Guia de remision de transporte
+    Route::get('guia-remision/get','Facturacion\GuiaRemisionController@get')->name('getGuias');
+    Route::get('guia-remision/get/{id}','Facturacion\GuiaRemisionController@getById')->name('getGuia');
+    Route::post('guia-remision/create','Facturacion\GuiaRemisionController@create')->name('createGuia');
+    Route::get('guia-remision/annul/{id}','Facturacion\GuiaRemisionController@annul')->name('annulGuia');
+   
 });
