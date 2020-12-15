@@ -330,7 +330,7 @@ class GuiaRemisionController extends Controller
      * @urlParam  id required El ID de la guia es requeridp
      *
      * @response {
-     *    "resp": "Proforma anulada"
+     *    "resp": "Guia de remision Anulada"
      * }
      */
 

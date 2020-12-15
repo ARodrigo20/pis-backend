@@ -221,4 +221,10 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::post('guia-remision/create','Facturacion\GuiaRemisionController@create')->name('createGuia');
     Route::get('guia-remision/annul/{id}','Facturacion\GuiaRemisionController@annul')->name('annulGuia');
    
+    // Factura
+    Route::get('factura/get','Facturacion\FacturaController@get')->name('getFacturas');
+    Route::get('factura/get/{id}','Facturacion\FacturaController@getById')->name('getFactura');
+    Route::post('factura/create','Facturacion\FacturaController@create')->name('createFactura');
+    Route::get('factura/annul/{id}','Facturacion\FacturaController@annul')->name('annulFactura');
+   
 });

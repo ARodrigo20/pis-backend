@@ -56,8 +56,26 @@ class Factura extends Model
     );
     protected $primaryKey = 'id_factura';
 
-    protected $appends = ['cliente', 'empresa', 'solicitud_cotizacion_cliente'];
+    protected $appends = ['cliente', 'factura_det', ];
     protected $hidden = [
         'created_at', 'updated_at',
     ];
+
+    public function getClienteAttribute()
+    {
+        return $this->cliente();
+    }
+
+    public function cliente(){
+        return $this->belongsTo('App\Models\Clientes\Cliente', 'id_cli');
+    }
+
+    public function getFacturaDetAttribute()
+    {
+        return $this->factura_det();
+    }
+
+    public function factura_det(){
+        return $this->hasMany('App\Models\Facturacion\FacturaDetalle', 'id_factura')->with(['producto'])->where('est_reg', '!=', 'E');
+    }
 }

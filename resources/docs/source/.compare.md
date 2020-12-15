@@ -72,7 +72,7 @@ curl -X POST \
     "http://localhost/api/login" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"email":"accusantium","password":"esse"}'
+    -d '{"email":"veniam","password":"voluptatum"}'
 
 ```
 
@@ -87,8 +87,8 @@ let headers = {
 };
 
 let body = {
-    "email": "accusantium",
-    "password": "esse"
+    "email": "veniam",
+    "password": "voluptatum"
 }
 
 fetch(url, {
@@ -191,14 +191,14 @@ Retorna cargo por Id
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/usuarios/cargos/get/dolorum" \
+    -G "http://localhost/api/usuarios/cargos/get/ut" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/usuarios/cargos/get/dolorum"
+    "http://localhost/api/usuarios/cargos/get/ut"
 );
 
 let headers = {
@@ -248,7 +248,7 @@ curl -X POST \
     "http://localhost/api/usuarios/cargos/create" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"des_car":"reiciendis"}'
+    -d '{"des_car":"itaque"}'
 
 ```
 
@@ -263,7 +263,7 @@ let headers = {
 };
 
 let body = {
-    "des_car": "reiciendis"
+    "des_car": "itaque"
 }
 
 fetch(url, {
@@ -303,16 +303,16 @@ Modifica un cargo
 
 ```bash
 curl -X POST \
-    "http://localhost/api/usuarios/cargos/update/ut" \
+    "http://localhost/api/usuarios/cargos/update/laborum" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"des_car":"sapiente"}'
+    -d '{"des_car":"omnis"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/usuarios/cargos/update/ut"
+    "http://localhost/api/usuarios/cargos/update/laborum"
 );
 
 let headers = {
@@ -321,7 +321,7 @@ let headers = {
 };
 
 let body = {
-    "des_car": "sapiente"
+    "des_car": "omnis"
 }
 
 fetch(url, {
@@ -366,14 +366,14 @@ Elimina un cargo
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/usuarios/cargos/delete/qui" \
+    -G "http://localhost/api/usuarios/cargos/delete/ipsam" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/usuarios/cargos/delete/qui"
+    "http://localhost/api/usuarios/cargos/delete/ipsam"
 );
 
 let headers = {
@@ -502,14 +502,14 @@ Retorna cliente por Id
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/clientes/get/dicta" \
+    -G "http://localhost/api/clientes/get/voluptatem" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/clientes/get/dicta"
+    "http://localhost/api/clientes/get/voluptatem"
 );
 
 let headers = {
@@ -586,7 +586,7 @@ curl -X POST \
     "http://localhost/api/clientes/create" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"razsoc_cli":"odit","numdoc_cli":"ullam","ema_cli":"sed","id_tipodoc":9}'
+    -d '{"razsoc_cli":"officia","numdoc_cli":"sunt","ema_cli":"aperiam","id_tipodoc":4}'
 
 ```
 
@@ -601,10 +601,10 @@ let headers = {
 };
 
 let body = {
-    "razsoc_cli": "odit",
-    "numdoc_cli": "ullam",
-    "ema_cli": "sed",
-    "id_tipodoc": 9
+    "razsoc_cli": "officia",
+    "numdoc_cli": "sunt",
+    "ema_cli": "aperiam",
+    "id_tipodoc": 4
 }
 
 fetch(url, {
@@ -647,16 +647,16 @@ Modifica un cliente
 
 ```bash
 curl -X POST \
-    "http://localhost/api/clientes/update/nostrum" \
+    "http://localhost/api/clientes/update/eaque" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"razsoc_cli":"adipisci","numdoc_cli":"quia","ema_cli":"ut","id_tipodoc":5}'
+    -d '{"razsoc_cli":"dolorem","numdoc_cli":"distinctio","ema_cli":"velit","id_tipodoc":5}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/clientes/update/nostrum"
+    "http://localhost/api/clientes/update/eaque"
 );
 
 let headers = {
@@ -665,9 +665,9 @@ let headers = {
 };
 
 let body = {
-    "razsoc_cli": "adipisci",
-    "numdoc_cli": "quia",
-    "ema_cli": "ut",
+    "razsoc_cli": "dolorem",
+    "numdoc_cli": "distinctio",
+    "ema_cli": "velit",
     "id_tipodoc": 5
 }
 
@@ -716,14 +716,14 @@ Elimina un cliente
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/clientes/delete/rerum" \
+    -G "http://localhost/api/clientes/delete/sunt" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/clientes/delete/rerum"
+    "http://localhost/api/clientes/delete/sunt"
 );
 
 let headers = {
@@ -768,7 +768,7 @@ Crea, Actualiza y elimina, contactos y direcciones de un cliente
 
 ```bash
 curl -X POST \
-    "http://localhost/api/clientes/admconydir/omnis" \
+    "http://localhost/api/clientes/admconydir/est" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"contactos":[],"direcciones":[]}'
@@ -777,7 +777,7 @@ curl -X POST \
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/clientes/admconydir/omnis"
+    "http://localhost/api/clientes/admconydir/est"
 );
 
 let headers = {
@@ -969,14 +969,14 @@ Retorna cotizacion por Id
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/cotizacion-cliente/get/quibusdam" \
+    -G "http://localhost/api/cotizacion-cliente/get/reprehenderit" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/cotizacion-cliente/get/quibusdam"
+    "http://localhost/api/cotizacion-cliente/get/reprehenderit"
 );
 
 let headers = {
@@ -1060,7 +1060,7 @@ curl -X POST \
     "http://localhost/api/cotizacion-cliente/create" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"id_cli":8,"solcli_cli_nom":"fugit","solcli_cli_numdoc":"qui","solcli_cli_tipdoc":"aut","solcli_cli_dir":"sequi","solcli_cli_id_dir":11,"solcli_cli_con":"repudiandae","solcli_cli_id_con":12,"id_col":11,"solcli_col_nom":"libero","cotizacion_detalle":[]}'
+    -d '{"id_cli":12,"solcli_cli_nom":"id","solcli_cli_numdoc":"cumque","solcli_cli_tipdoc":"harum","solcli_cli_dir":"aut","solcli_cli_id_dir":19,"solcli_cli_con":"voluptate","solcli_cli_id_con":17,"id_col":16,"solcli_col_nom":"corrupti","cotizacion_detalle":[]}'
 
 ```
 
@@ -1075,16 +1075,16 @@ let headers = {
 };
 
 let body = {
-    "id_cli": 8,
-    "solcli_cli_nom": "fugit",
-    "solcli_cli_numdoc": "qui",
-    "solcli_cli_tipdoc": "aut",
-    "solcli_cli_dir": "sequi",
-    "solcli_cli_id_dir": 11,
-    "solcli_cli_con": "repudiandae",
-    "solcli_cli_id_con": 12,
-    "id_col": 11,
-    "solcli_col_nom": "libero",
+    "id_cli": 12,
+    "solcli_cli_nom": "id",
+    "solcli_cli_numdoc": "cumque",
+    "solcli_cli_tipdoc": "harum",
+    "solcli_cli_dir": "aut",
+    "solcli_cli_id_dir": 19,
+    "solcli_cli_con": "voluptate",
+    "solcli_cli_id_con": 17,
+    "id_col": 16,
+    "solcli_col_nom": "corrupti",
     "cotizacion_detalle": []
 }
 
@@ -1135,14 +1135,14 @@ Anula una cotizacion
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/cotizacion-cliente/annul/nostrum" \
+    -G "http://localhost/api/cotizacion-cliente/annul/pariatur" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/cotizacion-cliente/annul/nostrum"
+    "http://localhost/api/cotizacion-cliente/annul/pariatur"
 );
 
 let headers = {
@@ -1185,16 +1185,16 @@ Parameter | Status | Description
 
 ```bash
 curl -X POST \
-    "http://localhost/api/cotizacion-cliente/update-header/animi" \
+    "http://localhost/api/cotizacion-cliente/update-header/culpa" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"id_proy":"est","id_cli":3,"solcli_proy_cod":"laborum","solcli_proy_nom":"voluptas","solcli_cli_nom":"accusantium","solcli_cli_numdoc":"dolorem","solcli_cli_tipdoc":"dolor","solcli_cli_dir":"facilis","solcli_cli_id_dir":12,"solcli_cli_con":"voluptatem","solcli_cli_id_con":2,"id_col":16,"solcli_col_nom":"illum","est_reg":"atque"}'
+    -d '{"id_proy":"possimus","id_cli":18,"solcli_proy_cod":"officiis","solcli_proy_nom":"repellendus","solcli_cli_nom":"maxime","solcli_cli_numdoc":"sint","solcli_cli_tipdoc":"fugit","solcli_cli_dir":"aut","solcli_cli_id_dir":17,"solcli_cli_con":"atque","solcli_cli_id_con":2,"id_col":4,"solcli_col_nom":"et","est_reg":"maxime"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/cotizacion-cliente/update-header/animi"
+    "http://localhost/api/cotizacion-cliente/update-header/culpa"
 );
 
 let headers = {
@@ -1203,20 +1203,20 @@ let headers = {
 };
 
 let body = {
-    "id_proy": "est",
-    "id_cli": 3,
-    "solcli_proy_cod": "laborum",
-    "solcli_proy_nom": "voluptas",
-    "solcli_cli_nom": "accusantium",
-    "solcli_cli_numdoc": "dolorem",
-    "solcli_cli_tipdoc": "dolor",
-    "solcli_cli_dir": "facilis",
-    "solcli_cli_id_dir": 12,
-    "solcli_cli_con": "voluptatem",
+    "id_proy": "possimus",
+    "id_cli": 18,
+    "solcli_proy_cod": "officiis",
+    "solcli_proy_nom": "repellendus",
+    "solcli_cli_nom": "maxime",
+    "solcli_cli_numdoc": "sint",
+    "solcli_cli_tipdoc": "fugit",
+    "solcli_cli_dir": "aut",
+    "solcli_cli_id_dir": 17,
+    "solcli_cli_con": "atque",
     "solcli_cli_id_con": 2,
-    "id_col": 16,
-    "solcli_col_nom": "illum",
-    "est_reg": "atque"
+    "id_col": 4,
+    "solcli_col_nom": "et",
+    "est_reg": "maxime"
 }
 
 fetch(url, {
@@ -1272,16 +1272,16 @@ Parameter | Type | Status | Description
 
 ```bash
 curl -X POST \
-    "http://localhost/api/cotizacion-cliente/update-detail/voluptatem" \
+    "http://localhost/api/cotizacion-cliente/update-detail/nulla" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"solclidet_prod_serv":"voluptate","solclidet_des":"est","id_prod":"placeat","solclidet_prod_can":"illo","solclidet_prod_codint":17,"solclidet_prod_numpar\":":"at","solclidet_prod_fabr":"explicabo","solclidet_prod_marc\":":"et","solclidet_prod_unimed":"et","solclidet_prod_stock\":":"et"}'
+    -d '{"solclidet_prod_serv":"labore","solclidet_des":"maiores","id_prod":"omnis","solclidet_prod_can":"quae","solclidet_prod_codint":1,"solclidet_prod_numpar\":":"est","solclidet_prod_fabr":"non","solclidet_prod_marc\":":"odit","solclidet_prod_unimed":"quo","solclidet_prod_stock\":":"sed"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/cotizacion-cliente/update-detail/voluptatem"
+    "http://localhost/api/cotizacion-cliente/update-detail/nulla"
 );
 
 let headers = {
@@ -1290,16 +1290,16 @@ let headers = {
 };
 
 let body = {
-    "solclidet_prod_serv": "voluptate",
-    "solclidet_des": "est",
-    "id_prod": "placeat",
-    "solclidet_prod_can": "illo",
-    "solclidet_prod_codint": 17,
-    "solclidet_prod_numpar\":": "at",
-    "solclidet_prod_fabr": "explicabo",
-    "solclidet_prod_marc\":": "et",
-    "solclidet_prod_unimed": "et",
-    "solclidet_prod_stock\":": "et"
+    "solclidet_prod_serv": "labore",
+    "solclidet_des": "maiores",
+    "id_prod": "omnis",
+    "solclidet_prod_can": "quae",
+    "solclidet_prod_codint": 1,
+    "solclidet_prod_numpar\":": "est",
+    "solclidet_prod_fabr": "non",
+    "solclidet_prod_marc\":": "odit",
+    "solclidet_prod_unimed": "quo",
+    "solclidet_prod_stock\":": "sed"
 }
 
 fetch(url, {
@@ -1353,16 +1353,16 @@ Actualiza una Cotizacion de cliente completa
 
 ```bash
 curl -X POST \
-    "http://localhost/api/cotizacion-cliente/update-complete/eos" \
+    "http://localhost/api/cotizacion-cliente/update-complete/cumque" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"id_cli":12,"solcli_cli_nom":"qui","solcli_cli_numdoc":"adipisci","solcli_cli_tipdoc":"tempora","solcli_cli_dir":"aut","solcli_cli_id_dir":7,"solcli_cli_con":"doloremque","solcli_cli_id_con":5,"id_col":11,"solcli_col_nom":"voluptatem","est_reg":"quo","cotizacion_detalle":[]}'
+    -d '{"id_cli":9,"solcli_cli_nom":"excepturi","solcli_cli_numdoc":"maxime","solcli_cli_tipdoc":"quia","solcli_cli_dir":"impedit","solcli_cli_id_dir":4,"solcli_cli_con":"maiores","solcli_cli_id_con":3,"id_col":7,"solcli_col_nom":"quia","est_reg":"vero","cotizacion_detalle":[]}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/cotizacion-cliente/update-complete/eos"
+    "http://localhost/api/cotizacion-cliente/update-complete/cumque"
 );
 
 let headers = {
@@ -1371,17 +1371,17 @@ let headers = {
 };
 
 let body = {
-    "id_cli": 12,
-    "solcli_cli_nom": "qui",
-    "solcli_cli_numdoc": "adipisci",
-    "solcli_cli_tipdoc": "tempora",
-    "solcli_cli_dir": "aut",
-    "solcli_cli_id_dir": 7,
-    "solcli_cli_con": "doloremque",
-    "solcli_cli_id_con": 5,
-    "id_col": 11,
-    "solcli_col_nom": "voluptatem",
-    "est_reg": "quo",
+    "id_cli": 9,
+    "solcli_cli_nom": "excepturi",
+    "solcli_cli_numdoc": "maxime",
+    "solcli_cli_tipdoc": "quia",
+    "solcli_cli_dir": "impedit",
+    "solcli_cli_id_dir": 4,
+    "solcli_cli_con": "maiores",
+    "solcli_cli_id_con": 3,
+    "id_col": 7,
+    "solcli_col_nom": "quia",
+    "est_reg": "vero",
     "cotizacion_detalle": []
 }
 
@@ -1522,14 +1522,14 @@ Retorna cotizacion del proveedor por medio de su Id
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/cotizacion-proveedor/get/ad" \
+    -G "http://localhost/api/cotizacion-proveedor/get/sapiente" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/cotizacion-proveedor/get/ad"
+    "http://localhost/api/cotizacion-proveedor/get/sapiente"
 );
 
 let headers = {
@@ -1620,7 +1620,7 @@ curl -X POST \
     "http://localhost/api/cotizacion-proveedor/create" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"solcli_id":19,"id_proy":5,"id_cli":17,"id_prov":7,"cotprov_razsoc":"quas","cotprov_ruc":"autem","cotprov_tipdoc":"ea","cotprov_dir":"blanditiis","cotprov_con":"dicta","cotprov_ema":"dolores","id_col":"voluptates","cotprov_col_nom":"corporis","cotprov_col_usu":"et","cotizacion_proveedor_detalle":[]}'
+    -d '{"solcli_id":8,"id_proy":18,"id_cli":1,"id_prov":6,"cotprov_razsoc":"eum","cotprov_ruc":"odio","cotprov_tipdoc":"vitae","cotprov_dir":"illum","cotprov_con":"ea","cotprov_ema":"consectetur","id_col":"est","cotprov_col_nom":"consequuntur","cotprov_col_usu":"aliquid","cotizacion_proveedor_detalle":[]}'
 
 ```
 
@@ -1635,19 +1635,19 @@ let headers = {
 };
 
 let body = {
-    "solcli_id": 19,
-    "id_proy": 5,
-    "id_cli": 17,
-    "id_prov": 7,
-    "cotprov_razsoc": "quas",
-    "cotprov_ruc": "autem",
-    "cotprov_tipdoc": "ea",
-    "cotprov_dir": "blanditiis",
-    "cotprov_con": "dicta",
-    "cotprov_ema": "dolores",
-    "id_col": "voluptates",
-    "cotprov_col_nom": "corporis",
-    "cotprov_col_usu": "et",
+    "solcli_id": 8,
+    "id_proy": 18,
+    "id_cli": 1,
+    "id_prov": 6,
+    "cotprov_razsoc": "eum",
+    "cotprov_ruc": "odio",
+    "cotprov_tipdoc": "vitae",
+    "cotprov_dir": "illum",
+    "cotprov_con": "ea",
+    "cotprov_ema": "consectetur",
+    "id_col": "est",
+    "cotprov_col_nom": "consequuntur",
+    "cotprov_col_usu": "aliquid",
     "cotizacion_proveedor_detalle": []
 }
 
@@ -1701,14 +1701,14 @@ Anula una cotizacion
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/cotizacion-proveedor/annul/molestiae" \
+    -G "http://localhost/api/cotizacion-proveedor/annul/facere" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/cotizacion-proveedor/annul/molestiae"
+    "http://localhost/api/cotizacion-proveedor/annul/facere"
 );
 
 let headers = {
@@ -1796,7 +1796,7 @@ curl -X POST \
     "http://localhost/api/email/send-email" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"archivo":"est","asunto":"exercitationem","cc":"aliquid","mensaje":"vel","destinatario":"facere","tabla":"aut","doc_referencia":"aliquid"}'
+    -d '{"archivo":"dolorum","asunto":"aut","cc":"et","mensaje":"sequi","destinatario":"consequatur","tabla":"aliquam","doc_referencia":"et"}'
 
 ```
 
@@ -1811,13 +1811,13 @@ let headers = {
 };
 
 let body = {
-    "archivo": "est",
-    "asunto": "exercitationem",
-    "cc": "aliquid",
-    "mensaje": "vel",
-    "destinatario": "facere",
-    "tabla": "aut",
-    "doc_referencia": "aliquid"
+    "archivo": "dolorum",
+    "asunto": "aut",
+    "cc": "et",
+    "mensaje": "sequi",
+    "destinatario": "consequatur",
+    "tabla": "aliquam",
+    "doc_referencia": "et"
 }
 
 fetch(url, {
@@ -1891,7 +1891,7 @@ fetch(url, {
 
 ```json
 {
-    "resp": "No se encontro el logotipo"
+    "message": "Server Error"
 }
 ```
 
@@ -1913,7 +1913,7 @@ curl -X POST \
     "http://localhost/api/empresa/update" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"logo":"ullam","nom_emp":"non","numdoc_emp":"perferendis","dir_emp":"voluptas","dis_emp":"aut","ciu_emp":"accusamus","tel_emp":"consequatur","cel_emp":"et","codciu_emp":"soluta","id_tipodoc":7}'
+    -d '{"logo":"mollitia","nom_emp":"laudantium","numdoc_emp":"quis","dir_emp":"quasi","dis_emp":"sapiente","ciu_emp":"vel","tel_emp":"consequuntur","cel_emp":"non","codciu_emp":"exercitationem","id_tipodoc":3}'
 
 ```
 
@@ -1928,16 +1928,16 @@ let headers = {
 };
 
 let body = {
-    "logo": "ullam",
-    "nom_emp": "non",
-    "numdoc_emp": "perferendis",
-    "dir_emp": "voluptas",
-    "dis_emp": "aut",
-    "ciu_emp": "accusamus",
-    "tel_emp": "consequatur",
-    "cel_emp": "et",
-    "codciu_emp": "soluta",
-    "id_tipodoc": 7
+    "logo": "mollitia",
+    "nom_emp": "laudantium",
+    "numdoc_emp": "quis",
+    "dir_emp": "quasi",
+    "dis_emp": "sapiente",
+    "ciu_emp": "vel",
+    "tel_emp": "consequuntur",
+    "cel_emp": "non",
+    "codciu_emp": "exercitationem",
+    "id_tipodoc": 3
 }
 
 fetch(url, {
@@ -2110,14 +2110,14 @@ Retorna fabricante por Id
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/almacen/fabricantes/get/autem" \
+    -G "http://localhost/api/almacen/fabricantes/get/minima" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/almacen/fabricantes/get/autem"
+    "http://localhost/api/almacen/fabricantes/get/minima"
 );
 
 let headers = {
@@ -2169,7 +2169,7 @@ curl -X POST \
     "http://localhost/api/almacen/fabricantes/create" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"des_fab":"error"}'
+    -d '{"des_fab":"totam"}'
 
 ```
 
@@ -2184,7 +2184,7 @@ let headers = {
 };
 
 let body = {
-    "des_fab": "error"
+    "des_fab": "totam"
 }
 
 fetch(url, {
@@ -2224,16 +2224,16 @@ Modifica un fabricante
 
 ```bash
 curl -X POST \
-    "http://localhost/api/almacen/fabricantes/update/placeat" \
+    "http://localhost/api/almacen/fabricantes/update/ducimus" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"des_fab":"blanditiis"}'
+    -d '{"des_fab":"sapiente"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/almacen/fabricantes/update/placeat"
+    "http://localhost/api/almacen/fabricantes/update/ducimus"
 );
 
 let headers = {
@@ -2242,7 +2242,7 @@ let headers = {
 };
 
 let body = {
-    "des_fab": "blanditiis"
+    "des_fab": "sapiente"
 }
 
 fetch(url, {
@@ -2287,14 +2287,14 @@ Elimina un fabricante
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/almacen/fabricantes/delete/blanditiis" \
+    -G "http://localhost/api/almacen/fabricantes/delete/consequuntur" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/almacen/fabricantes/delete/blanditiis"
+    "http://localhost/api/almacen/fabricantes/delete/consequuntur"
 );
 
 let headers = {
@@ -2329,6 +2329,405 @@ Parameter | Status | Description
     `id` |  required  | El ID del fabricante.
 
 <!-- END_46ca20df31bce23f3c78e2aaec00303c -->
+
+#Factura
+
+APIs para crear factura o boleta internamente
+<!-- START_95bfc452756073b0cd94294f8a050da6 -->
+## Retornar  facturas
+
+Retorna todas las factura sin ningun filtro adicional
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/api/factura/get" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/factura/get"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "data": [
+        {
+            "id_factura": 2,
+            "tipoDoc": 1,
+            "serie": "F001",
+            "correlativo": 1,
+            "fechaEmision": "2020-12-11 23:59:12",
+            "solcli_id": null,
+            "id_cli": 1,
+            "id_emp": 1,
+            "tipoMoneda": "PEN",
+            "sumOtrosCargos": 0,
+            "mtoOperGravadas": 100,
+            "mtoOperInafectas": 0,
+            "mtoOperExoneradas": 0,
+            "mtoOperExportacion": 0,
+            "mtoIGV": 18,
+            "mtoISC": 0,
+            "mtoOtrosTributos": 0,
+            "icbper": 0,
+            "mtoImpVenta": 118,
+            "id_det_fac": null,
+            "id_legends": null,
+            "id_guias": null,
+            "id_relDocs": null,
+            "observacion": "my observacion :)",
+            "compra": null,
+            "mtoBaseIsc": 0,
+            "mtoBaseOth": 0,
+            "totalImpuestos": 18,
+            "ublVersion": 2,
+            "tipoOperacion": 1,
+            "fecVencimiento": "2021-01-20",
+            "sumDsctoGlobal": 0,
+            "mtoDescuentos": 0,
+            "mtoOperGratuitas": 0,
+            "totalAnticipos": 0,
+            "id_guiaEmbebida": null,
+            "id_seller": null,
+            "id_direccion_entrega": null,
+            "descuentos": 0,
+            "id_cargo": null,
+            "mtoCargos": 0,
+            "valorVenta": 118,
+            "observaciones": null,
+            "est_reg": "A",
+            "est_env": "P",
+            "cliente": {
+                "id_cli": 1,
+                "razsoc_cli": "LA PRUEBA CLEITNE SAC",
+                "numdoc_cli": 9842255555,
+                "ema_cli": "prueba@cliente.com",
+                "id_tipdoc": 1,
+                "est_reg": "A",
+                "tipo_documento": {},
+                "contactos": {},
+                "direcciones": {},
+                "proyectos": {},
+                "ordenes_compras": {}
+            },
+            "factura_det": [
+                {
+                    "id_det_fac": 1,
+                    "unidad": "NIU",
+                    "cantidad": 12,
+                    "codProducto": "string",
+                    "codProdSunat": "string",
+                    "codProdGS1": "string",
+                    "descripcion": "PRODUCTO 1",
+                    "mtoValorUnitario": 100,
+                    "descuento": 0,
+                    "igv": 18,
+                    "tipAfeIgv": 10,
+                    "isc": 0,
+                    "tipSisIsc": "string",
+                    "totalImpuestos": 18,
+                    "mtoPrecioUnitario": 118,
+                    "mtoValorVenta": 100,
+                    "mtoValorGratuito": 0,
+                    "mtoBaseIgv": 0,
+                    "porcentajeIgv": 0,
+                    "mtoBaseIsc": 0,
+                    "porcentajeIsc": 0,
+                    "mtoBaseOth": 0,
+                    "porcentajeOth": 0,
+                    "otroTributo": 0,
+                    "icbper": 0,
+                    "factorIcbper": 0,
+                    "est_reg": "A",
+                    "id_factura": 2,
+                    "id_prod": 1,
+                    "producto": {
+                        "id_prod": 1,
+                        "cod_prod": 2121312,
+                        "num_parte_prod": 1,
+                        "stk_prod": 0,
+                        "des_prod": "desarmador 3 pulgadas",
+                        "pre_com_prod": 125,
+                        "mon_prod": null,
+                        "id_unimed": null,
+                        "id_mar": null,
+                        "id_mod": null,
+                        "id_fab": null,
+                        "est_reg": "A",
+                        "marca": null,
+                        "modelo": {},
+                        "fabricante": {},
+                        "unidad_medida": null
+                    }
+                }
+            ]
+        }
+    ],
+    "size": 0
+}
+```
+
+### HTTP Request
+`GET api/factura/get`
+
+
+<!-- END_95bfc452756073b0cd94294f8a050da6 -->
+
+<!-- START_6077d7b232329127b0c3170475f3a17c -->
+## Retornar una factura
+
+Retorna una factura por medio de su Id
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/api/factura/get/natus" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/factura/get/natus"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+null
+```
+
+### HTTP Request
+`GET api/factura/get/{id}`
+
+#### URL Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -------
+    `id` |  required  | El ID de la factura cabecera
+
+<!-- END_6077d7b232329127b0c3170475f3a17c -->
+
+<!-- START_5a429d3767ad898374c9fd9a990120f5 -->
+## Crear Factura
+
+Crea una guia de remision de transporte
+
+> Example request:
+
+```bash
+curl -X POST \
+    "http://localhost/api/factura/create" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"tipoDoc":"et","serie":"molestias","solcli_id":"et","id_cli":"consequuntur","tipoMoneda":"sapiente","sumOtrosCargos":11626690.5914,"mtoOperGravadas":20667003.3162773,"mtoOperInafecta":462143128.6233932,"mtoOperExoneradas":752.39054,"mtoOperExportacion":17321.234,"mtoIGV":2359552,"mtoISC":0.2,"mtoOtrosTributos":0.469108875,"icbper":30494745.36329932,"mtoImpVenta":30.6,"id_legends":"dolorem","id_guias":"animi","id_relDocs":"officia","observacion":"ad","compra":"qui","mtoBaseIsc":33819670.38,"mtoBaseOth":21542151.6626062,"totalImpuestos":107.4,"tipoOperacion":"quisquam","fecVencimiento":"non","sumDsctoGlobal":23.313885333,"mtoDescuentos":"quia","mtoOperGratuitas":93011.81043309,"totalAnticipos":38.9573285,"id_guiaEmbebida":"hic","id_seller":"nostrum","id_direccion_entrega":"veniam","descuentos":7050.0097,"id_cargo":"adipisci","mtoCargos":64823.523,"valorVenta":0.89,"est_reg":"qui","est_env":"impedit","detalle_factura":[]}'
+
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/factura/create"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "tipoDoc": "et",
+    "serie": "molestias",
+    "solcli_id": "et",
+    "id_cli": "consequuntur",
+    "tipoMoneda": "sapiente",
+    "sumOtrosCargos": 11626690.5914,
+    "mtoOperGravadas": 20667003.3162773,
+    "mtoOperInafecta": 462143128.6233932,
+    "mtoOperExoneradas": 752.39054,
+    "mtoOperExportacion": 17321.234,
+    "mtoIGV": 2359552,
+    "mtoISC": 0.2,
+    "mtoOtrosTributos": 0.469108875,
+    "icbper": 30494745.36329932,
+    "mtoImpVenta": 30.6,
+    "id_legends": "dolorem",
+    "id_guias": "animi",
+    "id_relDocs": "officia",
+    "observacion": "ad",
+    "compra": "qui",
+    "mtoBaseIsc": 33819670.38,
+    "mtoBaseOth": 21542151.6626062,
+    "totalImpuestos": 107.4,
+    "tipoOperacion": "quisquam",
+    "fecVencimiento": "non",
+    "sumDsctoGlobal": 23.313885333,
+    "mtoDescuentos": "quia",
+    "mtoOperGratuitas": 93011.81043309,
+    "totalAnticipos": 38.9573285,
+    "id_guiaEmbebida": "hic",
+    "id_seller": "nostrum",
+    "id_direccion_entrega": "veniam",
+    "descuentos": 7050.0097,
+    "id_cargo": "adipisci",
+    "mtoCargos": 64823.523,
+    "valorVenta": 0.89,
+    "est_reg": "qui",
+    "est_env": "impedit",
+    "detalle_factura": []
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "resp": "Factura creada"
+}
+```
+
+### HTTP Request
+`POST api/factura/create`
+
+#### Body Parameters
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    `tipoDoc` | string |  optional  | 1,
+        `serie` | string |  optional  | F001,
+        `solcli_id` | id |  optional  | id de solicitud de cotizacion cliente,
+        `id_cli` | id |  optional  | id del cliente,
+        `tipoMoneda` | string |  optional  | Codigo de moneda,
+        `sumOtrosCargos` | float |  optional  | Monto en Otros cargos,
+        `mtoOperGravadas` | float |  optional  | Monto en Operaciones Gravadas,
+        `mtoOperInafecta` | float |  optional  | Monto en Operaciones Inafectas,
+        `mtoOperExoneradas` | float |  optional  | Monto en Operaciones Exoneradas,
+        `mtoOperExportacion` | float |  optional  | Monto en Operaciones que va a Exportacion,
+        `mtoIGV` | float |  optional  | Monto de igv,
+        `mtoISC` | float |  optional  | 0,
+        `mtoOtrosTributos` | float |  optional  | 0,
+        `icbper` | float |  optional  | 0,
+        `mtoImpVenta` | float |  optional  | Monto imponible,
+        `id_legends` | null |  optional  | Deberia ser un id a otra tabla de legendas,
+        `id_guias` | null |  optional  | Deberia ser un id a otra tabla,
+        `id_relDocs` | null |  optional  | Deberia ser el id de tabla de documentos relacionados,
+        `observacion` | string |  optional  | Observacion del usuario,
+        `compra` | string |  optional  | Valor segun catalogo Sunat,
+        `mtoBaseIsc` | float |  optional  | 0,
+        `mtoBaseOth` | float |  optional  | 0,
+        `totalImpuestos` | float |  optional  | 18,
+        `tipoOperacion` | string |  optional  | Codigo segun sunat,
+        `fecVencimiento` | date |  optional  | Fecha que vence la factura o boleta,
+        `sumDsctoGlobal` | float |  optional  | Sumatoria de descuentos de todos detalley cabecera,
+        `mtoDescuentos` | floar |  optional  | Suma Descuentos detalle,
+        `mtoOperGratuitas` | float |  optional  | Monto de operaciones gratuitas,
+        `totalAnticipos` | float |  optional  | Total en anticipos,
+        `id_guiaEmbebida` | null |  optional  | ID,
+        `id_seller` | null |  optional  | ID,
+        `id_direccion_entrega` | null |  optional  | ID,
+        `descuentos` | float |  optional  | 0,
+        `id_cargo` | null |  optional  | Id,
+        `mtoCargos` | float |  optional  | 0,
+        `valorVenta` | float |  optional  | Valor final que el cliente pagara,
+        `est_reg` | string |  optional  | estado de registro,
+        `est_env` | string |  optional  | estado de envio,
+        `detalle_factura` | array |  optional  | Ejemplo: [{
+    
+<!-- END_5a429d3767ad898374c9fd9a990120f5 -->
+
+<!-- START_b082d383d378481393dd0909b218dc6c -->
+## Anular factura
+
+Anula una factura cabecera solo en nuestro sistema solo deve hacerse antes de ser enviada a la SUNAT sino GG
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/api/factura/annul/quidem" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/factura/annul/quidem"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "resp": "Factura anulada"
+}
+```
+
+### HTTP Request
+`GET api/factura/annul/{id}`
+
+#### URL Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -------
+    `id` |  required  | El ID de la factura es requerido
+
+<!-- END_b082d383d378481393dd0909b218dc6c -->
 
 #Gasto
 
@@ -2415,7 +2814,7 @@ curl -X POST \
     "http://localhost/api/gasto/create" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"gas_fec":"quia","gas_fac":"exercitationem","gas_subtot":178.7,"gas_igv":86456021.01895,"gas_tot":60378.929,"id_prov":19,"prov_razsoc":"sed","prov_ruc":"ea","id_proy":9,"gas_mon":"rerum","gas_tipcam":7945867.678207396,"gas_fac_ser":"vero","gas_totdol":19,"gas_desc":"incidunt"}'
+    -d '{"gas_fec":"qui","gas_fac":"vel","gas_subtot":530.2,"gas_igv":1658.19697853,"gas_tot":0.1408,"id_prov":13,"prov_razsoc":"et","prov_ruc":"omnis","id_proy":2,"gas_mon":"nesciunt","gas_tipcam":3028.82437,"gas_fac_ser":"asperiores","gas_totdol":107795404,"gas_desc":"officiis"}'
 
 ```
 
@@ -2430,20 +2829,20 @@ let headers = {
 };
 
 let body = {
-    "gas_fec": "quia",
-    "gas_fac": "exercitationem",
-    "gas_subtot": 178.7,
-    "gas_igv": 86456021.01895,
-    "gas_tot": 60378.929,
-    "id_prov": 19,
-    "prov_razsoc": "sed",
-    "prov_ruc": "ea",
-    "id_proy": 9,
-    "gas_mon": "rerum",
-    "gas_tipcam": 7945867.678207396,
-    "gas_fac_ser": "vero",
-    "gas_totdol": 19,
-    "gas_desc": "incidunt"
+    "gas_fec": "qui",
+    "gas_fac": "vel",
+    "gas_subtot": 530.2,
+    "gas_igv": 1658.19697853,
+    "gas_tot": 0.1408,
+    "id_prov": 13,
+    "prov_razsoc": "et",
+    "prov_ruc": "omnis",
+    "id_proy": 2,
+    "gas_mon": "nesciunt",
+    "gas_tipcam": 3028.82437,
+    "gas_fac_ser": "asperiores",
+    "gas_totdol": 107795404,
+    "gas_desc": "officiis"
 }
 
 fetch(url, {
@@ -2496,14 +2895,14 @@ Anula un Gasto
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/gasto/annul/cumque" \
+    -G "http://localhost/api/gasto/annul/eum" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/gasto/annul/cumque"
+    "http://localhost/api/gasto/annul/eum"
 );
 
 let headers = {
@@ -2548,14 +2947,14 @@ Retorna Gasto por Id
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/gasto/get/ut" \
+    -G "http://localhost/api/gasto/get/reiciendis" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/gasto/get/ut"
+    "http://localhost/api/gasto/get/reiciendis"
 );
 
 let headers = {
@@ -2618,16 +3017,16 @@ Modifica un Gasto
 
 ```bash
 curl -X POST \
-    "http://localhost/api/gasto/update/et" \
+    "http://localhost/api/gasto/update/necessitatibus" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"gas_fec":"harum","gas_fac":"dignissimos","gas_subtot":195,"gas_igv":2.483978209,"gas_tot":3.8,"id_prov":5,"prov_razsoc":"est","prov_ruc":"quia","id_proy":10,"gas_mon":"soluta","gas_tipcam":228.425212,"gas_totdol":2.9129779,"gas_fac_ser":"ut","gas_desc":"voluptates"}'
+    -d '{"gas_fec":"soluta","gas_fac":"qui","gas_subtot":5034,"gas_igv":2553976.843,"gas_tot":4322.022537506,"id_prov":20,"prov_razsoc":"quia","prov_ruc":"quia","id_proy":14,"gas_mon":"illum","gas_tipcam":5312.2,"gas_totdol":0,"gas_fac_ser":"similique","gas_desc":"illum"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/gasto/update/et"
+    "http://localhost/api/gasto/update/necessitatibus"
 );
 
 let headers = {
@@ -2636,20 +3035,20 @@ let headers = {
 };
 
 let body = {
-    "gas_fec": "harum",
-    "gas_fac": "dignissimos",
-    "gas_subtot": 195,
-    "gas_igv": 2.483978209,
-    "gas_tot": 3.8,
-    "id_prov": 5,
-    "prov_razsoc": "est",
+    "gas_fec": "soluta",
+    "gas_fac": "qui",
+    "gas_subtot": 5034,
+    "gas_igv": 2553976.843,
+    "gas_tot": 4322.022537506,
+    "id_prov": 20,
+    "prov_razsoc": "quia",
     "prov_ruc": "quia",
-    "id_proy": 10,
-    "gas_mon": "soluta",
-    "gas_tipcam": 228.425212,
-    "gas_totdol": 2.9129779,
-    "gas_fac_ser": "ut",
-    "gas_desc": "voluptates"
+    "id_proy": 14,
+    "gas_mon": "illum",
+    "gas_tipcam": 5312.2,
+    "gas_totdol": 0,
+    "gas_fac_ser": "similique",
+    "gas_desc": "illum"
 }
 
 fetch(url, {
@@ -2894,14 +3293,14 @@ Retorna una guia de remision por medio de su Id
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/guia-remision/get/repellat" \
+    -G "http://localhost/api/guia-remision/get/cumque" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/guia-remision/get/repellat"
+    "http://localhost/api/guia-remision/get/cumque"
 );
 
 let headers = {
@@ -2947,7 +3346,7 @@ curl -X POST \
     "http://localhost/api/guia-remision/create" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"tipoDoc":"non","serie":"rerum","observacion":"inventore","id_cli":"et","envio":[],"est_reg":"labore","est_env":"sit","solcli_id":"incidunt","guia_remision_det":[]}'
+    -d '{"tipoDoc":"et","serie":"maxime","observacion":"et","id_cli":"sunt","envio":[],"est_reg":"accusamus","est_env":"architecto","solcli_id":"beatae","guia_remision_det":[]}'
 
 ```
 
@@ -2962,14 +3361,14 @@ let headers = {
 };
 
 let body = {
-    "tipoDoc": "non",
-    "serie": "rerum",
-    "observacion": "inventore",
-    "id_cli": "et",
+    "tipoDoc": "et",
+    "serie": "maxime",
+    "observacion": "et",
+    "id_cli": "sunt",
     "envio": [],
-    "est_reg": "labore",
-    "est_env": "sit",
-    "solcli_id": "incidunt",
+    "est_reg": "accusamus",
+    "est_env": "architecto",
+    "solcli_id": "beatae",
     "guia_remision_det": []
 }
 
@@ -3018,14 +3417,14 @@ Anula una guia de remision solo en nuestro sistema solo deve hacerse antes de se
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/guia-remision/annul/ratione" \
+    -G "http://localhost/api/guia-remision/annul/ut" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/guia-remision/annul/ratione"
+    "http://localhost/api/guia-remision/annul/ut"
 );
 
 let headers = {
@@ -3046,7 +3445,7 @@ fetch(url, {
 
 ```json
 {
-    "resp": "Proforma anulada"
+    "resp": "Guia de remision Anulada"
 }
 ```
 
@@ -3435,14 +3834,14 @@ Retorna marca por Id
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/almacen/marcas/get/sed" \
+    -G "http://localhost/api/almacen/marcas/get/aspernatur" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/almacen/marcas/get/sed"
+    "http://localhost/api/almacen/marcas/get/aspernatur"
 );
 
 let headers = {
@@ -3494,7 +3893,7 @@ curl -X POST \
     "http://localhost/api/almacen/marcas/create" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"des_mar":"et"}'
+    -d '{"des_mar":"aliquam"}'
 
 ```
 
@@ -3509,7 +3908,7 @@ let headers = {
 };
 
 let body = {
-    "des_mar": "et"
+    "des_mar": "aliquam"
 }
 
 fetch(url, {
@@ -3549,16 +3948,16 @@ Modifica una marca
 
 ```bash
 curl -X POST \
-    "http://localhost/api/almacen/marcas/update/in" \
+    "http://localhost/api/almacen/marcas/update/odit" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"des_mar":"maiores"}'
+    -d '{"des_mar":"ducimus"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/almacen/marcas/update/in"
+    "http://localhost/api/almacen/marcas/update/odit"
 );
 
 let headers = {
@@ -3567,7 +3966,7 @@ let headers = {
 };
 
 let body = {
-    "des_mar": "maiores"
+    "des_mar": "ducimus"
 }
 
 fetch(url, {
@@ -3612,14 +4011,14 @@ Elimina una marca
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/almacen/marcas/delete/est" \
+    -G "http://localhost/api/almacen/marcas/delete/alias" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/almacen/marcas/delete/est"
+    "http://localhost/api/almacen/marcas/delete/alias"
 );
 
 let headers = {
@@ -3723,14 +4122,14 @@ Retorna modelo por Id
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/almacen/modelos/get/officiis" \
+    -G "http://localhost/api/almacen/modelos/get/suscipit" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/almacen/modelos/get/officiis"
+    "http://localhost/api/almacen/modelos/get/suscipit"
 );
 
 let headers = {
@@ -3782,7 +4181,7 @@ curl -X POST \
     "http://localhost/api/almacen/modelos/create" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"des_mod":"voluptatem"}'
+    -d '{"des_mod":"dolore"}'
 
 ```
 
@@ -3797,7 +4196,7 @@ let headers = {
 };
 
 let body = {
-    "des_mod": "voluptatem"
+    "des_mod": "dolore"
 }
 
 fetch(url, {
@@ -3837,16 +4236,16 @@ Modifica un modelo
 
 ```bash
 curl -X POST \
-    "http://localhost/api/almacen/modelos/update/repellendus" \
+    "http://localhost/api/almacen/modelos/update/veniam" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"des_mod":"tempora"}'
+    -d '{"des_mod":"maiores"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/almacen/modelos/update/repellendus"
+    "http://localhost/api/almacen/modelos/update/veniam"
 );
 
 let headers = {
@@ -3855,7 +4254,7 @@ let headers = {
 };
 
 let body = {
-    "des_mod": "tempora"
+    "des_mod": "maiores"
 }
 
 fetch(url, {
@@ -3900,14 +4299,14 @@ Elimina un modelo
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/almacen/modelos/delete/consequatur" \
+    -G "http://localhost/api/almacen/modelos/delete/dolore" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/almacen/modelos/delete/consequatur"
+    "http://localhost/api/almacen/modelos/delete/dolore"
 );
 
 let headers = {
@@ -3999,14 +4398,14 @@ Retorna orden de compra por medio de su Id
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/orden-compra/get/ut" \
+    -G "http://localhost/api/orden-compra/get/maiores" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/orden-compra/get/ut"
+    "http://localhost/api/orden-compra/get/maiores"
 );
 
 let headers = {
@@ -4052,7 +4451,7 @@ curl -X POST \
     "http://localhost/api/orden-compra/create" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"cotprov_id":19,"ord_com_prov_id":3,"ord_com_prov_dir":"cumque","ord_com_prov_con":"error","ord_com_prov_ema":"quod","ord_com_term":"velit","id_col":6,"ord_com_bas_imp":3.50167,"ord_com_igv":42.81315997,"ord_com_tot":6.35033267,"id_pro":10,"id_cli":16,"ord_med_ent":"tempora","orden_detalle":[]}'
+    -d '{"cotprov_id":12,"ord_com_prov_id":18,"ord_com_prov_dir":"laborum","ord_com_prov_con":"libero","ord_com_prov_ema":"aliquam","ord_com_term":"quia","id_col":17,"ord_com_bas_imp":188.0786,"ord_com_igv":540563.75,"ord_com_tot":3779866.64602787,"id_pro":14,"id_cli":13,"ord_med_ent":"veritatis","orden_detalle":[]}'
 
 ```
 
@@ -4067,19 +4466,19 @@ let headers = {
 };
 
 let body = {
-    "cotprov_id": 19,
-    "ord_com_prov_id": 3,
-    "ord_com_prov_dir": "cumque",
-    "ord_com_prov_con": "error",
-    "ord_com_prov_ema": "quod",
-    "ord_com_term": "velit",
-    "id_col": 6,
-    "ord_com_bas_imp": 3.50167,
-    "ord_com_igv": 42.81315997,
-    "ord_com_tot": 6.35033267,
-    "id_pro": 10,
-    "id_cli": 16,
-    "ord_med_ent": "tempora",
+    "cotprov_id": 12,
+    "ord_com_prov_id": 18,
+    "ord_com_prov_dir": "laborum",
+    "ord_com_prov_con": "libero",
+    "ord_com_prov_ema": "aliquam",
+    "ord_com_term": "quia",
+    "id_col": 17,
+    "ord_com_bas_imp": 188.0786,
+    "ord_com_igv": 540563.75,
+    "ord_com_tot": 3779866.64602787,
+    "id_pro": 14,
+    "id_cli": 13,
+    "ord_med_ent": "veritatis",
     "orden_detalle": []
 }
 
@@ -4133,14 +4532,14 @@ Anula una orden de compra
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/orden-compra/annul/provident" \
+    -G "http://localhost/api/orden-compra/annul/omnis" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/orden-compra/annul/provident"
+    "http://localhost/api/orden-compra/annul/omnis"
 );
 
 let headers = {
@@ -4232,14 +4631,14 @@ Retorna orden de compra por medio de su Id
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/orden-compra-cliente/get/omnis" \
+    -G "http://localhost/api/orden-compra-cliente/get/autem" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/orden-compra-cliente/get/omnis"
+    "http://localhost/api/orden-compra-cliente/get/autem"
 );
 
 let headers = {
@@ -4285,7 +4684,7 @@ curl -X POST \
     "http://localhost/api/orden-compra-cliente/create" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"cotprov_id":12,"ord_com_prov_id":7,"ord_com_prov_dir":"quae","ord_com_prov_con":"praesentium","ord_com_prov_ema":"accusantium","ord_com_term":"nostrum","id_col":5,"ord_com_bas_imp":1135.233,"ord_com_igv":40.9841,"ord_com_tot":29145.85,"id_pro":12,"id_cli":12,"ord_med_ent":"adipisci","orden_detalle":[]}'
+    -d '{"cotprov_id":14,"ord_com_prov_id":9,"ord_com_prov_dir":"consequatur","ord_com_prov_con":"et","ord_com_prov_ema":"incidunt","ord_com_term":"maxime","id_col":16,"ord_com_bas_imp":823.915216564,"ord_com_igv":2303.9203011,"ord_com_tot":346.51,"id_pro":4,"id_cli":9,"ord_med_ent":"sit","orden_detalle":[]}'
 
 ```
 
@@ -4300,19 +4699,19 @@ let headers = {
 };
 
 let body = {
-    "cotprov_id": 12,
-    "ord_com_prov_id": 7,
-    "ord_com_prov_dir": "quae",
-    "ord_com_prov_con": "praesentium",
-    "ord_com_prov_ema": "accusantium",
-    "ord_com_term": "nostrum",
-    "id_col": 5,
-    "ord_com_bas_imp": 1135.233,
-    "ord_com_igv": 40.9841,
-    "ord_com_tot": 29145.85,
-    "id_pro": 12,
-    "id_cli": 12,
-    "ord_med_ent": "adipisci",
+    "cotprov_id": 14,
+    "ord_com_prov_id": 9,
+    "ord_com_prov_dir": "consequatur",
+    "ord_com_prov_con": "et",
+    "ord_com_prov_ema": "incidunt",
+    "ord_com_term": "maxime",
+    "id_col": 16,
+    "ord_com_bas_imp": 823.915216564,
+    "ord_com_igv": 2303.9203011,
+    "ord_com_tot": 346.51,
+    "id_pro": 4,
+    "id_cli": 9,
+    "ord_med_ent": "sit",
     "orden_detalle": []
 }
 
@@ -4366,14 +4765,14 @@ Anula una orden de compra Cliente
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/orden-compra-cliente/annul/ratione" \
+    -G "http://localhost/api/orden-compra-cliente/annul/harum" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/orden-compra-cliente/annul/ratione"
+    "http://localhost/api/orden-compra-cliente/annul/harum"
 );
 
 let headers = {
@@ -4502,14 +4901,14 @@ Retorna producto por Id
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/almacen/productos/get/quam" \
+    -G "http://localhost/api/almacen/productos/get/dolore" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/almacen/productos/get/quam"
+    "http://localhost/api/almacen/productos/get/dolore"
 );
 
 let headers = {
@@ -4586,7 +4985,7 @@ curl -X POST \
     "http://localhost/api/almacen/productos/create" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"cod_prod":"id","num_parte_prod":"quis","stk_prod":12,"des_prod":"laborum","pre_com_prod":8,"mon_prod":9,"id_unimed":6,"id_mar":4,"id_mod":18,"id_fab":12}'
+    -d '{"cod_prod":"voluptas","num_parte_prod":"placeat","stk_prod":12,"des_prod":"id","pre_com_prod":18,"mon_prod":1,"id_unimed":6,"id_mar":2,"id_mod":15,"id_fab":5}'
 
 ```
 
@@ -4601,16 +5000,16 @@ let headers = {
 };
 
 let body = {
-    "cod_prod": "id",
-    "num_parte_prod": "quis",
+    "cod_prod": "voluptas",
+    "num_parte_prod": "placeat",
     "stk_prod": 12,
-    "des_prod": "laborum",
-    "pre_com_prod": 8,
-    "mon_prod": 9,
+    "des_prod": "id",
+    "pre_com_prod": 18,
+    "mon_prod": 1,
     "id_unimed": 6,
-    "id_mar": 4,
-    "id_mod": 18,
-    "id_fab": 12
+    "id_mar": 2,
+    "id_mod": 15,
+    "id_fab": 5
 }
 
 fetch(url, {
@@ -4659,16 +5058,16 @@ Modifica un producto
 
 ```bash
 curl -X POST \
-    "http://localhost/api/almacen/productos/update/impedit" \
+    "http://localhost/api/almacen/productos/update/dolor" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"cod_prod":"nemo","num_parte_prod":"accusantium","stk_prod":5,"des_prod":"voluptatem","pre_com_prod":16,"mon_prod":11,"id_unimed":20,"id_mar":17,"id_mod":20,"id_fab":13}'
+    -d '{"cod_prod":"velit","num_parte_prod":"est","stk_prod":18,"des_prod":"fugiat","pre_com_prod":12,"mon_prod":17,"id_unimed":2,"id_mar":18,"id_mod":1,"id_fab":13}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/almacen/productos/update/impedit"
+    "http://localhost/api/almacen/productos/update/dolor"
 );
 
 let headers = {
@@ -4677,15 +5076,15 @@ let headers = {
 };
 
 let body = {
-    "cod_prod": "nemo",
-    "num_parte_prod": "accusantium",
-    "stk_prod": 5,
-    "des_prod": "voluptatem",
-    "pre_com_prod": 16,
-    "mon_prod": 11,
-    "id_unimed": 20,
-    "id_mar": 17,
-    "id_mod": 20,
+    "cod_prod": "velit",
+    "num_parte_prod": "est",
+    "stk_prod": 18,
+    "des_prod": "fugiat",
+    "pre_com_prod": 12,
+    "mon_prod": 17,
+    "id_unimed": 2,
+    "id_mar": 18,
+    "id_mod": 1,
     "id_fab": 13
 }
 
@@ -4740,14 +5139,14 @@ Elimina un producto
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/almacen/productos/delete/voluptatem" \
+    -G "http://localhost/api/almacen/productos/delete/accusamus" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/almacen/productos/delete/voluptatem"
+    "http://localhost/api/almacen/productos/delete/accusamus"
 );
 
 let headers = {
@@ -4901,14 +5300,14 @@ Retorna proforma del cliente por medio de su Id
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/proforma-cliente/get/adipisci" \
+    -G "http://localhost/api/proforma-cliente/get/sit" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/proforma-cliente/get/adipisci"
+    "http://localhost/api/proforma-cliente/get/sit"
 );
 
 let headers = {
@@ -4954,7 +5353,7 @@ curl -X POST \
     "http://localhost/api/proforma-cliente/create" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"id_cli":17,"prof_mon":3,"id_proy":10,"id_col":3,"solcli_id":16,"prof_cre":11,"prof_imp_ini":11.814,"prof_int":2.2,"prof_cuo":5,"prof_val":"asperiores","prof_tie_ent":"excepturi","prof_cos_dir":341123.21451,"prof_gas_ind":30312.9874672,"prof_uti":230.811,"prof_bas_imp":19.606,"prof_igv":107183481.95,"prof_neto":1476.39,"prof_fac":250625.5796768,"prof_finan":1234.45305067,"prof_val_cuo":24271046,"prof_cli_id_dir":11,"prof_cli_id_con":19,"prof_obs":"ipsum","prof_tie_ins":"commodi","prof_con_pag":"sed","prof_desc":494959859.69691,"prof_cli_ciu":"eius","proforma_detalle":[]}'
+    -d '{"id_cli":20,"prof_mon":5,"id_proy":13,"id_col":18,"solcli_id":5,"prof_cre":15,"prof_imp_ini":0.8812051,"prof_int":3.8,"prof_cuo":5,"prof_val":"consequatur","prof_tie_ent":"a","prof_cos_dir":2.0566024,"prof_gas_ind":13804.4494268,"prof_uti":239.17296787,"prof_bas_imp":302149.3797,"prof_igv":1265.30218664,"prof_neto":660187.764,"prof_fac":275238234,"prof_finan":401083.54,"prof_val_cuo":504,"prof_cli_id_dir":8,"prof_cli_id_con":15,"prof_obs":"iusto","prof_tie_ins":"eligendi","prof_con_pag":"beatae","prof_desc":33882999.381008595,"prof_cli_ciu":"praesentium","proforma_detalle":[]}'
 
 ```
 
@@ -4969,33 +5368,33 @@ let headers = {
 };
 
 let body = {
-    "id_cli": 17,
-    "prof_mon": 3,
-    "id_proy": 10,
-    "id_col": 3,
-    "solcli_id": 16,
-    "prof_cre": 11,
-    "prof_imp_ini": 11.814,
-    "prof_int": 2.2,
+    "id_cli": 20,
+    "prof_mon": 5,
+    "id_proy": 13,
+    "id_col": 18,
+    "solcli_id": 5,
+    "prof_cre": 15,
+    "prof_imp_ini": 0.8812051,
+    "prof_int": 3.8,
     "prof_cuo": 5,
-    "prof_val": "asperiores",
-    "prof_tie_ent": "excepturi",
-    "prof_cos_dir": 341123.21451,
-    "prof_gas_ind": 30312.9874672,
-    "prof_uti": 230.811,
-    "prof_bas_imp": 19.606,
-    "prof_igv": 107183481.95,
-    "prof_neto": 1476.39,
-    "prof_fac": 250625.5796768,
-    "prof_finan": 1234.45305067,
-    "prof_val_cuo": 24271046,
-    "prof_cli_id_dir": 11,
-    "prof_cli_id_con": 19,
-    "prof_obs": "ipsum",
-    "prof_tie_ins": "commodi",
-    "prof_con_pag": "sed",
-    "prof_desc": 494959859.69691,
-    "prof_cli_ciu": "eius",
+    "prof_val": "consequatur",
+    "prof_tie_ent": "a",
+    "prof_cos_dir": 2.0566024,
+    "prof_gas_ind": 13804.4494268,
+    "prof_uti": 239.17296787,
+    "prof_bas_imp": 302149.3797,
+    "prof_igv": 1265.30218664,
+    "prof_neto": 660187.764,
+    "prof_fac": 275238234,
+    "prof_finan": 401083.54,
+    "prof_val_cuo": 504,
+    "prof_cli_id_dir": 8,
+    "prof_cli_id_con": 15,
+    "prof_obs": "iusto",
+    "prof_tie_ins": "eligendi",
+    "prof_con_pag": "beatae",
+    "prof_desc": 33882999.381008595,
+    "prof_cli_ciu": "praesentium",
     "proforma_detalle": []
 }
 
@@ -5063,14 +5462,14 @@ Anula una proforma
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/proforma-cliente/annul/veritatis" \
+    -G "http://localhost/api/proforma-cliente/annul/unde" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/proforma-cliente/annul/veritatis"
+    "http://localhost/api/proforma-cliente/annul/unde"
 );
 
 let headers = {
@@ -5113,16 +5512,16 @@ Parameter | Status | Description
 
 ```bash
 curl -X POST \
-    "http://localhost/api/proforma-cliente/update-header/consequuntur" \
+    "http://localhost/api/proforma-cliente/update-header/quia" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"id_cli":17,"prof_mon":4,"id_proy":9,"id_col":18,"solcli_id":6,"prof_cre":2,"prof_imp_ini":735706.491975,"prof_int":160863.67778,"prof_cuo":11,"prof_val":"nostrum","prof_tie_ent":"quo","prof_cos_dir":997.8,"prof_gas_ind":1.91681431,"prof_uti":87472.24509429,"prof_bas_imp":0,"prof_igv":29823.62,"prof_neto":20547012.5121,"prof_fac":13978310.565655,"prof_finan":32072703.2,"prof_val_cuo":55.71,"prof_cli_id_dir":9,"prof_cli_id_con":20,"prof_obs":"magnam","prof_tie_ins":"neque","prof_con_pag":"unde","prof_desc":214118614.75179368,"id_cli_dir":"quia","prof_cli_ciu":"sed"}'
+    -d '{"id_cli":13,"prof_mon":16,"id_proy":2,"id_col":7,"solcli_id":17,"prof_cre":18,"prof_imp_ini":0.96333158,"prof_int":272236318.106281,"prof_cuo":9,"prof_val":"cum","prof_tie_ent":"id","prof_cos_dir":27.49422,"prof_gas_ind":1213.6,"prof_uti":42145,"prof_bas_imp":205.42,"prof_igv":4963065.7,"prof_neto":31272.8282879,"prof_fac":2181.2122,"prof_finan":6044.6197,"prof_val_cuo":16.39524,"prof_cli_id_dir":14,"prof_cli_id_con":2,"prof_obs":"quaerat","prof_tie_ins":"aut","prof_con_pag":"sit","prof_desc":241763.763,"id_cli_dir":"et","prof_cli_ciu":"labore"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/proforma-cliente/update-header/consequuntur"
+    "http://localhost/api/proforma-cliente/update-header/quia"
 );
 
 let headers = {
@@ -5131,34 +5530,34 @@ let headers = {
 };
 
 let body = {
-    "id_cli": 17,
-    "prof_mon": 4,
-    "id_proy": 9,
-    "id_col": 18,
-    "solcli_id": 6,
-    "prof_cre": 2,
-    "prof_imp_ini": 735706.491975,
-    "prof_int": 160863.67778,
-    "prof_cuo": 11,
-    "prof_val": "nostrum",
-    "prof_tie_ent": "quo",
-    "prof_cos_dir": 997.8,
-    "prof_gas_ind": 1.91681431,
-    "prof_uti": 87472.24509429,
-    "prof_bas_imp": 0,
-    "prof_igv": 29823.62,
-    "prof_neto": 20547012.5121,
-    "prof_fac": 13978310.565655,
-    "prof_finan": 32072703.2,
-    "prof_val_cuo": 55.71,
-    "prof_cli_id_dir": 9,
-    "prof_cli_id_con": 20,
-    "prof_obs": "magnam",
-    "prof_tie_ins": "neque",
-    "prof_con_pag": "unde",
-    "prof_desc": 214118614.75179368,
-    "id_cli_dir": "quia",
-    "prof_cli_ciu": "sed"
+    "id_cli": 13,
+    "prof_mon": 16,
+    "id_proy": 2,
+    "id_col": 7,
+    "solcli_id": 17,
+    "prof_cre": 18,
+    "prof_imp_ini": 0.96333158,
+    "prof_int": 272236318.106281,
+    "prof_cuo": 9,
+    "prof_val": "cum",
+    "prof_tie_ent": "id",
+    "prof_cos_dir": 27.49422,
+    "prof_gas_ind": 1213.6,
+    "prof_uti": 42145,
+    "prof_bas_imp": 205.42,
+    "prof_igv": 4963065.7,
+    "prof_neto": 31272.8282879,
+    "prof_fac": 2181.2122,
+    "prof_finan": 6044.6197,
+    "prof_val_cuo": 16.39524,
+    "prof_cli_id_dir": 14,
+    "prof_cli_id_con": 2,
+    "prof_obs": "quaerat",
+    "prof_tie_ins": "aut",
+    "prof_con_pag": "sit",
+    "prof_desc": 241763.763,
+    "id_cli_dir": "et",
+    "prof_cli_ciu": "labore"
 }
 
 fetch(url, {
@@ -5228,16 +5627,16 @@ Modifica los campos de un solo detalle, todos los campos son editable excepto el
 
 ```bash
 curl -X POST \
-    "http://localhost/api/proforma-cliente/update-detail/fugiat" \
+    "http://localhost/api/proforma-cliente/update-detail/aut" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"id_prod":"voluptas","prof_det_can":"repudiandae","prof_det_pre_lis":"qui","prof_det_imp":"officiis","prof_det_cos":"cupiditate","prof_det_tcos":"dolor","prof_det_com":"modi","id_prov":"autem","id_sec":"earum","prof_prod_serv":"velit","prof_des_prod":"atque","prof_can_prod":"quod","prof_dir_prov":"quis","prof_ema_prov":"distinctio","id_prov_dir":"aut"}'
+    -d '{"id_prod":"pariatur","prof_det_can":"blanditiis","prof_det_pre_lis":"qui","prof_det_imp":"sunt","prof_det_cos":"iusto","prof_det_tcos":"voluptatem","prof_det_com":"quas","id_prov":"occaecati","id_sec":"non","prof_prod_serv":"saepe","prof_des_prod":"minima","prof_can_prod":"quisquam","prof_dir_prov":"sint","prof_ema_prov":"molestias","id_prov_dir":"atque"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/proforma-cliente/update-detail/fugiat"
+    "http://localhost/api/proforma-cliente/update-detail/aut"
 );
 
 let headers = {
@@ -5246,21 +5645,21 @@ let headers = {
 };
 
 let body = {
-    "id_prod": "voluptas",
-    "prof_det_can": "repudiandae",
+    "id_prod": "pariatur",
+    "prof_det_can": "blanditiis",
     "prof_det_pre_lis": "qui",
-    "prof_det_imp": "officiis",
-    "prof_det_cos": "cupiditate",
-    "prof_det_tcos": "dolor",
-    "prof_det_com": "modi",
-    "id_prov": "autem",
-    "id_sec": "earum",
-    "prof_prod_serv": "velit",
-    "prof_des_prod": "atque",
-    "prof_can_prod": "quod",
-    "prof_dir_prov": "quis",
-    "prof_ema_prov": "distinctio",
-    "id_prov_dir": "aut"
+    "prof_det_imp": "sunt",
+    "prof_det_cos": "iusto",
+    "prof_det_tcos": "voluptatem",
+    "prof_det_com": "quas",
+    "id_prov": "occaecati",
+    "id_sec": "non",
+    "prof_prod_serv": "saepe",
+    "prof_des_prod": "minima",
+    "prof_can_prod": "quisquam",
+    "prof_dir_prov": "sint",
+    "prof_ema_prov": "molestias",
+    "id_prov_dir": "atque"
 }
 
 fetch(url, {
@@ -5451,14 +5850,14 @@ Retorna proveedor por Id
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/proveedores/get/cum" \
+    -G "http://localhost/api/proveedores/get/est" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/proveedores/get/cum"
+    "http://localhost/api/proveedores/get/est"
 );
 
 let headers = {
@@ -5551,7 +5950,7 @@ curl -X POST \
     "http://localhost/api/proveedores/create" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"razsoc_prov":"consequatur","ema_prov":"consequatur","num_doc_prov":"ea","id_tipodoc":18}'
+    -d '{"razsoc_prov":"voluptatibus","ema_prov":"laboriosam","num_doc_prov":"quis","id_tipodoc":6}'
 
 ```
 
@@ -5566,10 +5965,10 @@ let headers = {
 };
 
 let body = {
-    "razsoc_prov": "consequatur",
-    "ema_prov": "consequatur",
-    "num_doc_prov": "ea",
-    "id_tipodoc": 18
+    "razsoc_prov": "voluptatibus",
+    "ema_prov": "laboriosam",
+    "num_doc_prov": "quis",
+    "id_tipodoc": 6
 }
 
 fetch(url, {
@@ -5612,16 +6011,16 @@ Modifica un proveedor
 
 ```bash
 curl -X POST \
-    "http://localhost/api/proveedores/update/sequi" \
+    "http://localhost/api/proveedores/update/sunt" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"razsoc_prov":"ea","ema_prov":"blanditiis","num_doc_prov":"enim","id_tipodoc":4}'
+    -d '{"razsoc_prov":"eaque","ema_prov":"dolores","num_doc_prov":"doloribus","id_tipodoc":7}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/proveedores/update/sequi"
+    "http://localhost/api/proveedores/update/sunt"
 );
 
 let headers = {
@@ -5630,10 +6029,10 @@ let headers = {
 };
 
 let body = {
-    "razsoc_prov": "ea",
-    "ema_prov": "blanditiis",
-    "num_doc_prov": "enim",
-    "id_tipodoc": 4
+    "razsoc_prov": "eaque",
+    "ema_prov": "dolores",
+    "num_doc_prov": "doloribus",
+    "id_tipodoc": 7
 }
 
 fetch(url, {
@@ -5681,14 +6080,14 @@ Elimina un proveedor
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/proveedores/delete/odit" \
+    -G "http://localhost/api/proveedores/delete/magni" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/proveedores/delete/odit"
+    "http://localhost/api/proveedores/delete/magni"
 );
 
 let headers = {
@@ -5733,7 +6132,7 @@ Crea, Actualiza y elimina, banco, colaborador y direcciones de un proveedor
 
 ```bash
 curl -X POST \
-    "http://localhost/api/proveedores/admbancolydir/cupiditate" \
+    "http://localhost/api/proveedores/admbancolydir/ut" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"banco":[],"colaborador":[],"direcciones":[]}'
@@ -5742,7 +6141,7 @@ curl -X POST \
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/proveedores/admbancolydir/cupiditate"
+    "http://localhost/api/proveedores/admbancolydir/ut"
 );
 
 let headers = {
@@ -5861,14 +6260,14 @@ Retorna banco del proveedor por Id
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/proveedores-banco/get/quia" \
+    -G "http://localhost/api/proveedores-banco/get/repellat" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/proveedores-banco/get/quia"
+    "http://localhost/api/proveedores-banco/get/repellat"
 );
 
 let headers = {
@@ -5922,7 +6321,7 @@ curl -X POST \
     "http://localhost/api/proveedores-banco/create" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"tip_prov_ban":"rerum","cue_prov_ban":"qui","ban_prov_ban":"magnam","id_prov":11,"com_prov_ban":"earum"}'
+    -d '{"tip_prov_ban":"et","cue_prov_ban":"non","ban_prov_ban":"exercitationem","id_prov":13,"com_prov_ban":"ut"}'
 
 ```
 
@@ -5937,11 +6336,11 @@ let headers = {
 };
 
 let body = {
-    "tip_prov_ban": "rerum",
-    "cue_prov_ban": "qui",
-    "ban_prov_ban": "magnam",
-    "id_prov": 11,
-    "com_prov_ban": "earum"
+    "tip_prov_ban": "et",
+    "cue_prov_ban": "non",
+    "ban_prov_ban": "exercitationem",
+    "id_prov": 13,
+    "com_prov_ban": "ut"
 }
 
 fetch(url, {
@@ -5985,16 +6384,16 @@ Modifica un banco del proveedor
 
 ```bash
 curl -X POST \
-    "http://localhost/api/proveedores-banco/update/voluptate" \
+    "http://localhost/api/proveedores-banco/update/sapiente" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"tip_prov_ban":"aut","cue_prov_ban":"excepturi","ban_prov_ban":"et","id_prov":1,"com_prov_ban":"blanditiis"}'
+    -d '{"tip_prov_ban":"vel","cue_prov_ban":"perferendis","ban_prov_ban":"impedit","id_prov":10,"com_prov_ban":"nihil"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/proveedores-banco/update/voluptate"
+    "http://localhost/api/proveedores-banco/update/sapiente"
 );
 
 let headers = {
@@ -6003,11 +6402,11 @@ let headers = {
 };
 
 let body = {
-    "tip_prov_ban": "aut",
-    "cue_prov_ban": "excepturi",
-    "ban_prov_ban": "et",
-    "id_prov": 1,
-    "com_prov_ban": "blanditiis"
+    "tip_prov_ban": "vel",
+    "cue_prov_ban": "perferendis",
+    "ban_prov_ban": "impedit",
+    "id_prov": 10,
+    "com_prov_ban": "nihil"
 }
 
 fetch(url, {
@@ -6056,14 +6455,14 @@ Elimina un banco del proveedor
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/proveedores-banco/delete/perferendis" \
+    -G "http://localhost/api/proveedores-banco/delete/velit" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/proveedores-banco/delete/perferendis"
+    "http://localhost/api/proveedores-banco/delete/velit"
 );
 
 let headers = {
@@ -6170,14 +6569,14 @@ Retorna colaborador proveedor por Id
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/proveedores-colaborador/get/rem" \
+    -G "http://localhost/api/proveedores-colaborador/get/perferendis" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/proveedores-colaborador/get/rem"
+    "http://localhost/api/proveedores-colaborador/get/perferendis"
 );
 
 let headers = {
@@ -6232,7 +6631,7 @@ curl -X POST \
     "http://localhost/api/proveedores-colaborador/create" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"nom_prov":"eos","ema_prov":"qui","tel_prov":"praesentium","ane_prov_col":"modi","car_prov_col":"officia","id_prov":18}'
+    -d '{"nom_prov":"esse","ema_prov":"natus","tel_prov":"iste","ane_prov_col":"quos","car_prov_col":"impedit","id_prov":18}'
 
 ```
 
@@ -6247,11 +6646,11 @@ let headers = {
 };
 
 let body = {
-    "nom_prov": "eos",
-    "ema_prov": "qui",
-    "tel_prov": "praesentium",
-    "ane_prov_col": "modi",
-    "car_prov_col": "officia",
+    "nom_prov": "esse",
+    "ema_prov": "natus",
+    "tel_prov": "iste",
+    "ane_prov_col": "quos",
+    "car_prov_col": "impedit",
     "id_prov": 18
 }
 
@@ -6297,16 +6696,16 @@ Modifica un colaborador proveedor
 
 ```bash
 curl -X POST \
-    "http://localhost/api/proveedores-colaborador/update/facilis" \
+    "http://localhost/api/proveedores-colaborador/update/aut" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"nom_prov":"autem","ema_prov":"voluptatem","tel_prov":"blanditiis","ane_prov_col":"consequatur","car_prov_col":"et","id_prov":17}'
+    -d '{"nom_prov":"ea","ema_prov":"quia","tel_prov":"nulla","ane_prov_col":"ea","car_prov_col":"et","id_prov":8}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/proveedores-colaborador/update/facilis"
+    "http://localhost/api/proveedores-colaborador/update/aut"
 );
 
 let headers = {
@@ -6315,12 +6714,12 @@ let headers = {
 };
 
 let body = {
-    "nom_prov": "autem",
-    "ema_prov": "voluptatem",
-    "tel_prov": "blanditiis",
-    "ane_prov_col": "consequatur",
+    "nom_prov": "ea",
+    "ema_prov": "quia",
+    "tel_prov": "nulla",
+    "ane_prov_col": "ea",
     "car_prov_col": "et",
-    "id_prov": 17
+    "id_prov": 8
 }
 
 fetch(url, {
@@ -6370,14 +6769,14 @@ Elimina un colaborador proveedor
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/proveedores-colaborador/delete/dolore" \
+    -G "http://localhost/api/proveedores-colaborador/delete/ex" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/proveedores-colaborador/delete/dolore"
+    "http://localhost/api/proveedores-colaborador/delete/ex"
 );
 
 let headers = {
@@ -6484,14 +6883,14 @@ Retorna la direccion de proveedor por Id
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/proveedores-direccion/get/sunt" \
+    -G "http://localhost/api/proveedores-direccion/get/blanditiis" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/proveedores-direccion/get/sunt"
+    "http://localhost/api/proveedores-direccion/get/blanditiis"
 );
 
 let headers = {
@@ -6547,16 +6946,16 @@ Modifica una direccion de proveedor
 
 ```bash
 curl -X POST \
-    "http://localhost/api/proveedores-direccion/update/nihil" \
+    "http://localhost/api/proveedores-direccion/update/repellat" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"ciu_prov":"delectus","dir_prov":"sed","tel_prov":"voluptatem","id_prov":11}'
+    -d '{"ciu_prov":"sed","dir_prov":"fugiat","tel_prov":"voluptatem","id_prov":8}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/proveedores-direccion/update/nihil"
+    "http://localhost/api/proveedores-direccion/update/repellat"
 );
 
 let headers = {
@@ -6565,10 +6964,10 @@ let headers = {
 };
 
 let body = {
-    "ciu_prov": "delectus",
-    "dir_prov": "sed",
+    "ciu_prov": "sed",
+    "dir_prov": "fugiat",
     "tel_prov": "voluptatem",
-    "id_prov": 11
+    "id_prov": 8
 }
 
 fetch(url, {
@@ -6619,7 +7018,7 @@ curl -X POST \
     "http://localhost/api/proveedores-direccion/create" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"ciu_prov":"qui","dir_prov":"enim","tel_prov":"ut","id_prov":8}'
+    -d '{"ciu_prov":"vel","dir_prov":"totam","tel_prov":"omnis","id_prov":18}'
 
 ```
 
@@ -6634,10 +7033,10 @@ let headers = {
 };
 
 let body = {
-    "ciu_prov": "qui",
-    "dir_prov": "enim",
-    "tel_prov": "ut",
-    "id_prov": 8
+    "ciu_prov": "vel",
+    "dir_prov": "totam",
+    "tel_prov": "omnis",
+    "id_prov": 18
 }
 
 fetch(url, {
@@ -6680,14 +7079,14 @@ Elimina un direccion proveedor
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/proveedores-direccion/delete/quasi" \
+    -G "http://localhost/api/proveedores-direccion/delete/odit" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/proveedores-direccion/delete/quasi"
+    "http://localhost/api/proveedores-direccion/delete/odit"
 );
 
 let headers = {
@@ -6906,14 +7305,14 @@ Retorna proyecto  por Id
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/proyecto/get/eos" \
+    -G "http://localhost/api/proyecto/get/quisquam" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/proyecto/get/eos"
+    "http://localhost/api/proyecto/get/quisquam"
 );
 
 let headers = {
@@ -6966,7 +7365,7 @@ curl -X POST \
     "http://localhost/api/proyecto/create" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"nom_proy":"modi","id_cli":"repudiandae"}'
+    -d '{"nom_proy":"illo","id_cli":"reprehenderit"}'
 
 ```
 
@@ -6981,8 +7380,8 @@ let headers = {
 };
 
 let body = {
-    "nom_proy": "modi",
-    "id_cli": "repudiandae"
+    "nom_proy": "illo",
+    "id_cli": "reprehenderit"
 }
 
 fetch(url, {
@@ -7023,16 +7422,16 @@ Modifica un proyecto
 
 ```bash
 curl -X POST \
-    "http://localhost/api/proyecto/update/et" \
+    "http://localhost/api/proyecto/update/recusandae" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"nom_proy":"est","est_reg":"expedita","id_cli":"est"}'
+    -d '{"nom_proy":"veniam","est_reg":"deserunt","id_cli":"voluptas"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/proyecto/update/et"
+    "http://localhost/api/proyecto/update/recusandae"
 );
 
 let headers = {
@@ -7041,9 +7440,9 @@ let headers = {
 };
 
 let body = {
-    "nom_proy": "est",
-    "est_reg": "expedita",
-    "id_cli": "est"
+    "nom_proy": "veniam",
+    "est_reg": "deserunt",
+    "id_cli": "voluptas"
 }
 
 fetch(url, {
@@ -7090,14 +7489,14 @@ Elimina un proyecto
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/proyecto/delete/ab" \
+    -G "http://localhost/api/proyecto/delete/animi" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/proyecto/delete/ab"
+    "http://localhost/api/proyecto/delete/animi"
 );
 
 let headers = {
@@ -7247,14 +7646,14 @@ Retorna seccion por Id
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/seccion/get/sint" \
+    -G "http://localhost/api/seccion/get/excepturi" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/seccion/get/sint"
+    "http://localhost/api/seccion/get/excepturi"
 );
 
 let headers = {
@@ -7305,7 +7704,7 @@ curl -X POST \
     "http://localhost/api/seccion/create" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"des_sec":"dolor"}'
+    -d '{"des_sec":"quae"}'
 
 ```
 
@@ -7320,7 +7719,7 @@ let headers = {
 };
 
 let body = {
-    "des_sec": "dolor"
+    "des_sec": "quae"
 }
 
 fetch(url, {
@@ -7363,7 +7762,7 @@ curl -X POST \
     "http://localhost/api/seccion/update/aut" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"des_sec":"est"}'
+    -d '{"des_sec":"et"}'
 
 ```
 
@@ -7378,7 +7777,7 @@ let headers = {
 };
 
 let body = {
-    "des_sec": "est"
+    "des_sec": "et"
 }
 
 fetch(url, {
@@ -7423,14 +7822,14 @@ Elimina una seccion
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/seccion/delete/accusamus" \
+    -G "http://localhost/api/seccion/delete/est" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/seccion/delete/accusamus"
+    "http://localhost/api/seccion/delete/est"
 );
 
 let headers = {
@@ -7533,14 +7932,14 @@ Retorna tipo de documento por Id
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/usuarios/tiposdoc/get/possimus" \
+    -G "http://localhost/api/usuarios/tiposdoc/get/architecto" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/usuarios/tiposdoc/get/possimus"
+    "http://localhost/api/usuarios/tiposdoc/get/architecto"
 );
 
 let headers = {
@@ -7591,7 +7990,7 @@ curl -X POST \
     "http://localhost/api/usuarios/tiposdoc/create" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"cod_tipdoc":"veniam","des_tipdoc":"quasi"}'
+    -d '{"cod_tipdoc":"similique","des_tipdoc":"voluptatibus"}'
 
 ```
 
@@ -7606,8 +8005,8 @@ let headers = {
 };
 
 let body = {
-    "cod_tipdoc": "veniam",
-    "des_tipdoc": "quasi"
+    "cod_tipdoc": "similique",
+    "des_tipdoc": "voluptatibus"
 }
 
 fetch(url, {
@@ -7648,16 +8047,16 @@ Modifica un tipo de documento
 
 ```bash
 curl -X POST \
-    "http://localhost/api/usuarios/tiposdoc/update/ipsam" \
+    "http://localhost/api/usuarios/tiposdoc/update/natus" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"cod_tipdoc":"dolorum","des_tipdoc":"commodi"}'
+    -d '{"cod_tipdoc":"ad","des_tipdoc":"in"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/usuarios/tiposdoc/update/ipsam"
+    "http://localhost/api/usuarios/tiposdoc/update/natus"
 );
 
 let headers = {
@@ -7666,8 +8065,8 @@ let headers = {
 };
 
 let body = {
-    "cod_tipdoc": "dolorum",
-    "des_tipdoc": "commodi"
+    "cod_tipdoc": "ad",
+    "des_tipdoc": "in"
 }
 
 fetch(url, {
@@ -7713,14 +8112,14 @@ Elimina un tipo de documento
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/usuarios/tiposdoc/delete/incidunt" \
+    -G "http://localhost/api/usuarios/tiposdoc/delete/ut" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/usuarios/tiposdoc/delete/incidunt"
+    "http://localhost/api/usuarios/tiposdoc/delete/ut"
 );
 
 let headers = {
@@ -7866,7 +8265,7 @@ curl -X POST \
     "http://localhost/api/transportista/create" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"TipoDoc":"blanditiis","NumDoc":9,"RznSocial":"praesentium","Placa":"rerum","ChoferTipoDoc":"necessitatibus","est_reg":"quo"}'
+    -d '{"TipoDoc":"et","NumDoc":13,"RznSocial":"corrupti","Placa":"at","ChoferTipoDoc":"aut","est_reg":"tempore"}'
 
 ```
 
@@ -7881,12 +8280,12 @@ let headers = {
 };
 
 let body = {
-    "TipoDoc": "blanditiis",
-    "NumDoc": 9,
-    "RznSocial": "praesentium",
-    "Placa": "rerum",
-    "ChoferTipoDoc": "necessitatibus",
-    "est_reg": "quo"
+    "TipoDoc": "et",
+    "NumDoc": 13,
+    "RznSocial": "corrupti",
+    "Placa": "at",
+    "ChoferTipoDoc": "aut",
+    "est_reg": "tempore"
 }
 
 fetch(url, {
@@ -7931,14 +8330,14 @@ Anula un transportista se cambio el estado de registro a E
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/transportista/annul/voluptatem" \
+    -G "http://localhost/api/transportista/annul/excepturi" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/transportista/annul/voluptatem"
+    "http://localhost/api/transportista/annul/excepturi"
 );
 
 let headers = {
@@ -7981,16 +8380,16 @@ Parameter | Status | Description
 
 ```bash
 curl -X POST \
-    "http://localhost/api/transportista/update/libero" \
+    "http://localhost/api/transportista/update/quae" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"TipoDoc":"quasi","NumDoc":14,"RznSocial":"earum","Placa":"illo","ChoferTipoDoc":"voluptatem","est_reg":"autem"}'
+    -d '{"TipoDoc":"temporibus","NumDoc":5,"RznSocial":"earum","Placa":"est","ChoferTipoDoc":"possimus","est_reg":"dolorem"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/transportista/update/libero"
+    "http://localhost/api/transportista/update/quae"
 );
 
 let headers = {
@@ -7999,12 +8398,12 @@ let headers = {
 };
 
 let body = {
-    "TipoDoc": "quasi",
-    "NumDoc": 14,
+    "TipoDoc": "temporibus",
+    "NumDoc": 5,
     "RznSocial": "earum",
-    "Placa": "illo",
-    "ChoferTipoDoc": "voluptatem",
-    "est_reg": "autem"
+    "Placa": "est",
+    "ChoferTipoDoc": "possimus",
+    "est_reg": "dolorem"
 }
 
 fetch(url, {
@@ -8114,14 +8513,14 @@ Retorna unidad de medida por Id
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/almacen/unidadesmedida/get/voluptas" \
+    -G "http://localhost/api/almacen/unidadesmedida/get/dolorum" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/almacen/unidadesmedida/get/voluptas"
+    "http://localhost/api/almacen/unidadesmedida/get/dolorum"
 );
 
 let headers = {
@@ -8174,7 +8573,7 @@ curl -X POST \
     "http://localhost/api/almacen/unidadesmedida/create" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"nom_unimed":"laborum","des_mar":"iusto"}'
+    -d '{"nom_unimed":"aperiam","des_mar":"voluptatem"}'
 
 ```
 
@@ -8189,8 +8588,8 @@ let headers = {
 };
 
 let body = {
-    "nom_unimed": "laborum",
-    "des_mar": "iusto"
+    "nom_unimed": "aperiam",
+    "des_mar": "voluptatem"
 }
 
 fetch(url, {
@@ -8231,16 +8630,16 @@ Modifica una unidad de medida
 
 ```bash
 curl -X POST \
-    "http://localhost/api/almacen/unidadesmedida/update/omnis" \
+    "http://localhost/api/almacen/unidadesmedida/update/ut" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"nom_unimed":"esse","des_mar":"temporibus"}'
+    -d '{"nom_unimed":"odit","des_mar":"in"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/almacen/unidadesmedida/update/omnis"
+    "http://localhost/api/almacen/unidadesmedida/update/ut"
 );
 
 let headers = {
@@ -8249,8 +8648,8 @@ let headers = {
 };
 
 let body = {
-    "nom_unimed": "esse",
-    "des_mar": "temporibus"
+    "nom_unimed": "odit",
+    "des_mar": "in"
 }
 
 fetch(url, {
@@ -8296,14 +8695,14 @@ Elimina una unidad de medida
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/almacen/unidadesmedida/delete/quibusdam" \
+    -G "http://localhost/api/almacen/unidadesmedida/delete/blanditiis" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/almacen/unidadesmedida/delete/quibusdam"
+    "http://localhost/api/almacen/unidadesmedida/delete/blanditiis"
 );
 
 let headers = {
@@ -8420,14 +8819,14 @@ Retorna usuario por Id
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/usuarios/get/numquam" \
+    -G "http://localhost/api/usuarios/get/voluptas" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/usuarios/get/numquam"
+    "http://localhost/api/usuarios/get/voluptas"
 );
 
 let headers = {
@@ -8492,7 +8891,7 @@ curl -X POST \
     "http://localhost/api/usuarios/create" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"nom_col":"adipisci","ape_col":"qui","email":"dolor","password":"ea","num_doc_col":"nihil","cod_col":"quibusdam","cel_col":"minus","id_tipdoc":6,"id_car":12}'
+    -d '{"nom_col":"nulla","ape_col":"facere","email":"nam","password":"rerum","num_doc_col":"necessitatibus","cod_col":"corporis","cel_col":"repudiandae","id_tipdoc":11,"id_car":9}'
 
 ```
 
@@ -8507,15 +8906,15 @@ let headers = {
 };
 
 let body = {
-    "nom_col": "adipisci",
-    "ape_col": "qui",
-    "email": "dolor",
-    "password": "ea",
-    "num_doc_col": "nihil",
-    "cod_col": "quibusdam",
-    "cel_col": "minus",
-    "id_tipdoc": 6,
-    "id_car": 12
+    "nom_col": "nulla",
+    "ape_col": "facere",
+    "email": "nam",
+    "password": "rerum",
+    "num_doc_col": "necessitatibus",
+    "cod_col": "corporis",
+    "cel_col": "repudiandae",
+    "id_tipdoc": 11,
+    "id_car": 9
 }
 
 fetch(url, {
@@ -8563,16 +8962,16 @@ Modifica un usuario
 
 ```bash
 curl -X POST \
-    "http://localhost/api/usuarios/update/pariatur" \
+    "http://localhost/api/usuarios/update/dolore" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"nom_col":"in","ape_col":"non","email":"enim","num_doc_col":"amet","cod_col":"aliquam","cel_col":"et","id_tipdoc":8,"id_car":9}'
+    -d '{"nom_col":"sit","ape_col":"et","email":"ratione","num_doc_col":"sunt","cod_col":"natus","cel_col":"qui","id_tipdoc":18,"id_car":20}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/usuarios/update/pariatur"
+    "http://localhost/api/usuarios/update/dolore"
 );
 
 let headers = {
@@ -8581,14 +8980,14 @@ let headers = {
 };
 
 let body = {
-    "nom_col": "in",
-    "ape_col": "non",
-    "email": "enim",
-    "num_doc_col": "amet",
-    "cod_col": "aliquam",
-    "cel_col": "et",
-    "id_tipdoc": 8,
-    "id_car": 9
+    "nom_col": "sit",
+    "ape_col": "et",
+    "email": "ratione",
+    "num_doc_col": "sunt",
+    "cod_col": "natus",
+    "cel_col": "qui",
+    "id_tipdoc": 18,
+    "id_car": 20
 }
 
 fetch(url, {
@@ -8640,14 +9039,14 @@ Elimina un usuario
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/usuarios/delete/repellat" \
+    -G "http://localhost/api/usuarios/delete/ad" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/usuarios/delete/repellat"
+    "http://localhost/api/usuarios/delete/ad"
 );
 
 let headers = {
@@ -8692,16 +9091,16 @@ Modifica la contraseña persona
 
 ```bash
 curl -X POST \
-    "http://localhost/api/usuarios/update/password/est" \
+    "http://localhost/api/usuarios/update/password/et" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"email":"similique","old_password":"tempore","new_password":"et"}'
+    -d '{"email":"error","old_password":"saepe","new_password":"ipsam"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/usuarios/update/password/est"
+    "http://localhost/api/usuarios/update/password/et"
 );
 
 let headers = {
@@ -8710,9 +9109,9 @@ let headers = {
 };
 
 let body = {
-    "email": "similique",
-    "old_password": "tempore",
-    "new_password": "et"
+    "email": "error",
+    "old_password": "saepe",
+    "new_password": "ipsam"
 }
 
 fetch(url, {
