@@ -40,7 +40,7 @@ class Envio extends Model
     }
 
     public function transportista(){
-        return $this->belongsTo('App\Models\Facturacion\transportista', 'id_transportista');
+        return $this->belongsTo('App\Models\Facturacion\Transportista', 'id_transportista');
     }
 
 

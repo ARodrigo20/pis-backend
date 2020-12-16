@@ -82,7 +82,7 @@ class GuiaRemisionController extends Controller
      *           "codPuerto": 123,
      *          "id_transportista": 1,
      *           "ubigueoLlegada": 4255565,
-     *          "direccionLlegada": "Calle los alamos de la molina 312",
+     *          "direccionLlegada": "Calle los alamos de la molina 3125555",
      *           "ubigueoSalida": 415855,
      *          "direccionSalida": "Via evitamiento KM 42",
      *           "est_reg": "A",
@@ -238,7 +238,7 @@ class GuiaRemisionController extends Controller
      * @bodyParam est_reg string estado de registro
      * @bodyParam est_env string estado de envio
      * @bodyParam solcli_id  num  Id de la solicitud de cotizacion cliente,
-     * @bodyParam guia_remision_det array Ejemplo:[ {"id_guia_remision_det": 1,"id_guia_remision": 1,"codigo": "PROD1","descripcion": "PRODUCTO 1","unidad": "ZZ","cantidad": 2,"codProdSunat": "P001","id_prod": null,"est_reg": "A","producto": null}]
+     * @bodyParam guia_remision_det array Ejemplo:[ {"id_guia_remision_det": 1,"id_guia_remision": 1,"codigo": "PROD1","descripcion": "PRODUCTO 1","unidad": "ZZ","cantidad": 2,"codProdSunat": "P001","id_prod": null,"est_reg": "A"}]
      * @response {
      *    "resp": "Guia de remision  creada"
      * }
