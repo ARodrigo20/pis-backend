@@ -154,7 +154,7 @@ class FacturaController extends Controller
             if ($detalles_factura) {
                 foreach ($detalles_factura as $detalle) {
                     $facturaDet = FacturaDetalle::create([
-
+                        'id_factura' => $factura->id_factura,
                         'unidad' => $detalle['unidad'],
                         'cantidad' => $detalle['cantidad'],
                         'codProducto' => $detalle['codProducto'],
@@ -180,7 +180,6 @@ class FacturaController extends Controller
                         'otroTributo' => $detalle['otroTributo'],
                         'icbper' => $detalle['icbper'],
                         'factorIcbper' => $detalle['factorIcbper'],
-                        'id_factura' => $factura->id_factura,
                         'id_prod' => $detalle['id_prod'],
                         'est_reg' => $detalle['est_reg'],
 
@@ -330,7 +329,7 @@ class FacturaController extends Controller
     public function get()
     {
         try {
-            $factura = Factura::with(['factura_det', 'cliente'])->get();
+            $factura = Factura::with(['factura_det', 'cliente'])->orderBy('id_ord_com', 'desc')->get();
         } catch (Exception $e) {
             return response()->json([
                 'error' => 'Ocurrio un error en el servidor',

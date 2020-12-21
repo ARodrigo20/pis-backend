@@ -67,7 +67,7 @@ class Factura extends Model
     }
 
     public function cliente(){
-        return $this->belongsTo('App\Models\Clientes\Cliente', 'id_cli');
+        return $this->belongsTo('App\Models\Clientes\Cliente', 'id_cli')->with(['tipo_documento']);
     }
 
     public function getFacturaDetAttribute()
