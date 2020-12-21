@@ -329,7 +329,7 @@ class FacturaController extends Controller
     public function get()
     {
         try {
-            $factura = Factura::with(['factura_det', 'cliente'])->orderBy('id_factura', 'desc')->get();
+            $factura = Factura::with(['factura_det', 'cliente'])->orderBy('id_ord_com', 'desc')->get();
         } catch (Exception $e) {
             return response()->json([
                 'error' => 'Ocurrio un error en el servidor',
@@ -512,6 +512,23 @@ class FacturaController extends Controller
        
         return response()->json([
             'resp' => 'Factura Anulada',
+        ], 200, [], JSON_NUMERIC_CHECK);
+    }
+
+    public function updateEstadoEnvio(Request $request, $id)
+    {
+        try {
+            $factura = Factura::find($id);
+            $factura->fill(array('est_env' => $request->input('estado')))->save();
+        } catch (Exception $e) {
+            return response()->json([
+                'error' => 'ocurrio un error en el servidor',
+                'desc' => $e,
+            ], 500);
+        }
+       
+        return response()->json([
+            'resp' => 'Factura Actualizada',
         ], 200, [], JSON_NUMERIC_CHECK);
     }
 

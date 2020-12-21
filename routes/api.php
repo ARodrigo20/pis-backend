@@ -226,5 +226,6 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::get('factura/get/{id}','Facturacion\FacturaController@getById')->name('getFactura');
     Route::post('factura/create','Facturacion\FacturaController@create')->name('createFactura');
     Route::get('factura/annul/{id}','Facturacion\FacturaController@annul')->name('annulFactura');
+	Route::post('factura/update-estado/{id}','Facturacion\FacturaController@updateEstadoEnvio')->name('updateEstadoFactura');
    
 });
