@@ -329,7 +329,7 @@ class FacturaController extends Controller
     public function get()
     {
         try {
-            $factura = Factura::with(['factura_det', 'cliente'])->orderBy('id_ord_com', 'desc')->get();
+            $factura = Factura::with(['factura_det', 'cliente'])->orderBy('id_factura', 'desc')->get();
         } catch (Exception $e) {
             return response()->json([
                 'error' => 'Ocurrio un error en el servidor',
