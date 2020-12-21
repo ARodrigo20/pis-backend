@@ -218,14 +218,21 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     // Guia de remision de transporte
     Route::get('guia-remision/get','Facturacion\GuiaRemisionController@get')->name('getGuias');
     Route::get('guia-remision/get/{id}','Facturacion\GuiaRemisionController@getById')->name('getGuia');
+    Route::get('guia-remision/changeStateEnvio/{id}','Facturacion\GuiaRemisionController@changeStateEnvio')->name('changeState');
     Route::post('guia-remision/create','Facturacion\GuiaRemisionController@create')->name('createGuia');
     Route::get('guia-remision/annul/{id}','Facturacion\GuiaRemisionController@annul')->name('annulGuia');
+
    
     // Factura
     Route::get('factura/get','Facturacion\FacturaController@get')->name('getFacturas');
     Route::get('factura/get/{id}','Facturacion\FacturaController@getById')->name('getFactura');
     Route::post('factura/create','Facturacion\FacturaController@create')->name('createFactura');
     Route::get('factura/annul/{id}','Facturacion\FacturaController@annul')->name('annulFactura');
-	Route::post('factura/update-estado/{id}','Facturacion\FacturaController@updateEstadoEnvio')->name('updateEstadoFactura');
+    Route::post('factura/update-estado/{id}','Facturacion\FacturaController@updateEstadoEnvio')->name('updateEstadoFactura');
    
+    // Pago
+    Route::get('pago/get','Facturacion\PagoController@get')->name('getPagos');
+    Route::get('pago/get/{id}','Facturacion\PagoController@getById')->name('getPago');
+    Route::post('pago/create','Facturacion\PagoController@create')->name('createPago');
+    Route::get('pago/annul/{id}','Facturacion\PagoController@annul')->name('annulPago');
 });

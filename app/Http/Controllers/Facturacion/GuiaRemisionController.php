@@ -243,6 +243,7 @@ class GuiaRemisionController extends Controller
      *    "resp": "Guia de remision  creada"
      * }
      */
+    
     public function create(Request $request)
     {
         DB::beginTransaction();
@@ -369,4 +370,24 @@ class GuiaRemisionController extends Controller
         
         return $cod_correlativo_max;
     }
+
+  
+        public function changeStateEnvio($id)
+        {
+            try {
+                $guia = GuiaRemision::find($id);
+                $guia->fill(array('est_env' => 'E'))->save();
+            } catch (Exception $e) {
+                return response()->json([
+                    'error' => 'ocurrio un error en el servidor',
+                    'desc' => $e,
+                ], 500);
+            }
+           
+            return response()->json([
+                'resp' => 'Guia de remision Enviado',
+            ], 200, [], JSON_NUMERIC_CHECK);
+        }
+
+        
 }
