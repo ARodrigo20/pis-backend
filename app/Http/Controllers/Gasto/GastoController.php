@@ -296,7 +296,7 @@ class GastoController extends Controller
     }
 
     /**
-     * Modificar Gasto 
+     * Modificar Gasto |
      *
      * Modifica un Gasto 
      *

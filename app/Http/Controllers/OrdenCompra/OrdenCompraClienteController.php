@@ -86,7 +86,7 @@ class OrdenCompraClienteController extends Controller
      *                  "id_cli": 0,
      *                  "razsoc_cli": "string",
      *                  "numdoc_cli": 0,
-     *                  "ema_cli": "string",
+     *                  "ema_cli": "string", 
      *                  "id_tipdoc": 0,
      *                  "est_reg": "string"
      *              },
@@ -185,11 +185,11 @@ class OrdenCompraClienteController extends Controller
                         'ord_com_det_canfal' => $detalle['ord_com_det_canfal'],
                         'ord_com_prod_serv' => $detalle['ord_com_prod_serv'],
                     ]);
-                    if($detalle['ord_com_det_est'] != "2") {
+                    /*if($detalle['ord_com_det_est'] != "2") {
                         $estado_orden = "0";
                     }
                     $producto = Producto::find($detalle['id_prod']);
-                    $producto->fill(array('pre_com_prod' => $detalle['ord_com_det_preuni']))->save();
+                    $producto->fill(array('pre_com_prod' => $detalle['ord_com_det_preuni']))->save();*/
                 }
             }
             $ordenCompra->fill(array('ord_com_est' => $estado_orden))->save();
