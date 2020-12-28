@@ -302,10 +302,18 @@ class GuiaRemisionController extends Controller
                         'codProdSunat' => $detalle['codProdSunat'],
                         'id_prod' => $detalle['id_prod'],
                         'est_reg' => $detalle['est_reg'],
+                        
                        
                     ]);
-                }
-            }
+
+                      //Discount stock
+        
+                        $producto = Producto::find($detalle['id_prod']);
+                        $producto->fill(array(
+                            'stk_prod' =>  ($producto->stk_prod - $detalle['cantidad']),   
+                        ))->save();
+                            }
+                        }
 
             DB::commit();
             //all good
@@ -320,6 +328,12 @@ class GuiaRemisionController extends Controller
         return response()->json([
             'resp' => 'Guia de remision creada',
         ], 200, [], JSON_NUMERIC_CHECK);
+
+
+
+
+      
+
     }
 
     
