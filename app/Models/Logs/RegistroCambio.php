@@ -26,8 +26,11 @@ class RegistroCambio extends Model
 
     public function users()
     {
-        return $this->belongsTo('App\Models\Logs\UserLog', 'id_col');
+        return $this->belongsTo('App\User', 'id_col')->select('id_col','email','nom_col','ape_col');
     }
+    // public function usuario(){
+    //     return $this->belongsTo('App\User', 'id_col')->select('id_col','email','nom_col','ape_col');
+    // }
     public function tipo_cambio()
     {
         return $this->belongsTo('App\Models\Logs\TipoCambio', 'id_tipcam');
