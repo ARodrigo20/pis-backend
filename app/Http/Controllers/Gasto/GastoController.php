@@ -60,6 +60,7 @@ class GastoController extends Controller
     public function get()
     {
         try {
+
             $Gasto = DB::table('gasto')
                                     ->select(
                                         'id_gas',
@@ -78,8 +79,9 @@ class GastoController extends Controller
                                         'gas_totdol',
                                         'gas_desc',
                                         'gas_fac_ser',
-                                        'gasto.est_reg')->join('proyecto','proyecto.id_proy','=','gasto.id_proy')
+                                        'gasto.est_reg')->leftJoin('proyecto','proyecto.id_proy','=','gasto.id_proy')
                                         ->orderBy('id_gas', 'desc')->get();
+            //$Gasto = Gasto::with(['proyecto'])->orderBy('id_gas', 'desc')->get();
         } catch (Exception $e) {
             return response()->json([
                 'error' => 'ocurrio un error en el servidor',
@@ -161,7 +163,7 @@ class GastoController extends Controller
                                         'gas_totdol',
                                         'gas_desc',
                                         'gas_fac_ser',
-                                        'gasto.est_reg')->join('proyecto','proyecto.id_proy','=','gasto.id_proy')
+                                        'gasto.est_reg')->leftJoin('proyecto','proyecto.id_proy','=','gasto.id_proy')
                                         ->where('id_gas','=',$id)->get();
         } catch (Exception $e) {
             return response()->json([
@@ -398,7 +400,7 @@ class GastoController extends Controller
                                         'gas_igv as IGV S/',
                                         'gas_tot as Total S/',
                                         'gas_tipcam as T.C. $',
-                                        'gas_totdol as Dolares $')->join('proyecto','proyecto.id_proy','=','gasto.id_proy')
+                                        'gas_totdol as Dolares $')->leftJoin('proyecto','proyecto.id_proy','=','gasto.id_proy')
                                         ->orderBy('id_gas', 'desc')->get();
         } catch (Exception $e) {
             return response()->json([

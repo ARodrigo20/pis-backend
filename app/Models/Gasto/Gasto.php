@@ -29,6 +29,13 @@ class Gasto extends Model
     protected $hidden = [
         'created_at', 'updated_at',
     ];
+    /*public function getMarcaAttribute() {
+        return $this->marca();
+    }
+    public function marca()
+    {
+        return $this->belongsTo('App\Models\Almacen\Marca', 'id_mar');
+    }*/
 
 /*    public function getOrdenDetalleAttribute()
     {
