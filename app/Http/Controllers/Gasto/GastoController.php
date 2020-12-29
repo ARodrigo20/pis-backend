@@ -401,6 +401,7 @@ class GastoController extends Controller
                                         'gas_tot as Total S/',
                                         'gas_tipcam as T.C. $',
                                         'gas_totdol as Dolares $')->leftJoin('proyecto','proyecto.id_proy','=','gasto.id_proy')
+                                        ->where('gasto.est_reg','=','A')
                                         ->orderBy('id_gas', 'desc')->get();
         } catch (Exception $e) {
             return response()->json([
