@@ -25,9 +25,10 @@ Route::post('register', 'AuthController@register');
 Route::post('login', 'AuthController@authenticate');
 Route::get('empresa/logo','EmpresaController@getLogo')->name('getLogo');
 
-Route::group(['middleware' => ['jwt.verify']], function() {
 
-    //Logs
+//test
+
+//Logs
     Route::get('logs/get','LogsController@get')->name('getLogs');
 
     //Almacen
@@ -235,4 +236,8 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::get('pago/get/{id}','Facturacion\PagoController@getById')->name('getPago');
     Route::post('pago/create','Facturacion\PagoController@create')->name('createPago');
     Route::get('pago/annul/{id}','Facturacion\PagoController@annul')->name('annulPago');
+
+Route::group(['middleware' => ['jwt.verify']], function() {
+
+    
 });
