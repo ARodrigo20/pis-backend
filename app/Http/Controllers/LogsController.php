@@ -72,7 +72,7 @@ class LogsController extends Controller
         
 
         //habilitar o desabilitar
-        $enabled_logs = true;
+        $enabled_logs = false;
 
         if($enabled_logs) {
             $user = Auth::user();
